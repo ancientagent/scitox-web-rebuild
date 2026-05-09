@@ -1,0 +1,16 @@
+{
+  "name": "scitox-web-rebuild",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Private SciTOX website rebuild, vendor-readiness, source audit, and Webflow handoff workspace.",
+  "type": "module",
+  "scripts": {
+    "build:claims-inventory": "node scripts/build_claims_inventory.mjs",
+    "build:public-site-extraction": "node scripts/build_public_site_extraction.mjs",
+    "verify:public-site-extraction": "node scripts/verify_public_site_extraction.mjs",
+    "build:risky-claims-cleanup": "node scripts/build_risky_claims_cleanup_list.mjs",
+    "build:product-data": "node scripts/build_product_data_requirements.mjs",
+    "build:buyer-outreach": "node scripts/build_buyer_outreach_tracker.mjs",
+    "build:line-sheet": "node scripts/build_product_line_sheet_template.mjs"
+  }
+}

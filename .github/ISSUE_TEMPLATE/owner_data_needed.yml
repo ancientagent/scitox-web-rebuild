@@ -1,0 +1,44 @@
+name: Owner data needed
+description: Track missing owner-confirmed product, policy, vendor, or business data.
+title: "[Owner Data] "
+labels:
+  - owner-data-needed
+body:
+  - type: dropdown
+    id: data_type
+    attributes:
+      label: Data type
+      options:
+        - Product data
+        - Pricing
+        - Wholesale terms
+        - Shipping
+        - Returns / guarantee
+        - Policy / legal
+        - Product images / labels
+        - Form routing
+        - Analytics / Search Console
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: needed
+    attributes:
+      label: Data needed
+      placeholder: What exact owner data is needed?
+    validations:
+      required: true
+  - type: textarea
+    id: affected_pages
+    attributes:
+      label: Affected pages or assets
+      placeholder: Product Detail, Partner / Wholesale Inquiry, line sheet, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: launch_impact
+    attributes:
+      label: Launch impact
+      description: Explain whether this blocks V1 or can wait.
+    validations:
+      required: true

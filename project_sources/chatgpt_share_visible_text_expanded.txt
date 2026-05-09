@@ -1,0 +1,840 @@
+This is a copy of a shared ChatGPT conversation
+
+Report conversation
+You are going to help me prepare a business expansion plan, but do not write the plan yet.
+
+Your first job is only to create a planning checkpoint.
+
+When I send the project brief next, treat it as source material only.
+
+Your first response must include only:
+
+1. Intended outcome
+2. Missing information needed from the business owner
+3. What needs live research
+4. Key risks and assumptions
+5. Proposed staged structure
+6. Agent roles needed
+7. Checklist of data I should gather
+
+Then stop and wait for my approval.
+
+Do not repeat these instructions back to me.
+Show less
+Thought for a couple of seconds
+
+Understood. Send the project brief when you’re ready.
+
+Project brief:
+
+I am helping a friend who owns SciTOX: https://scitoxdetox.com/
+
+SciTOX sells a hair detox treatment for people expecting a hair drug test. The owner says the product works and the business already makes strong money, but he runs almost everything himself, which is the main bottleneck.
+
+The business is considered risky by many payment platforms and related services, so the plan needs to be compliance-aware and cautious.
+
+The first goal is to remodel the website so it looks professional, credible, less cluttered, and ready for third-party vendor outreach.
+
+The larger goal is to expand the business through:
+- better website structure
+- better product positioning
+- analytics and traffic-source understanding
+- automated sales/support/calls/order questions
+- customer service systems
+- possible third-party online vendors
+- possible Amazon path if viable
+- alternative growth plan if Amazon is not viable
+- possible wholesale/headshop/niche retailer strategy
+- possible manufacturing, bottling, inventory, or fulfillment partners
+
+I need this turned into an agent-executable action plan that an AI orchestrator can manage.
+
+Important:
+- Do not invent traffic, sales, margin, Amazon eligibility, vendor eligibility, or manufacturing facts.
+- Include what should be researched live.
+- Include what data I need from the owner.
+- Include risks around payment processors, marketplaces, advertising, and product claims.
+- The plan should eventually be something I can pitch to the owner.
+- The plan should include a fallback path if Amazon is not realistic.
+- The plan should allow financial projections once real sales/margin/order data is provided.
+
+Now give me only the planning checkpoint requested in my previous message.
+Show more
+Thought for 35s
+
+Intended outcome
+
+Create a staged, agent-executable expansion plan for SciTOX that can be pitched to the owner, starting with website/professionalization and moving toward channel expansion only after claims, payments, analytics, support, fulfillment, and compliance risks are mapped.
+
+Missing information needed from the business owner
+
+Monthly revenue, order volume, average order value, refund rate, chargeback rate, and gross margin.
+
+Current payment processor, history of freezes, denials, reserves, or account issues.
+
+Current platform/CMS, hosting, checkout setup, email/SMS tools, call handling, and customer service workflow.
+
+Product SKUs, pricing, COGS, manufacturing method, bottling process, inventory levels, lead times, and fulfillment process.
+
+Ingredient lists, labels, safety docs, batch records, substantiation/testing, customer result documentation, and any legal review.
+
+Any prior Amazon, Meta, Google Ads, merchant account, marketplace, or wholesale attempts.
+
+Owner’s actual bottlenecks: calls, fulfillment, customer questions, inventory, tech, marketing, or compliance.
+
+What “strong money” means in actual numbers.
+
+What needs live research
+
+Current FDA/cosmetic-drug positioning risk, because FDA says classification depends on intended use, claims, advertising, internet promotion, consumer perception, and reputation. 
+U.S. Food and Drug Administration
+
+Current FTC claim-substantiation requirements, especially because objective health/safety-related claims need adequate evidence and health-related claims generally require competent and reliable scientific evidence. 
+Federal Trade Commission
++1
+
+Current Amazon category, restricted-product, cosmetics, drug-claim, and “drug test” policy exposure.
+
+Current payment processor restrictions, high-risk merchant options, reserve expectations, chargeback thresholds, and underwriting requirements; PayPal, for example, prohibits transactions involving narcotics, drug paraphernalia, products that present consumer-safety risk, or items that facilitate illegal activity. 
+PayPal
+
+Current third-party vendor requirements for SMOKEA-like online sellers, headshop distributors, niche retailers, and wholesale platforms.
+
+Current analytics state: GA4, Search Console, conversion tracking, phone tracking, UTM tracking, and order-source attribution. GA4 traffic acquisition and UTM data can show campaign/source behavior, while Search Console can show Google queries and landing pages. 
+Google Help
++2
+Google Help
++2
+
+Manufacturing, bottling, labeling, warehousing, 3PL, and fulfillment partner options willing to handle the product category.
+
+Alternative growth paths if Amazon is not viable.
+
+Key risks and assumptions
+
+Do not assume Amazon is viable.
+
+Do not assume online vendors will carry the product.
+
+Do not assume payment processors will approve it.
+
+Do not assume testimonials equal substantiation; FTC guidance treats testimonials as insufficient proof by themselves. 
+Federal Trade Commission
+
+Main risk is claim language around drug testing, detox, toxins, metabolites, permanent cleansing, guarantees, and result promises.
+
+Payment, advertising, and marketplace systems may classify the business as high-risk even if the product sells well.
+
+The website may currently convert high-intent buyers but still fail third-party vendor, payment, or marketplace review.
+
+Financial projections should wait until real owner data is provided.
+
+Proposed staged structure
+
+Stage 1: Owner intake + risk map
+Gather business facts, product docs, operational data, payment history, and current bottlenecks.
+
+Stage 2: Claims/compliance cleanup
+Build a claims matrix, evidence matrix, banned-language list, and safer positioning rules.
+
+Stage 3: Website remodel plan
+Restructure site, product pages, FAQ, proof pages, policies, trust signals, support flow, and wholesale-facing materials.
+
+Stage 4: Analytics + attribution
+Set up traffic/source tracking, phone/order source capture, conversion events, UTM structure, and reporting dashboard.
+
+Stage 5: Operations automation
+Automate FAQs, order intake questions, call routing, support tickets, CRM, abandoned checkout, repeat customer flows, and fulfillment handoffs.
+
+Stage 6: Channel viability research
+Separately evaluate Amazon, niche online sellers, headshop/wholesale, affiliate/referral, SEO, direct sales, and distributor routes.
+
+Stage 7: Expansion roadmap + projections
+Build the owner-facing pitch, phased budget, staffing/agent needs, vendor shortlist, and projections once real numbers are supplied.
+
+Agent roles needed
+
+Project Orchestrator
+
+Compliance/Risk Research Agent
+
+Website UX/Conversion Agent
+
+Copy/Claims Matrix Agent
+
+Analytics/Attribution Agent
+
+Payment/High-Risk Merchant Research Agent
+
+Marketplace/Amazon Research Agent
+
+Wholesale/Vendor Outreach Agent
+
+Operations Automation Agent
+
+Manufacturing/Fulfillment Research Agent
+
+Financial Modeling Agent
+
+Checklist of data I should gather
+
+Last 12 months revenue/orders by month.
+
+Current product list, prices, COGS, margins, and inventory.
+
+Refunds, chargebacks, failed payments, processor reserves, and disputes.
+
+Current website admin access or screenshots of platform/settings.
+
+GA4/Search Console access or exports.
+
+Checkout/order export with traffic/source data if available.
+
+Customer service logs, call volume, common questions, and owner time spent.
+
+Labels, ingredients, instructions, warnings, guarantee/refund language.
+
+Any lab tests, internal tests, third-party tests, testimonials, reviews, and result documentation.
+
+Current suppliers, manufacturers, bottlers, packers, and fulfillment process.
+
+Any legal letters, platform warnings, account suspensions, ad denials, or payment denials.
+
+Owner’s preferred expansion priority: website first, Amazon first, wholesale first, automation first, or operations first.
+
+Sources
+Good. Use that staged structure.
+
+Before writing Stage 1, create the practical intake packet I need for the owner.
+
+Return only:
+
+1. Owner questions, grouped by category
+2. Documents/access I need to request
+3. Metrics/data I need from him
+4. Website/platform access checklist
+5. Analytics/payment/customer-service data checklist
+6. Red flags I should look for immediately
+7. The exact next step after I collect this information
+
+Do not start Stage 1 yet.
+Do not write the full plan yet.
+Keep this short enough that I can actually send or use it with the owner.
+Show more
+Good. Now turn that into a clean one-page Owner Intake Summary template that I can fill in after talking to him.
+
+Return only the template.
+
+Use these sections:
+
+1. Current Business Reality
+2. Current Bottlenecks
+3. Immediate Risks
+4. Missing Data
+5. Expansion Readiness
+6. First Recommended Move
+7. Open Questions Before Stage 1
+
+Keep it practical and owner-friendly.
+
+Do not begin Stage 1 yet.
+Do not write the website audit yet.
+Do not make assumptions where data is missing. Use placeholders like [NEEDED] or [UNKNOWN].
+Show more
+Good. Now begin Stage 1 only.
+
+Stage 1: Owner intake + risk map.
+
+Use the Owner Intake Summary template as the foundation.
+
+Current website to review:
+https://scitoxdetox.com/
+
+Return only:
+
+1. What must be confirmed with the owner before any website remodel
+2. What must be reviewed on the current SciTOX site
+3. The initial risk map
+4. The safest order of operations
+5. What an AI agent team should do first
+6. What should not be touched yet
+7. Stage 1 deliverables
+
+Use live web research where needed, especially for the current SciTOX website and current payment, marketplace, advertising, FDA/FTC, and Amazon risk.
+
+Do not begin Stage 2.
+Do not write the website remodel yet.
+Do not create the full expansion plan yet.
+Do not invent business numbers or traffic sources.
+Show more
+Good. Before moving to Stage 2, turn Stage 1 into a practical working packet.
+
+Return only:
+
+1. Current Site Snapshot template
+2. Page-by-page Claims Inventory template
+3. Claims Risk Matrix template
+4. Payment/Marketplace/Advertising Risk Map template
+5. Operations Map template
+6. Immediate Red Flag Report template
+7. Go/No-Go checklist for moving into Stage 2
+
+Use tables where helpful.
+
+Do not begin Stage 2 yet.
+Do not rewrite claims yet.
+Do not propose the remodel yet.
+Do not contact vendors yet.
+Keep all fields fillable with [NEEDED], [UNKNOWN], or [REVIEW REQUIRED].
+Show more
+Good. Now convert this Stage 1 working packet into an agent-executable task packet.
+
+Return only:
+
+1. Stage 1 objective
+2. Agent assignments
+3. Task list for each agent
+4. Required inputs for each task
+5. Exact outputs each agent must produce
+6. File/table names to create
+7. Handoff order between agents
+8. Completion checklist
+
+Keep it practical and execution-focused.
+
+Do not begin Stage 2 yet.
+Do not rewrite claims yet.
+Do not propose the remodel yet.
+Do not create the full expansion plan yet.
+Show more
+Good. Stage 1 structure is approved.
+
+Now begin Stage 2 only: Claims/compliance cleanup.
+
+Use the Stage 1 risk map and current SciTOX site findings as the foundation.
+
+Return only:
+
+1. Stage 2 objective
+2. Claims cleanup workflow
+3. Claim categories to inventory
+4. Claims Matrix structure
+5. Evidence Matrix structure
+6. High-risk language list
+7. Safer positioning rules
+8. What needs legal/compliance review
+9. What an AI agent team should do in Stage 2
+10. Stage 2 deliverables
+11. Go/No-Go checklist before Stage 3
+
+Use live research where needed for FDA, FTC, payment processor, advertising, Amazon, and marketplace claim-risk context.
+
+Do not rewrite the website yet.
+Do not propose the new site structure yet.
+Do not begin Stage 3.
+Do not contact vendors.
+Do not invent evidence or claim support.
+Show more
+Good. Now convert Stage 2 into an agent-executable task packet.
+
+Return only:
+
+1. Stage 2 objective
+2. Agent assignments
+3. Task list for each agent
+4. Required inputs for each task
+5. Exact outputs each agent must produce
+6. File/table names to create
+7. Handoff order between agents
+8. Completion checklist
+
+Important:
+- Do not rewrite claims yet.
+- Do not create new website copy yet.
+- Do not propose the remodel yet.
+- Do not begin Stage 3.
+- Keep this focused on claims cleanup, evidence mapping, risk classification, and legal/compliance review preparation.
+Show more
+Good. Stage 2 structure is approved.
+
+Now begin Stage 3 only: Website remodel and credibility strategy.
+
+Use Stage 1 and Stage 2 as constraints.
+
+Important:
+- Do not use high-risk claims unless Stage 2 would allow them.
+- Do not invent proof, test results, sales numbers, or traffic data.
+- Do not write final website copy yet.
+- Do not create the full expansion plan yet.
+- Focus only on the website structure, credibility, trust, conversion flow, and partner-readiness.
+
+Return only:
+
+1. Stage 3 objective
+2. Current website problems to solve
+3. Recommended site architecture
+4. Homepage section strategy
+5. Product page strategy
+6. FAQ/support strategy
+7. Testimonials/results strategy
+8. Policy/trust strategy
+9. Vendor-facing credibility strategy
+10. Mobile-first design requirements
+11. What content should be removed, hidden, consolidated, or moved to review
+12. What an AI agent team should do in Stage 3
+13. Stage 3 deliverables
+14. Go/No-Go checklist before Stage 4
+
+Do not begin Stage 4.
+Do not contact vendors.
+Do not start automation planning yet.
+Show more
+Good. Now convert Stage 3 into an agent-executable task packet.
+
+Return only:
+
+1. Stage 3 objective
+2. Agent assignments
+3. Task list for each agent
+4. Required inputs for each task
+5. Exact outputs each agent must produce
+6. File/table names to create
+7. Handoff order between agents
+8. Completion checklist
+
+Important:
+- Do not write final website copy yet.
+- Do not rewrite claims yet.
+- Do not begin Stage 4.
+- Do not plan automation yet.
+- Keep this focused on website structure, credibility strategy, content disposition, mobile-first UX, and partner-readiness.
+Show more
+Good. Stage 3 structure is approved.
+
+Now begin Stage 4 only: Analytics and traffic-source investigation.
+
+Use Stages 1–3 as constraints.
+
+Important:
+- Do not begin automation planning yet.
+- Do not begin vendor outreach.
+- Do not write the full expansion plan.
+- Do not invent traffic sources, sales numbers, conversion rates, or customer acquisition data.
+- Focus only on finding out where traffic, orders, calls, referrals, and sales are actually coming from.
+
+Return only:
+
+1. Stage 4 objective
+2. What must be measured before marketing or expansion decisions
+3. Analytics/account access needed
+4. Traffic-source investigation workflow
+5. Sales/source attribution workflow
+6. Call/text/referral tracking workflow
+7. Dashboard/reporting structure
+8. Data quality risks and blind spots
+9. What an AI agent team should do in Stage 4
+10. Stage 4 deliverables
+11. Go/No-Go checklist before Stage 5
+
+Use live research where needed for current GA4, Search Console, UTM, call tracking, heatmap/session recording, and e-commerce analytics best practices.
+
+Do not begin Stage 5.
+Do not recommend vendors yet.
+Do not start automation tool selection yet.
+Show more
+Good. Now convert Stage 4 into an agent-executable task packet.
+
+Return only:
+
+1. Stage 4 objective
+2. Agent assignments
+3. Task list for each agent
+4. Required inputs for each task
+5. Exact outputs each agent must produce
+6. File/table names to create
+7. Handoff order between agents
+8. Completion checklist
+
+Important:
+- Do not begin Stage 5.
+- Do not start automation planning yet.
+- Do not make marketing recommendations yet.
+- Do not invent traffic, sales, attribution, conversion, or customer-source data.
+- Keep this focused on analytics access, tracking verification, traffic-source baseline, sales attribution, call/text/referral tracking, UTM governance, and dashboard design.
+Show more
+Good. Stage 4 structure is approved.
+
+Now begin Stage 5 only: Operations automation.
+
+Use Stages 1–4 as constraints.
+
+Important:
+- Do not begin vendor outreach yet.
+- Do not begin Amazon planning yet.
+- Do not write the full expansion plan.
+- Do not recommend tools that create unnecessary payment, privacy, compliance, or platform risk.
+- Do not automate claim-heavy conversations until Stage 2 claim boundaries are approved.
+- Focus only on reducing owner workload while keeping support, sales, order handling, and documentation manageable.
+
+Return only:
+
+1. Stage 5 objective
+2. Owner workload areas to automate or delegate
+3. Automation priorities
+4. Customer support workflow
+5. Call/text handling workflow
+6. Product guidance/intake workflow
+7. Order support workflow
+8. Email/SMS workflow
+9. CRM/helpdesk structure
+10. SOP/documentation structure
+11. Privacy/compliance risks
+12. What an AI agent team should do in Stage 5
+13. Stage 5 deliverables
+14. Go/No-Go checklist before Stage 6
+
+Use live research where needed for current small-business CRM, helpdesk, call tracking, AI chatbot, email/SMS, SOP, and ecommerce automation options.
+
+Do not begin Stage 6.
+Do not contact vendors.
+Do not choose final tools yet unless you clearly separate “candidate tools” from “approved tools.”
+Show more
+Good. Now convert Stage 5 into an agent-executable task packet.
+
+Return only:
+
+1. Stage 5 objective
+2. Agent assignments
+3. Task list for each agent
+4. Required inputs for each task
+5. Exact outputs each agent must produce
+6. File/table names to create
+7. Handoff order between agents
+8. Completion checklist
+
+Important:
+- Do not begin Stage 6.
+- Do not begin vendor outreach.
+- Do not begin Amazon planning.
+- Do not choose final tools yet.
+- Do not automate claim-heavy conversations.
+- Keep this focused on owner workload reduction, support workflow, call/text handling, product intake, order support, email/SMS workflow, CRM/helpdesk structure, SOPs, privacy risk, and candidate tool evaluation.
+Show more
+Good. Stage 5 structure is approved.
+
+Now begin Stage 6 only: Channel viability research.
+
+Use Stages 1–5 as constraints.
+
+Important:
+- Do not begin vendor outreach yet.
+- Do not begin Amazon execution yet.
+- Do not write the full expansion plan.
+- Do not assume any channel is viable.
+- Do not invent vendor acceptance, Amazon eligibility, wholesale margins, or marketplace approval.
+- Focus only on researching and scoring possible expansion channels.
+
+Return only:
+
+1. Stage 6 objective
+2. Channel categories to evaluate
+3. Evaluation criteria
+4. Amazon viability research framework
+5. Third-party online vendor framework
+6. Wholesale/headshop/distributor framework
+7. Affiliate/referral framework
+8. Direct-to-consumer growth framework
+9. Paid ads viability framework
+10. Channel risk scoring model
+11. What an AI agent team should do in Stage 6
+12. Stage 6 deliverables
+13. Go/No-Go checklist before Stage 7
+
+Use live research where needed for Amazon, payment/platform restrictions, online retailer/vendor requirements, wholesale/distributor expectations, affiliate/referral rules, and ad-platform restrictions.
+
+Do not begin Stage 7.
+Do not contact vendors.
+Do not select final channels yet.
+Show more
+Good. Now convert Stage 6 into an agent-executable task packet.
+
+Return only:
+
+1. Stage 6 objective
+2. Agent assignments
+3. Task list for each agent
+4. Required inputs for each task
+5. Exact outputs each agent must produce
+6. File/table names to create
+7. Handoff order between agents
+8. Completion checklist
+
+Important:
+- Do not begin Stage 7.
+- Do not contact vendors.
+- Do not begin Amazon execution.
+- Do not select final channels yet.
+- Do not invent vendor acceptance, Amazon eligibility, wholesale margins, traffic data, or marketplace approval.
+- Keep this focused on channel research, requirements, restrictions, readiness, risk scoring, and blockers.
+
+Same settings:
+Show more
+Good. Stage 6 structure is approved.
+
+Now begin Stage 7 only: Expansion roadmap + projections.
+
+Use Stages 1–6 as constraints.
+
+Important:
+- Do not write the final pitch yet.
+- Do not create a polished full business plan yet.
+- Do not invent revenue, margins, order volume, conversion rate, traffic, vendor acceptance, Amazon eligibility, or manufacturing capacity.
+- Use placeholders and formulas where real data is missing.
+- Treat Amazon as conditional unless Stage 6 proves otherwise.
+- Treat non-Amazon expansion as a serious path, not a fallback footnote.
+
+Return only:
+
+1. Stage 7 objective
+2. Expansion path options
+3. Decision tree for choosing the first expansion path
+4. Financial model structure
+5. Required owner inputs for projections
+6. Conservative/base/aggressive projection framework
+7. Amazon path scenario
+8. Non-Amazon path scenario
+9. Wholesale/vendor path scenario
+10. DTC/automation-first path scenario
+11. Risk-adjusted roadmap
+12. What an AI agent team should do in Stage 7
+13. Stage 7 deliverables
+14. Go/No-Go checklist before final owner pitch
+
+Do not begin the final owner pitch yet.
+Do not produce the final expansion blueprint yet.
+Do not contact vendors.
+Do not select Amazon as the main plan unless the data supports it.
+Show more
+Good. Now convert Stage 7 into an agent-executable task packet.
+
+Return only:
+
+1. Stage 7 objective
+2. Agent assignments
+3. Task list for each agent
+4. Required inputs for each task
+5. Exact outputs each agent must produce
+6. File/table names to create
+7. Handoff order between agents
+8. Completion checklist
+
+Important:
+- Do not write the final owner pitch yet.
+- Do not create the polished full business plan yet.
+- Do not invent revenue, margins, traffic, conversion rates, Amazon eligibility, vendor acceptance, or manufacturing capacity.
+- Keep Amazon conditional unless Stage 6 data proves otherwise.
+- Treat non-Amazon growth as a serious expansion path.
+- Keep this focused on financial model structure, assumptions, scenarios, risk-adjusted roadmap, and final-pitch preparation inputs only.
+Show more
+Good. Stage 7 structure is approved.
+
+Now create the final owner-facing pitch framework only.
+
+Use Stages 1–7 as constraints.
+
+Important:
+- Do not write a long full business plan yet.
+- Do not invent numbers, margins, traffic, Amazon eligibility, vendor acceptance, or legal conclusions.
+- Keep Amazon conditional.
+- Treat non-Amazon growth as a serious path.
+- Make this practical for a business owner who is busy and currently the bottleneck.
+
+Return only:
+
+1. Pitch objective
+2. One-page pitch structure
+3. Key message to the owner
+4. Owner pain points to highlight
+5. Opportunity framing
+6. Why website cleanup comes before expansion
+7. Why operations automation comes before aggressive growth
+8. Why analytics are needed before marketing decisions
+9. Amazon path, framed conditionally
+10. Non-Amazon growth path
+11. Data still needed from the owner
+12. Recommended first 30 days
+13. What an AI agent team should do next
+14. Final pitch deliverables
+
+Do not create the polished final pitch yet.
+Do not create the full blueprint yet.
+Do not switch into sales hype.
+Show more
+Good. Now write the actual owner-facing pitch using this framework.
+
+Keep it short, direct, and practical.
+
+Audience:
+The owner of SciTOX. He is busy, already making money, and may not want a huge complicated plan.
+
+Goal:
+Convince him that the first move should be cleanup and operational leverage before Amazon, ads, or vendor outreach.
+
+Return only:
+
+1. A short verbal pitch I can say to him
+2. A one-page written pitch
+3. A simple 30-day action plan
+4. A plain-English list of what I need from him
+5. The recommended first decision he needs to make
+
+Rules:
+- Do not overhype.
+- Do not invent numbers.
+- Do not make legal conclusions.
+- Keep Amazon conditional.
+- Treat non-Amazon growth as a real path.
+- Make it sound like a practical business conversation, not a corporate consulting deck.
+Show more
+Good. Now tighten this into a more natural version I can actually say or send.
+
+Keep the same meaning, but make it sound less like a consulting document and more like a practical conversation between me and the owner.
+
+Return only:
+
+1. A 60-second version I can say out loud
+2. A short text/email version I can send him
+3. The 30-day plan in plain language
+4. The exact list of data I need from him
+
+Rules:
+- Keep it direct.
+- Do not overhype.
+- Do not mention FDA/FTC unless absolutely necessary.
+- Do not make it sound scary, but do not ignore risk.
+- Keep Amazon conditional.
+- Make the first step clearly be cleanup, tracking, and owner workload reduction.
+Show more
+Good. Clean up only the short text/email version.
+
+Do not change the strategy.
+
+Return only:
+
+1. Subject line
+2. Clean email body
+
+Make it sound natural, direct, and easy to send.
+Keep it short.
+Good. We do not need to wait for the owner to start the public-facing work.
+
+Using only publicly available information from https://scitoxdetox.com/ and the staged plan so far, begin a pre-owner-response workstream.
+
+Return only:
+
+1. What can be completed now without owner data
+2. What must wait for owner data
+3. Public website audit checklist
+4. Homepage remodel wireframe
+5. Product page remodel wireframe
+6. FAQ/support remodel structure
+7. Partner/wholesale inquiry page structure
+8. Content to remove, hide, consolidate, or send to review
+9. Mockup brief for a designer or AI design agent
+10. Next prompt I should use to generate visual mockups
+
+Rules:
+- Do not invent business numbers.
+- Do not invent proof or testing.
+- Do not make legal conclusions.
+- Do not write final claims as approved.
+- Clearly label anything claim-sensitive as REVIEW REQUIRED.
+- Keep Amazon conditional.
+- Focus on what can be done from the public site alone.
+Show more
+Good. Now generate the mockup descriptions only.
+
+Use the public-site audit and remodel brief.
+
+Return only:
+
+1. Homepage mobile 9:16 mockup description
+2. Product category mobile 9:16 mockup description
+3. Product detail mobile 9:16 mockup description
+4. FAQ/support mobile 9:16 mockup description
+5. Partner/wholesale inquiry mobile 9:16 mockup description
+6. Shared visual style rules
+7. Desktop layout notes
+
+Rules:
+- Do not create final copy.
+- Use placeholder text.
+- Mark claim-sensitive sections as [REVIEW REQUIRED].
+- Do not use success rates.
+- Do not use “guaranteed pass.”
+- Do not invent proof, testing, certifications, customer counts, or vendor relationships.
+- Keep the design clean, professional, mobile-first, and trust-focused.
+Show more
+Good. Now turn these mockup descriptions into a polished visual design brief for a designer or AI mockup tool.
+
+Return only:
+
+1. Overall design direction
+2. Mobile mockup brief for Homepage
+3. Mobile mockup brief for Product Category Page
+4. Mobile mockup brief for Product Detail Page
+5. Mobile mockup brief for FAQ/Support Page
+6. Mobile mockup brief for Partner/Wholesale Inquiry Page
+7. Shared component rules
+8. Copy placeholder rules
+9. Claim-sensitive section rules
+10. Visual do/don’t list
+
+Rules:
+- Do not write final website copy.
+- Do not invent proof, numbers, certifications, reviews, testing, or vendor relationships.
+- Keep all claim-sensitive areas marked [REVIEW REQUIRED].
+- Keep all missing business/product data marked [OWNER DATA NEEDED].
+- Make this ready to hand to a designer or AI design agent.
+Show more
+Create five clean 9:16 mobile website mockups for SciTOX based on the approved visual design brief.
+
+Pages:
+1. Homepage
+2. Product Category Page
+3. Product Detail Page
+4. FAQ / Support Page
+5. Partner / Wholesale Inquiry Page
+
+Style:
+Clean, professional, mobile-first ecommerce design. Light background, calm trust-focused layout, simple cards, clear CTAs, rounded sections, strong support/contact path, organized product information, policy footer.
+
+Rules:
+- Do not use final website copy.
+- Use placeholder text only.
+- Mark claim-sensitive sections as [REVIEW REQUIRED].
+- Mark missing business/product details as [OWNER DATA NEEDED].
+- Do not use success rates.
+- Do not use guaranteed outcome language.
+- Do not invent proof, reviews, certifications, test results, customer counts, vendor logos, or Amazon approval.
+- No panic-sales-page styling.
+- No fake trust badges.
+Show more
+something a little more masculin, clean but less spa
+change color scheme to black green white no need for photography, this is a scientific product for people who use various mind altering properties, it needs to be strong / confident 
+so ultimately i think we need to take a look at two avenues, 1 being the primary goal being vendor outreach, the second being running on its own with the site as is.   lets start with the first.  Im thinking the site primarily focusing on the making the user feel safe, and in good hands now that they have arrived. Potential users/buyers will have a lot on the line and they will most likely have someone they trust or have read many of the positive reviews and will be wanting to check for themselves. the site should champion liberty, privacy, while being sensitive to the potential situation that they may be in, tone should be a warm but serious./direct medical like approach in understanding what is going on with them so we can get them what they need so they can get on with their life. should offer encrypted ai consultations and product questions etc. (this is all suggestion, feel free to express any issues, concerns, potential problems withthis approach)
+
+Show more
+ok well lets start executing the plan discussed in this conversation 
+ok lets get building
+what else would need to be done for avenue one, 
+right, i just assumed one way or another the site thats up needs to be redesigned anyway or else the risk will deter them regardless if its easy for them.   but yes this whole push is to get the product in the hands of vendors
+Uploaded a file
+ok  is there any info that would be critical / helpful if we had first that can be gathered from the original site itself? traffic etc?
+please provide a bulletproof prompt for any of the known or suggested tools that can complete this end to end.   (if it is better to break it down into multiple prompts / sections / stages please include insted)
+should the 1st prompt be done in thinking heavy? 
+ok i pay for pro so its not a matter of cost for me if thats what its weighing against?
+does the prior information in this chat need to be here in order for the last 10 prompts to be effective?
+
+Voice
+ChatGPT can make mistakes. Check important info. See Your privacy choices.

@@ -1,0 +1,64 @@
+name: Claim review
+description: Track a claim that needs owner, evidence, legal, or compliance review.
+title: "[Claim Review] "
+labels:
+  - review-required
+  - claims
+body:
+  - type: textarea
+    id: exact_claim
+    attributes:
+      label: Exact claim
+      description: Paste the exact current or proposed claim. Do not rewrite it here.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Page/source
+      placeholder: URL, Webflow page, workbook, or source file
+    validations:
+      required: true
+  - type: dropdown
+    id: claim_type
+    attributes:
+      label: Claim type
+      options:
+        - Drug-test outcome
+        - Detox/removal
+        - Scientific/proven/tested
+        - Success rate
+        - Guarantee/refund
+        - Testimonial/result
+        - Privacy/security
+        - Medical/legal
+        - Vendor/platform eligibility
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: risk_reason
+    attributes:
+      label: Risk reason
+      placeholder: "[REVIEW REQUIRED]"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_needed
+    attributes:
+      label: Evidence needed
+      placeholder: "[OWNER DATA NEEDED]"
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Recommended status
+      options:
+        - Keep
+        - Review
+        - Remove
+        - Rewrite Later
+        - Legal Review
+    validations:
+      required: true

@@ -1,0 +1,587 @@
+[
+  {
+    "index": 1,
+    "url": "https://advertising.amazon.com/resources/ad-policy/en",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\01_advertising.amazon.com_resources_ad-policy_en.html",
+    "bytes": 329480,
+    "error": ""
+  },
+  {
+    "index": 2,
+    "url": "https://advertising.amazon.com/resources/ad-policy/en?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\02_advertising.amazon.com_resources_ad-policy_en.html",
+    "bytes": 327692,
+    "error": ""
+  },
+  {
+    "index": 3,
+    "url": "https://chatgpt.com/",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 4,
+    "url": "https://consumer.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\04_consumer.ftc.gov_business-guidance_resources_ftcs-endorsement-guides-what-people-are-asking.html",
+    "bytes": 574256,
+    "error": ""
+  },
+  {
+    "index": 5,
+    "url": "https://help.hotjar.com/hc/en-us/articles/115012439167-How-to-Suppress-Text-Images-Videos-and-User-Input-from-Collected-Data?utm_source=chatgpt.com",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 6,
+    "url": "https://help.klaviyo.com/hc/en-us/articles/360035056972?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\06_help.klaviyo.com_hc_en-us_articles_360035056972.html",
+    "bytes": 183855,
+    "error": ""
+  },
+  {
+    "index": 7,
+    "url": "https://help.klaviyo.com/hc/en-us/articles/4404710011035?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\07_help.klaviyo.com_hc_en-us_articles_4404710011035.html",
+    "bytes": 138083,
+    "error": ""
+  },
+  {
+    "index": 8,
+    "url": "https://help.openai.com/en/articles/11909943-gpt-53-and-54-in-chatgpt?utm_source=chatgpt.com",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 9,
+    "url": "https://help.shopify.com/en/manual/payments/shopify-payments/eligibility?utm_source=chatgpt.com",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 10,
+    "url": "https://help.shopify.com/en/manual/payments/shopify-payments/onboarding/eligibility?utm_source=chatgpt.com",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 11,
+    "url": "https://help.webflow.com/hc/en-us/articles/33961307099027-Intro-to-the-Webflow-CMS?utm_source=chatgpt.com",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 12,
+    "url": "https://knowledge.hubspot.com/help-desk/manage-tickets-in-help-desk?src=bl-po&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\12_knowledge.hubspot.com_help-desk_manage-tickets-in-help-desk.html",
+    "bytes": 396053,
+    "error": ""
+  },
+  {
+    "index": 13,
+    "url": "https://knowledge.hubspot.com/help-desk/overview-of-the-help-desk-workspace?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\13_knowledge.hubspot.com_help-desk_overview-of-the-help-desk-workspace.html",
+    "bytes": 368607,
+    "error": ""
+  },
+  {
+    "index": 14,
+    "url": "https://learn.microsoft.com/en-us/clarity/?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html",
+    "file": "project_sources\\external_pages\\14_learn.microsoft.com_en-us_clarity.html",
+    "bytes": 56135,
+    "error": ""
+  },
+  {
+    "index": 15,
+    "url": "https://openai.com/chatgpt/pricing/",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 16,
+    "url": "https://qwac.paypal.com/us/cshelp/article/what-is-paypal%E2%80%99s-acceptable-use-policy-and-where-can-i-find-it-help270?utm_source=chatgpt.com",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 429 (Too Many Requests)."
+  },
+  {
+    "index": 17,
+    "url": "https://scitoxdetox.com/",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\17_scitoxdetox.com_home.html",
+    "bytes": 309045,
+    "error": ""
+  },
+  {
+    "index": 18,
+    "url": "https://scitoxdetox.com/?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\18_scitoxdetox.com_home.html",
+    "bytes": 309045,
+    "error": ""
+  },
+  {
+    "index": 19,
+    "url": "https://scitoxdetox.com/contact?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\19_scitoxdetox.com_contact.html",
+    "bytes": 155796,
+    "error": ""
+  },
+  {
+    "index": 20,
+    "url": "https://scitoxdetox.com/f-a-q-1",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\20_scitoxdetox.com_f-a-q-1.html",
+    "bytes": 168836,
+    "error": ""
+  },
+  {
+    "index": 21,
+    "url": "https://scitoxdetox.com/f-a-q-1?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\21_scitoxdetox.com_f-a-q-1.html",
+    "bytes": 168836,
+    "error": ""
+  },
+  {
+    "index": 22,
+    "url": "https://scitoxdetox.com/how-it-works",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\22_scitoxdetox.com_how-it-works.html",
+    "bytes": 245404,
+    "error": ""
+  },
+  {
+    "index": 23,
+    "url": "https://scitoxdetox.com/online-store?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\23_scitoxdetox.com_online-store.html",
+    "bytes": 131794,
+    "error": ""
+  },
+  {
+    "index": 24,
+    "url": "https://scitoxdetox.com/products",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\24_scitoxdetox.com_products.html",
+    "bytes": 165074,
+    "error": ""
+  },
+  {
+    "index": 25,
+    "url": "https://scitoxdetox.com/reviews?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\25_scitoxdetox.com_reviews.html",
+    "bytes": 142774,
+    "error": ""
+  },
+  {
+    "index": 26,
+    "url": "https://sell.amazon.com/pricing/estimate?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\26_sell.amazon.com_pricing_estimate.html",
+    "bytes": 278209,
+    "error": ""
+  },
+  {
+    "index": 27,
+    "url": "https://sell.amazon.com/zh/pricing/?mons_sel_locale=en_US&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\27_sell.amazon.com_zh_pricing.html",
+    "bytes": 398596,
+    "error": ""
+  },
+  {
+    "index": 28,
+    "url": "https://sellercentral.amazon.com/seller-forums/discussions/t/1d6b267a-3add-4d4a-a0c1-2fd963b50113?mons_sel_locale=en_US&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\28_sellercentral.amazon.com_seller-forums_discussions_t_1d6b267a-3add-4d4a-a0c1-2fd963b50113.html",
+    "bytes": 364920,
+    "error": ""
+  },
+  {
+    "index": 29,
+    "url": "https://sellercentral.amazon.com/seller-forums/discussions/t/65b131da-2865-4c08-a6e2-6f333e242574?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\29_sellercentral.amazon.com_seller-forums_discussions_t_65b131da-2865-4c08-a6e2-6f333e242574.html",
+    "bytes": 292320,
+    "error": ""
+  },
+  {
+    "index": 30,
+    "url": "https://sellercentral.amazon.de/seller-forums/discussions/t/a0750d4f-52f9-4a6f-ac9c-89d705333ecb?postId=a0750d4f-52f9-4a6f-ac9c-89d705333ecb&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\30_sellercentral.amazon.de_seller-forums_discussions_t_a0750d4f-52f9-4a6f-ac9c-89d705333ecb.html",
+    "bytes": 340878,
+    "error": ""
+  },
+  {
+    "index": 31,
+    "url": "https://smokeawholesale.com/?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\31_smokeawholesale.com_home.html",
+    "bytes": 307257,
+    "error": ""
+  },
+  {
+    "index": 32,
+    "url": "https://smokeawholesale.com/pages/frequently-asked-questions?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\32_smokeawholesale.com_pages_frequently-asked-questions.html",
+    "bytes": 81185,
+    "error": ""
+  },
+  {
+    "index": 33,
+    "url": "https://smokeawholesale.reamaze.com/kb/general-faq-f99afb6b16fcc41d/how-do-i-open-an-account?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\33_smokeawholesale.reamaze.com_kb_general-faq-f99afb6b16fcc41d_how-do-i-open-an-account.html",
+    "bytes": 10014,
+    "error": ""
+  },
+  {
+    "index": 34,
+    "url": "https://squareup.com/help/us/en/article/6386-understand-square-s-business-restrictions?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\34_squareup.com_help_us_en_article_6386-understand-square-s-business-restrictions.html",
+    "bytes": 76175,
+    "error": ""
+  },
+  {
+    "index": 35,
+    "url": "https://squareup.com/help/us/en/article/6386?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\35_squareup.com_help_us_en_article_6386.html",
+    "bytes": 76175,
+    "error": ""
+  },
+  {
+    "index": 36,
+    "url": "https://support.google.com/adspolicy/answer/176024?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\36_support.google.com_adspolicy_answer_176024.html",
+    "bytes": 1593332,
+    "error": ""
+  },
+  {
+    "index": 37,
+    "url": "https://support.google.com/adspolicy/answer/176031?hl=en&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\37_support.google.com_adspolicy_answer_176031.html",
+    "bytes": 1698360,
+    "error": ""
+  },
+  {
+    "index": 38,
+    "url": "https://support.google.com/analytics/answer/10917952?hl=en&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\38_support.google.com_analytics_answer_10917952.html",
+    "bytes": 1561858,
+    "error": ""
+  },
+  {
+    "index": 39,
+    "url": "https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=en-EN&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\39_support.google.com_analytics_answer_12923437.html",
+    "bytes": 1626876,
+    "error": ""
+  },
+  {
+    "index": 40,
+    "url": "https://support.google.com/analytics/answer/12923437?co=GENIE.Platform%3DDesktop&hl=en&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\40_support.google.com_analytics_answer_12923437.html",
+    "bytes": 1626466,
+    "error": ""
+  },
+  {
+    "index": 41,
+    "url": "https://support.google.com/analytics/answer/14143583?hl=en&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\41_support.google.com_analytics_answer_14143583.html",
+    "bytes": 1544209,
+    "error": ""
+  },
+  {
+    "index": 42,
+    "url": "https://support.google.com/tagmanager/answer/7679320?hl=en-GB&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\42_support.google.com_tagmanager_answer_7679320.html",
+    "bytes": 1389795,
+    "error": ""
+  },
+  {
+    "index": 43,
+    "url": "https://support.google.com/webmasters/answer/7576553?hl=en&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\43_support.google.com_webmasters_answer_7576553.html",
+    "bytes": 1392572,
+    "error": ""
+  },
+  {
+    "index": 44,
+    "url": "https://www.callrail.com/call-tracking/attribution?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\44_www.callrail.com_call-tracking_attribution.html",
+    "bytes": 20810,
+    "error": ""
+  },
+  {
+    "index": 45,
+    "url": "https://www.facebook.com/policies/ads/restricted_content/prescription_drugs?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=\"utf-8\"",
+    "file": "project_sources\\external_pages\\45_www.facebook.com_policies_ads_restricted_content_prescription_drugs.html",
+    "bytes": 235376,
+    "error": ""
+  },
+  {
+    "index": 46,
+    "url": "https://www.faire.com/de/support/articles/360015893192?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\46_www.faire.com_de_support_articles_360015893192.html",
+    "bytes": 177139,
+    "error": ""
+  },
+  {
+    "index": 47,
+    "url": "https://www.fda.gov/cosmetics/cosmetics-labeling/cosmetics-labeling-claims",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\47_www.fda.gov_cosmetics_cosmetics-labeling_cosmetics-labeling-claims.html",
+    "bytes": 33071,
+    "error": ""
+  },
+  {
+    "index": 48,
+    "url": "https://www.fda.gov/cosmetics/cosmetics-labeling/cosmetics-labeling-claims?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\48_www.fda.gov_cosmetics_cosmetics-labeling_cosmetics-labeling-claims.html",
+    "bytes": 33071,
+    "error": ""
+  },
+  {
+    "index": 49,
+    "url": "https://www.fda.gov/cosmetics/cosmetics-laws-regulations/it-cosmetic-drug-or-both-or-it-soap",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\49_www.fda.gov_cosmetics_cosmetics-laws-regulations_it-cosmetic-drug-or-both-or-it-soap.html",
+    "bytes": 50539,
+    "error": ""
+  },
+  {
+    "index": 50,
+    "url": "https://www.fda.gov/cosmetics/cosmetics-laws-regulations/it-cosmetic-drug-or-both-or-it-soap?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\50_www.fda.gov_cosmetics_cosmetics-laws-regulations_it-cosmetic-drug-or-both-or-it-soap.html",
+    "bytes": 50539,
+    "error": ""
+  },
+  {
+    "index": 51,
+    "url": "https://www.ftc.gov/business-guidance/advertising-marketing/endorsements-influencers-reviews?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\51_www.ftc.gov_business-guidance_advertising-marketing_endorsements-influencers-reviews.html",
+    "bytes": 1093035,
+    "error": ""
+  },
+  {
+    "index": 52,
+    "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\52_www.ftc.gov_business-guidance_resources_ftcs-endorsement-guides.html",
+    "bytes": 1082025,
+    "error": ""
+  },
+  {
+    "index": 53,
+    "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\53_www.ftc.gov_business-guidance_resources_health-products-compliance-guidance.html",
+    "bytes": 1153055,
+    "error": ""
+  },
+  {
+    "index": 54,
+    "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\54_www.ftc.gov_business-guidance_resources_health-products-compliance-guidance.html",
+    "bytes": 1153055,
+    "error": ""
+  },
+  {
+    "index": 55,
+    "url": "https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/01/ai-companies-uphold-your-privacy-confidentiality-commitments?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\55_www.ftc.gov_policy_advocacy-research_tech-at-ftc_2024_01_ai-companies-uphold-your-privacy-confidentiality-commitments.html",
+    "bytes": 1017371,
+    "error": ""
+  },
+  {
+    "index": 56,
+    "url": "https://www.godaddy.com/help/track-website-traffic-in-websites-marketing-41333?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\56_www.godaddy.com_help_track-website-traffic-in-websites-marketing-41333.html",
+    "bytes": 254636,
+    "error": ""
+  },
+  {
+    "index": 57,
+    "url": "https://www.godaddy.com/hi-in/help/track-website-traffic-with-google-analytics-41405?utm_source=chatgpt.com",
+    "status": "FAILED",
+    "content_type": "",
+    "file": "",
+    "bytes": 0,
+    "error": "Response status code does not indicate success: 403 (Forbidden)."
+  },
+  {
+    "index": 58,
+    "url": "https://www.gs1us.org/?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\58_www.gs1us.org_home.html",
+    "bytes": 185519,
+    "error": ""
+  },
+  {
+    "index": 59,
+    "url": "https://www.gs1us.org/upcs-barcodes-prefixes/what-is-a-gtin?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\59_www.gs1us.org_upcs-barcodes-prefixes_what-is-a-gtin.html",
+    "bytes": 147753,
+    "error": ""
+  },
+  {
+    "index": 60,
+    "url": "https://www.paypal.com/us/legalhub/paypal/acceptableuse-full?locale.x=en_US",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\60_www.paypal.com_us_legalhub_paypal_acceptableuse-full.html",
+    "bytes": 1345673,
+    "error": ""
+  },
+  {
+    "index": 61,
+    "url": "https://www.paypal.com/us/legalhub/paypal/acceptableuse-full?locale.x=en_US&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\61_www.paypal.com_us_legalhub_paypal_acceptableuse-full.html",
+    "bytes": 1345808,
+    "error": ""
+  },
+  {
+    "index": 62,
+    "url": "https://www.pci-dss.net/merchants/saq-type-a-for-merchants/?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\62_www.pci-dss.net_merchants_saq-type-a-for-merchants.html",
+    "bytes": 59672,
+    "error": ""
+  },
+  {
+    "index": 63,
+    "url": "https://www.sba.gov/starting-business/write-your-business-plan/financial-projections?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "project_sources\\external_pages\\63_www.sba.gov_starting-business_write-your-business-plan_financial-projections.html",
+    "bytes": 124783,
+    "error": ""
+  },
+  {
+    "index": 64,
+    "url": "https://www.youtube.com/watch?v=ldSOshmM5s8&utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\64_www.youtube.com_watch.html",
+    "bytes": 1161476,
+    "error": ""
+  },
+  {
+    "index": 65,
+    "url": "https://www.zendesk.com/blog/ai/chatbots/knowledge-base-chatbots/?utm_source=chatgpt.com",
+    "status": "200",
+    "content_type": "text/html; charset=utf-8",
+    "file": "project_sources\\external_pages\\65_www.zendesk.com_blog_ai_chatbots_knowledge-base-chatbots.html",
+    "bytes": 685996,
+    "error": ""
+  }
+]

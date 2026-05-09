@@ -1,0 +1,57 @@
+name: Webflow page build
+description: Build or revise a SciTOX Webflow page without introducing unsupported claims.
+title: "[Webflow] "
+labels:
+  - webflow
+  - v1
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      placeholder: Homepage, Product Detail, Partner / Wholesale Inquiry
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What this page needs to accomplish.
+    validations:
+      required: true
+  - type: textarea
+    id: source_files
+    attributes:
+      label: Source files
+      placeholder: docs/VENDOR_READY_SITEMAP.md, docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md
+    validations:
+      required: true
+  - type: textarea
+    id: sections
+    attributes:
+      label: Required sections
+      description: List the build sections in order.
+    validations:
+      required: true
+  - type: textarea
+    id: claim_sensitive
+    attributes:
+      label: Claim-sensitive areas
+      description: Mark anything requiring review before launch.
+      placeholder: "[REVIEW REQUIRED]"
+    validations:
+      required: true
+  - type: textarea
+    id: owner_data
+    attributes:
+      label: Owner data needed
+      placeholder: "[OWNER DATA NEEDED]"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Include mobile, desktop, form, and QA expectations where relevant.
+    validations:
+      required: true

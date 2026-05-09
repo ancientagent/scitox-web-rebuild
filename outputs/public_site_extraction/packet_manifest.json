@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-05-08T23:46:11.015Z",
+  "website": "https://scitoxdetox.com",
+  "pageCount": 28,
+  "counts": {
+    "claims": 350,
+    "products": 37,
+    "policies": 157,
+    "contacts": 19,
+    "reviews": 112,
+    "disposition": 116,
+    "ownerRequests": 11
+  },
+  "files": {
+    "Current_Site_Map": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Current_Site_Map.xlsx",
+    "Claims_Inventory": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Claims_Inventory.xlsx",
+    "Product_Catalog_Public_Pull": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Product_Catalog_Public_Pull.xlsx",
+    "Policy_Trust_Audit": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Policy_Trust_Audit.xlsx",
+    "Contact_Flow_Audit": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Contact_Flow_Audit.xlsx",
+    "Review_Asset_Audit": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Review_Asset_Audit.xlsx",
+    "Content_Disposition_Map": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Content_Disposition_Map.xlsx",
+    "Owner_Data_Request_List": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Owner_Data_Request_List.xlsx"
+  },
+  "summary": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Public_Site_Extraction_Summary.md"
+}

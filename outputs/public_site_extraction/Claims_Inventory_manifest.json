@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-05-08T23:54:27.503Z",
+  "outputFile": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Claims_Inventory.xlsx",
+  "summaryFile": "C:\\Users\\baris\\OneDrive\\Desktop\\SciTox\\outputs\\public_site_extraction\\Claims_Inventory_Summary.md",
+  "pagesCrawled": 28,
+  "claimsInventoried": 4062,
+  "source": "Live public SciTOX website plus existing public extraction files"
+}

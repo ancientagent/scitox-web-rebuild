@@ -1,0 +1,450 @@
+[
+  {
+    "index": 1,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/181c4ccda1244f71/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\001_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_181c4ccda1244f71_script.js.js",
+    "bytes": 64577,
+    "error": ""
+  },
+  {
+    "index": 2,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/1ba48627c65c23d9/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\002_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_1ba48627c65c23d9_script.js.js",
+    "bytes": 67113,
+    "error": ""
+  },
+  {
+    "index": 3,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/4229f138ba7544be/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\003_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_4229f138ba7544be_script.js.js",
+    "bytes": 67113,
+    "error": ""
+  },
+  {
+    "index": 4,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/4e02f65922aea9fc/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\004_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_4e02f65922aea9fc_script.js.js",
+    "bytes": 67114,
+    "error": ""
+  },
+  {
+    "index": 5,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/6052022c469d6ff6/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\005_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_6052022c469d6ff6_script.js.js",
+    "bytes": 59823,
+    "error": ""
+  },
+  {
+    "index": 6,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/62884a80c0dcc140/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\006_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_62884a80c0dcc140_script.js.js",
+    "bytes": 83767,
+    "error": ""
+  },
+  {
+    "index": 7,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/70038358d15b3a80/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\007_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_70038358d15b3a80_script.js.js",
+    "bytes": 67113,
+    "error": ""
+  },
+  {
+    "index": 8,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/750f280def72c505/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\008_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_750f280def72c505_script.js.js",
+    "bytes": 67113,
+    "error": ""
+  },
+  {
+    "index": 9,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/8643fbafd2dde666/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\009_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_8643fbafd2dde666_script.js.js",
+    "bytes": 67113,
+    "error": ""
+  },
+  {
+    "index": 10,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/bddecf756b10e3bb/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\010_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_bddecf756b10e3bb_script.js.js",
+    "bytes": 46789,
+    "error": ""
+  },
+  {
+    "index": 11,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/d769ffea8985209a/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\011_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_d769ffea8985209a_script.js.js",
+    "bytes": 67113,
+    "error": ""
+  },
+  {
+    "index": 12,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/e140e9e822ce0536/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\012_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_e140e9e822ce0536_script.js.js",
+    "bytes": 51205,
+    "error": ""
+  },
+  {
+    "index": 13,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/e4f31a867b190550/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\013_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_e4f31a867b190550_script.js.js",
+    "bytes": 50094,
+    "error": ""
+  },
+  {
+    "index": 14,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/gpub/fe4785822fd01d61/script.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\014_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_gpub_fe4785822fd01d61_script.js.js",
+    "bytes": 68643,
+    "error": ""
+  },
+  {
+    "index": 15,
+    "url": "https://img1.wsimg.com/blobby/go/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX_Frequently_Asked_Questions_About_Hair_F.pdf",
+    "status": "OK",
+    "file": "assets\\scitox_site\\015_img1.wsimg.com_blobby_go_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_Frequently_Asked_Questions_About_Hair_F.pdf.pdf",
+    "bytes": 379932,
+    "error": ""
+  },
+  {
+    "index": 16,
+    "url": "https://img1.wsimg.com/ceph-p3-01/website-builder-data-prod/static/widgets/UX.4.51.17.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\016_img1.wsimg.com_ceph-p3-01_website-builder-data-prod_static_widgets_UX.4.51.17.js.js",
+    "bytes": 314757,
+    "error": ""
+  },
+  {
+    "index": 17,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/favicon/00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg/:/rs=w:16,h:16,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\017_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_favicon_00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg___rs_w_16_h_16_m.bin",
+    "bytes": 7647,
+    "error": ""
+  },
+  {
+    "index": 18,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/favicon/00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg/:/rs=w:24,h:24,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\018_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_favicon_00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg___rs_w_24_h_24_m.bin",
+    "bytes": 7668,
+    "error": ""
+  },
+  {
+    "index": 19,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/favicon/00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg/:/rs=w:32,h:32,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\019_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_favicon_00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg___rs_w_32_h_32_m.bin",
+    "bytes": 7777,
+    "error": ""
+  },
+  {
+    "index": 20,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/favicon/00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg/:/rs=w:48,h:48,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\020_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_favicon_00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg___rs_w_48_h_48_m.bin",
+    "bytes": 7861,
+    "error": ""
+  },
+  {
+    "index": 21,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/favicon/00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg/:/rs=w:64,h:64,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\021_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_favicon_00d36102-3a24-400b-9c5b-f46ea09e5e2e.jpg___rs_w_64_h_64_m.bin",
+    "bytes": 8087,
+    "error": ""
+  },
+  {
+    "index": 22,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/",
+    "status": "OK",
+    "file": "assets\\scitox_site\\022_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png__.bin",
+    "bytes": 80426,
+    "error": ""
+  },
+  {
+    "index": 23,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=h:75,cg:true,m/qt=q:95",
+    "status": "OK",
+    "file": "assets\\scitox_site\\023_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_h_75_cg_true_m_qt_q_95.bin",
+    "bytes": 3348,
+    "error": ""
+  },
+  {
+    "index": 24,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:114,h:114,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\024_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_114_h_114_m.bin",
+    "bytes": 3424,
+    "error": ""
+  },
+  {
+    "index": 25,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:120,h:120,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\025_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_120_h_120_m.bin",
+    "bytes": 3822,
+    "error": ""
+  },
+  {
+    "index": 26,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:144,h:144,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\026_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_144_h_144_m.bin",
+    "bytes": 5138,
+    "error": ""
+  },
+  {
+    "index": 27,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:152,h:152,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\027_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_152_h_152_m.bin",
+    "bytes": 5421,
+    "error": ""
+  },
+  {
+    "index": 28,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:180,h:180,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\028_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_180_h_180_m.bin",
+    "bytes": 6960,
+    "error": ""
+  },
+  {
+    "index": 29,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:57,h:57,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\029_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_57_h_57_m.bin",
+    "bytes": 1458,
+    "error": ""
+  },
+  {
+    "index": 30,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:60,h:60,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\030_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_60_h_60_m.bin",
+    "bytes": 1558,
+    "error": ""
+  },
+  {
+    "index": 31,
+    "url": "https://img1.wsimg.com/isteam/ip/70f51a51-acc5-486a-8b72-0544e77d15d9/SciTOX%20DETOX%20Logo%20Design.png/:/rs=w:72,h:72,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\031_img1.wsimg.com_isteam_ip_70f51a51-acc5-486a-8b72-0544e77d15d9_SciTOX_20DETOX_20Logo_20Design.png___rs_w_72_h_72_m.bin",
+    "bytes": 1988,
+    "error": ""
+  },
+  {
+    "index": 32,
+    "url": "https://img1.wsimg.com/isteam/ip/stock/drew-beamer-3SIXZisims4-unsplash.jpg/:/cr=t:32.78%25,l:20.62%25,w:60.24%25,h:41.06%25/rs=w:515,h:234,cg:true,m",
+    "status": "OK",
+    "file": "assets\\scitox_site\\032_img1.wsimg.com_isteam_ip_stock_drew-beamer-3SIXZisims4-unsplash.jpg___cr_t_32.78_25_l_20.62_25_w_60.24_25_h_41.06_25_rs_w_515_h_234_cg_true_m.bin",
+    "bytes": 12545,
+    "error": ""
+  },
+  {
+    "index": 33,
+    "url": "https://img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js",
+    "status": "OK",
+    "file": "assets\\scitox_site\\033_img1.wsimg.com_signals_js_clients_scc-c2_scc-c2.min.js.js",
+    "bytes": 104828,
+    "error": ""
+  },
+  {
+    "index": 34,
+    "url": "https://scitoxdetox.com/",
+    "status": "OK",
+    "file": "assets\\scitox_site\\034_scitoxdetox.com_.bin",
+    "bytes": 309043,
+    "error": ""
+  },
+  {
+    "index": 35,
+    "url": "https://scitoxdetox.com/?olsPage=cart",
+    "status": "OK",
+    "file": "assets\\scitox_site\\035_scitoxdetox.com_.bin",
+    "bytes": 309043,
+    "error": ""
+  },
+  {
+    "index": 36,
+    "url": "https://scitoxdetox.com/about-us",
+    "status": "OK",
+    "file": "assets\\scitox_site\\036_scitoxdetox.com_about-us.bin",
+    "bytes": 178628,
+    "error": ""
+  },
+  {
+    "index": 37,
+    "url": "https://scitoxdetox.com/contact",
+    "status": "OK",
+    "file": "assets\\scitox_site\\037_scitoxdetox.com_contact.bin",
+    "bytes": 155794,
+    "error": ""
+  },
+  {
+    "index": 38,
+    "url": "https://scitoxdetox.com/detox-methods-comparison",
+    "status": "OK",
+    "file": "assets\\scitox_site\\038_scitoxdetox.com_detox-methods-comparison.bin",
+    "bytes": 136851,
+    "error": ""
+  },
+  {
+    "index": 39,
+    "url": "https://scitoxdetox.com/f-a-q-1",
+    "status": "OK",
+    "file": "assets\\scitox_site\\039_scitoxdetox.com_f-a-q-1.bin",
+    "bytes": 168834,
+    "error": ""
+  },
+  {
+    "index": 40,
+    "url": "https://scitoxdetox.com/featured-products",
+    "status": "OK",
+    "file": "assets\\scitox_site\\040_scitoxdetox.com_featured-products.bin",
+    "bytes": 131754,
+    "error": ""
+  },
+  {
+    "index": 41,
+    "url": "https://scitoxdetox.com/how-it-works",
+    "status": "OK",
+    "file": "assets\\scitox_site\\041_scitoxdetox.com_how-it-works.bin",
+    "bytes": 245402,
+    "error": ""
+  },
+  {
+    "index": 42,
+    "url": "https://scitoxdetox.com/macujo-vs-scitox-reviews",
+    "status": "OK",
+    "file": "assets\\scitox_site\\042_scitoxdetox.com_macujo-vs-scitox-reviews.bin",
+    "bytes": 153014,
+    "error": ""
+  },
+  {
+    "index": 43,
+    "url": "https://scitoxdetox.com/manifest.webmanifest",
+    "status": "OK",
+    "file": "assets\\scitox_site\\043_scitoxdetox.com_manifest.webmanifest.bin",
+    "bytes": 585,
+    "error": ""
+  },
+  {
+    "index": 44,
+    "url": "https://scitoxdetox.com/ols/all?sortOption=descend_by_created_at",
+    "status": "OK",
+    "file": "assets\\scitox_site\\044_scitoxdetox.com_ols_all.bin",
+    "bytes": 309034,
+    "error": ""
+  },
+  {
+    "index": 45,
+    "url": "https://scitoxdetox.com/ols/all?sortOption=descend_by_popularity",
+    "status": "OK",
+    "file": "assets\\scitox_site\\045_scitoxdetox.com_ols_all.bin",
+    "bytes": 309034,
+    "error": ""
+  },
+  {
+    "index": 46,
+    "url": "https://scitoxdetox.com/ols/categories/hair-follicle-drug-test-detox-shampoos-and-full-scitox-systems",
+    "status": "OK",
+    "file": "assets\\scitox_site\\046_scitoxdetox.com_ols_categories_hair-follicle-drug-test-detox-shampoos-and-full-scitox-systems.bin",
+    "bytes": 310768,
+    "error": ""
+  },
+  {
+    "index": 47,
+    "url": "https://scitoxdetox.com/ols/categories/scientifically-proven-urine-drug-test-products",
+    "status": "OK",
+    "file": "assets\\scitox_site\\047_scitoxdetox.com_ols_categories_scientifically-proven-urine-drug-test-products.bin",
+    "bytes": 310456,
+    "error": ""
+  },
+  {
+    "index": 48,
+    "url": "https://scitoxdetox.com/online-store",
+    "status": "OK",
+    "file": "assets\\scitox_site\\048_scitoxdetox.com_online-store.bin",
+    "bytes": 131792,
+    "error": ""
+  },
+  {
+    "index": 49,
+    "url": "https://scitoxdetox.com/privacy-policy",
+    "status": "OK",
+    "file": "assets\\scitox_site\\049_scitoxdetox.com_privacy-policy.bin",
+    "bytes": 162798,
+    "error": ""
+  },
+  {
+    "index": 50,
+    "url": "https://scitoxdetox.com/products",
+    "status": "OK",
+    "file": "assets\\scitox_site\\050_scitoxdetox.com_products.bin",
+    "bytes": 165072,
+    "error": ""
+  },
+  {
+    "index": 51,
+    "url": "https://scitoxdetox.com/results-%26-testimonials",
+    "status": "OK",
+    "file": "assets\\scitox_site\\051_scitoxdetox.com_results-_26-testimonials.bin",
+    "bytes": 159632,
+    "error": ""
+  },
+  {
+    "index": 52,
+    "url": "https://scitoxdetox.com/returns-%26-refunds",
+    "status": "OK",
+    "file": "assets\\scitox_site\\052_scitoxdetox.com_returns-_26-refunds.bin",
+    "bytes": 143019,
+    "error": ""
+  },
+  {
+    "index": 53,
+    "url": "https://scitoxdetox.com/reviews",
+    "status": "OK",
+    "file": "assets\\scitox_site\\053_scitoxdetox.com_reviews.bin",
+    "bytes": 142772,
+    "error": ""
+  },
+  {
+    "index": 54,
+    "url": "https://scitoxdetox.com/terms-and-conditions",
+    "status": "OK",
+    "file": "assets\\scitox_site\\054_scitoxdetox.com_terms-and-conditions.bin",
+    "bytes": 165555,
+    "error": ""
+  },
+  {
+    "index": 55,
+    "url": "https://scitoxdetox.com/the-macujo-method-scam",
+    "status": "OK",
+    "file": "assets\\scitox_site\\055_scitoxdetox.com_the-macujo-method-scam.bin",
+    "bytes": 219012,
+    "error": ""
+  },
+  {
+    "index": 56,
+    "url": "https://scitoxdetox.com/why-scitox%3F",
+    "status": "OK",
+    "file": "assets\\scitox_site\\056_scitoxdetox.com_why-scitox_3F.bin",
+    "bytes": 221592,
+    "error": ""
+  }
+]
