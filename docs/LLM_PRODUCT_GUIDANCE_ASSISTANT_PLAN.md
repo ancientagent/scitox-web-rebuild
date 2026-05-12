@@ -33,7 +33,7 @@ The assistant should:
 
 ## Live System Shape
 
-1. Webflow page or embedded component collects structured answers.
+1. Custom app page/component collects structured answers. Webflow may remain a visual/reference layer if used later.
 2. Browser submits answers to a backend guidance endpoint.
 3. Backend loads the approved source base.
 4. Backend asks the LLM to choose only from the approved source base.
@@ -86,6 +86,11 @@ Current local scaffold:
 - `scripts/serve_demo.mjs`: demo server with the guidance API attached.
 - `guidance/source_base.example.json`: source-base template.
 - `demo/app.js`: frontend demo call to `/api/guidance/recommend`.
+
+Current production target:
+- `site/app/api/guidance/recommend/route.ts`: planned custom app API route.
+- `site/lib/guidance/`: planned custom app source-base loader, validation, and recommendation logic.
+- `site/data/guidance-source.example.json`: planned custom app source-base example.
 
 Local scripts:
 - `npm run serve:demo` serves the demo and guidance endpoint together.

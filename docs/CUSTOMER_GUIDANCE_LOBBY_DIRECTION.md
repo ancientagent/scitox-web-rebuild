@@ -197,7 +197,7 @@ Owner direction notes that typical channels may be limited because the current p
 
 Planning implication:
 - Keep checkout/payment migration outside V1 unless reviewed.
-- Treat Authorize.net as the owner-confirmed current processor/gateway, but keep integration type, enabled payment methods, fraud/dispute/refund settings, and Webflow handoff as `[OWNER DATA NEEDED]` / `[REVIEW REQUIRED]`.
+- Treat Authorize.net as the owner-confirmed current processor/gateway, but keep integration type, enabled payment methods, fraud/dispute/refund settings, and custom app checkout handoff as `[OWNER DATA NEEDED]` / `[REVIEW REQUIRED]`.
 - Build the site so it can route customers clearly without implying platform safety.
 - Do not claim a payment, marketplace, ad, vendor, or messaging channel is approved.
 - Do not design the public demo around tools, channels, or scenarios that the business likely cannot support because of current risk status.

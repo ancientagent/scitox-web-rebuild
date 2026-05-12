@@ -1,5 +1,8 @@
 # SciTOX Agent And Service Build Prompts
 
+Legacy/reference note:
+The current primary prompt pack is `docs/CUSTOM_APP_AGENT_PROMPTS.md`. Use this file only when an agent is explicitly assigned Webflow/reference work or when older Webflow-first planning needs to be interpreted.
+
 Source context:
 - `AGENTS.md`
 - `docs/CONTINUE_HERE.md`

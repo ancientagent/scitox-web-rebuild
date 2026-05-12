@@ -142,7 +142,7 @@ Recommended V1 structure:
 - Policies visible enough for customer and partner review.
 
 Operational constraints:
-- Avoid fragile custom development for V1.
+- Build V1 as a simple custom app under `site/`, avoiding unnecessary custom complexity beyond the app shell, source-grounded guidance, intake routing, and reviewed checkout handoff.
 - Keep checkout/payment migration outside V1 unless owner and payment review clear it.
 - Build AI guidance only as a backend-source-grounded assistant with reviewed source material, structured outputs, and human escalation.
 - Use controlled intake/product guidance language only after privacy, claim, and escalation rules are reviewed.
@@ -250,7 +250,7 @@ Do not include:
 - Unverified testimonials or result screenshots.
 - Unsupported privacy/security guarantees.
 - Checkout/payment migration unless owner and payment review clear it.
-- Heavy custom app development if a hosted rebuild can accomplish V1.
+- Unnecessary app complexity beyond the reviewed V1 custom-app scope.
 - Anything that mixes the vendor-facing layer with the warmer customer emotional flow in a way that weakens either audience.
 
 ## V1 Success Standard

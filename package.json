@@ -2,7 +2,7 @@
   "name": "scitox-web-rebuild",
   "version": "0.1.0",
   "private": true,
-  "description": "Private SciTOX website rebuild, vendor-readiness, source audit, and Webflow handoff workspace.",
+  "description": "Private SciTOX custom-app rebuild, vendor-readiness, source audit, and optional Webflow/reference handoff workspace.",
   "type": "module",
   "scripts": {
     "build:claims-inventory": "node scripts/build_claims_inventory.mjs",

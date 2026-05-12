@@ -1,5 +1,8 @@
 # SciTOX Webflow QA Checklist
 
+Legacy/reference note:
+The current primary QA checklist is `docs/CUSTOM_APP_QA_CHECKLIST.md`. Use this checklist only when reviewing an actual Webflow build or translating older Webflow-first QA expectations.
+
 Source context:
 - `docs/WEBSITE_REBUILD_BRIEF.md`
 - `docs/VENDOR_READY_SITEMAP.md`

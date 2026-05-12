@@ -94,9 +94,9 @@ Owner data needed:
 - Current merchant account provider connected to Authorize.net `[OWNER DATA NEEDED]`.
 - Enabled payment types: Visa, Mastercard, AmEx, Discover, eCheck/ACH, Apple Pay, Google Pay, PayPal `[OWNER DATA NEEDED]`.
 - Current fraud settings, AVS/CVV requirements, transaction limits, holds/reserves, and dispute workflow `[OWNER DATA NEEDED]`.
-- Current checkout URL/path and whether it can be linked from the Webflow rebuild `[OWNER DATA NEEDED]`.
+- Current checkout URL/path and whether it can be linked from the custom app rebuild `[OWNER DATA NEEDED]`.
 - Refund/return handling for Authorize.net orders `[OWNER DATA NEEDED]`.
-- Whether the current setup can support Webflow handoff through hosted payment, embedded payment, invoice, or external checkout `[REVIEW REQUIRED]`.
+- Whether the current setup can support custom app handoff through hosted payment, embedded payment, invoice, or external checkout `[REVIEW REQUIRED]`.
 
 ## Option A: Controlled On-Site Guidance
 
@@ -112,7 +112,7 @@ How it works:
 4. Sensitive or unclear cases route to human support.
 
 Pros:
-- Works well in Webflow or a light custom layer.
+- Works well in a custom app or a light prototype layer.
 - Keeps messaging controlled.
 - Avoids open-ended AI risk when paired with the backend-source-grounded guidance assistant plan.
 - Gives the owner an automation system to review.
@@ -129,7 +129,7 @@ Best for:
 - Cases that should not be handled by public product pages.
 
 Possible tools:
-- Signal: strong fit for human-to-human end-to-end encrypted messaging. Not a native Webflow checkout or autonomous bot flow.
+- Signal: strong fit for human-to-human end-to-end encrypted messaging. Not a native custom app checkout or autonomous bot flow by itself.
 - WhatsApp: widely adopted and end-to-end encrypted for messages, but business/API/vendor setups can change who has access to business messages. Must be reviewed before claims.
 - Telegram: Secret Chats are end-to-end encrypted, but regular cloud chats are not end-to-end encrypted. Bot-based automation should not be described as end-to-end encrypted Secret Chat.
 
@@ -314,7 +314,7 @@ For real implementation:
 - Merchant account provider connected to Authorize.net.
 - Enabled Authorize.net payment types.
 - Authorize.net fraud, dispute, refund, and payout settings.
-- Whether the owner wants Signal, WhatsApp, Telegram, native Webflow forms, or another helpdesk/chat tool.
+- Whether the owner wants Signal, WhatsApp, Telegram, custom app forms, or another helpdesk/chat tool.
 - Whether chat is for support only or purchase facilitation.
 - Whether AI can access support messages or only structured guidance answers.
 - Who answers human escalations.

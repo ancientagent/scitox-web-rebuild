@@ -6,16 +6,16 @@ Source context:
 - `docs/PUBLIC_SITE_MESSAGING_RULES.md`
 - `docs/SHARED_CHAT_CONTEXT.md`
 
-This sitemap is for a lean, buildable Webflow rebuild. It does not include final copy, approved claims, vendor acceptance, Amazon eligibility, legal conclusions, or proof claims. Use placeholders with `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` where facts are not verified.
+This sitemap is for a lean, buildable rebuild. The current primary implementation path is the custom app described in `docs/CUSTOM_APP_BUILD_BRIEF.md`; Webflow references are legacy/reference unless Webflow is explicitly selected. This document does not include final copy, approved claims, vendor acceptance, Amazon eligibility, legal conclusions, or proof claims. Use placeholders with `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` where facts are not verified.
 
 ## Build Principle
 
-Use Webflow as a marketing/product site with CMS-driven product-style pages and form submissions. Keep checkout/payment migration outside V1 unless owner and payment review clear it.
+Use the custom app as the primary marketing/product, guidance, intake, and vendor-readiness surface. Keep checkout/payment migration outside V1 unless owner and payment review clear it.
 
-Recommended Webflow structure:
+Recommended custom app structure:
 - Static pages for home, support, contact/intake, wholesale inquiry, and policy pages.
-- CMS collection for products/SKUs if product data is ready enough.
-- Webflow forms for customer support/intake and vendor inquiry, routed to email plus spreadsheet/CRM if approved.
+- Source-controlled product/SKU data first; CMS can be added later if product data is ready enough.
+- Server-side forms for customer support/intake and vendor inquiry, routed to email plus spreadsheet/CRM if approved.
 - A customer guidance lobby pattern on the homepage, with common-situation self-service, a backend-source-grounded guidance assistant, and escalation for nuanced situations.
 
 ## Layer 1: Public Customer Site
@@ -40,7 +40,7 @@ Recommended Webflow structure:
 | Vendor Documentation Checklist | Show what SciTOX can provide and what is still pending before outreach. | Wholesale buyers; internal owner/team; vendor prep agents. | Checklist for product data, labels, images, ingredients, policies, insurance, line sheet, claims review, fulfillment readiness. | Any statement implying documents are complete or approved when they are not. | Label files; product images; ingredients; insurance; policies; claims review; line sheet; fulfillment details. | V1 |
 | Wholesale FAQ | Answer buyer-process questions without exposing unapproved terms. | Wholesale buyers; distributors; internal sales prep. | Account/inquiry process; order process placeholder; product documentation; support handoff; policy links. | Wholesale pricing; MOQ; returns; payment terms; exclusivity; vendor acceptance; legal/compliance claims. | Wholesale terms; MOQ; shipping terms; returns/damaged goods; payment terms; account approval process. | Later unless owner terms are ready |
 | Vendor Resource / Download Area | Provide gated or semi-private documents after owner approval. | Qualified vendors or distributors. | Line sheet download; product images; labels; policy docs; contact owner/support. | Any document containing unreviewed product claims, pricing, or legal statements. | Final line sheet; approved docs; access/gating process; file storage workflow. | Later |
-| Buyer Tracker / Outreach Admin | Internal-only operating surface, not public site content. | Owner/team; outreach agents. | Buyer list; contact status; risk level; notes; next step; owner approval state. | Vendor acceptance claims; unsupported notes presented as fact. | Target list; outreach rules; owner approvals; CRM/sheet workflow. | Later/internal, not public Webflow page |
+| Buyer Tracker / Outreach Admin | Internal-only operating surface, not public site content. | Owner/team; outreach agents. | Buyer list; contact status; risk level; notes; next step; owner approval state. | Vendor acceptance claims; unsupported notes presented as fact. | Target list; outreach rules; owner approvals; CRM/sheet workflow. | Later/internal, not public app page |
 
 ## V1 Navigation Recommendation
 
@@ -63,11 +63,11 @@ Footer:
 
 Avoid crowding the header with every policy page. Keep policies accessible in the footer and from relevant page sections.
 
-## Webflow CMS Recommendation
+## Product Data Recommendation
 
-Use a `Products` CMS collection if product data can be provided cleanly.
+Use source-controlled product data in the custom app first. A CMS can be added later if product data can be provided cleanly and owner workflow requires it.
 
-Suggested product CMS fields:
+Suggested product data fields:
 - Product name `[OWNER DATA NEEDED]`
 - SKU `[OWNER DATA NEEDED]`
 - Category `[OWNER DATA NEEDED]`
@@ -95,12 +95,12 @@ Do not include in V1:
 - Wholesale portal login.
 - Wholesale pricing unless owner confirms it.
 - Vendor outreach automation.
-- Heavy custom code.
+- Unnecessary custom complexity beyond the V1 app, guidance, intake, and reviewed checkout scope.
 - Final product claims.
 
 ## Approval Gates
 
-Before Webflow build:
+Before custom app build:
 - Sitemap approved.
 - Messaging rules approved.
 - Claims cleanup template started.

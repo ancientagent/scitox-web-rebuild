@@ -1,5 +1,8 @@
 # Webflow Development Backlog
 
+Legacy/reference note:
+The current primary build backlog is `docs/CUSTOM_APP_DEVELOPMENT_BACKLOG.md`. Use this file only when Webflow is explicitly selected, when reviewing an actual Webflow build, or when translating older Webflow-first planning into the custom app path.
+
 Use this backlog to turn the planning files into buildable Webflow work. Do not publish final copy or claim-sensitive language until review is complete.
 
 ## Priority 1: Repo And Source Alignment

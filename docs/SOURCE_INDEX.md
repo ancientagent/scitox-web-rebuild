@@ -13,6 +13,17 @@ Generated from the shared ChatGPT conversation source links.
 - `assets/scitox_site/` - downloaded public SciTOX site assets referenced by archived SciTOX pages.
 - `assets/scitox_site_manifest.json` - SciTOX asset download manifest.
 
+## Current Platform Build Sources
+
+These sources support the current custom-app direction in `docs/CUSTOM_APP_SOURCE_MATRIX.md`:
+
+- Webflow custom code in head/body tags: https://help.webflow.com/hc/en-us/articles/33961357265299-Custom-code-in-head-and-body-tags
+- Webflow AI Site Builder: https://help.webflow.com/hc/en-us/articles/38840145286035-Build-a-site-with-Webflow-s-AI-site-builder
+- Webflow AI Code Components: https://help.webflow.com/hc/en-us/articles/51168990228499-Build-AI-code-components
+- Next.js Route Handlers: https://nextjs.org/docs/app/getting-started/route-handlers
+- Vercel environment variables: https://vercel.com/docs/environment-variables
+- Authorize.net Accept Hosted: https://developer.authorize.net/api/reference/features/accept-hosted.html
+
 ## Linked Source Archive
 
 | # | Status | Local file | URL |

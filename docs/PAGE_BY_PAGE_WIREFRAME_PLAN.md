@@ -16,10 +16,11 @@ All copy blocks should remain placeholders until owner data, claims review, priv
 - Use short placeholder labels, not final marketing copy.
 - Mark claim-sensitive copy `[REVIEW REQUIRED]`.
 - Mark missing owner/business/product facts `[OWNER DATA NEEDED]`.
+- Treat the custom app under `site/` as the primary implementation target unless the owner explicitly changes direction.
 - Keep the tone private, serious, warm, direct, and competent.
 - Do not use panic-sales language, legal/medical advice, outcome guarantees, fake proof, fake badges, fake review counts, or vendor/platform approval claims.
 - Do not overexplain or advertise the product/category where a lower-exposure product path, category label, or support route will accomplish the user flow.
-- Keep Webflow build lean: static pages plus CMS product template if product data is ready.
+- Keep the custom app build lean: static routes plus product templates and server-side API routes only where needed.
 - Keep customer-facing pages separate from vendor/wholesale pages.
 
 ## 1. Homepage
