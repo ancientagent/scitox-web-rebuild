@@ -11,6 +11,8 @@ Start with:
 - `docs/WEBSITE_REBUILD_BRIEF.md`
 - `docs/VENDOR_READY_STRATEGY_BRIEF.md`
 - `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`
+- `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md`
+- `docs/AGENT_SERVICE_BUILD_PROMPTS.md`
 - `docs/PUBLIC_SITE_MESSAGING_RULES.md`
 - `docs/VENDOR_READY_SITEMAP.md`
 - `docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md`
@@ -33,6 +35,10 @@ Reusable artifact scripts are in:
 
 - `scripts/`
 
+The explorable owner-review demo is in:
+
+- `demo/index.html`
+
 Important boundaries:
 
 - This repository is private by default.
@@ -52,3 +58,4 @@ Run scripts from the repository root after dependencies are available:
 - `npm run build:product-data`
 - `npm run build:buyer-outreach`
 - `npm run build:line-sheet`
+- `npm run serve:demo`

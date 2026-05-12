@@ -13,6 +13,14 @@ This document captures the current owner direction for the customer-facing rebui
 
 Because much customer traffic is expected to arrive from other sources, the first customer-facing experience does not need to overexplain the product category or lead with the nature of the product.
 
+Refined owner direction:
+- The site does not need to advertise the product category heavily if customers arrive through word of mouth or other trusted sources.
+- Most visitors should be treated as already-aware prospects who may trust the product because of people they know, reviews they have read, or outside research completed before arrival.
+- The site should validate that existing trust, reduce friction, and help them choose the right path.
+- The customer-facing goal is to make the visitor feel that the product and company are serious, organized, respectful, and capable.
+- The claims priority is not to prove every product point in the demo. The priority is to avoid exposing the product/category in a way that flags the business as risky to vendors, platforms, payment reviewers, or partners.
+- Product details should appear only where needed for user routing, product selection, and confidence.
+
 The rebuild should focus on:
 - Comfort.
 - Respect.
@@ -56,6 +64,7 @@ The customer-facing homepage should behave more like a product guidance lobby th
 
 The lobby should include:
 - A calm entry point.
+- A confirmation that the visitor can quickly choose the right path without sitting through a product pitch.
 - Product/category paths for common situations.
 - A simple path to purchase when the situation clearly fits reviewed product information.
 - A "not sure" route for nuanced situations.
@@ -64,6 +73,8 @@ The lobby should include:
 
 The lobby should not:
 - Overexplain the product category on the first screen.
+- Try to persuade already-aware visitors with heavy proof, results, or product-category advertising.
+- Advertise the product category in a way that creates avoidable vendor or platform risk.
 - Use panic or urgency as the main conversion driver.
 - Force every visitor into a form.
 - Hide product information from customers who can self-select.
@@ -85,6 +96,7 @@ Required boundaries:
 - Do not let the guidance flow provide legal, medical, or test-result advice.
 - Do not ask for more sensitive data than needed to route the question.
 - Do not imply that the guidance system can solve every situation.
+- Do not require customers to read risk-flagging product explanations before they can choose a path.
 - Mark guidance logic `[REVIEW REQUIRED]`.
 - Mark actual routing rules `[OWNER DATA NEEDED]`.
 
@@ -155,6 +167,8 @@ The owner is open to native on-site messaging or third-party platforms such as T
 
 This needs separate technical, privacy, payment, and compliance review before implementation.
 
+The demo should include this as a possible system architecture, not as a live promise. See `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md`.
+
 Review questions:
 - Is the platform appropriate for this product category and customer privacy expectations?
 - Can the platform support required consent, retention, access control, and deletion workflows?
@@ -165,6 +179,12 @@ Review questions:
 
 V1 should not depend on a third-party autonomous purchasing flow unless owner/payment/privacy review clears it.
 
+The likely near-term path is:
+1. Controlled on-site routing.
+2. Optional secure human support handoff.
+3. Assisted checkout through a current or approved purchase path.
+4. Autonomous checkout only after payment/channel review.
+
 ## High-Risk Channel Constraint
 
 Owner direction notes that typical channels may be limited because the current product/category is treated as high risk.
@@ -174,6 +194,8 @@ Planning implication:
 - Treat current purchase paths as `[OWNER DATA NEEDED]`.
 - Build the site so it can route customers clearly without implying platform safety.
 - Do not claim a payment, marketplace, ad, vendor, or messaging channel is approved.
+- Do not design the public demo around tools, channels, or scenarios that the business likely cannot support because of current risk status.
+- Any system shown in the demo should be framed as controlled routing, support workflow, or review-gated future capability unless it is already verified.
 
 ## UI Implications
 
@@ -181,6 +203,7 @@ Homepage:
 - Reframe as a calm product guidance lobby.
 - Lead with orientation and next steps, not dense product explanation.
 - Provide common situation paths and "not sure" support routing.
+- Show seriousness through structure, restraint, and support workflow rather than product-category promotion.
 
 Product Category:
 - Keep self-service paths for common situations.
@@ -214,5 +237,6 @@ The first development slice should define:
 - Tooling options for chat/forms/callbacks.
 - Payment/channel constraints.
 - Claim and privacy review gates.
+- Demo-safe automation surfaces that can be explored without implying unsupported live systems.
 
 No final UI copy should be written from this document without review.

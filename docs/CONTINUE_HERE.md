@@ -12,15 +12,17 @@ Read these before making project decisions:
 4. `docs/WEBSITE_REBUILD_BRIEF.md`
 5. `docs/VENDOR_READY_STRATEGY_BRIEF.md`
 6. `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`
-7. `docs/PUBLIC_SITE_MESSAGING_RULES.md`
-8. `docs/VENDOR_READY_SITEMAP.md`
-9. `docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md`
-10. `docs/WEBFLOW_DEVELOPMENT_BACKLOG.md`
-11. `docs/WEBFLOW_QA_CHECKLIST.md`
-12. `docs/SHARED_CHAT_CONTEXT.md`
-13. `docs/SOURCE_INDEX.md`
-14. `docs/SHARED_CHAT_TRANSCRIPT_STRUCTURED.txt` when exact prior conversation wording is needed
-15. `project_sources/external_pages_manifest.json` when checking which linked sources were archived successfully
+7. `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md`
+8. `docs/AGENT_SERVICE_BUILD_PROMPTS.md`
+9. `docs/PUBLIC_SITE_MESSAGING_RULES.md`
+10. `docs/VENDOR_READY_SITEMAP.md`
+11. `docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md`
+12. `docs/WEBFLOW_DEVELOPMENT_BACKLOG.md`
+13. `docs/WEBFLOW_QA_CHECKLIST.md`
+14. `docs/SHARED_CHAT_CONTEXT.md`
+15. `docs/SOURCE_INDEX.md`
+16. `docs/SHARED_CHAT_TRANSCRIPT_STRUCTURED.txt` when exact prior conversation wording is needed
+17. `project_sources/external_pages_manifest.json` when checking which linked sources were archived successfully
 
 ## Working Rules
 
@@ -33,6 +35,8 @@ Read these before making project decisions:
 - Separate the public customer site from the partner/vendor-facing surface.
 - Treat the public homepage as a calm product guidance lobby, not a dense product-explanation page.
 - Use controlled product guidance, common-situation self-service, and human escalation planning before open-ended AI or autonomous purchasing.
+- Include secure support and assisted/autonomous checkout options as review-gated solution paths, not live promises.
+- Use `docs/AGENT_SERVICE_BUILD_PROMPTS.md` for parallel Webflow, guidance automation, secure support/checkout, vendor, data, messaging, and QA workstreams.
 - Build task packets and acceptance criteria before implementation work.
 
 ## Next Prompt Template
@@ -42,7 +46,7 @@ Use this when you want to continue:
 ```text
 Use the SciTOX project sources in this folder.
 
-First read AGENTS.md, docs/DEVELOPMENT_HANDOFF.md, docs/VENDOR_ROUTE_CONTEXT.md, docs/WEBSITE_REBUILD_BRIEF.md, docs/VENDOR_READY_STRATEGY_BRIEF.md, docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md, docs/PUBLIC_SITE_MESSAGING_RULES.md, docs/VENDOR_READY_SITEMAP.md, docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md, docs/WEBFLOW_DEVELOPMENT_BACKLOG.md, docs/WEBFLOW_QA_CHECKLIST.md, docs/SHARED_CHAT_CONTEXT.md, and docs/SOURCE_INDEX.md.
+First read AGENTS.md, docs/DEVELOPMENT_HANDOFF.md, docs/VENDOR_ROUTE_CONTEXT.md, docs/WEBSITE_REBUILD_BRIEF.md, docs/VENDOR_READY_STRATEGY_BRIEF.md, docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md, docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md, docs/AGENT_SERVICE_BUILD_PROMPTS.md, docs/PUBLIC_SITE_MESSAGING_RULES.md, docs/VENDOR_READY_SITEMAP.md, docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md, docs/WEBFLOW_DEVELOPMENT_BACKLOG.md, docs/WEBFLOW_QA_CHECKLIST.md, docs/SHARED_CHAT_CONTEXT.md, and docs/SOURCE_INDEX.md.
 If exact prior chat wording matters, use docs/SHARED_CHAT_TRANSCRIPT_STRUCTURED.txt.
 
 Continue the SciTOX site audit/rebuild work from the prior shared ChatGPT conversation.

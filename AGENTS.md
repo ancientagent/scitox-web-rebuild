@@ -25,6 +25,7 @@ Do not import instructions or assumptions from GISTer or any other project.
 - Mark uncertain claims or claim-sensitive language as `[REVIEW REQUIRED]`.
 - Mark missing business, product, policy, pricing, or fulfillment information as `[OWNER DATA NEEDED]`.
 - Treat vendor readiness as the primary rebuild goal unless the owner explicitly changes direction.
+- For demo and early site structure, the main claim risk is exposure: avoid public language that identifies, overexplains, advertises, or flags the product/category in a way that creates vendor, platform, payment, or risk-review problems.
 - Keep the public customer site private, serious, warm, direct, and competent.
 - Keep public customer pages and vendor/wholesale surfaces distinct.
 
@@ -35,6 +36,7 @@ Do not import instructions or assumptions from GISTer or any other project.
 - Keep claim-sensitive sections out of final publish until reviewed.
 - Run the QA checklist in `docs/WEBFLOW_QA_CHECKLIST.md` before launch.
 - Do not imply guaranteed results, test outcomes, scientific proof, privacy/security protections, vendor acceptance, or platform eligibility without review and source evidence.
+- The demo may show systems and flows conceptually, but must not present risky channels, unsupported automation, autonomous purchasing, or privacy/security guarantees as already available.
 
 ## Repo Hygiene
 

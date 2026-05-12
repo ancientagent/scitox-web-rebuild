@@ -66,8 +66,11 @@ The customer site should not feel like:
 Updated owner direction:
 - Treat the customer-facing entry experience as a calm product guidance lobby.
 - Assume many visitors arrive with outside context and do not need a dense first-screen explanation of the product category.
+- Treat many visitors as already-aware prospects who need confirmation, product routing, and support access more than persuasion.
 - Let common situations self-serve through reviewed product/category paths.
 - Route nuanced, uncertain, or more sensitive situations to controlled product guidance or human follow-up.
+- Make the company and product feel serious, organized, and competent without unnecessarily advertising or exposing the product category.
+- For the demo and early build, claims risk should be judged mainly by whether language exposes or flags the product/category to vendors, platforms, payment reviewers, or risk systems.
 - Do not use "prescribe," "counsel," "consultation," "encrypted," or autonomous purchasing claims in public copy until reviewed.
 
 ## Tone Rules
@@ -143,6 +146,8 @@ Operational constraints:
 - Keep checkout/payment migration outside V1 unless owner and payment review clear it.
 - Avoid open-ended AI guidance that can generate risky claims.
 - Use controlled intake/product guidance language only after privacy, claim, and escalation rules are reviewed.
+- Do not present unsupported channels, tools, autonomous purchase flows, or privacy/security systems as available in the demo.
+- Show automation as flow design, routing, support escalation, and operational simplification unless the tool is verified.
 
 ## Claim-Sensitive Sections
 
@@ -161,6 +166,11 @@ These sections require `[REVIEW REQUIRED]` until substantiation, legal/complianc
 - Privacy, confidentiality, encryption, or AI consultation claims.
 - Vendor, wholesale, distributor, marketplace, Amazon, or payment acceptance claims.
 - Any claim implying legal or medical advice.
+
+Demo-specific claim lens:
+- The most important demo risk is exposure. Avoid public copy that identifies, overexplains, or advertises the product/category in a way that could trigger vendor, platform, payment, or risk-review concerns.
+- Product language can stay abstract, guided, and customer-support oriented where exact product detail is unnecessary for the flow.
+- Still avoid privacy/security, legal/medical, AI, payment, vendor, and platform promises unless verified.
 
 ## Owner Data Needed
 

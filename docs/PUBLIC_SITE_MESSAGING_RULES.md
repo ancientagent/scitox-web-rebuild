@@ -24,6 +24,8 @@ The public customer site should feel:
 
 The visitor may be anxious, privacy-sensitive, and trying to make a fast decision. Messaging should lower confusion without increasing fear. The site should sound like a capable product team that understands urgency, not like a panic-driven sales page.
 
+For the demo and early rebuild, the site should not overexplain or advertise the product category when the visitor likely arrives with outside context. Many visitors may already trust the product because of word of mouth, reviews, or outside research. Trust should be validated through seriousness, discretion, organization, clear routing, and support availability.
+
 Use:
 
 - Plain, direct language.
@@ -32,6 +34,8 @@ Use:
 - Supportive but restrained reassurance.
 - Review markers where claims are not approved.
 - Owner-data markers where facts are missing.
+- Abstract product-path labels where specific product/category exposure is unnecessary.
+- Confirmation-oriented language for already-aware visitors.
 
 ## Banned Tone
 
@@ -50,6 +54,7 @@ Do not use:
 - Fake scientific authority.
 - Fake privacy/security certainty.
 - Marketplace/platform certainty.
+- Product-category exposure that creates avoidable vendor, payment, or platform risk.
 
 The site should not imply: "we can solve any situation," "you are guaranteed safe," "this is medical/legal guidance," or "platforms/vendors have approved this."
 
@@ -111,7 +116,7 @@ Mark these topics `[REVIEW REQUIRED]` until substantiation, owner approval, and 
 - Any Amazon, vendor, marketplace, payment, ad-platform, or regulatory eligibility claim.
 - Any third-party messaging, autonomous purchasing, or chat-based checkout claim.
 
-Rule: if the phrase would need proof, policy review, technical verification, legal review, or owner confirmation, mark it `[REVIEW REQUIRED]` or `[OWNER DATA NEEDED]`.
+Rule: for the demo, the first question is whether the language exposes or flags the product/category to vendors, platforms, payment reviewers, or risk systems. If yes, remove it, abstract it, or mark it `[REVIEW REQUIRED]`. Continue to mark privacy/security, legal/medical, AI, payment, vendor, platform, and outcome claims `[REVIEW REQUIRED]` or `[OWNER DATA NEEDED]`.
 
 ## Privacy And Discretion Language Rules
 
@@ -241,12 +246,16 @@ Hero/support framing:
 - "Private product guidance for time-sensitive situations. [REVIEW REQUIRED]"
 - "Clear steps, discreet support, and product information in one place. [REVIEW REQUIRED]"
 - "Find the product path that fits your situation. [REVIEW REQUIRED]"
+- "You may already know why you are here. Start with the path that fits. [REVIEW REQUIRED]"
+- "Choose a path, ask a question, or request follow-up. [REVIEW REQUIRED]"
 
 Product routing:
 
 - "Answer a few product questions to narrow the options. [REVIEW REQUIRED]"
 - "Choose the product category you need help with. [REVIEW REQUIRED]"
 - "Compare available product options. [OWNER DATA NEEDED]"
+- "Choose the path that best matches your situation. [REVIEW REQUIRED]"
+- "Use a common path, or request support if your situation is more specific. [REVIEW REQUIRED]"
 
 Privacy/discretion:
 

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SciTOX Rebuild Demo</title>
+    <link rel="icon" href="assets/scitox-logo.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="SciTOX demo home">
+        <img src="assets/scitox-logo.jpg" alt="SciTOX" />
+        <span>Rebuild Demo</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Demo navigation">
+        <a href="#paths">Product Paths</a>
+        <a href="#guidance">Guidance</a>
+        <a href="#support">Support</a>
+        <a href="#secure-checkout">Secure Path</a>
+        <a href="#wholesale">Wholesale</a>
+        <a href="#systems">Owner Systems</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Private, serious, guided</p>
+          <h1>A calmer front door for people who already know why they are here.</h1>
+          <p class="lead">
+            This demo assumes many visitors arrive with trust from word of mouth, reviews, or
+            outside research. The site does not need to sell hard. It needs to confirm they are in
+            the right place, help them choose a path, and make support easy when the situation is
+            more specific.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="#paths">Explore customer flow</a>
+            <a class="button secondary" href="#wholesale">View vendor layer</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Demo system status">
+          <div class="panel-topline">
+            <span>Demo Mode</span>
+            <strong>Review-gated</strong>
+          </div>
+          <div class="route-preview">
+            <span class="route-dot active"></span>
+            <span class="route-line"></span>
+            <span class="route-dot"></span>
+            <span class="route-line"></span>
+            <span class="route-dot"></span>
+          </div>
+          <h2>Customer path routing</h2>
+          <p>
+            Common path, guided questions, or human follow-up. No product pitch, no open-ended
+            advice, no unsupported product claims, no channel promises.
+          </p>
+          <div class="status-grid">
+            <div><span>Claims exposure</span><strong>Reduced</strong></div>
+            <div><span>Support routing</span><strong>Visible</strong></div>
+            <div><span>Vendor layer</span><strong>Separate</strong></div>
+            <div><span>Purchase flow</span><strong>Review needed</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-note">
+        <div>
+          <strong>Demo boundary</strong>
+          <p>
+            This prototype is for feel and flow. It assumes customers may already trust the
+            product and need a cleaner way to act on that trust. It does not claim a live AI assistant,
+            encrypted communication, autonomous checkout, vendor approval, payment approval, or
+            product outcomes.
+          </p>
+        </div>
+      </section>
+
+      <section id="paths" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Customer lobby</p>
+          <h2>Three ways to move forward</h2>
+          <p>
+            The site gives already-aware customers a calm choice immediately: choose a common
+            path, answer a few guided questions, or request support for a more specific situation.
+          </p>
+        </div>
+        <div class="path-grid">
+          <article class="path-card">
+            <span class="icon">01</span>
+            <h3>Common product path</h3>
+            <p>
+              For customers who already trust the product and want a clean route to the right
+              product information.
+            </p>
+            <a href="#products">View path cards</a>
+          </article>
+          <article class="path-card featured">
+            <span class="icon">02</span>
+            <h3>Guided product questions</h3>
+            <p>
+              A controlled decision flow that narrows options without asking for broad sensitive
+              details.
+            </p>
+            <a href="#guidance">Try the guide</a>
+          </article>
+          <article class="path-card">
+            <span class="icon">03</span>
+            <h3>Human follow-up</h3>
+            <p>
+              A clear support request path for situations that should not be handled by generic
+              product descriptions.
+            </p>
+            <a href="#support">Request support</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="products" class="section split">
+        <div class="section-heading compact">
+          <p class="eyebrow">Low-exposure product area</p>
+          <h2>Product pages can feel serious without overexplaining the category.</h2>
+          <p>
+            Product cards use controlled labels in the demo. The goal is quick selection and
+            reassurance, not a public product pitch. Final names, images, pricing, availability,
+            directions, and purchase links remain owner-data and review items.
+          </p>
+        </div>
+        <div class="product-shell">
+          <div class="product-tabs" role="tablist" aria-label="Product path options">
+            <button class="tab active" type="button" data-product="standard">Standard Path</button>
+            <button class="tab" type="button" data-product="focused">Focused Path</button>
+            <button class="tab" type="button" data-product="complete">Complete Path</button>
+          </div>
+          <article class="product-preview">
+            <p class="tag">Product facts preview</p>
+            <h3 id="product-title">Standard Path</h3>
+            <p id="product-copy">
+              A clean product detail layout for the most common customer path. Final product
+              specifics stay hidden until owner data and review are complete.
+            </p>
+            <dl>
+              <div><dt>Display status</dt><dd id="product-status">Common self-service</dd></div>
+              <div><dt>CTA behavior</dt><dd id="product-cta">Current purchase path pending review</dd></div>
+              <div><dt>Support route</dt><dd>Ask a product question</dd></div>
+            </dl>
+            <button class="button ghost" type="button" data-open-drawer="product">Preview page sections</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="guidance" class="section dark-band">
+        <div class="section-heading">
+          <p class="eyebrow">Automation preview</p>
+          <h2>Guided routing, not unsupported advice</h2>
+          <p>
+            This is the first automation layer: a controlled question flow that routes customers
+            to a product path or support queue. It is intentionally not an open-ended chat.
+          </p>
+        </div>
+        <div class="guide-shell">
+          <div class="guide-card">
+            <span class="step-label">Question 1</span>
+            <h3>Which route feels closest?</h3>
+            <div class="choice-list" role="group" aria-label="Guidance choices">
+              <button type="button" class="choice active" data-route="ready">I know the general path</button>
+              <button type="button" class="choice" data-route="compare">I want to compare options</button>
+              <button type="button" class="choice" data-route="specific">My situation is more specific</button>
+            </div>
+          </div>
+          <div class="guide-result" aria-live="polite">
+            <p class="tag">Suggested next step</p>
+            <h3 id="route-title">Common product path</h3>
+            <p id="route-copy">
+              Show product-path cards with restrained product facts, support links, and policy
+              visibility.
+            </p>
+            <div class="route-actions">
+              <span id="route-owner">Owner data: product mapping</span>
+              <span id="route-review">Review: product labels</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="section split reversed">
+        <div class="support-panel">
+          <div class="support-header">
+            <p class="eyebrow">Support intake</p>
+            <h2>Support without overcollection</h2>
+          </div>
+          <form class="mock-form">
+            <label>
+              Reason for contact
+              <select>
+                <option>Product question</option>
+                <option>Order or shipping question</option>
+                <option>Need follow-up</option>
+                <option>Wholesale / partner inquiry</option>
+              </select>
+            </label>
+            <label>
+              Preferred follow-up
+              <select>
+                <option>Email</option>
+                <option>Call back</option>
+                <option>Text, if approved</option>
+              </select>
+            </label>
+            <label>
+              Short question
+              <textarea placeholder="Demo field: ask only what is needed to route the request."></textarea>
+            </label>
+            <button class="button primary" type="button">Create support request</button>
+          </form>
+        </div>
+        <div class="section-heading compact">
+          <p class="eyebrow">Owner benefit</p>
+          <h2>Every inquiry enters a cleaner workflow.</h2>
+          <p>
+            Instead of urgent calls, broken chat notices, and scattered customer context, the
+            owner sees structured intake, reason codes, callback needs, and review-safe routing.
+          </p>
+          <ul class="check-list">
+            <li>Reason-based routing</li>
+            <li>Human escalation for nuanced situations</li>
+            <li>Privacy/security language held for review</li>
+            <li>Cleaner support queue for the owner</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="secure-checkout" class="section secure-flow">
+        <div class="section-heading">
+          <p class="eyebrow">Secure support + checkout options</p>
+          <h2>Include a path to encrypted support and cleaner checkout without overpromising it.</h2>
+          <p>
+            The demo separates routing, private support, and payment. That lets the owner see the
+            solution while keeping every channel claim behind review until the real tools are chosen.
+          </p>
+        </div>
+        <div class="secure-grid">
+          <article class="secure-card">
+            <span class="icon">A</span>
+            <h3>Controlled site routing</h3>
+            <p>
+              The site asks structured questions and routes the customer to a product path or
+              support. This is the safest V1 automation layer.
+            </p>
+            <strong>Demo status: included</strong>
+          </article>
+          <article class="secure-card">
+            <span class="icon">B</span>
+            <h3>Encrypted human support</h3>
+            <p>
+              Signal, WhatsApp, or another reviewed channel can be offered as a handoff. Exact
+              encryption language depends on the selected tool and workflow.
+            </p>
+            <strong>Review needed: privacy/tooling</strong>
+          </article>
+          <article class="secure-card">
+            <span class="icon">C</span>
+            <h3>Assisted checkout</h3>
+            <p>
+              The customer can be guided to the current or reviewed purchase path after the product
+              route is clear. This avoids pretending a new processor is already approved.
+            </p>
+            <strong>Owner data: current purchase path</strong>
+          </article>
+          <article class="secure-card muted-card">
+            <span class="icon">D</span>
+            <h3>Autonomous checkout</h3>
+            <p>
+              This can be designed as a later module only if a payment provider, support workflow,
+              privacy policy, and platform rules support it.
+            </p>
+            <strong>Later: payment/channel review</strong>
+          </article>
+        </div>
+        <div class="architecture-strip">
+          <div>
+            <span>Near-term path</span>
+            <strong>Guide -> support handoff -> reviewed checkout path</strong>
+          </div>
+          <div>
+            <span>Later path</span>
+            <strong>Constrained AI + compliant payment flow</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="wholesale" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Vendor-facing layer</p>
+          <h2>A separate surface for buyers and partners</h2>
+          <p>
+            The vendor layer should look organized and restrained. It should not borrow customer
+            urgency, result claims, or risky product-category language.
+          </p>
+        </div>
+        <div class="vendor-grid">
+          <article>
+            <h3>Product line overview</h3>
+            <p>SKU, size, images, MSRP, wholesale fields, MOQ, case pack, and UPC/GTIN placeholders.</p>
+          </article>
+          <article>
+            <h3>Documentation checklist</h3>
+            <p>Labels, images, ingredients, policies, fulfillment notes, and claim-review status.</p>
+          </article>
+          <article>
+            <h3>Wholesale inquiry</h3>
+            <p>Buyer type, company, channel, required docs, product fit, and owner approval routing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="systems" class="section systems">
+        <div class="section-heading">
+          <p class="eyebrow">Owner systems</p>
+          <h2>The demo also shows the operating model behind the site.</h2>
+          <p>
+            These are explorable previews of systems that can make the owner's life easier. They
+            are not presented as live tools until selected, verified, and implemented.
+          </p>
+        </div>
+        <div class="dashboard">
+          <article class="metric-card">
+            <span>Guidance requests</span>
+            <strong>Queue view</strong>
+            <p>Customer path, urgency, next action, and support owner.</p>
+          </article>
+          <article class="metric-card">
+            <span>Product readiness</span>
+            <strong>Data gaps</strong>
+            <p>SKU, images, label, pricing, review status, and owner data needed.</p>
+          </article>
+          <article class="metric-card">
+            <span>Vendor pipeline</span>
+            <strong>Buyer tracker</strong>
+            <p>Company, channel fit, risk level, docs required, and approval status.</p>
+          </article>
+          <article class="metric-card">
+            <span>Risk controls</span>
+            <strong>Launch gates</strong>
+            <p>Claims, privacy, forms, policies, analytics, and broken links.</p>
+          </article>
+        </div>
+        <div class="workstream-shell">
+          <div>
+            <p class="eyebrow">Parallel build prompts</p>
+            <h3>Development can split into focused workstreams.</h3>
+            <p>
+              The prompt pack keeps other agents and service builders aligned on Webflow,
+              automation, secure support, vendor readiness, product data, messaging controls,
+              and QA without letting any one track invent missing facts.
+            </p>
+            <a class="text-link" href="../docs/AGENT_SERVICE_BUILD_PROMPTS.md">Open prompt pack</a>
+          </div>
+          <div class="workstream-grid" aria-label="Parallel build workstreams">
+            <article>
+              <span>01</span>
+              <strong>Webflow build</strong>
+              <p>Turn the demo flow into lean Webflow pages and components.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Guidance engine</strong>
+              <p>Define controlled routing rules and human escalation points.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Secure path</strong>
+              <p>Research support, messaging, assisted checkout, and later automation.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <strong>Vendor layer</strong>
+              <p>Prepare wholesale inquiry, line sheet needs, and buyer documentation.</p>
+            </article>
+            <article>
+              <span>05</span>
+              <strong>Data/CMS</strong>
+              <p>Map products, placeholders, owner data gaps, and review fields.</p>
+            </article>
+            <article>
+              <span>06</span>
+              <strong>QA gates</strong>
+              <p>Check layouts, links, forms, claims, privacy language, and launch blockers.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="drawer" id="demo-drawer" aria-hidden="true" aria-label="Demo detail panel">
+      <div class="drawer-panel">
+        <button class="drawer-close" type="button" aria-label="Close panel">Close</button>
+        <p class="eyebrow">Product detail skeleton</p>
+        <h2>What the Webflow product template will show</h2>
+        <ul class="detail-list">
+          <li>Controlled product title and image area</li>
+          <li>Product facts: SKU, size, availability, price placeholder</li>
+          <li>Short description field with review gate</li>
+          <li>Instructions and warnings held for owner data</li>
+          <li>Support CTA for unsure customers</li>
+          <li>Purchase path shown only after payment/channel review</li>
+        </ul>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <div>
+        <strong>SciTOX Rebuild Demo</strong>
+        <p>Explorable prototype for owner review. Not final site copy.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#support">Support</a>
+        <a href="#secure-checkout">Secure Path</a>
+        <a href="#wholesale">Wholesale</a>
+        <a href="#systems">Systems</a>
+        <a href="../docs/AGENT_SERVICE_BUILD_PROMPTS.md">Build Prompts</a>
+      </nav>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

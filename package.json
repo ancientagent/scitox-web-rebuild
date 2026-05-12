@@ -11,6 +11,7 @@
     "build:risky-claims-cleanup": "node scripts/build_risky_claims_cleanup_list.mjs",
     "build:product-data": "node scripts/build_product_data_requirements.mjs",
     "build:buyer-outreach": "node scripts/build_buyer_outreach_tracker.mjs",
-    "build:line-sheet": "node scripts/build_product_line_sheet_template.mjs"
+    "build:line-sheet": "node scripts/build_product_line_sheet_template.mjs",
+    "serve:demo": "node scripts/serve_demo.mjs"
   }
 }
