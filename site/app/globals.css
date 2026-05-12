@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8f4;
+  --foreground: #17211c;
+  --panel: #ffffff;
+  --border: #d7ded2;
+  --muted: #56645d;
+  --accent: #1f6b45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.route-shell {
+  min-height: 100vh;
+  padding: 48px 20px;
+}
+
+.route-panel {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 32px;
+  box-shadow: 0 12px 32px rgb(23 33 28 / 8%);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+p {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+ul {
+  margin: 24px 0 0;
+  padding-left: 20px;
+  color: var(--foreground);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .route-shell {
+    padding: 24px 12px;
+  }
+
+  .route-panel {
+    padding: 24px;
+  }
+}
