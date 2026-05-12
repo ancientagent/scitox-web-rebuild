@@ -3,6 +3,7 @@
 Source context:
 - `docs/VENDOR_READY_SITEMAP.md`
 - `docs/WEBSITE_REBUILD_BRIEF.md`
+- `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`
 - `docs/VENDOR_READY_STRATEGY_BRIEF.md`
 - `docs/PUBLIC_SITE_MESSAGING_RULES.md`
 
@@ -24,32 +25,35 @@ All copy blocks should remain placeholders until owner data, claims review, priv
 
 **Purpose**
 
-Orient stressed visitors quickly, establish a serious and credible brand feel, route users to products, guidance, support, and vendor inquiry without overclaiming.
+Orient stressed visitors quickly, establish a serious and credible brand feel, and act as a calm product guidance lobby. The page should route users to common product paths, guided product questions, support, and vendor inquiry without overclaiming or overexplaining the product category on the first screen.
 
 **Section Order**
 
 1. Header/navigation: Products, Product Guidance, FAQ / Support, Contact, Wholesale / Partners.
-2. Product-first hero: concise positioning placeholder and primary CTAs.
-3. Calm guidance path: "choose product path / ask product question / contact support" structure.
+2. Lobby hero: concise orientation placeholder and primary CTAs.
+3. Calm guidance path: "common situation / not sure / contact support" structure.
 4. Product category cards: major product categories or product paths.
-5. Why the site is structured this way: trust/support/process placeholder.
-6. Product guidance/intake teaser: minimal, privacy-aware form entry.
-7. Reviews/customer experience placeholder: neutral trust area, no proof language.
-8. Support and policy strip: shipping, returns, FAQ, contact.
-9. Wholesale/partner teaser: small professional route for buyers.
-10. Footer: policies, support, contact, wholesale, privacy, terms.
+5. Common situation self-service: reviewed paths for situations that fit clear product/category information.
+6. Nuanced situation escalation: guided product questions and human follow-up placeholder.
+7. Why the site is structured this way: trust/support/process placeholder.
+8. Product guidance/intake teaser: minimal, privacy-aware form entry.
+9. Reviews/customer experience placeholder: neutral trust area, no proof language.
+10. Support and policy strip: shipping, returns, FAQ, contact.
+11. Wholesale/partner teaser: small professional route for buyers.
+12. Footer: policies, support, contact, wholesale, privacy, terms.
 
 **CTA Hierarchy**
 
-- Primary: View Products / Product Categories.
-- Secondary: Get Product Guidance.
+- Primary: Choose a Product Path / View Product Categories.
+- Secondary: Get Product Guidance / Not Sure.
 - Tertiary: Contact Support.
 - Footer/utility: Wholesale / Partners.
 
 **Placeholder Copy Rules**
 
 - Use concise placeholder headings only.
-- Position as product guidance and support, not guaranteed outcomes.
+- Position as product guidance and support, not guaranteed outcomes or broad product-category education.
+- Do not use "prescribe," "counsel," "consultation," or "encrypted" in public copy without review.
 - Any privacy reassurance must be marked `[REVIEW REQUIRED]`.
 - Any claim about effectiveness, results, testing, or superiority must be marked `[REVIEW REQUIRED]`.
 
@@ -57,6 +61,8 @@ Orient stressed visitors quickly, establish a serious and credible brand feel, r
 
 - Hero positioning.
 - Product category summaries.
+- Product guidance routing.
+- Human callback or AI-assisted support language.
 - Reviews/customer experience area.
 - Product guidance/privacy teaser.
 - Shipping/returns/guarantee mentions.
@@ -66,8 +72,10 @@ Orient stressed visitors quickly, establish a serious and credible brand feel, r
 
 - Product category list.
 - Approved product positioning.
+- Approved common-situation routing rules.
 - Product images.
 - Current support paths.
+- Chat/form/callback tooling.
 - Privacy/data handling details.
 - Review/testimonial source status.
 - Shipping/returns/guarantee policy.
@@ -185,19 +193,20 @@ Present each product in a structured, review-safe format that can serve both cus
 
 **Purpose**
 
-Give customers a structured way to ask product questions or choose a product path while minimizing sensitive data collection and avoiding legal/medical/test-result advice.
+Give customers a structured way to ask product questions, choose a product path, or request human follow-up while minimizing sensitive data collection and avoiding legal/medical/test-result advice.
 
 **Section Order**
 
 1. Header/navigation.
 2. Guidance page intro: purpose and privacy-aware placeholder.
-3. "How this works" steps: answer limited questions, support reviews, next step.
-4. Minimal intake form.
-5. Human support escalation note.
-6. Privacy/data handling notice placeholder.
-7. Product category links.
-8. FAQ/support links.
-9. Footer policy links.
+3. Common situation selector.
+4. "How this works" steps: answer limited questions, get routed to product information or support, next step.
+5. Guided product questions.
+6. Human support/callback request placeholder.
+7. Privacy/data handling notice placeholder.
+8. Product category links.
+9. FAQ/support links.
+10. Footer policy links.
 
 **CTA Hierarchy**
 
@@ -208,9 +217,9 @@ Give customers a structured way to ask product questions or choose a product pat
 **Placeholder Copy Rules**
 
 - Use "Product Guidance" or "Product Support Intake" language.
-- Do not call it encrypted, confidential, medical, legal, diagnostic, or guaranteed.
+- Do not call it prescribed, counsel, consultation, encrypted, confidential, medical, legal, diagnostic, or guaranteed without review.
 - Use `[REVIEW REQUIRED]` for any privacy, discretion, or response-time statement.
-- Use `[OWNER DATA NEEDED]` for form routing, retention, response time, support owner, CRM/helpdesk, and privacy policy.
+- Use `[OWNER DATA NEEDED]` for form routing, retention, response time, support owner, CRM/helpdesk/chat tool, callback process, and privacy policy.
 
 **Claim-Sensitive Sections**
 
@@ -220,6 +229,7 @@ Give customers a structured way to ask product questions or choose a product pat
 - Support response expectations.
 - Any AI/private consultation language.
 - Any product matching outcome.
+- Any third-party messaging or autonomous purchasing flow.
 
 **Owner Data Needed**
 
@@ -228,6 +238,8 @@ Give customers a structured way to ask product questions or choose a product pat
 - Response-time expectations.
 - Form destination.
 - CRM/helpdesk tool.
+- Chat/messaging tool.
+- Human callback workflow.
 - Privacy/data retention policy.
 - Escalation rules.
 - Approved product routing logic.
@@ -512,4 +524,3 @@ Give vendors, wholesalers, smoke shops, head shops, distributors, online retaile
 - Use `[OWNER DATA NEEDED]` for facts, policies, prices, product specs, support workflows, and system behavior.
 - Do not write final slogans, hero headlines, product claims, FAQ answers, privacy promises, or guarantee language.
 - Do not remove review markers until review is complete.
-

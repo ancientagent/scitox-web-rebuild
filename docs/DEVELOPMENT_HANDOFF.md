@@ -12,10 +12,11 @@ Prepare a lean, vendor-ready SciTOX website rebuild that supports customer trust
 2. `docs/VENDOR_ROUTE_CONTEXT.md`
 3. `docs/WEBSITE_REBUILD_BRIEF.md`
 4. `docs/VENDOR_READY_STRATEGY_BRIEF.md`
-5. `docs/PUBLIC_SITE_MESSAGING_RULES.md`
-6. `docs/VENDOR_READY_SITEMAP.md`
-7. `docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md`
-8. `docs/WEBFLOW_QA_CHECKLIST.md`
+5. `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`
+6. `docs/PUBLIC_SITE_MESSAGING_RULES.md`
+7. `docs/VENDOR_READY_SITEMAP.md`
+8. `docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md`
+9. `docs/WEBFLOW_QA_CHECKLIST.md`
 
 ## Directory Map
 
@@ -32,10 +33,11 @@ Prepare a lean, vendor-ready SciTOX website rebuild that supports customer trust
 
 1. Confirm owner data needed for products, pricing, policies, wholesale terms, shipping, returns, and support process.
 2. Resolve or remove launch-blocking claims from the current site.
-3. Build lean public customer pages from `docs/VENDOR_READY_SITEMAP.md`.
-4. Build Partner / Wholesale Inquiry as the primary vendor-facing conversion surface.
-5. Prepare product data and line-sheet assets from `outputs/`.
-6. Run `docs/WEBFLOW_QA_CHECKLIST.md` before publishing.
+3. Define the customer guidance lobby and controlled product-routing flow from `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`.
+4. Build lean public customer pages from `docs/VENDOR_READY_SITEMAP.md`.
+5. Build Partner / Wholesale Inquiry as the primary vendor-facing conversion surface.
+6. Prepare product data and line-sheet assets from `outputs/`.
+7. Run `docs/WEBFLOW_QA_CHECKLIST.md` before publishing.
 
 ## Required Gates
 
@@ -57,3 +59,5 @@ Prepare a lean, vendor-ready SciTOX website rebuild that supports customer trust
 - Legal, medical, or testing advice.
 - Privacy/security promises that are not technically verified.
 - Open-ended AI/private consultation claims without review.
+- Customer-facing "prescribe," "counsel," or "consultation" framing without legal/compliance review.
+- Third-party autonomous chat or purchasing flows without privacy, payment, and platform review.

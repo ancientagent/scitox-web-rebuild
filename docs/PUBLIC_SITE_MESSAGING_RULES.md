@@ -76,6 +76,11 @@ Do not use these phrases in customer-facing V1 copy:
 - "Confidential medical consultation"
 - "Secure legal advice"
 - "Private diagnosis"
+- "Product prescription"
+- "Personal counsel"
+- "Immediate counsel"
+- "AI counsel"
+- "AI consultation"
 - "Guaranteed privacy"
 - "Amazon approved"
 - "Vendor approved"
@@ -104,6 +109,7 @@ Mark these topics `[REVIEW REQUIRED]` until substantiation, owner approval, and 
 - AI consultation, private guidance, or intake claims.
 - Any wording that could imply legal or medical advice.
 - Any Amazon, vendor, marketplace, payment, ad-platform, or regulatory eligibility claim.
+- Any third-party messaging, autonomous purchasing, or chat-based checkout claim.
 
 Rule: if the phrase would need proof, policy review, technical verification, legal review, or owner confirmation, mark it `[REVIEW REQUIRED]` or `[OWNER DATA NEEDED]`.
 
@@ -141,6 +147,8 @@ Use:
 - "Product guidance"
 - "Product questions"
 - "Support"
+- "Guided product questions"
+- "Common product path"
 - "Private product guidance" after privacy review
 - "Confidential product intake" only after privacy/policy review
 - "Tell us what you need help choosing" as a placeholder concept
@@ -151,6 +159,10 @@ Avoid:
 - "Medical consultation"
 - "Legal advice"
 - "Diagnosis"
+- "Prescription"
+- "Prescribe"
+- "Counsel"
+- "Consultation" when it could imply professional advice
 - "Case evaluation"
 - "We know what will work for your test"
 - "Tell us everything about your situation" as broad collection
@@ -174,6 +186,8 @@ Do not use:
 - "Encrypted AI consultation"
 - "AI medical consultation"
 - "AI legal guidance"
+- "AI counsel"
+- "AI consultation"
 - "Private diagnosis"
 - "Secure legal advice"
 - "Confidential AI expert"
@@ -194,6 +208,7 @@ Rules:
 - It must route sensitive, uncertain, or high-risk cases to human support.
 - It must not claim encryption, confidentiality, or special privacy unless technically and legally verified.
 - It must not produce final claims, guarantees, or outcome promises.
+- It must not support autonomous purchase flow unless payment, privacy, platform, and compliance review approve the exact workflow.
 
 ## Testimonial And Review Handling Rules
 
@@ -266,4 +281,3 @@ FAQ:
 ## Working Rule For Future Copy Agents
 
 Future copy agents may propose draft section structures and placeholder wording only. They must not convert placeholders into final claims until owner data, substantiation, technical privacy details, and legal/compliance review are available.
-

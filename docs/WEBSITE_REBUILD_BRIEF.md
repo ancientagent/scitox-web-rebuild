@@ -63,6 +63,13 @@ The customer site should not feel like:
 - A legal advisor.
 - A platform-risky drug-test workaround page.
 
+Updated owner direction:
+- Treat the customer-facing entry experience as a calm product guidance lobby.
+- Assume many visitors arrive with outside context and do not need a dense first-screen explanation of the product category.
+- Let common situations self-serve through reviewed product/category paths.
+- Route nuanced, uncertain, or more sensitive situations to controlled product guidance or human follow-up.
+- Do not use "prescribe," "counsel," "consultation," "encrypted," or autonomous purchasing claims in public copy until reviewed.
+
 ## Tone Rules
 
 Use:
@@ -119,6 +126,7 @@ General constraints:
 - Keep Amazon conditional.
 - Treat vendor readiness as the primary goal unless the owner changes direction.
 - Build V1 around structure, clarity, review labels, inquiry flow, and owner-data placeholders.
+- Build the public homepage as a guidance lobby, not a product-category explainer.
 
 Recommended V1 structure:
 - Public customer homepage.
@@ -244,4 +252,3 @@ V1 is successful if it produces a clean, navigable, vendor-ready site structure 
 - Clear `[REVIEW REQUIRED]` markers for claim-sensitive sections.
 - No invented proof, numbers, approvals, eligibility, legal conclusions, or claim support.
 - A practical path from site cleanup to vendor-readiness packet to controlled outreach planning.
-
