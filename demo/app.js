@@ -10,8 +10,11 @@ const routeTitle = document.querySelector("#route-title");
 const routeCopy = document.querySelector("#route-copy");
 const routeOwner = document.querySelector("#route-owner");
 const routeReview = document.querySelector("#route-review");
+const assistantRun = document.querySelector("#assistant-run");
+const assistantStatus = document.querySelector("#assistant-status");
 const drawer = document.querySelector("#demo-drawer");
 const drawerClose = document.querySelector(".drawer-close");
+let selectedRouteKey = "ready";
 
 const productData = {
   standard: {
@@ -42,22 +45,22 @@ const routeData = {
     title: "Common product path",
     copy:
       "Show product-path cards with restrained product facts, support links, and policy visibility.",
-    owner: "Owner data: product mapping",
-    review: "Review: product labels",
+    owner: "Owner data: source-backed product mapping",
+    review: "Review: product labels and guidance rules",
   },
   compare: {
     title: "Comparison path",
     copy:
-      "Show controlled comparison criteria and prompt support when the customer needs more context.",
-    owner: "Owner data: comparison rules",
-    review: "Review: category exposure",
+      "Use approved comparison criteria and prompt support when the customer needs more context.",
+    owner: "Owner data: source comparison rules",
+    review: "Review: category exposure and claim limits",
   },
   specific: {
     title: "Human follow-up path",
     copy:
       "Route to support intake instead of forcing a product recommendation for a nuanced situation.",
-    owner: "Owner data: callback workflow",
-    review: "Review: privacy notice",
+    owner: "Owner data: escalation workflow",
+    review: "Review: privacy notice and data handling",
   },
 };
 
@@ -80,15 +83,74 @@ tabs.forEach((tab) => {
 
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
+    const routeKey = choice.dataset.route;
+    const selected = routeData[routeKey];
+    if (!selected) {
+      return;
+    }
+
     choices.forEach((item) => item.classList.remove("active"));
     choice.classList.add("active");
-    const selected = routeData[choice.dataset.route];
+    selectedRouteKey = routeKey;
     routeTitle.textContent = selected.title;
     routeCopy.textContent = selected.copy;
     routeOwner.textContent = selected.owner;
     routeReview.textContent = selected.review;
+    resetAssistantStatus();
   });
 });
+
+assistantRun?.addEventListener("click", async () => {
+  if (window.location.protocol === "file:") {
+    assistantStatus.textContent =
+      "Serve the demo with npm run serve:demo to call the backend guidance endpoint.";
+    return;
+  }
+
+  const selected = routeData[selectedRouteKey];
+  assistantRun.disabled = true;
+  assistantStatus.textContent = "Checking the backend source-grounded guidance endpoint...";
+
+  try {
+    const response = await fetch("/api/guidance/recommend", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        answers: [
+          {
+            id: "selected_route",
+            label: "Selected route",
+            value: selectedRouteKey,
+          },
+          {
+            id: "selected_route_label",
+            label: "Selected route label",
+            value: selected.title,
+          },
+        ],
+      }),
+    });
+
+    const payload = await response.json();
+    assistantStatus.textContent = `${payload.recommendation_status}: ${payload.explanation}`;
+  } catch {
+    assistantStatus.textContent =
+      "The backend guidance endpoint could not be reached. Route to human support until configured.";
+  } finally {
+    assistantRun.disabled = false;
+  }
+});
+
+function resetAssistantStatus() {
+  if (!assistantStatus) {
+    return;
+  }
+
+  assistantStatus.textContent =
+    "The live endpoint uses backend source material. If product data or model credentials are missing, it escalates instead of inventing a recommendation.";
+}
 
 document.querySelectorAll("[data-open-drawer]").forEach((button) => {
   button.addEventListener("click", () => {

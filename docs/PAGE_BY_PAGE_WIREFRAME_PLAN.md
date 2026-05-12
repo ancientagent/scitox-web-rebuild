@@ -195,20 +195,21 @@ Present each product in a structured, review-safe format that can serve both cus
 
 **Purpose**
 
-Give customers a structured way to ask product questions, choose a product path, or request human follow-up while minimizing sensitive data collection and avoiding legal/medical/test-result advice.
+Give customers a structured way to ask product questions, choose a product path, or request human follow-up through a backend-source-grounded assistant while minimizing sensitive data collection and avoiding legal/medical/test-result advice.
 
 **Section Order**
 
 1. Header/navigation.
 2. Guidance page intro: purpose and privacy-aware placeholder.
 3. Common situation selector.
-4. "How this works" steps: answer limited questions, get routed to product information or support, next step.
+4. "How this works" steps: answer limited questions, backend checks approved source information, get routed to product information or support, next step.
 5. Guided product questions.
-6. Human support/callback request placeholder.
-7. Privacy/data handling notice placeholder.
-8. Product category links.
-9. FAQ/support links.
-10. Footer policy links.
+6. Assistant output state: product path, needs more information, or human follow-up.
+7. Human support/callback request placeholder.
+8. Privacy/data handling notice placeholder.
+9. Product category links.
+10. FAQ/support links.
+11. Footer policy links.
 
 **CTA Hierarchy**
 
@@ -219,6 +220,7 @@ Give customers a structured way to ask product questions, choose a product path,
 **Placeholder Copy Rules**
 
 - Use "Product Guidance" or "Product Support Intake" language.
+- "AI-assisted product guidance" and "source-grounded assistant" remain `[REVIEW REQUIRED]` until the backend, source base, and privacy review are complete.
 - Do not call it prescribed, counsel, consultation, encrypted, confidential, medical, legal, diagnostic, or guaranteed without review.
 - Use `[REVIEW REQUIRED]` for any privacy, discretion, or response-time statement.
 - Use `[OWNER DATA NEEDED]` for form routing, retention, response time, support owner, CRM/helpdesk/chat tool, callback process, and privacy policy.
@@ -228,6 +230,7 @@ Give customers a structured way to ask product questions, choose a product path,
 - Privacy/discretion intro.
 - Intake question labels.
 - Recommendation logic.
+- LLM source retrieval and output behavior.
 - Support response expectations.
 - Any AI/private consultation language.
 - Any product matching outcome.
@@ -241,6 +244,9 @@ Give customers a structured way to ask product questions, choose a product path,
 - Form destination.
 - CRM/helpdesk tool.
 - Chat/messaging tool.
+- LLM provider and backend deployment choice.
+- Approved source-base content.
+- Product-to-situation mapping rules.
 - Human callback workflow.
 - Privacy/data retention policy.
 - Escalation rules.
@@ -518,7 +524,8 @@ Give vendors, wholesalers, smoke shops, head shops, distributors, online retaile
 - Vendor pages should prioritize Wholesale Inquiry and Product Information Request.
 - Reviews should support navigation but not act as proof.
 - Policy pages should reduce confusion, not sell.
-- Product pages can point to current checkout only after owner/payment review confirms the intended flow.
+- Product pages can point to the owner-confirmed Authorize.net checkout path after integration/configuration review confirms the intended flow.
+- Optional comfort-oriented payment choices may be offered after review, but do not describe them as anonymous, private, processor-proof, refund-proof, or guaranteed.
 
 ## Cross-Page Placeholder Rules
 

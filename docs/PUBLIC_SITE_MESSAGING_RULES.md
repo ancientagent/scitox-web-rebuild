@@ -184,7 +184,7 @@ Support/intake should:
 
 ## AI And Private Consultation Wording Rules
 
-Do not launch or describe open-ended AI chat as a V1 promise unless the system is actually built, tested, policy-reviewed, and approved.
+Do not launch or describe open-ended AI chat as a V1 promise. A live guidance assistant may be used only if it is backend-source-grounded, tested, policy-reviewed, and approved.
 
 Do not use:
 
@@ -203,12 +203,17 @@ Safer working labels:
 - "Confidential Product Intake" `[REVIEW REQUIRED]`
 - "Guided Product Questions" `[REVIEW REQUIRED]`
 - "Product Support Intake" `[REVIEW REQUIRED]`
+- "AI-assisted product guidance" `[REVIEW REQUIRED]`
+- "Source-grounded product assistant" `[REVIEW REQUIRED]`
+- "Guided product support" `[REVIEW REQUIRED]`
 
 Rules:
 
-- AI/product guidance must be controlled, not free-form.
+- AI/product guidance must be backend-source-grounded and controlled, not free-form.
 - It should ask structured questions only.
 - It should provide only approved product guidance.
+- It should retrieve from owner-approved source information, not general internet knowledge.
+- It must return a product path only when approved source data supports the path.
 - It must avoid legal or medical advice.
 - It must route sensitive, uncertain, or high-risk cases to human support.
 - It must not claim encryption, confidentiality, or special privacy unless technically and legally verified.
@@ -268,6 +273,8 @@ Support/intake:
 - "Send a product question and support will follow up. [OWNER DATA NEEDED]"
 - "For uncertain situations, route to human support. [REVIEW REQUIRED]"
 - "Product guidance form placeholder. [REVIEW REQUIRED]"
+- "Source-grounded product guidance assistant placeholder. [REVIEW REQUIRED]"
+- "Assistant result should cite approved source IDs internally. [REVIEW REQUIRED]"
 
 Claims/proof sections:
 

@@ -144,7 +144,7 @@ Recommended V1 structure:
 Operational constraints:
 - Avoid fragile custom development for V1.
 - Keep checkout/payment migration outside V1 unless owner and payment review clear it.
-- Avoid open-ended AI guidance that can generate risky claims.
+- Build AI guidance only as a backend-source-grounded assistant with reviewed source material, structured outputs, and human escalation.
 - Use controlled intake/product guidance language only after privacy, claim, and escalation rules are reviewed.
 - Do not present unsupported channels, tools, autonomous purchase flows, or privacy/security systems as available in the demo.
 - Show automation as flow design, routing, support escalation, and operational simplification unless the tool is verified.

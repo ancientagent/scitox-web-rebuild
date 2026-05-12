@@ -16,7 +16,7 @@ Recommended Webflow structure:
 - Static pages for home, support, contact/intake, wholesale inquiry, and policy pages.
 - CMS collection for products/SKUs if product data is ready enough.
 - Webflow forms for customer support/intake and vendor inquiry, routed to email plus spreadsheet/CRM if approved.
-- A customer guidance lobby pattern on the homepage, with common-situation self-service and escalation for nuanced situations.
+- A customer guidance lobby pattern on the homepage, with common-situation self-service, a backend-source-grounded guidance assistant, and escalation for nuanced situations.
 
 ## Layer 1: Public Customer Site
 
@@ -87,6 +87,7 @@ Use static placeholder blocks instead of CMS fields if owner data is not ready.
 Do not include in V1:
 - Open-ended AI chat as a live feature.
 - "Encrypted AI consultation" language.
+- Product recommendations from AI unless the assistant uses approved backend source data and escalation rules.
 - Third-party autonomous purchasing through messaging unless owner/payment/privacy review clears it.
 - Amazon, marketplace, or vendor approval claims.
 - Checkout/payment migration unless reviewed.

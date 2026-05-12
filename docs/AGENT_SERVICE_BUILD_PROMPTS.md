@@ -5,6 +5,7 @@ Source context:
 - `docs/CONTINUE_HERE.md`
 - `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`
 - `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md`
+- `docs/LLM_PRODUCT_GUIDANCE_ASSISTANT_PLAN.md`
 - `docs/PUBLIC_SITE_MESSAGING_RULES.md`
 - `docs/VENDOR_READY_SITEMAP.md`
 - `docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md`
@@ -26,7 +27,8 @@ Every agent or service builder must follow these rules:
 - Mark uncertain claims `[REVIEW REQUIRED]`.
 - Mark missing business, product, policy, support, payment, fulfillment, or wholesale information `[OWNER DATA NEEDED]`.
 - Do not write final public website copy unless explicitly assigned and review gates are defined.
-- Do not present autonomous AI, encrypted chat, autonomous checkout, payment approval, or vendor acceptance as live unless verified.
+- Do not present encrypted chat, autonomous checkout, payment approval, or vendor acceptance as live unless verified.
+- Treat the product guidance assistant as a live V1 target only when it is backend-source-grounded, uses approved source material, and escalates unsupported cases.
 
 ## Parallel Workstreams
 
@@ -34,8 +36,8 @@ Every agent or service builder must follow these rules:
 | --- | --- | --- | --- |
 | Webflow demo/build | Webflow-ready page structure and interaction notes | `demo/`, `docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md` | No final copy or unsupported claims |
 | Visual/UI refinement | Refined style system and component notes | `demo/`, `docs/WEBSITE_REBUILD_BRIEF.md` | Serious and warm, not hype or panic |
-| Customer guidance automation | Decision-tree model and routing rules | `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md` | Controlled routing, not advice |
-| Secure support/checkout | Tool and payment option matrix | `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md` | Review-gated, no approval assumptions |
+| Customer guidance automation | Live backend-source-grounded LLM assistant model and routing rules | `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`, `docs/LLM_PRODUCT_GUIDANCE_ASSISTANT_PLAN.md` | Source-grounded routing, not advice |
+| Secure support/checkout | Authorize.net primary checkout plan plus optional comfort-oriented alternate payment matrix | `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md` | Review-gated, no approval assumptions |
 | Vendor/wholesale layer | Wholesale page and asset requirements | `docs/VENDOR_READY_STRATEGY_BRIEF.md` | No vendor acceptance claims |
 | Product/CMS data | CMS fields and owner-data gap list | `outputs/`, `docs/VENDOR_READY_SITEMAP.md` | No invented SKUs, prices, labels, claims |
 | Messaging/risk control | Exposure-safe placeholder language rules | `docs/PUBLIC_SITE_MESSAGING_RULES.md` | Do not write final copy |
@@ -124,10 +126,13 @@ Acceptance criteria:
 ## Prompt 3: Customer Guidance Automation Agent
 
 Objective:
-Design the controlled product guidance flow that can reduce owner support load without creating legal, medical, test-result, privacy, or claims risk.
+Design the live backend-source-grounded LLM product guidance flow that can reduce owner support load without creating legal, medical, test-result, privacy, or claims risk.
 
 Expected output:
+- Backend assistant architecture.
+- Source-base requirements.
 - Decision-tree outline.
+- LLM prompt/output contract.
 - Allowed question types.
 - Disallowed question types.
 - Routing destinations.
@@ -140,11 +145,14 @@ Copy-paste prompt:
 ```text
 Use the SciTOX customer guidance docs in this repository.
 
-Read AGENTS.md, docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md, docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md, docs/PUBLIC_SITE_MESSAGING_RULES.md, docs/VENDOR_READY_SITEMAP.md, and docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md.
+Read AGENTS.md, docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md, docs/LLM_PRODUCT_GUIDANCE_ASSISTANT_PLAN.md, docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md, docs/PUBLIC_SITE_MESSAGING_RULES.md, docs/VENDOR_READY_SITEMAP.md, docs/PAGE_BY_PAGE_WIREFRAME_PLAN.md, guidance/source_base.example.json, and scripts/guidance_assistant_lib.mjs.
 
-Design a controlled product guidance automation model for SciTOX. The site should help already-aware visitors choose a common product path, compare options, or request human follow-up. It must not act like open-ended AI advice, legal advice, medical advice, diagnostic guidance, or test-result advice.
+Design a live backend-source-grounded product guidance assistant for SciTOX. The site should help already-aware visitors choose a common product path, compare options, or request human follow-up. It may use a capable LLM only through a backend endpoint that retrieves approved source material and returns structured outputs. It must not act like open-ended AI advice, legal advice, medical advice, diagnostic guidance, or test-result advice.
 
 Deliver:
+- backend architecture
+- source-base schema
+- LLM prompt/output contract
 - decision-tree structure
 - suggested form/intake fields
 - routing outcomes
@@ -153,13 +161,15 @@ Deliver:
 - what the automation must never say
 - owner data needed
 - review items
-- implementation options for Webflow plus a light custom layer
+- implementation options for Webflow plus a backend API layer
+- safe fallback behavior when LLM credentials or source data are missing
 
 Do not invent product mappings, claims, results, or final wording. Mark all routing logic [REVIEW REQUIRED] until owner and review approval.
 ```
 
 Acceptance criteria:
-- Keeps guidance rule-based and reviewable.
+- Keeps guidance source-grounded, structured, and reviewable.
+- Never exposes LLM credentials in Webflow/frontend code.
 - Avoids overcollection of sensitive data.
 - Routes unclear cases to human support.
 - Leaves product mapping as `[OWNER DATA NEEDED]`.
@@ -167,7 +177,7 @@ Acceptance criteria:
 ## Prompt 4: Secure Support And Checkout Research Agent
 
 Objective:
-Identify realistic secure support, human handoff, assisted checkout, and later autonomous checkout options without implying approval.
+Identify realistic secure support, human handoff, Authorize.net primary checkout, comfort-oriented alternate payment paths, low-friction crypto/onramp checkout, assisted checkout, and later autonomous checkout options without implying approval.
 
 Expected output:
 - Option matrix.
@@ -175,6 +185,9 @@ Expected output:
 - Data flow notes.
 - Privacy/security claim review notes.
 - Payment/channel review needs.
+- Authorize.net implementation and owner-data checklist.
+- Optional comfort-oriented payment path ranking.
+- Low-friction crypto/onramp checkout ranking.
 - V1 recommendation and later-phase recommendation.
 
 Copy-paste prompt:
@@ -187,13 +200,25 @@ Read AGENTS.md, docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md, docs/CUSTOMER_GUIDANCE_
 Research and propose implementation options for:
 - controlled on-site routing
 - encrypted or privacy-sensitive human support handoff
+- Authorize.net as the owner-confirmed current checkout path
+- optional comfort-oriented payment choices for customers who want a different purchase path
+- crypto or stablecoin checkout where the customer can buy the accepted coin and complete purchase in the fewest practical steps
 - assisted checkout through an owner-approved path
 - later autonomous checkout only if payment/channel review allows it
 
-Use official provider, platform, privacy, and payment documentation where possible. Do not assume Stripe, PayPal, WhatsApp, Telegram, Signal, Webflow, or any high-risk merchant provider is approved. Do not claim end-to-end encrypted AI. Separate support, guidance automation, and checkout.
+Use official provider, platform, privacy, and payment documentation where possible. Treat Authorize.net as owner-confirmed but still verify integration type, merchant-account provider, enabled payment types, fraud/dispute/refund settings, and Webflow handoff path. Prioritize Authorize.net Accept Hosted, hosted payment, invoice/payment link, or secure external checkout patterns before proposing unnecessary custom payment handling.
+
+For optional alternate payment paths, prioritize hosted checkout or embedded widget products over manual wallet-transfer instructions. Evaluate Authorize.net-supported ACH/eCheck, Apple Pay, Google Pay, support-assisted payment links, MoonPay Commerce / Helio, NOWPayments, Coinbase Commerce + Coinbase Onramp, Transak, Ramp Network, Onramper, BitPay, and any high-risk merchant crypto provider the owner supplies.
+
+Do not assume Stripe, PayPal, WhatsApp, Telegram, Signal, Webflow, Coinbase, MoonPay, NOWPayments, Transak, Ramp Network, Onramper, BitPay, or any high-risk merchant provider is approved. Do not claim end-to-end encrypted AI. Do not describe crypto checkout as anonymous, processor-proof, chargeback-proof, refund-proof, KYC-free, or guaranteed. Separate support, guidance automation, and checkout.
+Do not describe any payment choice as private, anonymous, confidential, no-bank-record, refund-proof, dispute-proof, or fully secure unless the exact workflow and policy language support that claim.
 
 Deliver:
 - option matrix
+- Authorize.net primary checkout recommendation
+- optional comfort-oriented payment path ranking
+- low-friction buyer flow ranking
+- accepted coin/stablecoin recommendation criteria
 - data flow sketch
 - privacy/security language risks
 - payment/channel risks
@@ -205,7 +230,10 @@ Deliver:
 
 Acceptance criteria:
 - Distinguishes routing, human messaging, and payment.
-- Does not rely on unsupported autonomous purchasing.
+- Treats Authorize.net as the owner-confirmed current path without overclaiming what is enabled or approved.
+- Gives customers optional comfort-oriented paths without using unsupported privacy/anonymity claims.
+- Prioritizes checkout flows where the buyer can acquire the accepted coin and complete the order with minimal steps.
+- Does not rely on unsupported autonomous purchasing or manual wallet transfer as the primary V1 path.
 - Gives the owner a practical near-term path and a review-gated future path.
 
 ## Prompt 5: Vendor/Wholesale Layer Agent

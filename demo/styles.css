@@ -519,6 +519,26 @@ dd {
   font-weight: 800;
 }
 
+.assistant-check {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.assistant-check .button {
+  justify-self: start;
+  background: #f5faf4;
+}
+
+.assistant-check p {
+  margin: 0;
+  max-width: 720px;
+  color: #c2d2c6;
+  font-size: 14px;
+}
+
 .support-panel {
   padding: clamp(24px, 3vw, 34px);
 }

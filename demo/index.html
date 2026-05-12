@@ -54,8 +54,8 @@
           </div>
           <h2>Customer path routing</h2>
           <p>
-            Common path, guided questions, or human follow-up. No product pitch, no open-ended
-            advice, no unsupported product claims, no channel promises.
+            Common path, source-grounded guidance, or human follow-up. No product pitch, no
+            unsupported product claims, no channel promises.
           </p>
           <div class="status-grid">
             <div><span>Claims exposure</span><strong>Reduced</strong></div>
@@ -71,9 +71,9 @@
           <strong>Demo boundary</strong>
           <p>
             This prototype is for feel and flow. It assumes customers may already trust the
-            product and need a cleaner way to act on that trust. It does not claim a live AI assistant,
-            encrypted communication, autonomous checkout, vendor approval, payment approval, or
-            product outcomes.
+            product and need a cleaner way to act on that trust. The guidance assistant is planned
+            as a live backend feature, but it does not claim professional advice, special privacy
+            protections, autonomous checkout, vendor approval, payment approval, or product outcomes.
           </p>
         </div>
       </section>
@@ -101,8 +101,8 @@
             <span class="icon">02</span>
             <h3>Guided product questions</h3>
             <p>
-              A controlled decision flow that narrows options without asking for broad sensitive
-              details.
+              A source-grounded assistant flow that narrows options without asking for broad
+              sensitive details.
             </p>
             <a href="#guidance">Try the guide</a>
           </article>
@@ -153,11 +153,12 @@
 
       <section id="guidance" class="section dark-band">
         <div class="section-heading">
-          <p class="eyebrow">Automation preview</p>
-          <h2>Guided routing, not unsupported advice</h2>
+          <p class="eyebrow">Live assistant target</p>
+          <h2>Source-grounded product guidance, not unsupported advice</h2>
           <p>
-            This is the first automation layer: a controlled question flow that routes customers
-            to a product path or support queue. It is intentionally not an open-ended chat.
+            This is the first automation layer: structured answers go to a backend assistant that
+            uses reviewed source material. If the source base cannot support a product path, it
+            routes to human support.
           </p>
         </div>
         <div class="guide-shell">
@@ -171,15 +172,22 @@
             </div>
           </div>
           <div class="guide-result" aria-live="polite">
-            <p class="tag">Suggested next step</p>
+            <p class="tag">Assistant output preview</p>
             <h3 id="route-title">Common product path</h3>
             <p id="route-copy">
               Show product-path cards with restrained product facts, support links, and policy
               visibility.
             </p>
             <div class="route-actions">
-              <span id="route-owner">Owner data: product mapping</span>
-              <span id="route-review">Review: product labels</span>
+              <span id="route-owner">Owner data: source-backed product mapping</span>
+              <span id="route-review">Review: product labels and guidance rules</span>
+            </div>
+            <div class="assistant-check">
+              <button id="assistant-run" class="button ghost" type="button">Run backend check</button>
+              <p id="assistant-status">
+                The live endpoint uses backend source material. If product data or model credentials
+                are missing, it escalates instead of inventing a recommendation.
+              </p>
             </div>
           </div>
         </div>
@@ -234,11 +242,12 @@
 
       <section id="secure-checkout" class="section secure-flow">
         <div class="section-heading">
-          <p class="eyebrow">Secure support + checkout options</p>
-          <h2>Include a path to encrypted support and cleaner checkout without overpromising it.</h2>
+          <p class="eyebrow">Support + checkout options</p>
+          <h2>Keep Authorize.net as the current checkout path, with optional comfort paths.</h2>
           <p>
-            The demo separates routing, private support, and payment. That lets the owner see the
-            solution while keeping every channel claim behind review until the real tools are chosen.
+            The demo separates routing, support, and payment. The default purchase path can use the
+            owner-confirmed Authorize.net setup, while optional alternate paths can be offered after
+            configuration and review.
           </p>
         </div>
         <div class="secure-grid">
@@ -253,40 +262,40 @@
           </article>
           <article class="secure-card">
             <span class="icon">B</span>
-            <h3>Encrypted human support</h3>
+            <h3>Authorize.net checkout</h3>
             <p>
-              Signal, WhatsApp, or another reviewed channel can be offered as a handoff. Exact
-              encryption language depends on the selected tool and workflow.
+              Treat Authorize.net as the owner-confirmed current path. Payment methods, hosted
+              form, fraud settings, and return handling still need configuration review.
             </p>
-            <strong>Review needed: privacy/tooling</strong>
+            <strong>Owner confirmed: configuration review</strong>
           </article>
           <article class="secure-card">
             <span class="icon">C</span>
-            <h3>Assisted checkout</h3>
+            <h3>Comfort payment choices</h3>
             <p>
-              The customer can be guided to the current or reviewed purchase path after the product
-              route is clear. This avoids pretending a new processor is already approved.
+              If customers want a different route, the site can offer reviewed options such as
+              assisted checkout, ACH/eCheck, Apple Pay, Google Pay, or support-guided payment.
             </p>
-            <strong>Owner data: current purchase path</strong>
+            <strong>Review needed: enabled methods</strong>
           </article>
           <article class="secure-card muted-card">
             <span class="icon">D</span>
-            <h3>Autonomous checkout</h3>
+            <h3>Crypto / onramp path</h3>
             <p>
-              This can be designed as a later module only if a payment provider, support workflow,
-              privacy policy, and platform rules support it.
+              Hosted crypto or stablecoin checkout can be researched for buyers who prefer it,
+              especially if the flow lets them buy the accepted coin during checkout.
             </p>
-            <strong>Later: payment/channel review</strong>
+            <strong>Alternate: provider review</strong>
           </article>
         </div>
         <div class="architecture-strip">
           <div>
             <span>Near-term path</span>
-            <strong>Guide -> support handoff -> reviewed checkout path</strong>
+            <strong>Guide -> Authorize.net checkout -> support if needed</strong>
           </div>
           <div>
-            <span>Later path</span>
-            <strong>Constrained AI + compliant payment flow</strong>
+            <span>Optional comfort path</span>
+            <strong>Assisted payment or crypto/onramp after review</strong>
           </div>
         </div>
       </section>
@@ -322,14 +331,15 @@
           <h2>The demo also shows the operating model behind the site.</h2>
           <p>
             These are explorable previews of systems that can make the owner's life easier. They
-            are not presented as live tools until selected, verified, and implemented.
+            must be verified before public launch, but the guidance assistant has a backend live
+            feature path.
           </p>
         </div>
         <div class="dashboard">
           <article class="metric-card">
-            <span>Guidance requests</span>
-            <strong>Queue view</strong>
-            <p>Customer path, urgency, next action, and support owner.</p>
+            <span>Guidance source base</span>
+            <strong>Review queue</strong>
+            <p>Product mappings, source IDs, missing data, and review gates.</p>
           </article>
           <article class="metric-card">
             <span>Product readiness</span>
@@ -366,8 +376,8 @@
             </article>
             <article>
               <span>02</span>
-              <strong>Guidance engine</strong>
-              <p>Define controlled routing rules and human escalation points.</p>
+              <strong>LLM guidance</strong>
+              <p>Build the backend source base, assistant guardrails, and escalation points.</p>
             </article>
             <article>
               <span>03</span>

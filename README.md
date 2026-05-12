@@ -12,6 +12,7 @@ Start with:
 - `docs/VENDOR_READY_STRATEGY_BRIEF.md`
 - `docs/CUSTOMER_GUIDANCE_LOBBY_DIRECTION.md`
 - `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md`
+- `docs/LLM_PRODUCT_GUIDANCE_ASSISTANT_PLAN.md`
 - `docs/AGENT_SERVICE_BUILD_PROMPTS.md`
 - `docs/PUBLIC_SITE_MESSAGING_RULES.md`
 - `docs/VENDOR_READY_SITEMAP.md`
@@ -59,3 +60,4 @@ Run scripts from the repository root after dependencies are available:
 - `npm run build:buyer-outreach`
 - `npm run build:line-sheet`
 - `npm run serve:demo`
+- `npm run serve:guidance-assistant`

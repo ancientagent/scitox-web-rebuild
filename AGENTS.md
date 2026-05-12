@@ -37,6 +37,9 @@ Do not import instructions or assumptions from GISTer or any other project.
 - Run the QA checklist in `docs/WEBFLOW_QA_CHECKLIST.md` before launch.
 - Do not imply guaranteed results, test outcomes, scientific proof, privacy/security protections, vendor acceptance, or platform eligibility without review and source evidence.
 - The demo may show systems and flows conceptually, but must not present risky channels, unsupported automation, autonomous purchasing, or privacy/security guarantees as already available.
+- The product guidance assistant is now a live V1 target, but it must be backend-source-grounded, review-gated, and routed to human support when approved source data does not support a recommendation. Do not build or describe it as open-ended frontend AI, consultation, counsel, prescription, legal advice, medical advice, test-result advice, or encrypted AI.
+- Current owner-confirmed payment processor/gateway is Authorize.net as of May 12, 2026. Treat this as owner data for planning, not as proof that every payment method, integration setting, merchant-account term, refund process, or risk review is complete.
+- Crypto, stablecoin, or fiat-to-crypto onramp checkout may be prioritized for research, but must remain review-gated and must not be treated as approved, anonymous, frictionless, refund-proof, chargeback-proof, processor-proof, or legally/commercially safe without provider and owner review.
 
 ## Repo Hygiene
 

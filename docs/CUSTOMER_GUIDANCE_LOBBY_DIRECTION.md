@@ -82,32 +82,37 @@ The lobby should not:
 
 ## Product Guidance Flow
 
-The core customer automation concept is a guided product selection flow.
+The core customer automation concept is a live backend-source-grounded product selection flow.
 
 Recommended V1 direction:
 1. Let customers browse common product/category paths.
 2. Let customers answer a limited set of structured product questions.
-3. Route customers to a product option, support page, or human callback request.
-4. Keep product recommendations rule-based and reviewed.
-5. Escalate uncertain, sensitive, or unsupported situations to human support.
+3. Send structured answers to a backend assistant that can retrieve approved source information.
+4. Route customers to a product option, support page, or human callback request only when the source base supports the path.
+5. Keep product recommendations source-grounded, validated, and reviewed.
+6. Escalate uncertain, sensitive, or unsupported situations to human support.
 
 Required boundaries:
-- Do not use open-ended AI to generate claims or advice in V1 unless reviewed.
+- Do not use frontend-only or open-ended AI to generate claims or advice.
+- Do not let the assistant answer from general internet knowledge.
 - Do not let the guidance flow provide legal, medical, or test-result advice.
 - Do not ask for more sensitive data than needed to route the question.
 - Do not imply that the guidance system can solve every situation.
 - Do not require customers to read risk-flagging product explanations before they can choose a path.
+- Do not return a product recommendation unless the backend source base contains approved product mapping.
 - Mark guidance logic `[REVIEW REQUIRED]`.
 - Mark actual routing rules `[OWNER DATA NEEDED]`.
 
 ## AI Assistance Direction
 
-The owner is interested in immediate support through an AI agent with a deep understanding of the product.
+The owner wants the product guidance feature to be live and powered by a capable LLM assistant that refers to backend source information.
 
-This is directionally useful, but it must remain review-gated.
+This is directionally useful and should be planned as a live V1 feature, but it must remain backend-source-grounded and review-gated.
 
 Allowed planning language:
 - AI-assisted product guidance `[REVIEW REQUIRED]`
+- Source-grounded product assistant `[REVIEW REQUIRED]`
+- Backend-source-grounded guidance assistant `[REVIEW REQUIRED]`
 - Guided product questions `[REVIEW REQUIRED]`
 - Product support assistant `[REVIEW REQUIRED]`
 - Escalation to human support `[OWNER DATA NEEDED]`
@@ -120,7 +125,7 @@ Do not publicly claim:
 - Guaranteed product selection.
 - Fully autonomous support for sensitive cases.
 
-V1 should favor controlled decision trees and reviewed product guidance over open-ended AI chat.
+V1 should implement a live backend assistant, not open-ended frontend chat. The assistant should use approved product data and routing rules from the backend, return structured outputs, and route to human support when source data is missing or the customer situation is outside reviewed flows.
 
 ## Human Callback Direction
 
@@ -182,8 +187,9 @@ V1 should not depend on a third-party autonomous purchasing flow unless owner/pa
 The likely near-term path is:
 1. Controlled on-site routing.
 2. Optional secure human support handoff.
-3. Assisted checkout through a current or approved purchase path.
-4. Autonomous checkout only after payment/channel review.
+3. Default checkout through the owner-confirmed Authorize.net path after integration/configuration review.
+4. Optional comfort-oriented payment choices for customers who want another path, such as assisted payment, enabled ACH/eCheck, enabled Apple Pay/Google Pay, or crypto/stablecoin/onramp checkout after provider review.
+5. Autonomous checkout only after payment/channel review.
 
 ## High-Risk Channel Constraint
 
@@ -191,11 +197,12 @@ Owner direction notes that typical channels may be limited because the current p
 
 Planning implication:
 - Keep checkout/payment migration outside V1 unless reviewed.
-- Treat current purchase paths as `[OWNER DATA NEEDED]`.
+- Treat Authorize.net as the owner-confirmed current processor/gateway, but keep integration type, enabled payment methods, fraud/dispute/refund settings, and Webflow handoff as `[OWNER DATA NEEDED]` / `[REVIEW REQUIRED]`.
 - Build the site so it can route customers clearly without implying platform safety.
 - Do not claim a payment, marketplace, ad, vendor, or messaging channel is approved.
 - Do not design the public demo around tools, channels, or scenarios that the business likely cannot support because of current risk status.
 - Any system shown in the demo should be framed as controlled routing, support workflow, or review-gated future capability unless it is already verified.
+- Offer optional comfort-oriented payment paths as choices when reviewed; do not describe them as anonymous, private, processor-proof, refund-proof, or guaranteed.
 
 ## UI Implications
 
@@ -232,6 +239,7 @@ Vendor / Wholesale:
 The first development slice should define:
 - Customer lobby information architecture.
 - Product guidance decision model.
+- Live LLM guidance backend and source-base structure.
 - Intake fields and privacy boundaries.
 - Human escalation workflow.
 - Tooling options for chat/forms/callbacks.

@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { handleGuidanceApiRequest, isGuidanceApiPath } from "./guidance_assistant_lib.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -14,6 +15,7 @@ const contentTypes = new Map([
   [".css", "text/css; charset=utf-8"],
   [".js", "text/javascript; charset=utf-8"],
   [".md", "text/markdown; charset=utf-8"],
+  [".json", "application/json; charset=utf-8"],
   [".jpg", "image/jpeg"],
   [".jpeg", "image/jpeg"],
   [".png", "image/png"],
@@ -21,6 +23,12 @@ const contentTypes = new Map([
 
 const server = createServer(async (request, response) => {
   const url = new URL(request.url ?? "/", `http://${request.headers.host ?? "localhost"}`);
+
+  if (isGuidanceApiPath(url.pathname)) {
+    await handleGuidanceApiRequest(request, response);
+    return;
+  }
+
   let requestedPath = decodeURIComponent(url.pathname);
 
   if (requestedPath === "/" || requestedPath === "/demo" || requestedPath === "/demo/") {

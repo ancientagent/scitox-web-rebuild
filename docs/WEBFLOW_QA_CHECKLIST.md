@@ -136,7 +136,7 @@ Status values:
 |---|---|---|---|
 | Encryption claims | No "encrypted AI consultation" or encryption claim appears unless technically and legally verified. | Site copy scan. |  |
 | Confidentiality claims | No absolute confidentiality/privacy guarantee appears unless policy and system support it. | Site copy scan. |  |
-| AI guidance | No open-ended AI chat is launched in V1. Any product guidance is controlled and review-marked. | Feature check. |  |
+| AI guidance | Any live assistant is backend-source-grounded, does not expose model credentials, uses reviewed source material, and escalates unsupported cases. | Feature check + backend source-base review. |  |
 | Form privacy | Forms explain data use only in reviewed language or placeholders. | Form screenshot. |  |
 | Data minimization | Intake forms collect only needed fields. | Field list. |  |
 
@@ -190,4 +190,3 @@ Any item below should block public launch until resolved or explicitly accepted 
 | Desktop QA passed | Core desktop pages pass layout and usability checks. |  |
 | Link QA passed | No broken core links remain. |  |
 | Analytics/Search Console plan accepted | Tracking is working or owner knowingly accepts launch without complete setup. |  |
-
