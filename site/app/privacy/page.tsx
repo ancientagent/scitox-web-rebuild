@@ -1,12 +1,12 @@
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
 
-export default function ContactPage() {
+export default function PrivacyPage() {
   return (
     <div className="route-shell">
       <Section
-        eyebrow="Contact route"
-        title="[PLACEHOLDER: contact and callback request - REVIEW REQUIRED]"
+        eyebrow="Privacy route"
+        title="[PLACEHOLDER: privacy policy shell - REVIEW REQUIRED]"
         actions={
           <>
             <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
@@ -15,8 +15,8 @@ export default function ContactPage() {
         }
       >
         <p>
-          [OWNER DATA NEEDED: inquiry destination, callback workflow, response
-          expectations, and privacy notice]
+          [OWNER DATA NEEDED: privacy policy, data handling, provider review,
+          retention rules, and approved public wording]
         </p>
       </Section>
     </div>

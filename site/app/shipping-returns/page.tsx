@@ -1,14 +1,24 @@
+import { Section } from "@/components/Section";
+import { StatusTag } from "@/components/StatusTag";
+
 export default function ShippingReturnsPage() {
   return (
-    <main className="route-shell">
-      <section className="route-panel">
-        <p className="eyebrow">Policy scaffold</p>
-        <h1>[PLACEHOLDER: shipping, returns, and guarantee - REVIEW REQUIRED]</h1>
+    <div className="route-shell">
+      <Section
+        eyebrow="Policy route"
+        title="[PLACEHOLDER: shipping, returns, and guarantee - REVIEW REQUIRED]"
+        actions={
+          <>
+            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
+            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
+          </>
+        }
+      >
         <p>
           [OWNER DATA NEEDED: shipping terms, return process, refund process,
           guarantee language, and review-approved policy wording]
         </p>
-      </section>
-    </main>
+      </Section>
+    </div>
   );
 }

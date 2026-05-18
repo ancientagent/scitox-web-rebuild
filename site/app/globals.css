@@ -7,6 +7,11 @@
   --border: #d7ded2;
   --muted: #56645d;
   --accent: #1f6b45;
+  --accent-soft: #e8f1ea;
+  --review: #7a4b00;
+  --review-soft: #fff4d8;
+  --owner: #254f80;
+  --owner-soft: #e7f0fb;
 }
 
 * {
@@ -24,14 +29,105 @@ body {
 
 a {
   color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-frame {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-header,
+.site-footer {
+  border-color: var(--border);
+  background: rgb(255 255 255 / 86%);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.site-header__inner,
+.site-footer__inner {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header__inner {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-logo {
+  flex: 0 0 auto;
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.site-nav,
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+}
+
+.site-nav {
+  justify-content: flex-end;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+}
+
+.site-footer__inner {
+  display: grid;
+  gap: 20px;
+  padding: 28px 0;
+}
+
+.site-footer__note {
+  margin: 0;
+  max-width: none;
+  font-size: 0.92rem;
+}
+
+.footer-nav {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .route-shell {
-  min-height: 100vh;
-  padding: 48px 20px;
+  padding: 56px 20px;
 }
 
 .route-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
   width: min(920px, 100%);
   margin: 0 auto;
   border: 1px solid var(--border);
@@ -39,6 +135,26 @@ a {
   background: var(--panel);
   padding: 32px;
   box-shadow: 0 12px 32px rgb(23 33 28 / 8%);
+}
+
+.section-copy {
+  min-width: 0;
+}
+
+.section-body {
+  display: grid;
+  gap: 20px;
+}
+
+.section-body p {
+  margin: 0;
+}
+
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .eyebrow {
@@ -52,8 +168,15 @@ a {
 
 h1 {
   margin: 0 0 16px;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  overflow-wrap: anywhere;
+  font-size: clamp(1.75rem, 2.6rem, 3rem);
   line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
   letter-spacing: 0;
 }
 
@@ -71,12 +194,98 @@ ul {
   line-height: 1.8;
 }
 
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.route-card {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fbfcf8;
+  padding: 16px;
+}
+
+.route-card p {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.status-tag--placeholder {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.status-tag--owner {
+  background: var(--owner-soft);
+  color: var(--owner);
+}
+
+.status-tag--review {
+  background: var(--review-soft);
+  color: var(--review);
+}
+
+@media (max-width: 820px) {
+  .site-header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .route-panel,
+  .route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-actions {
+    justify-content: flex-start;
+  }
+}
+
 @media (max-width: 640px) {
+  .site-header__inner,
+  .site-footer__inner {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .site-nav,
+  .footer-nav {
+    gap: 8px 12px;
+    font-size: 0.86rem;
+  }
+
   .route-shell {
     padding: 24px 12px;
   }
 
   .route-panel {
     padding: 24px;
+  }
+
+  h1 {
+    font-size: 1.85rem;
   }
 }

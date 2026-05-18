@@ -1,14 +1,24 @@
+import { Section } from "@/components/Section";
+import { StatusTag } from "@/components/StatusTag";
+
 export default function WholesalePage() {
   return (
-    <main className="route-shell">
-      <section className="route-panel">
-        <p className="eyebrow">Wholesale scaffold</p>
-        <h1>[PLACEHOLDER: partner and wholesale inquiry - REVIEW REQUIRED]</h1>
+    <div className="route-shell">
+      <Section
+        eyebrow="Wholesale route"
+        title="[PLACEHOLDER: partner and wholesale inquiry - REVIEW REQUIRED]"
+        actions={
+          <>
+            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
+            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
+          </>
+        }
+      >
         <p>
           [OWNER DATA NEEDED: wholesale terms, MOQ, case pack, MSRP, wholesale
           price, UPC/GTIN, documentation checklist, and inquiry routing]
         </p>
-      </section>
-    </main>
+      </Section>
+    </div>
   );
 }
