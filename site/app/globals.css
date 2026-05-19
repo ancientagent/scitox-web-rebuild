@@ -238,6 +238,27 @@ ul {
   padding: 16px;
 }
 
+.route-card--link {
+  display: block;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.route-card--link:hover,
+.route-card--link:focus-visible {
+  border-color: rgb(31 107 69 / 42%);
+  box-shadow: 0 12px 28px rgb(23 33 28 / 10%);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.route-card--link:focus-visible {
+  outline: 3px solid rgb(31 107 69 / 18%);
+  outline-offset: 2px;
+}
+
 .route-card--featured {
   border-color: rgb(31 107 69 / 35%);
   background: #f4fbf5;
@@ -248,6 +269,13 @@ ul {
   overflow-wrap: anywhere;
   font-size: 0.92rem;
   line-height: 1.5;
+}
+
+.policy-route-links,
+.route-grid--wide {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .path-number {
@@ -709,6 +737,8 @@ ul {
 
   .route-panel,
   .route-grid,
+  .route-grid--wide,
+  .policy-route-links,
   .path-grid,
   .product-data-grid,
   .vendor-grid,

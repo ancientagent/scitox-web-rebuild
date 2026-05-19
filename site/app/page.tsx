@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
 import { GuidancePreview } from "@/components/GuidancePreview";
@@ -20,18 +21,18 @@ export default function Home() {
           [PLACEHOLDER: already-aware visitor routing summary - REVIEW REQUIRED]
         </p>
         <div className="route-grid" aria-label="Draft route paths">
-          <div className="route-card">
+          <Link className="route-card route-card--link" href="/guidance">
             <h2>Product guidance</h2>
             <p>[REVIEW REQUIRED: structured guidance entry point]</p>
-          </div>
-          <div className="route-card">
+          </Link>
+          <Link className="route-card route-card--link" href="/support">
             <h2>Human support</h2>
             <p>[OWNER DATA NEEDED: support process and destination]</p>
-          </div>
-          <div className="route-card">
+          </Link>
+          <Link className="route-card route-card--link" href="/wholesale">
             <h2>Wholesale path</h2>
             <p>[OWNER DATA NEEDED: partner inquiry routing]</p>
-          </div>
+          </Link>
         </div>
       </Section>
       <section className="content-band">
@@ -45,21 +46,21 @@ export default function Home() {
             </p>
           </div>
           <div className="path-grid">
-            <article className="route-card">
+            <Link className="route-card route-card--link" href="/products">
               <span className="path-number">01</span>
               <h2>Common path</h2>
               <p>[OWNER DATA NEEDED: category and product path rules]</p>
-            </article>
-            <article className="route-card route-card--featured">
+            </Link>
+            <Link className="route-card route-card--featured route-card--link" href="/guidance">
               <span className="path-number">02</span>
               <h2>Guided questions</h2>
               <p>[REVIEW REQUIRED: backend-source-grounded guidance preview]</p>
-            </article>
-            <article className="route-card">
+            </Link>
+            <Link className="route-card route-card--link" href="/contact">
               <span className="path-number">03</span>
               <h2>Human follow-up</h2>
               <p>[OWNER DATA NEEDED: support escalation workflow]</p>
-            </article>
+            </Link>
           </div>
         </div>
       </section>

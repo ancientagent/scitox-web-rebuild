@@ -6,6 +6,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "SciTOX Custom App Scaffold",
   description: "Draft V1 route scaffold. Public copy, claims, and owner data require review.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
