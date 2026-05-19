@@ -23,7 +23,9 @@ test("public product projection includes source-backed product records", () => {
   assert.equal(products.length, 6);
   assert.equal(product.slug, "greenout-thc-hair-detox-shampoo-system");
   assert.equal(product.name, "GreenOUT - THC Hair Detox Shampoo System");
-  assert.match(product.image, /^\/product-images\/greenout\.jpg$/);
+  assert.match(product.image, /^\/product-marketing\/greenout-kit\.png$/);
+  assert.match(product.sourceImage, /^\/product-images\/greenout\.jpg$/);
+  assert.match(product.kitComposition, /7-piece standard kit/);
 });
 
 test("public product projection does not expose vendor-only fields", () => {

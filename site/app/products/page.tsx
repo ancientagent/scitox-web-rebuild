@@ -48,12 +48,7 @@ export default function ProductsPage() {
           <div className="product-data-grid">
             {products.map((product) => (
               <article className="product-data-card" key={product.slug}>
-                <ProductImage
-                  accent={product.packageAccent}
-                  alt={product.name}
-                  src={product.image}
-                  windowLabel={product.packageWindowLabel}
-                />
+                <ProductImage alt={product.name} src={product.image} />
                 <p className="tag">{product.category}</p>
                 <h2>{product.name}</h2>
                 <p>{product.shortDescription}</p>
@@ -61,6 +56,10 @@ export default function ProductsPage() {
                   <div>
                     <dt>Size</dt>
                     <dd>{product.size}</dd>
+                  </div>
+                  <div>
+                    <dt>Kit composition</dt>
+                    <dd>{product.kitComposition}</dd>
                   </div>
                   <div>
                     <dt>Price</dt>

@@ -41,12 +41,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       <section className="content-band">
         <div className="band-inner two-column">
           <div className="product-data-card">
-            <ProductImage
-              accent={product.packageAccent}
-              alt={product.name}
-              src={product.image}
-              windowLabel={product.packageWindowLabel}
-            />
+            <ProductImage alt={product.name} src={product.image} />
             <p className="tag">{product.category}</p>
             <h2>{product.longDescription}</h2>
             <p>{product.supportCta}</p>
@@ -58,6 +53,10 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               <div>
                 <dt>Size</dt>
                 <dd>{product.size}</dd>
+              </div>
+              <div>
+                <dt>Kit composition</dt>
+                <dd>{product.kitComposition}</dd>
               </div>
               <div>
                 <dt>Price</dt>

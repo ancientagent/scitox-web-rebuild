@@ -5,8 +5,8 @@ export type PublicProductFields = {
   price: string;
   availability: string;
   image: string;
-  packageAccent: string;
-  packageWindowLabel: string;
+  sourceImage: string;
+  kitComposition: string;
   shortDescription: string;
   longDescription: string;
   ingredients: string;
