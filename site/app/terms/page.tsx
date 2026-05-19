@@ -16,7 +16,7 @@ export default function TermsPage() {
       >
         <p>
           [OWNER DATA NEEDED: terms, purchase conditions, support boundaries,
-          policy review, and approved public wording]
+          policy review, and reviewed public wording]
         </p>
       </Section>
     </div>

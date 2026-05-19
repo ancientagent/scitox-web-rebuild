@@ -16,7 +16,7 @@ export default function PrivacyPage() {
       >
         <p>
           [OWNER DATA NEEDED: privacy policy, data handling, provider review,
-          retention rules, and approved public wording]
+          retention rules, and reviewed public wording]
         </p>
       </Section>
     </div>

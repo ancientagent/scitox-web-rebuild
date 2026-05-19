@@ -16,7 +16,7 @@ export default function ProductDetailPage() {
       >
         <p>
           [OWNER DATA NEEDED: product name, SKU, size, ingredients, label file,
-          instructions, warnings, price, shipping notes, and approved checkout
+          instructions, warnings, price, shipping notes, and review-required CTA
           path]
         </p>
       </Section>
