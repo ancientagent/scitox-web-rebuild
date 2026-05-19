@@ -4,22 +4,22 @@ import { useState } from "react";
 
 const productPaths = {
   standard: {
-    label: "Standard path",
-    title: "[PLACEHOLDER: standard product path - REVIEW REQUIRED]",
-    status: "[OWNER DATA NEEDED: public product facts, image, and price]",
-    action: "[REVIEW REQUIRED: current checkout or support CTA]",
+    label: "Product path",
+    title: "[PLACEHOLDER: common product path - REVIEW REQUIRED]",
+    status: "[OWNER DATA NEEDED: public product facts, image, price, and availability]",
+    action: "[REVIEW REQUIRED: product detail, support fallback, or checkout gate]",
   },
   focused: {
-    label: "Focused path",
-    title: "[PLACEHOLDER: focused product path - REVIEW REQUIRED]",
-    status: "[OWNER DATA NEEDED: category relationship and comparison fields]",
-    action: "[REVIEW REQUIRED: product question CTA]",
+    label: "Compare path",
+    title: "[PLACEHOLDER: reviewed comparison path - REVIEW REQUIRED]",
+    status: "[OWNER DATA NEEDED: category relationship and comparison criteria]",
+    action: "[REVIEW REQUIRED: guided product questions before comparison output]",
   },
   complete: {
-    label: "Complete path",
-    title: "[PLACEHOLDER: full review product path - REVIEW REQUIRED]",
-    status: "[OWNER DATA NEEDED: directions, warnings, policies, and availability]",
-    action: "[REVIEW REQUIRED: guidance-first CTA]",
+    label: "Support fallback",
+    title: "[PLACEHOLDER: human support route - REVIEW REQUIRED]",
+    status: "[OWNER DATA NEEDED: support channel, destination, and routing owner]",
+    action: "[REVIEW REQUIRED: fallback route for nuanced or missing-source cases]",
   },
 };
 
@@ -44,7 +44,7 @@ export function ProductPathPreview() {
         ))}
       </div>
       <div className="product-preview-card">
-        <p className="tag">Product detail skeleton</p>
+        <p className="tag">Owner-review product path</p>
         <h2>{path.title}</h2>
         <dl className="fact-list">
           <div>
@@ -57,7 +57,7 @@ export function ProductPathPreview() {
           </div>
           <div>
             <dt>Support route</dt>
-            <dd>[OWNER DATA NEEDED: product support workflow]</dd>
+            <dd>[OWNER DATA NEEDED: approved support workflow and destination]</dd>
           </div>
         </dl>
       </div>

@@ -14,10 +14,10 @@ type InquiryFormProps = {
 const formConfig = {
   contact: {
     eyebrow: "Contact intake",
-    title: "[PLACEHOLDER: contact intake form - REVIEW REQUIRED]",
+    title: "[PLACEHOLDER: help-first contact intake - REVIEW REQUIRED]",
     helper:
-      "[OWNER DATA NEEDED: destination, routing owner, consent language, and reviewed privacy notice]",
-    submitLabel: "Send to route stub",
+      "[OWNER DATA NEEDED: approved destination, routing owner, consent language, and reviewed privacy notice]",
+    submitLabel: "Check contact route",
     options: [
       { value: "product", label: "Product question" },
       { value: "order", label: "Order or shipping" },
@@ -26,10 +26,10 @@ const formConfig = {
   },
   support: {
     eyebrow: "Support intake",
-    title: "[PLACEHOLDER: support intake form - REVIEW REQUIRED]",
+    title: "[PLACEHOLDER: product support intake - REVIEW REQUIRED]",
     helper:
       "[OWNER DATA NEEDED: support categories, channel owner, destination tooling, and reviewed policy language]",
-    submitLabel: "Send to support stub",
+    submitLabel: "Check support route",
     options: [
       { value: "product", label: "Product support" },
       { value: "order", label: "Order or shipping" },
@@ -38,10 +38,10 @@ const formConfig = {
   },
   wholesale: {
     eyebrow: "Wholesale intake",
-    title: "[PLACEHOLDER: wholesale inquiry form - REVIEW REQUIRED]",
+    title: "[PLACEHOLDER: partner inquiry intake - REVIEW REQUIRED]",
     helper:
       "[OWNER DATA NEEDED: buyer fields, qualification rules, destination, and follow-up workflow]",
-    submitLabel: "Send to wholesale stub",
+    submitLabel: "Check partner route",
     options: [
       { value: "vendor", label: "Vendor inquiry" },
       { value: "documentation", label: "Documentation question" },
@@ -233,14 +233,14 @@ export function InquiryForm({ surface }: InquiryFormProps) {
 
       <div className="form-note">
         <p>
-          [REVIEW REQUIRED: do not submit sensitive details until intake,
-          consent, privacy, and routing language are reviewed]
+          [REVIEW REQUIRED: keep questions limited until intake, consent,
+          privacy, and routing language are reviewed]
         </p>
       </div>
 
       <div className="form-actions">
         <button disabled={status === "submitting"} type="submit">
-          {status === "submitting" ? "Sending to stub" : config.submitLabel}
+          {status === "submitting" ? "Checking route" : config.submitLabel}
         </button>
         {statusMessage ? (
           <p className={`form-status form-status--${status}`}>{statusMessage}</p>

@@ -10,19 +10,19 @@
       "status": "[OWNER DATA NEEDED: product record status]",
       "public": {
         "name": "[OWNER DATA NEEDED: product name]",
-        "category": "[OWNER DATA NEEDED: product category]",
+        "category": "[OWNER DATA NEEDED: public product path label]",
         "size": "[OWNER DATA NEEDED: product size or variant]",
         "price": "[OWNER DATA NEEDED: public price]",
         "availability": "[OWNER DATA NEEDED: availability status]",
         "image": "[OWNER DATA NEEDED: product image asset]",
-        "shortDescription": "[REVIEW REQUIRED: short public product description]",
-        "longDescription": "[REVIEW REQUIRED: longer public product description]",
+        "shortDescription": "[REVIEW REQUIRED: source-backed public product summary after owner review]",
+        "longDescription": "[REVIEW REQUIRED: owner-reviewed product path details, instructions, and boundaries]",
         "ingredients": "[OWNER DATA NEEDED: ingredients]",
         "directions": "[REVIEW REQUIRED: directions or use guidance]",
         "warnings": "[REVIEW REQUIRED: warnings and safety language]",
         "shippingNotes": "[OWNER DATA NEEDED: public shipping notes]",
         "claimReviewStatus": "[REVIEW REQUIRED: product claim review status]",
-        "supportCta": "[REVIEW REQUIRED: product support or guidance CTA]"
+        "supportCta": "[REVIEW REQUIRED: guided product questions or human support fallback]"
       },
       "vendor": {
         "sku": "[OWNER DATA NEEDED: SKU]",

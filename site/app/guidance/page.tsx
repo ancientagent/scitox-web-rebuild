@@ -8,7 +8,7 @@ export default function GuidancePage() {
     <div className="page-flow">
       <Section
         eyebrow="Guidance route"
-        title="[PLACEHOLDER: structured product guidance - REVIEW REQUIRED]"
+        title="[PLACEHOLDER: guided product questions - REVIEW REQUIRED]"
         actions={
           <>
             <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
@@ -17,18 +17,18 @@ export default function GuidancePage() {
         }
       >
         <p>
-          [OWNER DATA NEEDED: reviewed product mapping rules, support escalation
-          workflow, privacy/data handling terms, and source-base records]
+          [OWNER DATA NEEDED: owner-reviewed source data, product mapping rules,
+          support fallback workflow, and privacy/data handling terms]
         </p>
       </Section>
       <section className="content-band content-band--dark">
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Guided product questions</p>
-            <h2>[PLACEHOLDER: guidance preview states - REVIEW REQUIRED]</h2>
+            <h2>[PLACEHOLDER: source-gated route check - REVIEW REQUIRED]</h2>
             <p>
-              [REVIEW REQUIRED: backend-source-grounded assistant behavior,
-              structured output, and fallback routing]
+              [REVIEW REQUIRED: structured questions, source-backed output,
+              and human follow-up when data is missing]
             </p>
           </div>
           <GuidanceAssistantDemo />

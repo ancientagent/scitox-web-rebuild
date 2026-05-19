@@ -6,20 +6,20 @@ const guidanceRoutes = {
   common: {
     label: "Common path",
     title: "[PLACEHOLDER: common product path - REVIEW REQUIRED]",
-    body: "[REVIEW REQUIRED: show restrained product-path cards, policy links, and support fallback]",
+    body: "[REVIEW REQUIRED: route to owner-reviewed product facts, policy links, and support fallback]",
     ownerNeed: "[OWNER DATA NEEDED: source-backed product mapping]",
   },
   compare: {
     label: "Compare options",
     title: "[PLACEHOLDER: comparison path - REVIEW REQUIRED]",
-    body: "[REVIEW REQUIRED: compare only reviewed product facts and avoid result language]",
+    body: "[REVIEW REQUIRED: compare only owner-reviewed product facts and avoid outcome language]",
     ownerNeed: "[OWNER DATA NEEDED: comparison criteria]",
   },
   specific: {
-    label: "Specific situation",
+    label: "Nuanced question",
     title: "[PLACEHOLDER: human follow-up path - REVIEW REQUIRED]",
-    body: "[REVIEW REQUIRED: route nuanced cases to support instead of forcing a recommendation]",
-    ownerNeed: "[OWNER DATA NEEDED: escalation workflow]",
+    body: "[REVIEW REQUIRED: route nuanced or missing-source cases to human support]",
+    ownerNeed: "[OWNER DATA NEEDED: support escalation workflow]",
   },
 };
 
@@ -33,7 +33,7 @@ export function GuidancePreview() {
     <div className="guidance-preview">
       <div className="choice-panel">
         <p className="tag">Guidance preview</p>
-        <h2>[PLACEHOLDER: limited product questions - REVIEW REQUIRED]</h2>
+        <h2>[PLACEHOLDER: answer structured product questions - REVIEW REQUIRED]</h2>
         <div className="choice-list" role="group" aria-label="Guidance route choices">
           {Object.entries(guidanceRoutes).map(([key, value]) => (
             <button
@@ -53,7 +53,7 @@ export function GuidancePreview() {
         <p>{route.body}</p>
         <div className="notice-list">
           <span>{route.ownerNeed}</span>
-          <span>[REVIEW REQUIRED: guidance rules and source-base behavior]</span>
+          <span>[REVIEW REQUIRED: source-base rules, fallback logic, and public wording]</span>
         </div>
       </div>
     </div>

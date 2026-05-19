@@ -8,7 +8,7 @@ export default function ShippingReturnsPage() {
       <div className="route-shell">
         <Section
           eyebrow="Policy route"
-          title="[PLACEHOLDER: shipping and returns policy - REVIEW REQUIRED]"
+          title="[PLACEHOLDER: shipping, returns, and damage-policy shell - REVIEW REQUIRED]"
           actions={
             <>
               <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
@@ -17,8 +17,8 @@ export default function ShippingReturnsPage() {
           }
         >
           <p>
-            [OWNER DATA NEEDED: shipping terms, return process, refund process,
-            claims-sensitive policy language, and reviewed public wording]
+            [OWNER DATA NEEDED: shipping terms, damaged-goods handling, return
+            process, refund process, payment review, and reviewed public wording]
           </p>
         </Section>
       </div>
@@ -26,8 +26,8 @@ export default function ShippingReturnsPage() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Policy review paths</p>
-            <h2>[PLACEHOLDER: related policy routes - REVIEW REQUIRED]</h2>
-            <p>[OWNER DATA NEEDED: reviewed launch policy set]</p>
+            <h2>[PLACEHOLDER: policy details required before checkout - REVIEW REQUIRED]</h2>
+            <p>[OWNER DATA NEEDED: reviewed shipping, returns, payment, and support policy set]</p>
           </div>
           <PolicyRouteLinks />
         </div>

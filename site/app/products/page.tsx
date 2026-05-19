@@ -11,20 +11,20 @@ export default function ProductsPage() {
     <div className="page-flow">
       <Section
         eyebrow="Products route"
-        title="[PLACEHOLDER: product category routing - REVIEW REQUIRED]"
+        title="[PLACEHOLDER: public product path records - REVIEW REQUIRED]"
         actions={<StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>}
       >
         <p>
-          [OWNER DATA NEEDED: product categories, product names, images, and
-          reviewed public descriptions]
+          [OWNER DATA NEEDED: public category labels, product names, images,
+          pricing, availability, and reviewed public descriptions]
         </p>
       </Section>
       <section className="content-band content-band--muted">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Product path states</p>
-            <h2>[PLACEHOLDER: product self-service preview - REVIEW REQUIRED]</h2>
-            <p>[REVIEW REQUIRED: product category labels and comparison criteria]</p>
+            <h2>[PLACEHOLDER: choose a reviewed product path - REVIEW REQUIRED]</h2>
+            <p>[REVIEW REQUIRED: category labels, comparison criteria, and support fallback]</p>
           </div>
           <ProductPathPreview />
         </div>
@@ -33,10 +33,10 @@ export default function ProductsPage() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Product data placeholders</p>
-            <h2>[PLACEHOLDER: public product records - REVIEW REQUIRED]</h2>
+            <h2>[PLACEHOLDER: owner-reviewed product facts - REVIEW REQUIRED]</h2>
             <p>
-              [OWNER DATA NEEDED: owner-reviewed product facts before public product
-              descriptions are final]
+              [OWNER DATA NEEDED: product facts remain placeholders until owner
+              data and claim review are complete]
             </p>
           </div>
           <div className="product-data-grid">
@@ -65,7 +65,7 @@ export default function ProductsPage() {
                   </div>
                 </dl>
                 <Link className="text-link" href={`/products/${product.slug}`}>
-                  View placeholder detail
+                  View owner-review detail
                 </Link>
               </article>
             ))}

@@ -4,22 +4,22 @@ const policyRoutes = [
   {
     href: "/shipping-returns",
     title: "Shipping / returns",
-    body: "[OWNER DATA NEEDED: shipping, return, and refund policy details]",
+    body: "[OWNER DATA NEEDED: shipping, returns, damaged-goods, and refund details]",
   },
   {
     href: "/privacy",
     title: "Privacy",
-    body: "[OWNER DATA NEEDED: data handling and provider review]",
+    body: "[OWNER DATA NEEDED: data handling, retention, provider, and consent review]",
   },
   {
     href: "/terms",
     title: "Terms",
-    body: "[REVIEW REQUIRED: purchase, support, and site-use language]",
+    body: "[REVIEW REQUIRED: purchase, support, messaging, and site-use language]",
   },
   {
     href: "/contact",
     title: "Contact route",
-    body: "[OWNER DATA NEEDED: owner-reviewed routing destination]",
+    body: "[OWNER DATA NEEDED: owner-reviewed support destination]",
   },
 ];
 

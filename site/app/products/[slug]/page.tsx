@@ -27,7 +27,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
   return (
     <div className="page-flow">
       <Section
-        eyebrow="Product detail route"
+        eyebrow="Product detail preview"
         title={product.name}
         actions={
           <>
@@ -47,8 +47,8 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
             <p>{product.supportCta}</p>
           </div>
           <div className="product-data-card">
-            <p className="tag">Public product fields</p>
-            <h2>[PLACEHOLDER: product facts - REVIEW REQUIRED]</h2>
+            <p className="tag">Public product facts</p>
+            <h2>[PLACEHOLDER: product facts pending owner review - REVIEW REQUIRED]</h2>
             <dl className="fact-list">
               <div>
                 <dt>Size</dt>
@@ -89,11 +89,11 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       <section className="content-band content-band--muted">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Checkout handoff gate</p>
-            <h2>[PLACEHOLDER: checkout CTA state - REVIEW REQUIRED]</h2>
+            <p className="eyebrow">Checkout gate</p>
+            <h2>[PLACEHOLDER: reviewed policy details required before checkout - REVIEW REQUIRED]</h2>
             <p>
               [OWNER DATA NEEDED: Authorize.net configuration, payment settings,
-              refund/dispute workflow, and owner-reviewed handoff path]
+              policy wording, and owner-reviewed handoff path]
             </p>
           </div>
           <CheckoutGateDemo productSlug={product.slug} />

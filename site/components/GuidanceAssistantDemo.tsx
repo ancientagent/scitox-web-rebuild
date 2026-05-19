@@ -36,13 +36,13 @@ type DemoRouteKey = keyof typeof demoRoutes;
 const initialResult: GuidanceResult = {
   recommendation_status: "human_follow_up",
   recommended_product_id: null,
-  recommended_path_label: "[PLACEHOLDER: guidance route not requested yet]",
+  recommended_path_label: "[PLACEHOLDER: source-gated route not requested yet]",
   explanation:
-    "[OWNER DATA NEEDED: submit a structured route to check source-gated behavior]",
+    "[OWNER DATA NEEDED: owner-reviewed source data before live route output]",
   source_ids: [],
   missing_owner_data: ["Reviewed product path mapping"],
   review_required: ["Guidance source-base behavior"],
-  next_step: "[OWNER DATA NEEDED: owner-reviewed source data before live recommendations]",
+  next_step: "[OWNER DATA NEEDED: human support destination for fallback cases]",
 };
 
 export function GuidanceAssistantDemo() {
@@ -100,7 +100,7 @@ export function GuidanceAssistantDemo() {
     <div className="guidance-api-demo">
       <form className="choice-panel guidance-api-demo__form" onSubmit={submitGuidance}>
         <p className="tag">Source-gated intake</p>
-        <h2>[PLACEHOLDER: guidance API demo - REVIEW REQUIRED]</h2>
+        <h2>[PLACEHOLDER: source-gated route check - REVIEW REQUIRED]</h2>
         <div className="choice-list" role="group" aria-label="Guidance API demo routes">
           {Object.entries(demoRoutes).map(([key, value]) => (
             <button
@@ -115,8 +115,8 @@ export function GuidanceAssistantDemo() {
         </div>
         <div className="form-note">
           <p>
-            [OWNER DATA NEEDED: live product recommendations remain gated until
-            owner-reviewed source data and routing rules exist]
+            [OWNER DATA NEEDED: route output remains gated until owner-reviewed
+            source data, product mapping, and support fallback rules exist]
           </p>
         </div>
         <div className="form-actions">
@@ -143,7 +143,7 @@ export function GuidanceAssistantDemo() {
 function GuidanceResultPanel({ result }: { result: GuidanceResult }) {
   return (
     <div className="preview-result guidance-api-demo__result">
-      <p className="tag">Structured JSON state</p>
+      <p className="tag">Structured route state</p>
       <h2>{result.recommended_path_label}</h2>
       <dl className="fact-list">
         <div>

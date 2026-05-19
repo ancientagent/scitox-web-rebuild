@@ -10,7 +10,7 @@ export default function WholesalePage() {
     <div className="page-flow">
       <Section
         eyebrow="Wholesale route"
-        title="[PLACEHOLDER: partner and wholesale inquiry - REVIEW REQUIRED]"
+        title="[PLACEHOLDER: wholesale and partner inquiry route - REVIEW REQUIRED]"
         actions={
           <>
             <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
@@ -19,21 +19,21 @@ export default function WholesalePage() {
         }
       >
         <p>
-          [OWNER DATA NEEDED: wholesale terms, MOQ, case pack, MSRP, wholesale
-          price, UPC/GTIN, documentation checklist, and inquiry routing]
+          [OWNER DATA NEEDED: partner terms, commercial fields, documentation
+          checklist, buyer qualification, and inquiry routing]
         </p>
       </Section>
       <section className="content-band">
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Vendor-facing preview</p>
-            <h2>[PLACEHOLDER: restrained wholesale layer - REVIEW REQUIRED]</h2>
-            <p>[REVIEW REQUIRED: vendor page language and product line overview]</p>
+            <h2>[PLACEHOLDER: separate data-forward wholesale surface - REVIEW REQUIRED]</h2>
+            <p>[REVIEW REQUIRED: partner page language and product line overview]</p>
           </div>
           <div className="vendor-grid">
             <article>
               <h2>Product line overview</h2>
-              <p>[OWNER DATA NEEDED: product line, SKU list, images, and labels]</p>
+              <p>[OWNER DATA NEEDED: product line, images, labels, and partner records]</p>
             </article>
             <article>
               <h2>Documentation checklist</h2>
@@ -41,7 +41,7 @@ export default function WholesalePage() {
             </article>
             <article>
               <h2>Inquiry process</h2>
-              <p>[OWNER DATA NEEDED: buyer fields, routing, and follow-up workflow]</p>
+              <p>[OWNER DATA NEEDED: buyer fields, qualification rules, routing, and follow-up workflow]</p>
             </article>
           </div>
           <div className="vendor-product-table-wrap">

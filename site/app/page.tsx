@@ -9,7 +9,7 @@ export default function Home() {
     <div className="page-flow">
       <Section
         eyebrow="Customer lobby preview"
-        title="[PLACEHOLDER: calm customer lobby headline - REVIEW REQUIRED]"
+        title="[PLACEHOLDER: choose a product path or request human follow-up - REVIEW REQUIRED]"
         actions={
           <>
             <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
@@ -18,20 +18,21 @@ export default function Home() {
         }
       >
         <p>
-          [PLACEHOLDER: already-aware visitor routing summary - REVIEW REQUIRED]
+          [REVIEW REQUIRED: already-aware visitor routing for guided product
+          questions, common product paths, and human support fallback]
         </p>
         <div className="route-grid" aria-label="Draft route paths">
           <Link className="route-card route-card--link" href="/guidance">
             <h2>Product guidance</h2>
-            <p>[REVIEW REQUIRED: structured guidance entry point]</p>
+            <p>[REVIEW REQUIRED: structured product questions with source-gated output]</p>
           </Link>
           <Link className="route-card route-card--link" href="/support">
             <h2>Human support</h2>
-            <p>[OWNER DATA NEEDED: support process and destination]</p>
+            <p>[OWNER DATA NEEDED: approved call, text, email, or form destination]</p>
           </Link>
           <Link className="route-card route-card--link" href="/wholesale">
             <h2>Wholesale path</h2>
-            <p>[OWNER DATA NEEDED: partner inquiry routing]</p>
+            <p>[OWNER DATA NEEDED: separate partner inquiry routing]</p>
           </Link>
         </div>
       </Section>
@@ -39,27 +40,27 @@ export default function Home() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Owner-review flow</p>
-            <h2>[PLACEHOLDER: three-path customer decision model - REVIEW REQUIRED]</h2>
+            <h2>[PLACEHOLDER: choose the next safe route - REVIEW REQUIRED]</h2>
             <p>
-              [REVIEW REQUIRED: calm routing explanation for common product paths,
-              guided questions, and human follow-up]
+              [REVIEW REQUIRED: source-backed route model for common paths,
+              structured questions, and human follow-up]
             </p>
           </div>
           <div className="path-grid">
             <Link className="route-card route-card--link" href="/products">
               <span className="path-number">01</span>
               <h2>Common path</h2>
-              <p>[OWNER DATA NEEDED: category and product path rules]</p>
+              <p>[OWNER DATA NEEDED: owner-reviewed category labels and product path rules]</p>
             </Link>
             <Link className="route-card route-card--featured route-card--link" href="/guidance">
               <span className="path-number">02</span>
               <h2>Guided questions</h2>
-              <p>[REVIEW REQUIRED: backend-source-grounded guidance preview]</p>
+              <p>[REVIEW REQUIRED: source-grounded questions before any product path]</p>
             </Link>
             <Link className="route-card route-card--link" href="/contact">
               <span className="path-number">03</span>
               <h2>Human follow-up</h2>
-              <p>[OWNER DATA NEEDED: support escalation workflow]</p>
+              <p>[OWNER DATA NEEDED: support escalation channel and routing workflow]</p>
             </Link>
           </div>
         </div>
@@ -68,10 +69,10 @@ export default function Home() {
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Product path preview</p>
-            <h2>[PLACEHOLDER: low-exposure product area - REVIEW REQUIRED]</h2>
+            <h2>[PLACEHOLDER: low-exposure product path area - REVIEW REQUIRED]</h2>
             <p>
-              [OWNER DATA NEEDED: product categories, product facts, reviewed labels,
-              images, pricing, and availability]
+              [OWNER DATA NEEDED: public category labels, product facts, images,
+              pricing, availability, and review status]
             </p>
           </div>
           <ProductPathPreview />
@@ -81,9 +82,9 @@ export default function Home() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Guidance preview</p>
-            <h2>[PLACEHOLDER: source-grounded routing states - REVIEW REQUIRED]</h2>
+            <h2>[PLACEHOLDER: source-gated routing states - REVIEW REQUIRED]</h2>
             <p>
-              [REVIEW REQUIRED: guidance assistant language, source-base behavior,
+              [REVIEW REQUIRED: guided product questions, source-base behavior,
               and human fallback handling]
             </p>
           </div>
@@ -94,16 +95,16 @@ export default function Home() {
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Separate vendor layer</p>
-            <h2>[PLACEHOLDER: wholesale surface remains separate - REVIEW REQUIRED]</h2>
+            <h2>[PLACEHOLDER: partner surface for data review - REVIEW REQUIRED]</h2>
             <p>
-              [OWNER DATA NEEDED: vendor data fields, documentation checklist,
+              [OWNER DATA NEEDED: partner data fields, documentation checklist,
               inquiry routing, and buyer qualification process]
             </p>
           </div>
           <div className="vendor-preview">
             <article>
               <h2>Product line overview</h2>
-              <p>[OWNER DATA NEEDED: SKU, MSRP, wholesale, MOQ, case pack, UPC/GTIN]</p>
+              <p>[OWNER DATA NEEDED: partner-facing product records and commercial fields]</p>
             </article>
             <article>
               <h2>Documentation checklist</h2>
