@@ -1,0 +1,48 @@
+{
+  "status": "[OWNER DATA NEEDED: product catalog status]",
+  "notes": [
+    "[OWNER DATA NEEDED: replace placeholders only with owner-reviewed product data]",
+    "[REVIEW REQUIRED: review public descriptions, directions, warnings, and claims before launch]"
+  ],
+  "products": [
+    {
+      "slug": "example-product",
+      "status": "[OWNER DATA NEEDED: product record status]",
+      "public": {
+        "name": "[OWNER DATA NEEDED: product name]",
+        "category": "[OWNER DATA NEEDED: product category]",
+        "size": "[OWNER DATA NEEDED: product size or variant]",
+        "price": "[OWNER DATA NEEDED: public price]",
+        "availability": "[OWNER DATA NEEDED: availability status]",
+        "image": "[OWNER DATA NEEDED: product image asset]",
+        "shortDescription": "[REVIEW REQUIRED: short public product description]",
+        "longDescription": "[REVIEW REQUIRED: longer public product description]",
+        "ingredients": "[OWNER DATA NEEDED: ingredients]",
+        "directions": "[REVIEW REQUIRED: directions or use guidance]",
+        "warnings": "[REVIEW REQUIRED: warnings and safety language]",
+        "shippingNotes": "[OWNER DATA NEEDED: public shipping notes]",
+        "claimReviewStatus": "[REVIEW REQUIRED: product claim review status]",
+        "supportCta": "[REVIEW REQUIRED: product support or guidance CTA]"
+      },
+      "vendor": {
+        "sku": "[OWNER DATA NEEDED: SKU]",
+        "msrp": "[OWNER DATA NEEDED: MSRP]",
+        "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
+        "moq": "[OWNER DATA NEEDED: MOQ]",
+        "casePack": "[OWNER DATA NEEDED: case pack]",
+        "upcGtin": "[OWNER DATA NEEDED: UPC/GTIN]",
+        "labelFile": "[OWNER DATA NEEDED: label file]",
+        "dimensionsWeight": "[OWNER DATA NEEDED: product dimensions and weight]",
+        "packagingDetails": "[OWNER DATA NEEDED: packaging details]",
+        "shippingTerms": "[OWNER DATA NEEDED: wholesale shipping terms]",
+        "returnPolicy": "[OWNER DATA NEEDED: return or damaged-goods policy]",
+        "insuranceStatus": "[OWNER DATA NEEDED: product liability insurance status]",
+        "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
+        "vendorReadinessNotes": [
+          "[OWNER DATA NEEDED: vendor documentation readiness]",
+          "[REVIEW REQUIRED: vendor-facing product language]"
+        ]
+      }
+    }
+  ]
+}

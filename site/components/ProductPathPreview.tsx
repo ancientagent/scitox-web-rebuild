@@ -6,7 +6,7 @@ const productPaths = {
   standard: {
     label: "Standard path",
     title: "[PLACEHOLDER: standard product path - REVIEW REQUIRED]",
-    status: "[OWNER DATA NEEDED: product facts, image, SKU, and price]",
+    status: "[OWNER DATA NEEDED: public product facts, image, and price]",
     action: "[REVIEW REQUIRED: current checkout or support CTA]",
   },
   focused: {

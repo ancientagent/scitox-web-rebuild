@@ -224,6 +224,12 @@ ul {
   gap: 14px;
 }
 
+.product-data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
 .route-card {
   min-width: 0;
   border: 1px solid var(--border);
@@ -347,6 +353,7 @@ ul {
 
 .choice-panel,
 .preview-result,
+.product-data-card,
 .product-preview-card,
 .vendor-grid article,
 .vendor-preview article {
@@ -365,6 +372,19 @@ ul {
   background: rgb(255 255 255 / 7%);
   color: #f8fbf6;
   box-shadow: none;
+}
+
+.product-data-card__media {
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: #f6f8f3;
+  color: var(--muted);
+  padding: 16px;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .segmented-control,
@@ -418,10 +438,18 @@ ul {
 }
 
 .preview-result h2,
+.product-data-card h2,
 .product-preview-card h2,
 .choice-panel h2 {
   overflow-wrap: anywhere;
   font-size: 1.45rem;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--accent);
+  font-weight: 900;
 }
 
 .tag {
@@ -476,6 +504,47 @@ ul {
   margin: 0;
   color: var(--muted);
   overflow-wrap: anywhere;
+}
+
+.vendor-product-table-wrap {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  margin-top: 24px;
+}
+
+.vendor-product-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.vendor-product-table caption {
+  padding: 12px 0;
+  color: var(--muted);
+  font-weight: 800;
+  text-align: left;
+}
+
+.vendor-product-table th,
+.vendor-product-table td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.vendor-product-table th {
+  color: var(--foreground);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.vendor-grid--detail {
+  margin-top: 24px;
 }
 
 .inquiry-form-wrap {
@@ -625,6 +694,7 @@ ul {
   .route-panel,
   .route-grid,
   .path-grid,
+  .product-data-grid,
   .vendor-grid,
   .two-column,
   .guidance-preview,
@@ -668,11 +738,16 @@ ul {
 
   .choice-panel,
   .preview-result,
+  .product-data-card,
   .product-preview-card,
   .vendor-grid article,
   .vendor-preview article,
   .inquiry-form {
     padding: 18px;
+  }
+
+  .vendor-product-table-wrap {
+    display: none;
   }
 
   .form-grid {
