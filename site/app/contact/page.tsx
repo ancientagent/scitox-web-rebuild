@@ -1,6 +1,6 @@
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
-import { ContactRoutePreview } from "@/components/ContactRoutePreview";
+import { InquiryForm } from "@/components/InquiryForm";
 
 export default function ContactPage() {
   return (
@@ -30,7 +30,7 @@ export default function ContactPage() {
               notice, and support expectations]
             </p>
           </div>
-          <ContactRoutePreview />
+          <InquiryForm surface="contact" />
         </div>
       </section>
     </div>

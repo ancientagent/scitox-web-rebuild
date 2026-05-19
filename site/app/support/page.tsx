@@ -1,6 +1,6 @@
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
-import { ContactRoutePreview } from "@/components/ContactRoutePreview";
+import { InquiryForm } from "@/components/InquiryForm";
 
 export default function SupportPage() {
   return (
@@ -8,7 +8,12 @@ export default function SupportPage() {
       <Section
         eyebrow="Support route"
         title="[PLACEHOLDER: FAQ and support routing - REVIEW REQUIRED]"
-        actions={<StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>}
+        actions={
+          <>
+            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
+            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
+          </>
+        }
       >
         <p>
           [OWNER DATA NEEDED: support hours, response expectations, support
@@ -25,7 +30,7 @@ export default function SupportPage() {
               expectations, and destination tooling]
             </p>
           </div>
-          <ContactRoutePreview />
+          <InquiryForm surface="support" />
         </div>
       </section>
     </div>

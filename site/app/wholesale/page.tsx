@@ -1,4 +1,5 @@
 import { Section } from "@/components/Section";
+import { InquiryForm } from "@/components/InquiryForm";
 import { StatusTag } from "@/components/StatusTag";
 
 export default function WholesalePage() {
@@ -39,6 +40,9 @@ export default function WholesalePage() {
               <h2>Inquiry process</h2>
               <p>[OWNER DATA NEEDED: buyer fields, routing, and follow-up workflow]</p>
             </article>
+          </div>
+          <div className="inquiry-form-wrap">
+            <InquiryForm surface="wholesale" />
           </div>
         </div>
       </section>

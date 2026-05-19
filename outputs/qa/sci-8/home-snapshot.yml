@@ -1,0 +1,134 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "SciTOX home" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - text: SciTOX
+        - navigation "Primary navigation" [ref=e6]:
+          - link "Products" [ref=e7] [cursor=pointer]:
+            - /url: /products
+          - link "Product Guidance" [ref=e8] [cursor=pointer]:
+            - /url: /guidance
+          - link "FAQ / Support" [ref=e9] [cursor=pointer]:
+            - /url: /support
+          - link "Contact" [ref=e10] [cursor=pointer]:
+            - /url: /contact
+          - link "Wholesale / Partners" [ref=e11] [cursor=pointer]:
+            - /url: /wholesale
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - paragraph [ref=e16]: Customer lobby preview
+            - 'heading "[PLACEHOLDER: calm customer lobby headline - REVIEW REQUIRED]" [level=1] [ref=e17]'
+            - generic [ref=e18]:
+              - paragraph [ref=e19]: "[PLACEHOLDER: already-aware visitor routing summary - REVIEW REQUIRED]"
+              - generic "Draft route paths" [ref=e20]:
+                - generic [ref=e21]:
+                  - heading "Product guidance" [level=2] [ref=e22]
+                  - paragraph [ref=e23]: "[REVIEW REQUIRED: structured guidance entry point]"
+                - generic [ref=e24]:
+                  - heading "Human support" [level=2] [ref=e25]
+                  - paragraph [ref=e26]: "[OWNER DATA NEEDED: support process and destination]"
+                - generic [ref=e27]:
+                  - heading "Wholesale path" [level=2] [ref=e28]
+                  - paragraph [ref=e29]: "[OWNER DATA NEEDED: partner inquiry routing]"
+          - generic [ref=e30]:
+            - generic [ref=e31]: "[REVIEW REQUIRED]"
+            - generic [ref=e32]: "[OWNER DATA NEEDED]"
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - paragraph [ref=e36]: Owner-review flow
+            - 'heading "[PLACEHOLDER: three-path customer decision model - REVIEW REQUIRED]" [level=2] [ref=e37]'
+            - paragraph [ref=e38]: "[REVIEW REQUIRED: calm routing explanation for common product paths, guided questions, and human follow-up]"
+          - generic [ref=e39]:
+            - article [ref=e40]:
+              - generic [ref=e41]: "01"
+              - heading "Common path" [level=2] [ref=e42]
+              - paragraph [ref=e43]: "[OWNER DATA NEEDED: category and product path rules]"
+            - article [ref=e44]:
+              - generic [ref=e45]: "02"
+              - heading "Guided questions" [level=2] [ref=e46]
+              - paragraph [ref=e47]: "[REVIEW REQUIRED: backend-source-grounded guidance preview]"
+            - article [ref=e48]:
+              - generic [ref=e49]: "03"
+              - heading "Human follow-up" [level=2] [ref=e50]
+              - paragraph [ref=e51]: "[OWNER DATA NEEDED: support escalation workflow]"
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - paragraph [ref=e55]: Product path preview
+            - 'heading "[PLACEHOLDER: low-exposure product area - REVIEW REQUIRED]" [level=2] [ref=e56]'
+            - paragraph [ref=e57]: "[OWNER DATA NEEDED: product categories, product facts, reviewed labels, images, pricing, and availability]"
+          - generic [ref=e58]:
+            - group "Product path preview" [ref=e59]:
+              - button "Standard path" [ref=e60] [cursor=pointer]
+              - button "Focused path" [ref=e61] [cursor=pointer]
+              - button "Complete path" [ref=e62] [cursor=pointer]
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: Product detail skeleton
+              - 'heading "[PLACEHOLDER: standard product path - REVIEW REQUIRED]" [level=2] [ref=e65]'
+              - generic [ref=e66]:
+                - generic [ref=e67]:
+                  - term [ref=e68]: Display status
+                  - definition [ref=e69]: "[OWNER DATA NEEDED: product facts, image, SKU, and price]"
+                - generic [ref=e70]:
+                  - term [ref=e71]: CTA behavior
+                  - definition [ref=e72]: "[REVIEW REQUIRED: current checkout or support CTA]"
+                - generic [ref=e73]:
+                  - term [ref=e74]: Support route
+                  - definition [ref=e75]: "[OWNER DATA NEEDED: product support workflow]"
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - paragraph [ref=e79]: Guidance preview
+            - 'heading "[PLACEHOLDER: source-grounded routing states - REVIEW REQUIRED]" [level=2] [ref=e80]'
+            - paragraph [ref=e81]: "[REVIEW REQUIRED: guidance assistant language, source-base behavior, and human fallback handling]"
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - paragraph [ref=e84]: Guidance preview
+              - 'heading "[PLACEHOLDER: limited product questions - REVIEW REQUIRED]" [level=2] [ref=e85]'
+              - group "Guidance route choices" [ref=e86]:
+                - button "Common path" [ref=e87] [cursor=pointer]
+                - button "Compare options" [ref=e88] [cursor=pointer]
+                - button "Specific situation" [ref=e89] [cursor=pointer]
+            - generic [ref=e90]:
+              - paragraph [ref=e91]: Output state
+              - 'heading "[PLACEHOLDER: common product path - REVIEW REQUIRED]" [level=2] [ref=e92]'
+              - paragraph [ref=e93]: "[REVIEW REQUIRED: show restrained product-path cards, policy links, and support fallback]"
+              - generic [ref=e94]:
+                - generic [ref=e95]: "[OWNER DATA NEEDED: source-backed product mapping]"
+                - generic [ref=e96]: "[REVIEW REQUIRED: guidance rules and source-base behavior]"
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - paragraph [ref=e100]: Separate vendor layer
+            - 'heading "[PLACEHOLDER: wholesale surface remains separate - REVIEW REQUIRED]" [level=2] [ref=e101]'
+            - paragraph [ref=e102]: "[OWNER DATA NEEDED: vendor data fields, documentation checklist, inquiry routing, and buyer qualification process]"
+          - generic [ref=e103]:
+            - article [ref=e104]:
+              - heading "Product line overview" [level=2] [ref=e105]
+              - paragraph [ref=e106]: "[OWNER DATA NEEDED: SKU, MSRP, wholesale, MOQ, case pack, UPC/GTIN]"
+            - article [ref=e107]:
+              - heading "Documentation checklist" [level=2] [ref=e108]
+              - paragraph [ref=e109]: "[OWNER DATA NEEDED: labels, images, policies, and review status]"
+    - contentinfo [ref=e110]:
+      - generic [ref=e111]:
+        - paragraph [ref=e112]: "[PLACEHOLDER: V1 footer note - REVIEW REQUIRED]"
+        - navigation "Footer navigation" [ref=e113]:
+          - link "Products" [ref=e114] [cursor=pointer]:
+            - /url: /products
+          - link "Guidance" [ref=e115] [cursor=pointer]:
+            - /url: /guidance
+          - link "Support" [ref=e116] [cursor=pointer]:
+            - /url: /support
+          - link "Contact" [ref=e117] [cursor=pointer]:
+            - /url: /contact
+          - link "Shipping / Returns" [ref=e118] [cursor=pointer]:
+            - /url: /shipping-returns
+          - link "Privacy [OWNER DATA NEEDED]" [ref=e119] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms [OWNER DATA NEEDED]" [ref=e120] [cursor=pointer]:
+            - /url: /terms
+          - link "Wholesale" [ref=e121] [cursor=pointer]:
+            - /url: /wholesale
+  - button "Open Next.js Dev Tools" [ref=e127] [cursor=pointer]:
+    - img [ref=e128]
