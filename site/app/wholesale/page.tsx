@@ -10,7 +10,7 @@ export default function WholesalePage() {
     <div className="page-flow">
       <Section
         eyebrow="Wholesale route"
-        title="[PLACEHOLDER: wholesale and partner inquiry route - REVIEW REQUIRED]"
+        title="Wholesale and partner inquiry route [REVIEW REQUIRED]"
         actions={
           <>
             <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
@@ -19,21 +19,29 @@ export default function WholesalePage() {
         }
       >
         <p>
-          [OWNER DATA NEEDED: partner terms, commercial fields, documentation
-          checklist, buyer qualification, and inquiry routing]
+          The vendor layer now has source-backed product names, path labels,
+          photos, and public price context. Commercial terms, routing, and
+          vendor documentation still need owner-confirmed data.
         </p>
       </Section>
       <section className="content-band">
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Vendor-facing preview</p>
-            <h2>[PLACEHOLDER: separate data-forward wholesale surface - REVIEW REQUIRED]</h2>
-            <p>[REVIEW REQUIRED: partner page language and product line overview]</p>
+            <h2>Separate data-forward wholesale surface</h2>
+            <p>
+              The line sheet can show the real product family now, while still
+              blocking incomplete pricing, SKU, case-pack, label, and claim
+              substantiation fields.
+            </p>
           </div>
           <div className="vendor-grid">
             <article>
               <h2>Product line overview</h2>
-              <p>[OWNER DATA NEEDED: product line, images, labels, and partner records]</p>
+              <p>
+                Six captured public product records are available for demo
+                line-sheet structure. [REVIEW REQUIRED]
+              </p>
             </article>
             <article>
               <h2>Documentation checklist</h2>
@@ -47,7 +55,7 @@ export default function WholesalePage() {
           <div className="vendor-product-table-wrap">
             <table className="vendor-product-table">
               <caption>
-                [PLACEHOLDER: vendor product data model - REVIEW REQUIRED]
+                Source-backed product line with commercial fields gated for review
               </caption>
               <thead>
                 <tr>

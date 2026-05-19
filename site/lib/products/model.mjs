@@ -2,28 +2,25 @@ const OWNER_MARKER = "[OWNER DATA NEEDED";
 const REVIEW_MARKER = "[REVIEW REQUIRED";
 
 const PUBLIC_OWNER_FIELDS = [
-  "name",
+  "ingredients",
+];
+
+const PUBLIC_REVIEW_FIELDS = [
   "category",
   "size",
   "price",
   "availability",
-  "image",
-  "ingredients",
-  "shippingNotes",
-];
-
-const PUBLIC_REVIEW_FIELDS = [
   "shortDescription",
   "longDescription",
   "directions",
   "warnings",
+  "shippingNotes",
   "claimReviewStatus",
   "supportCta",
 ];
 
 const VENDOR_OWNER_FIELDS = [
   "sku",
-  "msrp",
   "wholesalePrice",
   "moq",
   "casePack",
@@ -31,12 +28,27 @@ const VENDOR_OWNER_FIELDS = [
   "labelFile",
   "dimensionsWeight",
   "packagingDetails",
-  "shippingTerms",
-  "returnPolicy",
   "insuranceStatus",
 ];
 
-const VENDOR_REVIEW_FIELDS = ["claimSubstantiation"];
+const VENDOR_REVIEW_FIELDS = ["msrp", "shippingTerms", "returnPolicy", "claimSubstantiation"];
+
+const REQUIRED_PUBLIC_FIELDS = [
+  "name",
+  "category",
+  "size",
+  "price",
+  "availability",
+  "image",
+  "shortDescription",
+  "longDescription",
+  "ingredients",
+  "directions",
+  "warnings",
+  "shippingNotes",
+  "claimReviewStatus",
+  "supportCta",
+];
 
 function text(value) {
   return typeof value === "string" ? value : "";
@@ -52,6 +64,12 @@ function validateMarker(errors, product, section, field, marker) {
   }
 }
 
+function validateText(errors, product, section, field) {
+  if (!text(product?.[section]?.[field])) {
+    errors.push(`${product?.slug ?? "unknown"}.${section}.${field} missing text`);
+  }
+}
+
 export function validateProductCatalog(catalog) {
   const errors = [];
 
@@ -63,12 +81,16 @@ export function validateProductCatalog(catalog) {
   }
 
   for (const product of catalog.products) {
-    if (!hasMarker(product?.status, OWNER_MARKER)) {
-      errors.push(`${product?.slug ?? "unknown"}.status missing ${OWNER_MARKER}]`);
+    if (!hasMarker(product?.status, OWNER_MARKER) && !hasMarker(product?.status, REVIEW_MARKER)) {
+      errors.push(`${product?.slug ?? "unknown"}.status missing review or owner marker`);
     }
 
     if (!text(product?.slug)) {
       errors.push("product.slug missing");
+    }
+
+    for (const field of REQUIRED_PUBLIC_FIELDS) {
+      validateText(errors, product, "public", field);
     }
 
     for (const field of PUBLIC_OWNER_FIELDS) {

@@ -14,7 +14,7 @@ type InquiryFormProps = {
 const formConfig = {
   contact: {
     eyebrow: "Contact intake",
-    title: "[PLACEHOLDER: help-first contact intake - REVIEW REQUIRED]",
+    title: "Help-first contact intake [REVIEW REQUIRED]",
     helper:
       "[OWNER DATA NEEDED: approved destination, routing owner, consent language, and reviewed privacy notice]",
     submitLabel: "Check contact route",
@@ -26,7 +26,7 @@ const formConfig = {
   },
   support: {
     eyebrow: "Support intake",
-    title: "[PLACEHOLDER: product support intake - REVIEW REQUIRED]",
+    title: "Product support intake [REVIEW REQUIRED]",
     helper:
       "[OWNER DATA NEEDED: support categories, channel owner, destination tooling, and reviewed policy language]",
     submitLabel: "Check support route",
@@ -38,7 +38,7 @@ const formConfig = {
   },
   wholesale: {
     eyebrow: "Wholesale intake",
-    title: "[PLACEHOLDER: partner inquiry intake - REVIEW REQUIRED]",
+    title: "Partner inquiry intake [REVIEW REQUIRED]",
     helper:
       "[OWNER DATA NEEDED: buyer fields, qualification rules, destination, and follow-up workflow]",
     submitLabel: "Check partner route",

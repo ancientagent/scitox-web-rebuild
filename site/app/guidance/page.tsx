@@ -8,7 +8,7 @@ export default function GuidancePage() {
     <div className="page-flow">
       <Section
         eyebrow="Guidance route"
-        title="[PLACEHOLDER: guided product questions - REVIEW REQUIRED]"
+        title="Guided product questions [REVIEW REQUIRED]"
         actions={
           <>
             <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
@@ -25,7 +25,7 @@ export default function GuidancePage() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Guided product questions</p>
-            <h2>[PLACEHOLDER: source-gated route check - REVIEW REQUIRED]</h2>
+            <h2>Source-gated route check [REVIEW REQUIRED]</h2>
             <p>
               [REVIEW REQUIRED: structured questions, source-backed output,
               and human follow-up when data is missing]

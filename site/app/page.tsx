@@ -9,7 +9,7 @@ export default function Home() {
     <div className="page-flow">
       <Section
         eyebrow="Customer lobby preview"
-        title="[PLACEHOLDER: choose a product path or request human follow-up - REVIEW REQUIRED]"
+        title="Private product-routing lobby [REVIEW REQUIRED]"
         actions={
           <>
             <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
@@ -18,8 +18,9 @@ export default function Home() {
         }
       >
         <p>
-          [REVIEW REQUIRED: already-aware visitor routing for guided product
-          questions, common product paths, and human support fallback]
+          Already-aware visitors can review source-backed product paths, answer
+          structured guidance questions, or request human follow-up without a
+          loud public sales pitch.
         </p>
         <div className="route-grid" aria-label="Draft route paths">
           <Link className="route-card route-card--link" href="/guidance">
@@ -40,17 +41,17 @@ export default function Home() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Owner-review flow</p>
-            <h2>[PLACEHOLDER: choose the next safe route - REVIEW REQUIRED]</h2>
+            <h2>Choose the next safe route [REVIEW REQUIRED]</h2>
             <p>
-              [REVIEW REQUIRED: source-backed route model for common paths,
-              structured questions, and human follow-up]
+              The demo now has a source-backed catalog behind the flow, while
+              recommendations and sensitive claims still require review.
             </p>
           </div>
           <div className="path-grid">
             <Link className="route-card route-card--link" href="/products">
               <span className="path-number">01</span>
               <h2>Common path</h2>
-              <p>[OWNER DATA NEEDED: owner-reviewed category labels and product path rules]</p>
+              <p>Open the source-backed product catalog with photos, product names, and gated details.</p>
             </Link>
             <Link className="route-card route-card--featured route-card--link" href="/guidance">
               <span className="path-number">02</span>
@@ -69,10 +70,10 @@ export default function Home() {
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Product path preview</p>
-            <h2>[PLACEHOLDER: low-exposure product path area - REVIEW REQUIRED]</h2>
+            <h2>Low-exposure product path area [REVIEW REQUIRED]</h2>
             <p>
-              [OWNER DATA NEEDED: public category labels, product facts, images,
-              pricing, availability, and review status]
+              Product titles, photos, path labels, and standard-kit price
+              context are present. Public claims and routing rules remain gated.
             </p>
           </div>
           <ProductPathPreview />
@@ -82,10 +83,10 @@ export default function Home() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Guidance preview</p>
-            <h2>[PLACEHOLDER: source-gated routing states - REVIEW REQUIRED]</h2>
+            <h2>Source-gated routing states [REVIEW REQUIRED]</h2>
             <p>
-              [REVIEW REQUIRED: guided product questions, source-base behavior,
-              and human fallback handling]
+              Guidance can reference reviewed source data and fall back to a
+              human route when the source does not support a clear product path.
             </p>
           </div>
           <GuidancePreview />
@@ -95,20 +96,20 @@ export default function Home() {
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Separate vendor layer</p>
-            <h2>[PLACEHOLDER: partner surface for data review - REVIEW REQUIRED]</h2>
+            <h2>Partner surface for data review [REVIEW REQUIRED]</h2>
             <p>
-              [OWNER DATA NEEDED: partner data fields, documentation checklist,
-              inquiry routing, and buyer qualification process]
+              The wholesale surface can now show the real product family while
+              commercial fields, documents, and buyer routing remain gated.
             </p>
           </div>
           <div className="vendor-preview">
             <article>
               <h2>Product line overview</h2>
-              <p>[OWNER DATA NEEDED: partner-facing product records and commercial fields]</p>
+              <p>Six product records are available for owner review; commercial fields still need owner data.</p>
             </article>
             <article>
               <h2>Documentation checklist</h2>
-              <p>[OWNER DATA NEEDED: labels, images, policies, and review status]</p>
+              <p>Images are loaded; labels, final policies, and claim review remain gated.</p>
             </article>
           </div>
         </div>

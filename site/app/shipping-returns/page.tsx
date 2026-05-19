@@ -8,7 +8,7 @@ export default function ShippingReturnsPage() {
       <div className="route-shell">
         <Section
           eyebrow="Policy route"
-          title="[PLACEHOLDER: shipping, returns, and damage-policy shell - REVIEW REQUIRED]"
+          title="Shipping, returns, and damage-policy shell [REVIEW REQUIRED]"
           actions={
             <>
               <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
@@ -26,7 +26,7 @@ export default function ShippingReturnsPage() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Policy review paths</p>
-            <h2>[PLACEHOLDER: policy details required before checkout - REVIEW REQUIRED]</h2>
+            <h2>Policy details required before checkout [REVIEW REQUIRED]</h2>
             <p>[OWNER DATA NEEDED: reviewed shipping, returns, payment, and support policy set]</p>
           </div>
           <PolicyRouteLinks />

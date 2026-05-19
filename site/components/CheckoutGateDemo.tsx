@@ -77,7 +77,7 @@ export function CheckoutGateDemo({ productSlug }: { productSlug: string }) {
     <div className="checkout-gate">
       <form className="checkout-gate__panel" onSubmit={submitCheckoutGate}>
         <p className="tag">Checkout gate</p>
-        <h2>[PLACEHOLDER: Authorize.net checkout handoff - REVIEW REQUIRED]</h2>
+        <h2>Authorize.net checkout handoff [REVIEW REQUIRED]</h2>
         <p>
           [OWNER DATA NEEDED: Authorize.net sandbox/config details before checkout
           can open]

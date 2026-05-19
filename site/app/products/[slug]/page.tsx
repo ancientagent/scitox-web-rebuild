@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { CheckoutGateDemo } from "@/components/CheckoutGateDemo";
+import { ProductImage } from "@/components/ProductImage";
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
 import { getPublicProduct, getPublicProducts } from "@/lib/products/getProducts";
@@ -31,7 +32,6 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         title={product.name}
         actions={
           <>
-            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
             <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
           </>
         }
@@ -41,14 +41,14 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       <section className="content-band">
         <div className="band-inner two-column">
           <div className="product-data-card">
-            <div className="product-data-card__media">{product.image}</div>
+            <ProductImage alt={product.name} src={product.image} />
             <p className="tag">{product.category}</p>
             <h2>{product.longDescription}</h2>
             <p>{product.supportCta}</p>
           </div>
           <div className="product-data-card">
             <p className="tag">Public product facts</p>
-            <h2>[PLACEHOLDER: product facts pending owner review - REVIEW REQUIRED]</h2>
+            <h2>Source-backed facts with gated details</h2>
             <dl className="fact-list">
               <div>
                 <dt>Size</dt>
@@ -90,7 +90,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Checkout gate</p>
-            <h2>[PLACEHOLDER: reviewed policy details required before checkout - REVIEW REQUIRED]</h2>
+            <h2>Reviewed policy details required before checkout [REVIEW REQUIRED]</h2>
             <p>
               [OWNER DATA NEEDED: Authorize.net configuration, payment settings,
               policy wording, and owner-reviewed handoff path]

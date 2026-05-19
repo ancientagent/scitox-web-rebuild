@@ -16,12 +16,12 @@ type GuidanceResult = {
 const demoRoutes = {
   common: {
     label: "Common path",
-    answerLabel: "[PLACEHOLDER: product path type - REVIEW REQUIRED]",
+    answerLabel: "Product path type [REVIEW REQUIRED]",
     answerValue: "standard",
   },
   compare: {
     label: "Compare options",
-    answerLabel: "[PLACEHOLDER: comparison need - REVIEW REQUIRED]",
+    answerLabel: "Comparison need [REVIEW REQUIRED]",
     answerValue: "compare",
   },
   boundary: {
@@ -36,7 +36,7 @@ type DemoRouteKey = keyof typeof demoRoutes;
 const initialResult: GuidanceResult = {
   recommendation_status: "human_follow_up",
   recommended_product_id: null,
-  recommended_path_label: "[PLACEHOLDER: source-gated route not requested yet]",
+  recommended_path_label: "Source-gated route not requested yet",
   explanation:
     "[OWNER DATA NEEDED: owner-reviewed source data before live route output]",
   source_ids: [],
@@ -100,7 +100,7 @@ export function GuidanceAssistantDemo() {
     <div className="guidance-api-demo">
       <form className="choice-panel guidance-api-demo__form" onSubmit={submitGuidance}>
         <p className="tag">Source-gated intake</p>
-        <h2>[PLACEHOLDER: source-gated route check - REVIEW REQUIRED]</h2>
+        <h2>Source-gated route check [REVIEW REQUIRED]</h2>
         <div className="choice-list" role="group" aria-label="Guidance API demo routes">
           {Object.entries(demoRoutes).map(([key, value]) => (
             <button

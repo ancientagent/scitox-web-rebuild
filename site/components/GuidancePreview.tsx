@@ -5,20 +5,20 @@ import { useState } from "react";
 const guidanceRoutes = {
   common: {
     label: "Common path",
-    title: "[PLACEHOLDER: common product path - REVIEW REQUIRED]",
-    body: "[REVIEW REQUIRED: route to owner-reviewed product facts, policy links, and support fallback]",
-    ownerNeed: "[OWNER DATA NEEDED: source-backed product mapping]",
+    title: "Use the source-backed catalog for common product paths",
+    body: "The demo can show real product records while keeping recommendation logic and claims gated. [REVIEW REQUIRED]",
+    ownerNeed: "[OWNER DATA NEEDED: owner-reviewed product mapping rules]",
   },
   compare: {
     label: "Compare options",
-    title: "[PLACEHOLDER: comparison path - REVIEW REQUIRED]",
-    body: "[REVIEW REQUIRED: compare only owner-reviewed product facts and avoid outcome language]",
+    title: "Compare only reviewed product facts",
+    body: "Comparison output should use source-backed fields, not outcome claims or unsupported proof. [REVIEW REQUIRED]",
     ownerNeed: "[OWNER DATA NEEDED: comparison criteria]",
   },
   specific: {
     label: "Nuanced question",
-    title: "[PLACEHOLDER: human follow-up path - REVIEW REQUIRED]",
-    body: "[REVIEW REQUIRED: route nuanced or missing-source cases to human support]",
+    title: "Route nuanced cases to human follow-up",
+    body: "If the source data does not clearly support a product path, the system should avoid recommendation output. [REVIEW REQUIRED]",
     ownerNeed: "[OWNER DATA NEEDED: support escalation workflow]",
   },
 };
@@ -33,7 +33,7 @@ export function GuidancePreview() {
     <div className="guidance-preview">
       <div className="choice-panel">
         <p className="tag">Guidance preview</p>
-        <h2>[PLACEHOLDER: answer structured product questions - REVIEW REQUIRED]</h2>
+        <h2>Structured questions before product routing [REVIEW REQUIRED]</h2>
         <div className="choice-list" role="group" aria-label="Guidance route choices">
           {Object.entries(guidanceRoutes).map(([key, value]) => (
             <button

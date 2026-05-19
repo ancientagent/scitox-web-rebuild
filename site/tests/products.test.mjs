@@ -9,18 +9,27 @@ import {
   validateProductCatalog,
 } from "../lib/products/model.mjs";
 
-test("example product catalog keeps required owner and review markers", () => {
+test("source-backed product catalog keeps required owner and review gates", () => {
   const result = validateProductCatalog(catalog);
 
   assert.equal(result.ok, true);
   assert.deepEqual(result.errors, []);
 });
 
-test("public product projection does not expose vendor-only fields", () => {
-  const [product] = getPublicProductDetails(catalog);
-  const publicPayload = JSON.stringify(product);
+test("public product projection includes source-backed product records", () => {
+  const products = getPublicProductDetails(catalog);
+  const [product] = products;
 
-  assert.equal(product.slug, "example-product");
+  assert.equal(products.length, 6);
+  assert.equal(product.slug, "greenout-thc-hair-detox-shampoo-system");
+  assert.equal(product.name, "GreenOUT - THC Hair Detox Shampoo System");
+  assert.match(product.image, /^\/product-images\/greenout\.jpg$/);
+});
+
+test("public product projection does not expose vendor-only fields", () => {
+  const products = getPublicProductDetails(catalog);
+  const publicPayload = JSON.stringify(products);
+
   assert.match(publicPayload, /\[OWNER DATA NEEDED/);
   assert.match(publicPayload, /\[REVIEW REQUIRED/);
   assert.doesNotMatch(publicPayload, /wholesalePrice/);
@@ -33,7 +42,7 @@ test("public product projection does not expose vendor-only fields", () => {
 test("vendor product projection includes wholesale placeholders only for vendor surfaces", () => {
   const [row] = getVendorProductRows(catalog);
 
-  assert.equal(row.slug, "example-product");
+  assert.equal(row.slug, "greenout-thc-hair-detox-shampoo-system");
   assert.match(row.sku, /\[OWNER DATA NEEDED/);
   assert.match(row.wholesalePrice, /\[OWNER DATA NEEDED/);
   assert.match(row.casePack, /\[OWNER DATA NEEDED/);
@@ -63,4 +72,14 @@ test("catalog validation rejects missing markers on owner-data fields", () => {
 
   assert.equal(result.ok, false);
   assert.match(result.errors.join(" "), /vendor\.sku/);
+});
+
+test("catalog validation rejects missing review gates on source-sensitive public fields", () => {
+  const unsafeCatalog = structuredClone(catalog);
+  unsafeCatalog.products[0].public.price = "$239";
+
+  const result = validateProductCatalog(unsafeCatalog);
+
+  assert.equal(result.ok, false);
+  assert.match(result.errors.join(" "), /public\.price/);
 });

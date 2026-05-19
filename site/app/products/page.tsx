@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
+import { ProductImage } from "@/components/ProductImage";
 import { ProductPathPreview } from "@/components/ProductPathPreview";
 import { getPublicProducts } from "@/lib/products/getProducts";
 
@@ -11,20 +12,24 @@ export default function ProductsPage() {
     <div className="page-flow">
       <Section
         eyebrow="Products route"
-        title="[PLACEHOLDER: public product path records - REVIEW REQUIRED]"
-        actions={<StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>}
+        title="Source-backed product paths [REVIEW REQUIRED]"
+        actions={<StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>}
       >
         <p>
-          [OWNER DATA NEEDED: public category labels, product names, images,
-          pricing, availability, and reviewed public descriptions]
+          Product names, photos, path labels, and standard-kit price context
+          have been pulled from captured SciTOX store sources. Claims,
+          directions, and recommendation rules remain review-gated.
         </p>
       </Section>
       <section className="content-band content-band--muted">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Product path states</p>
-            <h2>[PLACEHOLDER: choose a reviewed product path - REVIEW REQUIRED]</h2>
-            <p>[REVIEW REQUIRED: category labels, comparison criteria, and support fallback]</p>
+            <h2>Choose a reviewed product path [REVIEW REQUIRED]</h2>
+            <p>
+              Source-backed products can be browsed now; comparison logic,
+              support fallback, and recommendations still need review.
+            </p>
           </div>
           <ProductPathPreview />
         </div>
@@ -32,17 +37,18 @@ export default function ProductsPage() {
       <section className="content-band">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Product data placeholders</p>
-            <h2>[PLACEHOLDER: owner-reviewed product facts - REVIEW REQUIRED]</h2>
+            <p className="eyebrow">Product data</p>
+            <h2>Store-sourced product records with review gates</h2>
             <p>
-              [OWNER DATA NEEDED: product facts remain placeholders until owner
-              data and claim review are complete]
+              These records make the demo feel like a real product catalog
+              while keeping sensitive claims and missing vendor fields clearly
+              marked.
             </p>
           </div>
           <div className="product-data-grid">
             {products.map((product) => (
               <article className="product-data-card" key={product.slug}>
-                <div className="product-data-card__media">{product.image}</div>
+                <ProductImage alt={product.name} src={product.image} />
                 <p className="tag">{product.category}</p>
                 <h2>{product.name}</h2>
                 <p>{product.shortDescription}</p>

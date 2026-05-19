@@ -16,7 +16,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <p className="site-footer__note">
-          [PLACEHOLDER: V1 footer note - REVIEW REQUIRED]
+          V1 demo footer note [REVIEW REQUIRED]
         </p>
         <nav className="footer-nav" aria-label="Footer navigation">
           {footerRoutes.map((route) => (

@@ -4,20 +4,20 @@ import { useState } from "react";
 
 const productPaths = {
   standard: {
-    label: "Product path",
-    title: "[PLACEHOLDER: common product path - REVIEW REQUIRED]",
-    status: "[OWNER DATA NEEDED: public product facts, image, price, and availability]",
-    action: "[REVIEW REQUIRED: product detail, support fallback, or checkout gate]",
+    label: "Product catalog",
+    title: "Six source-backed product records are loaded [REVIEW REQUIRED]",
+    status: "Product titles, photos, path labels, availability context, and standard-kit price context are visible.",
+    action: "Open product detail, then route to support, guidance, or the gated checkout handoff. [REVIEW REQUIRED]",
   },
   focused: {
-    label: "Compare path",
-    title: "[PLACEHOLDER: reviewed comparison path - REVIEW REQUIRED]",
-    status: "[OWNER DATA NEEDED: category relationship and comparison criteria]",
-    action: "[REVIEW REQUIRED: guided product questions before comparison output]",
+    label: "Path review",
+    title: "Product paths can be compared only through reviewed rules",
+    status: "Current source gives product-path labels, but comparison criteria and routing rules remain gated. [REVIEW REQUIRED]",
+    action: "Use structured guidance before presenting any product comparison or recommendation. [REVIEW REQUIRED]",
   },
   complete: {
     label: "Support fallback",
-    title: "[PLACEHOLDER: human support route - REVIEW REQUIRED]",
+    title: "Human support handles missing-source or nuanced cases",
     status: "[OWNER DATA NEEDED: support channel, destination, and routing owner]",
     action: "[REVIEW REQUIRED: fallback route for nuanced or missing-source cases]",
   },
@@ -44,7 +44,7 @@ export function ProductPathPreview() {
         ))}
       </div>
       <div className="product-preview-card">
-        <p className="tag">Owner-review product path</p>
+        <p className="tag">Source-backed product path</p>
         <h2>{path.title}</h2>
         <dl className="fact-list">
           <div>

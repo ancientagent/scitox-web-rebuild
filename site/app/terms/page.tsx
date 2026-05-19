@@ -8,7 +8,7 @@ export default function TermsPage() {
       <div className="route-shell">
         <Section
           eyebrow="Terms route"
-          title="[PLACEHOLDER: terms and purchase-boundary shell - REVIEW REQUIRED]"
+          title="Terms and purchase-boundary shell [REVIEW REQUIRED]"
           actions={
             <>
               <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
@@ -26,7 +26,7 @@ export default function TermsPage() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Policy review paths</p>
-            <h2>[PLACEHOLDER: policy details required before launch - REVIEW REQUIRED]</h2>
+            <h2>Policy details required before launch [REVIEW REQUIRED]</h2>
             <p>[OWNER DATA NEEDED: reviewed terms, privacy, and support policy set]</p>
           </div>
           <PolicyRouteLinks />

@@ -41,7 +41,7 @@ export default function NotFound() {
       <div className="route-shell">
         <Section
           eyebrow="Route unavailable"
-          title="[PLACEHOLDER: page not found - REVIEW REQUIRED]"
+          title="Page not found [REVIEW REQUIRED]"
           actions={
             <>
               <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
@@ -59,7 +59,7 @@ export default function NotFound() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Demo recovery routes</p>
-            <h2>[PLACEHOLDER: stable owner-demo navigation - REVIEW REQUIRED]</h2>
+            <h2>Stable owner-demo navigation [REVIEW REQUIRED]</h2>
             <p>[OWNER DATA NEEDED: final launch route priorities]</p>
           </div>
           <div className="route-grid route-grid--wide">
