@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { CheckoutGateDemo } from "@/components/CheckoutGateDemo";
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
 import { getPublicProduct, getPublicProducts } from "@/lib/products/getProducts";
@@ -83,6 +84,19 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
               </div>
             </dl>
           </div>
+        </div>
+      </section>
+      <section className="content-band content-band--muted">
+        <div className="band-inner">
+          <div className="section-heading">
+            <p className="eyebrow">Checkout handoff gate</p>
+            <h2>[PLACEHOLDER: checkout CTA state - REVIEW REQUIRED]</h2>
+            <p>
+              [OWNER DATA NEEDED: Authorize.net configuration, payment settings,
+              refund/dispute workflow, and owner-reviewed handoff path]
+            </p>
+          </div>
+          <CheckoutGateDemo productSlug={product.slug} />
         </div>
       </section>
     </div>

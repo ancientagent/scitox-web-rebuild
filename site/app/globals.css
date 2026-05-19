@@ -341,18 +341,21 @@ ul {
 .preview-shell,
 .guidance-preview,
 .guidance-api-demo,
+.checkout-gate,
 .vendor-preview {
   display: grid;
   gap: 14px;
 }
 
 .guidance-preview,
-.guidance-api-demo {
+.guidance-api-demo,
+.checkout-gate {
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
 }
 
 .choice-panel,
 .preview-result,
+.checkout-gate__panel,
 .product-data-card,
 .product-preview-card,
 .vendor-grid article,
@@ -385,6 +388,19 @@ ul {
   padding: 16px;
   text-align: center;
   overflow-wrap: anywhere;
+}
+
+.checkout-gate {
+  align-items: start;
+}
+
+.checkout-gate__panel {
+  display: grid;
+  gap: 14px;
+}
+
+.checkout-gate__panel p {
+  margin: 0;
 }
 
 .segmented-control,
@@ -698,7 +714,8 @@ ul {
   .vendor-grid,
   .two-column,
   .guidance-preview,
-  .guidance-api-demo {
+  .guidance-api-demo,
+  .checkout-gate {
     grid-template-columns: 1fr;
   }
 
@@ -738,6 +755,7 @@ ul {
 
   .choice-panel,
   .preview-result,
+  .checkout-gate__panel,
   .product-data-card,
   .product-preview-card,
   .vendor-grid article,
