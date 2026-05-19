@@ -1,0 +1,45 @@
+{
+  "name": "SciTOX guidance source base example",
+  "status": "OWNER_DATA_NEEDED",
+  "last_reviewed": null,
+  "instructions": [
+    "This file is loaded by the app server only.",
+    "Do not publish customer-facing claims from this file.",
+    "Replace placeholders only with owner-reviewed product data, labels, warnings, instructions, policies, and routing rules.",
+    "If a customer answer cannot be mapped to an owner-reviewed product path, the route must return human_follow_up."
+  ],
+  "source_groups": [
+    {
+      "id": "product-catalog-placeholder",
+      "type": "product_catalog",
+      "status": "OWNER_DATA_NEEDED",
+      "allowed_use": "Product matching only after owner-reviewed product data is supplied.",
+      "content": "[OWNER DATA NEEDED: product names, SKUs, categories, sizes, labels, prices, ingredients, instructions, warnings, availability, and reviewed product-path mapping rules.]"
+    },
+    {
+      "id": "claim-boundary-rules",
+      "type": "guardrail",
+      "status": "REVIEW_REQUIRED",
+      "allowed_use": "Restrict route outputs until review is complete.",
+      "content": "[REVIEW REQUIRED: route must not provide legal advice, medical advice, diagnostic advice, test-result advice, outcome guarantees, privacy/security guarantees, vendor approval claims, marketplace eligibility claims, payment-platform safety claims, or unsupported product performance claims.]"
+    },
+    {
+      "id": "human-escalation-rules",
+      "type": "routing_rule",
+      "status": "REVIEW_REQUIRED",
+      "allowed_use": "Escalate when reviewed source material does not support a clear product path.",
+      "content": "[REVIEW REQUIRED: escalate to human support when customer answers are ambiguous, sensitive, outside reviewed product mappings, or require support details not present in the source base.]"
+    }
+  ],
+  "product_paths": [],
+  "assistant_output_contract": {
+    "recommendation_status": "product_path | needs_more_info | human_follow_up",
+    "recommended_product_id": "null until owner-reviewed product mapping exists",
+    "recommended_path_label": "placeholder-safe path label only",
+    "explanation": "short source-grounded explanation, no final claim language",
+    "source_ids": "source group IDs used",
+    "missing_owner_data": "facts needed before final recommendation",
+    "review_required": "review gates triggered",
+    "next_step": "support-safe next action"
+  }
+}

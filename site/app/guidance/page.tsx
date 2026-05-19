@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section";
 import { StatusTag } from "@/components/StatusTag";
+import { GuidanceAssistantDemo } from "@/components/GuidanceAssistantDemo";
 import { GuidancePreview } from "@/components/GuidancePreview";
 
 export default function GuidancePage() {
@@ -30,6 +31,7 @@ export default function GuidancePage() {
               structured output, and fallback routing]
             </p>
           </div>
+          <GuidanceAssistantDemo />
           <GuidancePreview />
         </div>
       </section>
