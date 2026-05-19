@@ -21,8 +21,8 @@ test("public product projection includes source-backed product records", () => {
   const [product] = products;
 
   assert.equal(products.length, 1);
-  assert.equal(product.slug, "totaltox-hair-detox-shampoo-system");
-  assert.equal(product.name, "TotalTOX Hair Detox Shampoo System");
+  assert.equal(product.slug, "totaltox-hair-treatment-system");
+  assert.equal(product.name, "TotalTOX Hair Treatment System");
   assert.match(product.image, /^\/product-marketing\/totaltox-kit\.png$/);
   assert.match(product.sourceImage, /^\/product-images\/totaltox\.jpg$/);
   assert.match(product.kitComposition, /12-item complete-kit/);
@@ -45,7 +45,7 @@ test("public product projection does not expose vendor-only fields", () => {
 test("vendor product projection includes wholesale placeholders only for vendor surfaces", () => {
   const [row] = getVendorProductRows(catalog);
 
-  assert.equal(row.slug, "totaltox-hair-detox-shampoo-system");
+  assert.equal(row.slug, "totaltox-hair-treatment-system");
   assert.match(row.sku, /\[OWNER DATA NEEDED/);
   assert.match(row.wholesalePrice, /\[OWNER DATA NEEDED/);
   assert.match(row.casePack, /\[OWNER DATA NEEDED/);

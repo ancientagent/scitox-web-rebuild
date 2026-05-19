@@ -6,7 +6,7 @@ Status: active V1 direction pending owner confirmation. `[REVIEW REQUIRED]`
 
 The customer-facing V1 should move away from a public catalog of multiple substance-specific products and center on one core product line:
 
-- TotalTOX Hair Detox Shampoo System
+- TotalTOX Hair Treatment System
 - Variant paths based on hair length, kit volume, and timing-sensitive support needs
 - Human support fallback for nuanced, sensitive, unsupported, or time-sensitive cases
 

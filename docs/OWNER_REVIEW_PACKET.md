@@ -24,7 +24,7 @@ Use this path when reviewing the demo:
 
 1. Home: `/`
 2. Products: `/products`
-3. TotalTOX product detail: `/products/totaltox-hair-detox-shampoo-system`
+3. TotalTOX product detail: `/products/totaltox-hair-treatment-system`
 4. Checkout gate on the product detail page.
 5. Guidance: `/guidance`
 6. Support: `/support`
