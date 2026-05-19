@@ -55,7 +55,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
                 <dd>{product.size}</dd>
               </div>
               <div>
-                <dt>Kit composition</dt>
+                <dt>Kit / variant structure</dt>
                 <dd>{product.kitComposition}</dd>
               </div>
               <div>
@@ -90,6 +90,43 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           </div>
         </div>
       </section>
+      {product.variants?.length ? (
+        <section className="content-band content-band--muted">
+          <div className="band-inner">
+            <div className="section-heading">
+              <p className="eyebrow">Variant paths</p>
+              <h2>Length, volume, and timing-sensitive paths [REVIEW REQUIRED]</h2>
+              <p>
+                These are not final package names, claims, prices, or
+                recommendations. They show how one product can route into
+                owner-confirmed variants.
+              </p>
+            </div>
+            <div className="variant-grid">
+              {product.variants.map((variant) => (
+                <article className="variant-card" key={variant.id}>
+                  <p className="tag">{variant.label}</p>
+                  <h2>{variant.fit}</h2>
+                  <dl className="fact-list">
+                    <div>
+                      <dt>Kit volume</dt>
+                      <dd>{variant.kitVolume}</dd>
+                    </div>
+                    <div>
+                      <dt>Timing boundary</dt>
+                      <dd>{variant.timingBoundary}</dd>
+                    </div>
+                    <div>
+                      <dt>Price</dt>
+                      <dd>{variant.price}</dd>
+                    </div>
+                  </dl>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
       <section className="content-band content-band--muted">
         <div className="band-inner">
           <div className="section-heading">

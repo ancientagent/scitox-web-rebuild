@@ -104,8 +104,8 @@ export default function Home() {
           </div>
           <div className="vendor-preview">
             <article>
-              <h2>Product line overview</h2>
-              <p>Six product records are available for owner review; commercial fields still need owner data.</p>
+            <h2>Product line overview</h2>
+              <p>TotalTOX is now the V1 product-line focus; variant SKUs and commercial fields still need owner data.</p>
             </article>
             <article>
               <h2>Documentation checklist</h2>

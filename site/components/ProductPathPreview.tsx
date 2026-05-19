@@ -4,22 +4,22 @@ import { useState } from "react";
 
 const productPaths = {
   standard: {
-    label: "Product catalog",
-    title: "Six source-backed product records are loaded [REVIEW REQUIRED]",
-    status: "Product titles, photos, path labels, availability context, and standard-kit price context are visible.",
-    action: "Open product detail, then route to support, guidance, or the gated checkout handoff. [REVIEW REQUIRED]",
+    label: "Core system",
+    title: "One TotalTOX-first product line is loaded [REVIEW REQUIRED]",
+    status: "The public catalog now centers on TotalTOX instead of multiple category-specific product names.",
+    action: "Open the TotalTOX detail, then choose a volume or support-routed path. [REVIEW REQUIRED]",
   },
   focused: {
-    label: "Path review",
-    title: "Product paths can be compared only through reviewed rules",
-    status: "Current source gives product-path labels, but comparison criteria and routing rules remain gated. [REVIEW REQUIRED]",
-    action: "Use structured guidance before presenting any product comparison or recommendation. [REVIEW REQUIRED]",
+    label: "Variant review",
+    title: "Variants are based on length, volume, and timing sensitivity",
+    status: "[OWNER DATA NEEDED: exact bottle sizes, kit counts, fit rules, variant names, and pricing]",
+    action: "Use structured guidance before presenting a variant as the right path. [REVIEW REQUIRED]",
   },
   complete: {
     label: "Support fallback",
-    title: "Human support handles missing-source or nuanced cases",
+    title: "Human support handles timing-sensitive or nuanced cases",
     status: "[OWNER DATA NEEDED: support channel, destination, and routing owner]",
-    action: "[REVIEW REQUIRED: fallback route for nuanced or missing-source cases]",
+    action: "[REVIEW REQUIRED: fallback route before public deadline, outcome, or use-context language]",
   },
 };
 
@@ -44,7 +44,7 @@ export function ProductPathPreview() {
         ))}
       </div>
       <div className="product-preview-card">
-        <p className="tag">Source-backed product path</p>
+        <p className="tag">TotalTOX product path</p>
         <h2>{path.title}</h2>
         <dl className="fact-list">
           <div>

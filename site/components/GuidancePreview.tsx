@@ -5,15 +5,15 @@ import { useState } from "react";
 const guidanceRoutes = {
   common: {
     label: "Common path",
-    title: "Use the source-backed catalog for common product paths",
-    body: "The demo can show real product records while keeping recommendation logic and claims gated. [REVIEW REQUIRED]",
-    ownerNeed: "[OWNER DATA NEEDED: owner-reviewed product mapping rules]",
+    title: "Route common cases into the TotalTOX system",
+    body: "The demo can show one core product while keeping variant logic, recommendation output, and claims gated. [REVIEW REQUIRED]",
+    ownerNeed: "[OWNER DATA NEEDED: owner-reviewed TotalTOX variant mapping rules]",
   },
   compare: {
-    label: "Compare options",
-    title: "Compare only reviewed product facts",
-    body: "Comparison output should use source-backed fields, not outcome claims or unsupported proof. [REVIEW REQUIRED]",
-    ownerNeed: "[OWNER DATA NEEDED: comparison criteria]",
+    label: "Variant fit",
+    title: "Compare only reviewed volume and fit facts",
+    body: "Variant output should use owner-confirmed kit facts, not outcome claims, deadlines, or unsupported proof. [REVIEW REQUIRED]",
+    ownerNeed: "[OWNER DATA NEEDED: hair length, kit volume, and escalation criteria]",
   },
   specific: {
     label: "Nuanced question",

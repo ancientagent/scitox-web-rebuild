@@ -52,6 +52,9 @@ const REQUIRED_PUBLIC_FIELDS = [
   "supportCta",
 ];
 
+const PUBLIC_VARIANT_REVIEW_FIELDS = ["fit", "timingBoundary", "price"];
+const PUBLIC_VARIANT_OWNER_FIELDS = ["fit", "kitVolume", "price"];
+
 function text(value) {
   return typeof value === "string" ? value : "";
 }
@@ -70,6 +73,44 @@ function validateText(errors, product, section, field) {
   if (!text(product?.[section]?.[field])) {
     errors.push(`${product?.slug ?? "unknown"}.${section}.${field} missing text`);
   }
+}
+
+function validateVariants(errors, product) {
+  const variants = product?.public?.variants;
+  if (variants === undefined) {
+    return;
+  }
+
+  if (!Array.isArray(variants) || variants.length === 0) {
+    errors.push(`${product?.slug ?? "unknown"}.public.variants missing records`);
+    return;
+  }
+
+  variants.forEach((variant, index) => {
+    if (!text(variant?.id)) {
+      errors.push(`${product?.slug ?? "unknown"}.public.variants.${index}.id missing text`);
+    }
+
+    if (!text(variant?.label)) {
+      errors.push(`${product?.slug ?? "unknown"}.public.variants.${index}.label missing text`);
+    }
+
+    for (const field of PUBLIC_VARIANT_REVIEW_FIELDS) {
+      if (!hasMarker(variant?.[field], REVIEW_MARKER)) {
+        errors.push(
+          `${product?.slug ?? "unknown"}.public.variants.${index}.${field} missing ${REVIEW_MARKER}]`,
+        );
+      }
+    }
+
+    for (const field of PUBLIC_VARIANT_OWNER_FIELDS) {
+      if (!hasMarker(variant?.[field], OWNER_MARKER)) {
+        errors.push(
+          `${product?.slug ?? "unknown"}.public.variants.${index}.${field} missing ${OWNER_MARKER}]`,
+        );
+      }
+    }
+  });
 }
 
 export function validateProductCatalog(catalog) {
@@ -102,6 +143,8 @@ export function validateProductCatalog(catalog) {
     for (const field of PUBLIC_REVIEW_FIELDS) {
       validateMarker(errors, product, "public", field, REVIEW_MARKER);
     }
+
+    validateVariants(errors, product);
 
     for (const field of VENDOR_OWNER_FIELDS) {
       validateMarker(errors, product, "vendor", field, OWNER_MARKER);
@@ -151,6 +194,16 @@ export function getPublicProductDetails(catalog) {
     shippingNotes: text(product.public?.shippingNotes),
     claimReviewStatus: text(product.public?.claimReviewStatus),
     supportCta: text(product.public?.supportCta),
+    variants: Array.isArray(product.public?.variants)
+      ? product.public.variants.map((variant) => ({
+          id: text(variant.id),
+          label: text(variant.label),
+          fit: text(variant.fit),
+          kitVolume: text(variant.kitVolume),
+          timingBoundary: text(variant.timingBoundary),
+          price: text(variant.price),
+        }))
+      : [],
   }));
 }
 

@@ -14,7 +14,7 @@
       "type": "product_catalog",
       "status": "OWNER_DATA_NEEDED",
       "allowed_use": "Product matching only after owner-reviewed product data is supplied.",
-      "content": "[OWNER DATA NEEDED: product names, SKUs, categories, sizes, labels, prices, ingredients, instructions, warnings, availability, and reviewed product-path mapping rules.]"
+      "content": "[OWNER DATA NEEDED: TotalTOX variant names, SKUs, hair-length rules, kit volumes, bottle sizes, labels, prices, ingredients, instructions, warnings, availability, and reviewed variant-path mapping rules.]"
     },
     {
       "id": "claim-boundary-rules",
@@ -31,7 +31,21 @@
       "content": "[REVIEW REQUIRED: escalate to human support when customer answers are ambiguous, sensitive, outside reviewed product mappings, or require support details not present in the source base.]"
     }
   ],
-  "product_paths": [],
+  "product_paths": [
+    {
+      "id": "totaltox-variant-routing-placeholder",
+      "status": "OWNER_DATA_NEEDED",
+      "product_id": "totaltox-hair-detox-shampoo-system",
+      "path_label": "TotalTOX variant routing placeholder [REVIEW REQUIRED]",
+      "allowed_use": "Human follow-up only until owner-reviewed variant mapping exists.",
+      "routing_inputs_needed": [
+        "hair length [OWNER DATA NEEDED]",
+        "kit volume need [OWNER DATA NEEDED]",
+        "timing-sensitive support boundary [REVIEW REQUIRED]",
+        "variant pricing [OWNER DATA NEEDED]"
+      ]
+    }
+  ],
   "assistant_output_contract": {
     "recommendation_status": "product_path | needs_more_info | human_follow_up",
     "recommended_product_id": "null until owner-reviewed product mapping exists",

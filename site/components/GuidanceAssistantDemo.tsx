@@ -16,13 +16,13 @@ type GuidanceResult = {
 const demoRoutes = {
   common: {
     label: "Common path",
-    answerLabel: "Product path type [REVIEW REQUIRED]",
-    answerValue: "standard",
+    answerLabel: "TotalTOX path type [REVIEW REQUIRED]",
+    answerValue: "standard-volume",
   },
   compare: {
-    label: "Compare options",
-    answerLabel: "Comparison need [REVIEW REQUIRED]",
-    answerValue: "compare",
+    label: "Variant fit",
+    answerLabel: "Variant fit need [REVIEW REQUIRED]",
+    answerValue: "long-hair-volume",
   },
   boundary: {
     label: "Boundary check",

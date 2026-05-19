@@ -19,9 +19,9 @@ export default function WholesalePage() {
         }
       >
         <p>
-          The vendor layer now has source-backed product names, path labels,
-          photos, and public price context. Commercial terms, routing, and
-          vendor documentation still need owner-confirmed data.
+          The vendor layer now centers on one TotalTOX product line with
+          review-gated variant paths. Commercial terms, routing, and vendor
+          documentation still need owner-confirmed data.
         </p>
       </Section>
       <section className="content-band">
@@ -30,17 +30,17 @@ export default function WholesalePage() {
             <p className="eyebrow">Vendor-facing preview</p>
             <h2>Separate data-forward wholesale surface</h2>
             <p>
-              The line sheet can show the real product family now, while still
-              blocking incomplete pricing, SKU, case-pack, label, and claim
-              substantiation fields.
+              The line sheet can become cleaner around one product family,
+              while still blocking incomplete pricing, SKU, case-pack, label,
+              and claim substantiation fields.
             </p>
           </div>
           <div className="vendor-grid">
             <article>
               <h2>Product line overview</h2>
               <p>
-                Six captured public product records are available for demo
-                line-sheet structure. [REVIEW REQUIRED]
+                One TotalTOX-first product line is available for demo
+                line-sheet structure, with variant SKUs pending. [REVIEW REQUIRED]
               </p>
             </article>
             <article>
@@ -55,7 +55,7 @@ export default function WholesalePage() {
           <div className="vendor-product-table-wrap">
             <table className="vendor-product-table">
               <caption>
-                Source-backed product line with commercial fields gated for review
+                TotalTOX product line with commercial fields gated for review
               </caption>
               <thead>
                 <tr>

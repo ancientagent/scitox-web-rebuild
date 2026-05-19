@@ -17,7 +17,7 @@ export default function GuidancePage() {
         }
       >
         <p>
-          [OWNER DATA NEEDED: owner-reviewed source data, product mapping rules,
+          [OWNER DATA NEEDED: owner-reviewed source data, TotalTOX variant mapping rules,
           support fallback workflow, and privacy/data handling terms]
         </p>
       </Section>

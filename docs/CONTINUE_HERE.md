@@ -29,8 +29,9 @@ Read these before making project decisions:
 21. `docs/WEBFLOW_QA_CHECKLIST.md` only for actual Webflow QA or legacy reference
 22. `docs/SHARED_CHAT_CONTEXT.md`
 23. `docs/SOURCE_INDEX.md`
-24. `docs/SHARED_CHAT_TRANSCRIPT_STRUCTURED.txt` when exact prior conversation wording is needed
-25. `project_sources/external_pages_manifest.json` when checking which linked sources were archived successfully
+24. `docs/TOTALTOX_SINGLE_PRODUCT_DIRECTION.md`
+25. `docs/SHARED_CHAT_TRANSCRIPT_STRUCTURED.txt` when exact prior conversation wording is needed
+26. `project_sources/external_pages_manifest.json` when checking which linked sources were archived successfully
 
 ## Working Rules
 
@@ -42,6 +43,7 @@ Read these before making project decisions:
 - Treat non-Amazon growth as a serious path.
 - Separate the public customer site from the partner/vendor-facing surface.
 - Treat the public homepage as a calm product guidance lobby, not a dense product-explanation page.
+- Treat the current V1 product direction as TotalTOX-first: one public product family with review-gated variant paths, unless the owner explicitly changes direction.
 - Build the production implementation as a custom app under `site/` unless the owner explicitly changes the platform decision.
 - Treat Webflow and Claude Design as prototype, visual-reference, CMS-reference, or handoff aids unless explicitly assigned as production.
 - Build the product guidance assistant as a live backend-source-grounded feature, not as an open-ended frontend AI chat.

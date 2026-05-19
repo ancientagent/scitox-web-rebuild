@@ -12,7 +12,7 @@ The current demo shows the V1 shape of a private, restrained SciTOX web app:
 
 - A calm customer lobby for visitors who already know why they are there.
 - Stable navigation across products, product detail, guidance, support, contact, wholesale, and policy routes.
-- Product and vendor placeholders that keep public product pages separate from wholesale/vendor information.
+- TotalTOX-first product and vendor placeholders that keep public product pages separate from wholesale/vendor information.
 - Review-gated guidance, intake, and checkout flows.
 - Clear places where owner data, policy review, payment review, and source-base review are still needed.
 
@@ -24,7 +24,7 @@ Use this path when reviewing the demo:
 
 1. Home: `/`
 2. Products: `/products`
-3. Example product detail: `/products/example-product`
+3. TotalTOX product detail: `/products/totaltox-hair-detox-shampoo-system`
 4. Checkout gate on the product detail page.
 5. Guidance: `/guidance`
 6. Support: `/support`
@@ -42,7 +42,7 @@ Review the demo for structure and operating fit:
 
 - Does the homepage routing model match how customers should be guided?
 - Should the product path begin with product browsing, guided questions, human support, or another route?
-- Which product details can safely appear on public product pages?
+- Which TotalTOX product details and variant details can safely appear on public product pages?
 - Which product details should stay vendor-only or owner-only?
 - Does the guidance flow ask the right type of structured questions?
 - When should the guidance flow escalate to human support instead of returning a product path?
@@ -56,9 +56,9 @@ Review the demo for structure and operating fit:
 The current demo includes:
 
 - Shared header, footer, layout, route shell, favicon, and custom 404.
-- Stable demo routes for home, products, example product detail, guidance, support, contact, wholesale, privacy, terms, and shipping/returns.
+- Stable demo routes for home, products, TotalTOX product detail, guidance, support, contact, wholesale, privacy, terms, and shipping/returns.
 - Clickable homepage route cards for the main owner-demo paths.
-- Product data placeholders with public product fields separated from vendor/wholesale fields.
+- TotalTOX product data placeholders with public product fields separated from vendor/wholesale fields.
 - Product detail placeholders for facts, owner-needed data, review-needed sections, support routing, and checkout state.
 - Guidance API scaffold that returns structured JSON and escalates to human follow-up when source support is missing or the request is outside approved boundaries.
 - Support, contact, and wholesale intake forms with client/server validation and safe success/error states.
@@ -83,8 +83,8 @@ The following are intentionally not live:
 
 Before the demo can move toward launch, the owner needs to provide or confirm:
 
-- Product list, product names, categories, sizes, images, labels, ingredients, directions, warnings, availability, and public display rules. `[OWNER DATA NEEDED]`
-- Product routing rules for common paths, comparison paths, and human escalation. `[OWNER DATA NEEDED]`
+- TotalTOX product name, variant names, categories, sizes, images, labels, ingredients, directions, warnings, availability, and public display rules. `[OWNER DATA NEEDED]`
+- TotalTOX variant routing rules for hair length, kit volume, timing-sensitive support, and human escalation. `[OWNER DATA NEEDED]`
 - Prices, MSRP, wholesale pricing, MOQ, case pack, UPC/GTIN, stock status, shipping rules, and fulfillment rules. `[OWNER DATA NEEDED]`
 - Support process, support owner, response expectations, callback workflow, and customer handoff rules. `[OWNER DATA NEEDED]`
 - Contact, support, and wholesale form destinations. `[OWNER DATA NEEDED]`
@@ -156,7 +156,7 @@ Needed before vendor/wholesale review:
 Do not treat these as launch-ready:
 
 - Placeholder text.
-- Product facts on the example product page.
+- Product and variant facts on the TotalTOX product page.
 - Vendor product table data.
 - Guidance recommendation output beyond source-gated demo behavior.
 - Checkout handoff or payment collection.
@@ -171,8 +171,8 @@ Do not treat these as launch-ready:
 Recommended next steps:
 
 1. Owner completes the data and decision items in this packet.
-2. Convert owner-confirmed product and vendor fields into the source-controlled product data model.
-3. Build the owner-reviewed guidance source base and approved product-path rules.
+2. Convert owner-confirmed TotalTOX variant and vendor fields into the source-controlled product data model.
+3. Build the owner-reviewed guidance source base and approved TotalTOX variant-path rules.
 4. Connect support/contact/wholesale forms to an owner-confirmed destination.
 5. Configure and test Authorize.net sandbox only after owner/payment details are available.
 6. Draft policy pages from owner-provided policy decisions, then mark claim-sensitive language for review.

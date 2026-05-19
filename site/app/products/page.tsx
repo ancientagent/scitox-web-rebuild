@@ -12,23 +12,24 @@ export default function ProductsPage() {
     <div className="page-flow">
       <Section
         eyebrow="Products route"
-        title="Source-backed product paths [REVIEW REQUIRED]"
+        title="TotalTOX product line [REVIEW REQUIRED]"
         actions={<StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>}
       >
         <p>
-          Product names, photos, path labels, and standard-kit price context
-          have been pulled from captured SciTOX store sources. Claims,
-          directions, and recommendation rules remain review-gated.
+          The V1 product route now centers on one TotalTOX system with
+          review-gated variant paths for hair length, kit volume, and
+          timing-sensitive support needs.
         </p>
       </Section>
       <section className="content-band content-band--muted">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Product path states</p>
-            <h2>Choose a reviewed product path [REVIEW REQUIRED]</h2>
+            <h2>Choose a reviewed TotalTOX path [REVIEW REQUIRED]</h2>
             <p>
-              Source-backed products can be browsed now; comparison logic,
-              support fallback, and recommendations still need review.
+              Product browsing is now simpler: one core product, variant
+              selection through reviewed rules, and support fallback for
+              nuanced situations.
             </p>
           </div>
           <ProductPathPreview />
@@ -38,11 +39,11 @@ export default function ProductsPage() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Product data</p>
-            <h2>Store-sourced product records with review gates</h2>
+            <h2>One product record with review-gated variants</h2>
             <p>
-              These records make the demo feel like a real product catalog
-              while keeping sensitive claims and missing vendor fields clearly
-              marked.
+              The prior category-specific catalog is no longer the public V1
+              direction. Variant details still need owner confirmation before
+              they become launch data.
             </p>
           </div>
           <div className="product-data-grid">
@@ -58,7 +59,7 @@ export default function ProductsPage() {
                     <dd>{product.size}</dd>
                   </div>
                   <div>
-                    <dt>Kit composition</dt>
+                    <dt>Kit / variant structure</dt>
                     <dd>{product.kitComposition}</dd>
                   </div>
                   <div>
@@ -74,6 +75,16 @@ export default function ProductsPage() {
                     <dd>{product.claimReviewStatus}</dd>
                   </div>
                 </dl>
+                {product.variants?.length ? (
+                  <div className="variant-list" aria-label={`${product.name} variant paths`}>
+                    {product.variants.map((variant) => (
+                      <article className="variant-card" key={variant.id}>
+                        <h3>{variant.label}</h3>
+                        <p>{variant.fit}</p>
+                      </article>
+                    ))}
+                  </div>
+                ) : null}
                 <Link className="text-link" href={`/products/${product.slug}`}>
                   View owner-review detail
                 </Link>

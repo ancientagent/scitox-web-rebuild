@@ -9,7 +9,7 @@ import {
 
 test("missing Authorize.net config returns review-gated unavailable state", () => {
   const result = createAuthorizeNetCheckoutGate(
-    { productSlug: "example-product" },
+    { productSlug: "totaltox-hair-detox-shampoo-system" },
     { env: { AUTHORIZE_NET_ENVIRONMENT: "sandbox" } },
   );
 
@@ -32,7 +32,7 @@ test("malformed checkout request returns safe validation errors", () => {
 
 test("explicit sandbox config still returns unavailable review-gated state", () => {
   const result = createAuthorizeNetCheckoutGate(
-    { productSlug: "example-product" },
+    { productSlug: "totaltox-hair-detox-shampoo-system" },
     {
       env: {
         AUTHORIZE_NET_API_LOGIN_ID: "configured-for-test",
@@ -53,7 +53,7 @@ test("explicit sandbox config still returns unavailable review-gated state", () 
 
 test("raw card fields are not accepted by the checkout gate", () => {
   const result = validateAuthorizeNetCheckoutRequest({
-    productSlug: "example-product",
+    productSlug: "totaltox-hair-detox-shampoo-system",
     cardNumber: "4111111111111111",
     cvv: "123",
   });

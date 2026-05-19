@@ -1,240 +1,62 @@
 {
-  "status": "Source-backed product records imported from captured public SciTOX store pages. [REVIEW REQUIRED: confirm currentness before launch]",
+  "status": "Owner-direction product records imported from captured public SciTOX store pages and simplified to a TotalTOX-first V1. [REVIEW REQUIRED: confirm currentness before launch]",
   "notes": [
-    "Product titles, path labels, source image assets, visual kit-composition references, standard-kit sale context, shipping references, damaged-item handling references, and warning topics are source-backed from captured public product pages.",
-    "Outcome, mechanism, guarantee, review, comparison, timing, direction, and policy language remains blocked until review. [REVIEW REQUIRED]",
+    "The prior public store included multiple category-specific product records. V1 is now being reshaped around one TotalTOX system with variant paths for hair length, kit volume, and timing-sensitive support. [REVIEW REQUIRED]",
+    "TotalTOX title, source image asset, visual kit-composition reference, standard-kit sale context, shipping references, damaged-item handling references, and warning topics are source-backed from captured public product pages.",
+    "Outcome, mechanism, review, comparison, timing, direction, and policy language remains blocked until review. [REVIEW REQUIRED]",
     "Wholesale pricing, SKUs, case packs, UPC/GTIN, label files, dimensions, packaging, insurance status, and routing are still missing operational data. [OWNER DATA NEEDED]"
   ],
   "products": [
     {
-      "slug": "greenout-thc-hair-detox-shampoo-system",
-      "status": "Source-backed product record loaded from captured public store page. [REVIEW REQUIRED: public exposure and claim review]",
-      "public": {
-        "name": "GreenOUT - THC Hair Detox Shampoo System",
-        "category": "THC product path [REVIEW REQUIRED: public exposure level]",
-        "size": "Standard kit [REVIEW REQUIRED: confirm kit contents and variants]",
-        "price": "$239 standard-kit sale context [REVIEW REQUIRED: confirm current price and MSRP]",
-        "availability": "Captured public store product record [REVIEW REQUIRED: confirm current availability]",
-        "image": "/product-marketing/greenout-kit.png",
-        "sourceImage": "/product-images/greenout.jpg",
-        "kitComposition": "7-piece standard kit visual concept based on the captured product photo: 3 larger bottles/jars, 2 smaller bottles/jars, and 2 applicator bottles. [REVIEW REQUIRED: confirm exact bottle count, sizes, and types]",
-        "shortDescription": "Source-backed product record for the THC path. Public claims and recommendation rules remain review-gated. [REVIEW REQUIRED]",
-        "longDescription": "This demo uses the existing public product title, image, and path label to show how the product detail page can feel once source-backed data is loaded. Outcome, mechanism, guarantee, timing, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
-        "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
-        "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
-        "warnings": "Source warning topics include pregnancy or physician review, oral-product laxative effect, scalp irritation, hair texture changes, eye contact, protective coverings, treatment time, and child safety. [REVIEW REQUIRED]",
-        "shippingNotes": "Source captures worldwide shipping and damaged-item replacement handling with photo or video proof. [REVIEW REQUIRED: confirm current policy before launch]",
-        "claimReviewStatus": "Source page contains outcome, guarantee, scientific, review, competitor, timing, and mechanism claims. Public claim use remains blocked pending review. [REVIEW REQUIRED]",
-        "supportCta": "Use structured product questions or human follow-up for nuanced situations before routing a purchase path. [REVIEW REQUIRED]"
-      },
-      "vendor": {
-        "sku": "[OWNER DATA NEEDED: SKU]",
-        "msrp": "$239 public standard-kit sale context [REVIEW REQUIRED: confirm MSRP and current price]",
-        "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
-        "moq": "[OWNER DATA NEEDED: MOQ]",
-        "casePack": "[OWNER DATA NEEDED: case pack]",
-        "upcGtin": "[OWNER DATA NEEDED: UPC/GTIN]",
-        "labelFile": "[OWNER DATA NEEDED: label file]",
-        "dimensionsWeight": "[OWNER DATA NEEDED: product dimensions and weight]",
-        "packagingDetails": "[OWNER DATA NEEDED: packaging details]",
-        "shippingTerms": "Source captures worldwide shipping and damaged-item handling; wholesale shipping terms are not confirmed. [REVIEW REQUIRED]",
-        "returnPolicy": "Source captures damaged-item replacement and non-return policy themes; launch terms need rewrite and review. [REVIEW REQUIRED]",
-        "insuranceStatus": "[OWNER DATA NEEDED: product liability insurance status]",
-        "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
-        "vendorReadinessNotes": [
-          "Product title, path label, photo, and public price context are source-backed for demo use. [REVIEW REQUIRED]",
-          "Vendor line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
-        ]
-      }
-    },
-    {
-      "slug": "crystalclear-amphetamine-hair-detox-shampoo-system",
-      "status": "Source-backed product record loaded from captured public store page. [REVIEW REQUIRED: public exposure and claim review]",
-      "public": {
-        "name": "CrystalCLEAR - Amphetamine Hair Detox Shampoo System",
-        "category": "Amphetamine product path [REVIEW REQUIRED: public exposure level]",
-        "size": "Standard kit [REVIEW REQUIRED: confirm kit contents and variants]",
-        "price": "$239 standard-kit sale context [REVIEW REQUIRED: confirm current price and MSRP]",
-        "availability": "Captured public store product record [REVIEW REQUIRED: confirm current availability]",
-        "image": "/product-marketing/crystalclear-kit.png",
-        "sourceImage": "/product-images/crystalclear.jpg",
-        "kitComposition": "7-piece standard kit visual concept based on the captured product photo: 3 larger bottles/jars, 2 smaller bottles/jars, and 2 applicator bottles. [REVIEW REQUIRED: confirm exact bottle count, sizes, and types]",
-        "shortDescription": "Source-backed product record for the amphetamine path. Public claims and recommendation rules remain review-gated. [REVIEW REQUIRED]",
-        "longDescription": "This demo uses the existing public product title, image, and path label to show how the product detail page can feel once source-backed data is loaded. Outcome, mechanism, guarantee, timing, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
-        "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
-        "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
-        "warnings": "Source warning topics include pregnancy or physician review, oral-product laxative effect, scalp irritation, hair texture changes, eye contact, protective coverings, treatment time, and child safety. [REVIEW REQUIRED]",
-        "shippingNotes": "Source captures worldwide shipping and damaged-item replacement handling with photo or video proof. [REVIEW REQUIRED: confirm current policy before launch]",
-        "claimReviewStatus": "Source page contains outcome, guarantee, scientific, review, competitor, timing, and mechanism claims. Public claim use remains blocked pending review. [REVIEW REQUIRED]",
-        "supportCta": "Use structured product questions or human follow-up for nuanced situations before routing a purchase path. [REVIEW REQUIRED]"
-      },
-      "vendor": {
-        "sku": "[OWNER DATA NEEDED: SKU]",
-        "msrp": "$239 public standard-kit sale context [REVIEW REQUIRED: confirm MSRP and current price]",
-        "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
-        "moq": "[OWNER DATA NEEDED: MOQ]",
-        "casePack": "[OWNER DATA NEEDED: case pack]",
-        "upcGtin": "[OWNER DATA NEEDED: UPC/GTIN]",
-        "labelFile": "[OWNER DATA NEEDED: label file]",
-        "dimensionsWeight": "[OWNER DATA NEEDED: product dimensions and weight]",
-        "packagingDetails": "[OWNER DATA NEEDED: packaging details]",
-        "shippingTerms": "Source captures worldwide shipping and damaged-item handling; wholesale shipping terms are not confirmed. [REVIEW REQUIRED]",
-        "returnPolicy": "Source captures damaged-item replacement and non-return policy themes; launch terms need rewrite and review. [REVIEW REQUIRED]",
-        "insuranceStatus": "[OWNER DATA NEEDED: product liability insurance status]",
-        "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
-        "vendorReadinessNotes": [
-          "Product title, path label, photo, and public price context are source-backed for demo use. [REVIEW REQUIRED]",
-          "Vendor line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
-        ]
-      }
-    },
-    {
-      "slug": "whiteout-cocaine-hair-detox-shampoo-system",
-      "status": "Source-backed product record loaded from captured public store page. [REVIEW REQUIRED: public exposure and claim review]",
-      "public": {
-        "name": "WhiteOUT Cocaine Hair Detox Shampoo System",
-        "category": "Cocaine product path [REVIEW REQUIRED: public exposure level]",
-        "size": "Standard kit [REVIEW REQUIRED: confirm kit contents and variants]",
-        "price": "$239 standard-kit sale context [REVIEW REQUIRED: confirm current price and MSRP]",
-        "availability": "Captured public store product record [REVIEW REQUIRED: confirm current availability]",
-        "image": "/product-marketing/whiteout-kit.png",
-        "sourceImage": "/product-images/whiteout.jpg",
-        "kitComposition": "7-piece standard kit visual concept based on the captured product photo: 3 larger bottles/jars, 2 smaller bottles/jars, and 2 applicator bottles. [REVIEW REQUIRED: confirm exact bottle count, sizes, and types]",
-        "shortDescription": "Source-backed product record for the cocaine path. Public claims and recommendation rules remain review-gated. [REVIEW REQUIRED]",
-        "longDescription": "This demo uses the existing public product title, image, and path label to show how the product detail page can feel once source-backed data is loaded. Outcome, mechanism, guarantee, timing, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
-        "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
-        "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
-        "warnings": "Source warning topics include pregnancy or physician review, oral-product laxative effect, scalp irritation, hair texture changes, eye contact, protective coverings, treatment time, and child safety. [REVIEW REQUIRED]",
-        "shippingNotes": "Source captures worldwide shipping and damaged-item replacement handling with photo or video proof. [REVIEW REQUIRED: confirm current policy before launch]",
-        "claimReviewStatus": "Source page contains outcome, guarantee, scientific, review, competitor, timing, and mechanism claims. Public claim use remains blocked pending review. [REVIEW REQUIRED]",
-        "supportCta": "Use structured product questions or human follow-up for nuanced situations before routing a purchase path. [REVIEW REQUIRED]"
-      },
-      "vendor": {
-        "sku": "[OWNER DATA NEEDED: SKU]",
-        "msrp": "$239 public standard-kit sale context [REVIEW REQUIRED: confirm MSRP and current price]",
-        "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
-        "moq": "[OWNER DATA NEEDED: MOQ]",
-        "casePack": "[OWNER DATA NEEDED: case pack]",
-        "upcGtin": "[OWNER DATA NEEDED: UPC/GTIN]",
-        "labelFile": "[OWNER DATA NEEDED: label file]",
-        "dimensionsWeight": "[OWNER DATA NEEDED: product dimensions and weight]",
-        "packagingDetails": "[OWNER DATA NEEDED: packaging details]",
-        "shippingTerms": "Source captures worldwide shipping and damaged-item handling; wholesale shipping terms are not confirmed. [REVIEW REQUIRED]",
-        "returnPolicy": "Source captures damaged-item replacement and non-return policy themes; launch terms need rewrite and review. [REVIEW REQUIRED]",
-        "insuranceStatus": "[OWNER DATA NEEDED: product liability insurance status]",
-        "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
-        "vendorReadinessNotes": [
-          "Product title, path label, photo, and public price context are source-backed for demo use. [REVIEW REQUIRED]",
-          "Vendor line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
-        ]
-      }
-    },
-    {
-      "slug": "benzorid-benzodiazepine-hair-detox-shampoo-system",
-      "status": "Source-backed product record loaded from captured public store page. [REVIEW REQUIRED: public exposure and claim review]",
-      "public": {
-        "name": "BenzoRID Hair Detox Shampoo System- Benzodiazepine Hair Follicle Detox Shampoo System",
-        "category": "Benzodiazepine product path [REVIEW REQUIRED: public exposure level]",
-        "size": "Standard kit [REVIEW REQUIRED: confirm kit contents and variants]",
-        "price": "$239 standard-kit sale context [REVIEW REQUIRED: confirm current price and MSRP]",
-        "availability": "Captured public store product record [REVIEW REQUIRED: confirm current availability]",
-        "image": "/product-marketing/benzorid-kit.png",
-        "sourceImage": "/product-images/benzorid.jpg",
-        "kitComposition": "9-item kit visual concept based on the captured product photo: tall bottles, smaller bottles, tube-style items, and one spray-style item. [REVIEW REQUIRED: confirm exact bottle count, sizes, and types]",
-        "shortDescription": "Source-backed product record for the benzodiazepine path. Public claims and recommendation rules remain review-gated. [REVIEW REQUIRED]",
-        "longDescription": "This demo uses the existing public product title, image, and path label to show how the product detail page can feel once source-backed data is loaded. Outcome, mechanism, guarantee, timing, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
-        "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
-        "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
-        "warnings": "Source warning topics include pregnancy or physician review, oral-product laxative effect, scalp irritation, hair texture changes, eye contact, protective coverings, treatment time, and child safety. [REVIEW REQUIRED]",
-        "shippingNotes": "Source captures worldwide shipping and damaged-item replacement handling with photo or video proof. [REVIEW REQUIRED: confirm current policy before launch]",
-        "claimReviewStatus": "Source page contains outcome, guarantee, scientific, review, competitor, timing, and mechanism claims. Public claim use remains blocked pending review. [REVIEW REQUIRED]",
-        "supportCta": "Use structured product questions or human follow-up for nuanced situations before routing a purchase path. [REVIEW REQUIRED]"
-      },
-      "vendor": {
-        "sku": "[OWNER DATA NEEDED: SKU]",
-        "msrp": "$239 public standard-kit sale context [REVIEW REQUIRED: confirm MSRP and current price]",
-        "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
-        "moq": "[OWNER DATA NEEDED: MOQ]",
-        "casePack": "[OWNER DATA NEEDED: case pack]",
-        "upcGtin": "[OWNER DATA NEEDED: UPC/GTIN]",
-        "labelFile": "[OWNER DATA NEEDED: label file]",
-        "dimensionsWeight": "[OWNER DATA NEEDED: product dimensions and weight]",
-        "packagingDetails": "[OWNER DATA NEEDED: packaging details]",
-        "shippingTerms": "Source captures worldwide shipping and damaged-item handling; wholesale shipping terms are not confirmed. [REVIEW REQUIRED]",
-        "returnPolicy": "Source captures damaged-item replacement and non-return policy themes; launch terms need rewrite and review. [REVIEW REQUIRED]",
-        "insuranceStatus": "[OWNER DATA NEEDED: product liability insurance status]",
-        "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
-        "vendorReadinessNotes": [
-          "Product title, path label, photo, and public price context are source-backed for demo use. [REVIEW REQUIRED]",
-          "Vendor line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
-        ]
-      }
-    },
-    {
-      "slug": "etgtox-alcohol-hair-follicle-detox-shampoo-system",
-      "status": "Source-backed product record loaded from captured public store page. [REVIEW REQUIRED: public exposure and claim review]",
-      "public": {
-        "name": "ETGTox Alcohol Hair Follicle Detox Shampoo System - ETG Hair Alcohol Detox Shampoo",
-        "category": "Alcohol/ETG product path [REVIEW REQUIRED: public exposure level]",
-        "size": "Standard kit [REVIEW REQUIRED: confirm kit contents and variants]",
-        "price": "$239 standard-kit sale context [REVIEW REQUIRED: confirm current price and MSRP]",
-        "availability": "Captured public store product record [REVIEW REQUIRED: confirm current availability]",
-        "image": "/product-marketing/etgtox-kit.png",
-        "sourceImage": "/product-images/etgtox.png",
-        "kitComposition": "8-item kit visual concept based on the captured product photo: tall bottles, smaller bottles, one tube-style item, and one spray-style item. [REVIEW REQUIRED: confirm exact bottle count, sizes, and types]",
-        "shortDescription": "Source-backed product record for the alcohol/ETG path. Public claims and recommendation rules remain review-gated. [REVIEW REQUIRED]",
-        "longDescription": "This demo uses the existing public product title, image, and path label to show how the product detail page can feel once source-backed data is loaded. Outcome, mechanism, guarantee, timing, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
-        "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
-        "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
-        "warnings": "Source warning topics include pregnancy or physician review, oral-product laxative effect, scalp irritation, hair texture changes, eye contact, protective coverings, treatment time, and child safety. [REVIEW REQUIRED]",
-        "shippingNotes": "Source captures worldwide shipping and damaged-item replacement handling with photo or video proof. [REVIEW REQUIRED: confirm current policy before launch]",
-        "claimReviewStatus": "Source page contains outcome, guarantee, scientific, review, competitor, timing, and mechanism claims. Public claim use remains blocked pending review. [REVIEW REQUIRED]",
-        "supportCta": "Use structured product questions or human follow-up for nuanced situations before routing a purchase path. [REVIEW REQUIRED]"
-      },
-      "vendor": {
-        "sku": "[OWNER DATA NEEDED: SKU]",
-        "msrp": "$239 public standard-kit sale context [REVIEW REQUIRED: confirm MSRP and current price]",
-        "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
-        "moq": "[OWNER DATA NEEDED: MOQ]",
-        "casePack": "[OWNER DATA NEEDED: case pack]",
-        "upcGtin": "[OWNER DATA NEEDED: UPC/GTIN]",
-        "labelFile": "[OWNER DATA NEEDED: label file]",
-        "dimensionsWeight": "[OWNER DATA NEEDED: product dimensions and weight]",
-        "packagingDetails": "[OWNER DATA NEEDED: packaging details]",
-        "shippingTerms": "Source captures worldwide shipping and damaged-item handling; wholesale shipping terms are not confirmed. [REVIEW REQUIRED]",
-        "returnPolicy": "Source captures damaged-item replacement and non-return policy themes; launch terms need rewrite and review. [REVIEW REQUIRED]",
-        "insuranceStatus": "[OWNER DATA NEEDED: product liability insurance status]",
-        "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
-        "vendorReadinessNotes": [
-          "Product title, path label, photo, and public price context are source-backed for demo use. [REVIEW REQUIRED]",
-          "Vendor line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
-        ]
-      }
-    },
-    {
       "slug": "totaltox-hair-detox-shampoo-system",
-      "status": "Source-backed product record loaded from captured public store page. [REVIEW REQUIRED: public exposure and claim review]",
+      "status": "Owner-direction TotalTOX-first product record loaded from captured public store page. [REVIEW REQUIRED: public exposure, claim, and variant review]",
       "public": {
-        "name": "TotalTOX Best Hair Detox Shampoo- for ALL TOXINS",
-        "category": "Broad product path [REVIEW REQUIRED: public exposure level and claim wording]",
-        "size": "Standard kit [REVIEW REQUIRED: confirm kit contents and variants]",
-        "price": "$239 standard-kit sale context [REVIEW REQUIRED: confirm current price and MSRP]",
-        "availability": "Captured public store product record [REVIEW REQUIRED: confirm current availability]",
+        "name": "TotalTOX Hair Detox Shampoo System",
+        "category": "Single-system product line with volume and timing-sensitive paths [REVIEW REQUIRED: public exposure and claim wording]",
+        "size": "Variant-based kit [OWNER DATA NEEDED: confirm bottle sizes, volumes, and exact kit contents] [REVIEW REQUIRED]",
+        "price": "[OWNER DATA NEEDED: standard, long-hair, and timing-sensitive variant pricing] [REVIEW REQUIRED]",
+        "availability": "Owner-direction V1 product line pending confirmation. [REVIEW REQUIRED: confirm current availability]",
         "image": "/product-marketing/totaltox-kit.png",
         "sourceImage": "/product-images/totaltox.jpg",
-        "kitComposition": "12-item complete-kit visual concept based on the captured product photo: larger bottles, smaller bottles/jars, and multiple applicator bottles. [REVIEW REQUIRED: confirm exact bottle count, sizes, and types]",
-        "shortDescription": "Source-backed product record for the broad product path. Public claims and recommendation rules remain review-gated. [REVIEW REQUIRED]",
-        "longDescription": "This demo uses the existing public product title, image, and path label to show how the product detail page can feel once source-backed data is loaded. Outcome, mechanism, guarantee, timing, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
+        "kitComposition": "12-item complete-kit visual concept based on the captured TotalTOX product photo. Variant kit counts, bottle sizes, bottle types, and volume rules remain owner data. [OWNER DATA NEEDED] [REVIEW REQUIRED]",
+        "shortDescription": "One core TotalTOX system can become the V1 product line, with review-gated variant paths based on hair length, kit volume, and timing-sensitive support needs. [REVIEW REQUIRED]",
+        "longDescription": "This demo treats TotalTOX as the primary customer-facing product and moves the prior category-specific product paths out of the public catalog. Outcome, mechanism, restricted-use, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
         "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
         "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
         "warnings": "Source warning topics include pregnancy or physician review, oral-product laxative effect, scalp irritation, hair texture changes, eye contact, protective coverings, treatment time, and child safety. [REVIEW REQUIRED]",
         "shippingNotes": "Source captures worldwide shipping and damaged-item replacement handling with photo or video proof. [REVIEW REQUIRED: confirm current policy before launch]",
-        "claimReviewStatus": "Source page contains outcome, guarantee, scientific, review, competitor, timing, and mechanism claims. Public claim use remains blocked pending review. [REVIEW REQUIRED]",
-        "supportCta": "Use structured product questions or human follow-up for nuanced situations before routing a purchase path. [REVIEW REQUIRED]"
+        "claimReviewStatus": "The simplified TotalTOX line reduces category-specific public exposure, but product performance, timing, proof, and use-context language remains blocked pending review. [REVIEW REQUIRED]",
+        "supportCta": "Use structured product questions or human follow-up to choose the right kit volume and support path. [REVIEW REQUIRED]",
+        "variants": [
+          {
+            "id": "standard-volume",
+            "label": "Standard volume path",
+            "fit": "Common-volume product path for owner-reviewed scenarios. [OWNER DATA NEEDED: exact hair-length range and fit rules] [REVIEW REQUIRED]",
+            "kitVolume": "[OWNER DATA NEEDED: bottle count, bottle sizes, and included items]",
+            "timingBoundary": "[REVIEW REQUIRED: public timing language and restricted-use boundary]",
+            "price": "[OWNER DATA NEEDED: standard variant price] [REVIEW REQUIRED]"
+          },
+          {
+            "id": "long-hair-volume",
+            "label": "Long-hair volume path",
+            "fit": "Higher-volume product path for longer hair or higher product-volume needs. [OWNER DATA NEEDED: exact hair-length range and fit rules] [REVIEW REQUIRED]",
+            "kitVolume": "[OWNER DATA NEEDED: bottle count, bottle sizes, and included items]",
+            "timingBoundary": "[REVIEW REQUIRED: public timing language and restricted-use boundary]",
+            "price": "[OWNER DATA NEEDED: long-hair variant price] [REVIEW REQUIRED]"
+          },
+          {
+            "id": "time-sensitive-support",
+            "label": "Time-sensitive support path",
+            "fit": "Support-first path for timing-sensitive or nuanced situations before a purchase route is shown. [OWNER DATA NEEDED: escalation criteria] [REVIEW REQUIRED]",
+            "kitVolume": "[OWNER DATA NEEDED: whether this is a separate kit, bundle, or support-routed variant]",
+            "timingBoundary": "[REVIEW REQUIRED: avoid public outcome, proof, or deadline claims]",
+            "price": "[OWNER DATA NEEDED: variant or support-routed price] [REVIEW REQUIRED]"
+          }
+        ]
       },
       "vendor": {
         "sku": "[OWNER DATA NEEDED: SKU]",
-        "msrp": "$239 public standard-kit sale context [REVIEW REQUIRED: confirm MSRP and current price]",
+        "msrp": "[OWNER DATA NEEDED: MSRP by TotalTOX variant] [REVIEW REQUIRED]",
         "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
         "moq": "[OWNER DATA NEEDED: MOQ]",
         "casePack": "[OWNER DATA NEEDED: case pack]",
@@ -247,8 +69,8 @@
         "insuranceStatus": "[OWNER DATA NEEDED: product liability insurance status]",
         "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
         "vendorReadinessNotes": [
-          "Product title, path label, photo, and public price context are source-backed for demo use. [REVIEW REQUIRED]",
-          "Vendor line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
+          "TotalTOX-first product line can simplify vendor review and reduce category-specific catalog exposure. [REVIEW REQUIRED]",
+          "Variant SKUs, pricing, case packs, UPC/GTIN, and line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
         ]
       }
     }

@@ -273,6 +273,17 @@ ul {
   gap: 14px;
 }
 
+.variant-grid,
+.variant-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.variant-list {
+  margin-top: 18px;
+}
+
 .route-card {
   min-width: 0;
   border: 1px solid var(--border);
@@ -443,6 +454,7 @@ ul {
 .checkout-gate__panel,
 .product-data-card,
 .product-preview-card,
+.variant-card,
 .vendor-grid article,
 .vendor-preview article {
   min-width: 0;
@@ -549,9 +561,21 @@ ul {
 .preview-result h2,
 .product-data-card h2,
 .product-preview-card h2,
+.variant-card h2,
 .choice-panel h2 {
   overflow-wrap: anywhere;
   font-size: 1.45rem;
+}
+
+.variant-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.variant-card p {
+  margin: 0;
+  font-size: 0.92rem;
 }
 
 .text-link {
@@ -813,6 +837,8 @@ ul {
   .policy-route-links,
   .path-grid,
   .product-data-grid,
+  .variant-grid,
+  .variant-list,
   .vendor-grid,
   .two-column,
   .guidance-preview,
