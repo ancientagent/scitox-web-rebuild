@@ -20,8 +20,8 @@ const greetingCopy = {
     title: "A few calm questions can point you in the right direction.",
     body:
       "Choose the closest starting point. If the fit is not simple, the site routes you to support instead of guessing.",
-    primaryHref: "/support",
-    primaryLabel: "Go to support",
+    primaryHref: "#quick-guidance",
+    primaryLabel: "Start questions",
     secondaryHref: "/products",
     secondaryLabel: "View product line",
   },

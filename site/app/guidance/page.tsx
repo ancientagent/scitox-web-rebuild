@@ -6,7 +6,7 @@ export default function GuidancePage() {
   return (
     <div className="page-flow">
       <WelcomeGreeting context="guidance" />
-      <section className="content-band content-band--dark">
+      <section className="content-band content-band--dark" id="quick-guidance">
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Guided questions</p>
