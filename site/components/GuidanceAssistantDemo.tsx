@@ -16,17 +16,17 @@ type GuidanceResult = {
 const demoRoutes = {
   common: {
     label: "Common path",
-    answerLabel: "TotalTOX path type [REVIEW REQUIRED]",
+    answerLabel: "Starting point",
     answerValue: "standard-volume",
   },
   compare: {
-    label: "Variant fit",
-    answerLabel: "Variant fit need [REVIEW REQUIRED]",
+    label: "Longer hair",
+    answerLabel: "Product volume need",
     answerValue: "long-hair-volume",
   },
   boundary: {
-    label: "Boundary check",
-    answerLabel: "[REVIEW REQUIRED: sensitive guidance boundary]",
+    label: "Not simple",
+    answerLabel: "Support need",
     answerValue: "boundary-review-needed",
   },
 };
@@ -36,13 +36,13 @@ type DemoRouteKey = keyof typeof demoRoutes;
 const initialResult: GuidanceResult = {
   recommendation_status: "human_follow_up",
   recommended_product_id: null,
-  recommended_path_label: "Source-gated route not requested yet",
+  recommended_path_label: "Start with the closest option.",
   explanation:
-    "[OWNER DATA NEEDED: owner-reviewed source data before live route output]",
+    "The site can help with simple paths first. If the fit is unclear, it will move the request to support.",
   source_ids: [],
   missing_owner_data: ["Reviewed product path mapping"],
   review_required: ["Guidance source-base behavior"],
-  next_step: "[OWNER DATA NEEDED: human support destination for fallback cases]",
+  next_step: "Choose a starting point, then continue only if the route feels right.",
 };
 
 export function GuidanceAssistantDemo() {
@@ -75,23 +75,20 @@ export function GuidanceAssistantDemo() {
 
       if (!response.ok || !payload?.result) {
         setStatus("error");
-        setMessage(
-          payload?.message ??
-            "[REVIEW REQUIRED: guidance route returned a safe validation state]",
-        );
+        setMessage("Please answer the guidance question before continuing.");
         return;
       }
 
       setResult(payload.result);
       setStatus("idle");
-      setMessage("[REVIEW REQUIRED: source-gated response returned]");
+      setMessage("The guidance route checked your starting point.");
     } catch {
       setStatus("error");
-      setMessage("[REVIEW REQUIRED: guidance route unavailable; use support intake]");
+      setMessage("This route is not available right now. Support is the safer next step.");
       setResult({
         ...initialResult,
         explanation:
-          "[REVIEW REQUIRED: guidance route unavailable, so the demo must fall back to support]",
+          "The site should keep the experience calm when guidance is unavailable.",
       });
     }
   }
@@ -99,9 +96,9 @@ export function GuidanceAssistantDemo() {
   return (
     <div className="guidance-api-demo">
       <form className="choice-panel guidance-api-demo__form" onSubmit={submitGuidance}>
-        <p className="tag">Source-gated intake</p>
-        <h2>Source-gated route check [REVIEW REQUIRED]</h2>
-        <div className="choice-list" role="group" aria-label="Guidance API demo routes">
+        <p className="tag">Quick guidance</p>
+        <h2>Pick the closest starting point.</h2>
+        <div className="choice-list" role="group" aria-label="Guidance route choices">
           {Object.entries(demoRoutes).map(([key, value]) => (
             <button
               className={key === selectedRoute ? "is-active" : ""}
@@ -115,13 +112,13 @@ export function GuidanceAssistantDemo() {
         </div>
         <div className="form-note">
           <p>
-            [OWNER DATA NEEDED: route output remains gated until owner-reviewed
-            source data, product mapping, and support fallback rules exist]
+            The demo keeps this simple: common situations can move forward,
+            unclear situations should go to support.
           </p>
         </div>
         <div className="form-actions">
           <button disabled={status === "loading"} type="submit">
-            {status === "loading" ? "Checking source gate" : "Check route"}
+            {status === "loading" ? "Checking" : "Continue"}
           </button>
           {message ? (
             <span
@@ -141,37 +138,67 @@ export function GuidanceAssistantDemo() {
 }
 
 function GuidanceResultPanel({ result }: { result: GuidanceResult }) {
+  const display = getGuidanceDisplay(result);
+
   return (
     <div className="preview-result guidance-api-demo__result">
-      <p className="tag">Structured route state</p>
-      <h2>{result.recommended_path_label}</h2>
+      <p className="tag">Next step</p>
+      <h2>{display.title}</h2>
       <dl className="fact-list">
         <div>
-          <dt>Status</dt>
-          <dd>{result.recommendation_status}</dd>
+          <dt>Route</dt>
+          <dd>{display.status}</dd>
         </div>
         <div>
-          <dt>Product ID</dt>
-          <dd>{result.recommended_product_id ?? "[OWNER DATA NEEDED]"}</dd>
+          <dt>Product path</dt>
+          <dd>{display.productPath}</dd>
         </div>
         <div>
-          <dt>Explanation</dt>
-          <dd>{result.explanation}</dd>
+          <dt>Why</dt>
+          <dd>{display.explanation}</dd>
         </div>
         <div>
           <dt>Next step</dt>
-          <dd>{result.next_step}</dd>
+          <dd>{display.nextStep}</dd>
         </div>
       </dl>
       <div className="notice-list">
-        <span>{formatList("Source IDs", result.source_ids)}</span>
-        <span>{formatList("Owner data needed", result.missing_owner_data)}</span>
-        <span>{formatList("Review required", result.review_required)}</span>
+        <span>The site should avoid guessing when the fit is unclear.</span>
+        <span>Support remains available for situations that need more context.</span>
       </div>
     </div>
   );
 }
 
-function formatList(label: string, values: string[]) {
-  return `${label}: ${values.length ? values.join("; ") : "[OWNER DATA NEEDED]"}`;
+function getGuidanceDisplay(result: GuidanceResult) {
+  if (result.recommendation_status === "product_path" && result.recommended_product_id) {
+    return {
+      title: result.recommended_path_label,
+      status: "Product path available",
+      productPath: "TotalTOX product line",
+      explanation:
+        "A product path can be shown when the answers match reviewed product information.",
+      nextStep: "Review the product path, then continue only if it fits.",
+    };
+  }
+
+  if (result.recommendation_status === "needs_more_info") {
+    return {
+      title: "A little more context is needed.",
+      status: "More information needed",
+      productPath: "Not selected yet",
+      explanation:
+        "The site should ask for more context before suggesting a product path.",
+      nextStep: "Use support if the choice still feels unclear.",
+    };
+  }
+
+  return {
+    title: "Support is the better next step.",
+    status: "Support follow-up",
+    productPath: "Not selected yet",
+    explanation:
+      "When a situation is not simple, the site should route to support instead of guessing.",
+    nextStep: "Send the support request with the details you are comfortable sharing.",
+  };
 }

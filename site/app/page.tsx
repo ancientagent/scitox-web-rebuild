@@ -1,67 +1,61 @@
 import Link from "next/link";
 import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 import { GuidancePreview } from "@/components/GuidancePreview";
 import { ProductPathPreview } from "@/components/ProductPathPreview";
+import { WelcomeGreeting } from "@/components/WelcomeGreeting";
 
 export default function Home() {
   return (
     <div className="page-flow">
+      <WelcomeGreeting />
       <Section
-        eyebrow="Customer lobby preview"
-        title="Private product-routing lobby [REVIEW REQUIRED]"
-        actions={
-          <>
-            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
-          </>
-        }
+        eyebrow="Customer lobby"
+        title="Choose the route that feels most useful right now."
       >
         <p>
-          Already-aware visitors can review source-backed product paths, answer
-          structured guidance questions, or request human follow-up without a
-          loud public sales pitch.
+          The site is designed for people who already have some context and need
+          a clear, low-pressure way to choose the next step.
         </p>
         <div className="route-grid" aria-label="Draft route paths">
           <Link className="route-card route-card--link" href="/guidance">
             <h2>Product guidance</h2>
-            <p>[REVIEW REQUIRED: structured product questions with source-gated output]</p>
+            <p>Answer a few simple questions before choosing a path.</p>
           </Link>
           <Link className="route-card route-card--link" href="/support">
             <h2>Human support</h2>
-            <p>[OWNER DATA NEEDED: approved call, text, email, or form destination]</p>
+            <p>Use support when the situation is not simple.</p>
           </Link>
           <Link className="route-card route-card--link" href="/wholesale">
             <h2>Wholesale path</h2>
-            <p>[OWNER DATA NEEDED: separate partner inquiry routing]</p>
+            <p>Keep buyer and distributor inquiries separate from customer help.</p>
           </Link>
         </div>
       </Section>
       <section className="content-band">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Owner-review flow</p>
-            <h2>Choose the next safe route [REVIEW REQUIRED]</h2>
+            <p className="eyebrow">Next step</p>
+            <h2>Choose the next route.</h2>
             <p>
-              The demo now has a source-backed catalog behind the flow, while
-              recommendations and sensitive claims still require review.
+              The demo keeps product browsing, guided questions, and support
+              follow-up easy to find without turning the site into a loud sales page.
             </p>
           </div>
           <div className="path-grid">
             <Link className="route-card route-card--link" href="/products">
               <span className="path-number">01</span>
               <h2>Common path</h2>
-              <p>Open the source-backed product catalog with photos, product names, and gated details.</p>
+              <p>Open the product line when the choice is already clear.</p>
             </Link>
             <Link className="route-card route-card--featured route-card--link" href="/guidance">
               <span className="path-number">02</span>
               <h2>Guided questions</h2>
-              <p>[REVIEW REQUIRED: source-grounded questions before any product path]</p>
+              <p>Let the site ask a few questions before showing a path.</p>
             </Link>
             <Link className="route-card route-card--link" href="/contact">
               <span className="path-number">03</span>
               <h2>Human follow-up</h2>
-              <p>[OWNER DATA NEEDED: support escalation channel and routing workflow]</p>
+              <p>Send a note when the situation needs more context.</p>
             </Link>
           </div>
         </div>
@@ -70,10 +64,10 @@ export default function Home() {
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Product path preview</p>
-            <h2>Low-exposure product path area [REVIEW REQUIRED]</h2>
+            <h2>A simple product path area.</h2>
             <p>
-              Product titles, photos, path labels, and standard-kit price
-              context are present. Public claims and routing rules remain gated.
+              The site can keep the product line visible while saving detailed
+              fit decisions for guidance or support.
             </p>
           </div>
           <ProductPathPreview />
@@ -83,10 +77,10 @@ export default function Home() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Guidance preview</p>
-            <h2>Source-gated routing states [REVIEW REQUIRED]</h2>
+            <h2>Simple questions, then a clear next step.</h2>
             <p>
-              Guidance can reference reviewed source data and fall back to a
-              human route when the source does not support a clear product path.
+              If the answer is not obvious, the flow moves toward support rather
+              than forcing a customer to interpret everything alone.
             </p>
           </div>
           <GuidancePreview />
@@ -96,20 +90,20 @@ export default function Home() {
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Separate vendor layer</p>
-            <h2>Partner surface for data review [REVIEW REQUIRED]</h2>
+            <h2>A separate partner surface.</h2>
             <p>
-              The wholesale surface can now show the real product family while
-              commercial fields, documents, and buyer routing remain gated.
+              Wholesale inquiries stay separate from customer guidance so buyers
+              can evaluate the brand in a cleaner context.
             </p>
           </div>
           <div className="vendor-preview">
             <article>
             <h2>Product line overview</h2>
-              <p>TotalTOX is now the V1 product-line focus; variant SKUs and commercial fields still need owner data.</p>
+              <p>TotalTOX is the focused product-line path for this V1 demo.</p>
             </article>
             <article>
               <h2>Documentation checklist</h2>
-              <p>Images are loaded; labels, final policies, and claim review remain gated.</p>
+              <p>Vendor materials, policies, and final product data stay in the partner layer.</p>
             </article>
           </div>
         </div>

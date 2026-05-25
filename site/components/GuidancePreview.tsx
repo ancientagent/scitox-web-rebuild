@@ -5,21 +5,24 @@ import { useState } from "react";
 const guidanceRoutes = {
   common: {
     label: "Common path",
-    title: "Route common cases into the TotalTOX system",
-    body: "The demo can show one core product while keeping variant logic, recommendation output, and claims gated. [REVIEW REQUIRED]",
-    ownerNeed: "[OWNER DATA NEEDED: owner-reviewed TotalTOX variant mapping rules]",
+    title: "When the fit is simple",
+    body:
+      "The site can move a customer toward the product line without a long explanation or public overpromising.",
+    detail: "Keep the product path direct and easy to leave.",
   },
   compare: {
-    label: "Variant fit",
-    title: "Compare only reviewed volume and fit facts",
-    body: "Variant output should use owner-confirmed kit facts, not outcome claims, deadlines, or unsupported proof. [REVIEW REQUIRED]",
-    ownerNeed: "[OWNER DATA NEEDED: hair length, kit volume, and escalation criteria]",
+    label: "Product fit",
+    title: "When the customer needs help choosing",
+    body:
+      "The flow can compare practical fit details, then stop before making unsupported claims.",
+    detail: "Use simple questions and avoid pressure.",
   },
   specific: {
     label: "Nuanced question",
-    title: "Route nuanced cases to human follow-up",
-    body: "If the source data does not clearly support a product path, the system should avoid recommendation output. [REVIEW REQUIRED]",
-    ownerNeed: "[OWNER DATA NEEDED: support escalation workflow]",
+    title: "When the situation is not simple",
+    body:
+      "If the product path is not obvious, the site should make support feel normal instead of making the customer figure it out alone.",
+    detail: "Support is part of the main flow, not a dead end.",
   },
 };
 
@@ -32,8 +35,8 @@ export function GuidancePreview() {
   return (
     <div className="guidance-preview">
       <div className="choice-panel">
-        <p className="tag">Guidance preview</p>
-        <h2>Structured questions before product routing [REVIEW REQUIRED]</h2>
+        <p className="tag">How guidance works</p>
+        <h2>Simple options, then a clear route.</h2>
         <div className="choice-list" role="group" aria-label="Guidance route choices">
           {Object.entries(guidanceRoutes).map(([key, value]) => (
             <button
@@ -48,12 +51,12 @@ export function GuidancePreview() {
         </div>
       </div>
       <div className="preview-result">
-        <p className="tag">Output state</p>
+        <p className="tag">Customer experience</p>
         <h2>{route.title}</h2>
         <p>{route.body}</p>
         <div className="notice-list">
-          <span>{route.ownerNeed}</span>
-          <span>[REVIEW REQUIRED: source-base rules, fallback logic, and public wording]</span>
+          <span>{route.detail}</span>
+          <span>The flow should stay calm, private-feeling, and easy to understand.</span>
         </div>
       </div>
     </div>

@@ -5,21 +5,21 @@ import { useState } from "react";
 const productPaths = {
   standard: {
     label: "Core system",
-    title: "One TotalTOX-first product line is loaded [REVIEW REQUIRED]",
-    status: "The public catalog now centers on TotalTOX instead of multiple category-specific product names.",
-    action: "Open the TotalTOX detail, then choose a volume or support-routed path. [REVIEW REQUIRED]",
+    title: "One focused product line",
+    status: "The public catalog centers on TotalTOX instead of several confusing product categories.",
+    action: "Open the TotalTOX detail, then choose guidance or support if the fit is not obvious.",
   },
   focused: {
-    label: "Variant review",
-    title: "Variants are based on length, volume, and timing sensitivity",
-    status: "[OWNER DATA NEEDED: exact bottle sizes, kit counts, fit rules, variant names, and pricing]",
-    action: "Use structured guidance before presenting a variant as the right path. [REVIEW REQUIRED]",
+    label: "Fit questions",
+    title: "Practical questions help narrow the path",
+    status: "Questions can focus on what the customer knows without turning the page into a claims-heavy explanation.",
+    action: "Use guidance before presenting a path as the best fit.",
   },
   complete: {
     label: "Support fallback",
-    title: "Human support handles timing-sensitive or nuanced cases",
-    status: "[OWNER DATA NEEDED: support channel, destination, and routing owner]",
-    action: "[REVIEW REQUIRED: fallback route before public deadline, outcome, or use-context language]",
+    title: "Support handles nuanced cases",
+    status: "When the situation is not simple, the customer should feel comfortable asking for help.",
+    action: "Move the customer to support instead of forcing a product choice.",
   },
 };
 
@@ -57,7 +57,7 @@ export function ProductPathPreview() {
           </div>
           <div>
             <dt>Support route</dt>
-            <dd>[OWNER DATA NEEDED: approved support workflow and destination]</dd>
+            <dd>Available when the product path is not clear.</dd>
           </div>
         </dl>
       </div>

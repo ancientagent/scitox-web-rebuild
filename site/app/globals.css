@@ -165,6 +165,98 @@ textarea {
   padding: 56px 20px;
 }
 
+.welcome-greeting {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: end;
+  width: min(1120px, calc(100% - 40px));
+  min-width: 0;
+  margin: 56px auto 28px;
+  padding: 32px 0 18px;
+  color: #f7fbf8;
+  animation: welcome-fade-in 900ms ease-out both;
+}
+
+.welcome-greeting__copy {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.welcome-greeting__eyebrow {
+  margin: 0;
+  color: #9fe4b9;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.welcome-greeting h1 {
+  max-width: 780px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.welcome-greeting p {
+  margin: 0;
+  color: #d7e2da;
+}
+
+.welcome-greeting__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 0;
+}
+
+.button-link {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 8%);
+  color: #f7fbf8;
+  padding: 10px 14px;
+  font-weight: 900;
+  text-align: center;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+  border-color: rgb(0 189 98 / 65%);
+  background: rgb(255 255 255 / 13%);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.button-link:focus-visible {
+  outline: 3px solid rgb(0 189 98 / 24%);
+  outline-offset: 2px;
+}
+
+.button-link--primary {
+  border-color: rgb(0 189 98 / 72%);
+  background: #008f4a;
+}
+
+.button-link--primary:hover,
+.button-link--primary:focus-visible {
+  background: #00a958;
+}
+
+.page-flow > .welcome-greeting + .route-panel {
+  margin-top: 0;
+}
+
 .page-flow > .route-panel {
   margin-top: 56px;
   margin-bottom: 56px;
@@ -223,6 +315,18 @@ textarea {
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+@keyframes welcome-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
@@ -832,6 +936,7 @@ ul {
   }
 
   .route-panel,
+  .welcome-greeting,
   .route-grid,
   .route-grid--wide,
   .policy-route-links,
@@ -850,10 +955,19 @@ ul {
   .section-actions {
     justify-content: flex-start;
   }
+
+  .welcome-greeting {
+    align-items: start;
+  }
+
+  .welcome-greeting__actions {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 640px) {
   .site-header__inner,
+  .welcome-greeting,
   .site-footer__inner {
     width: min(100% - 24px, 1120px);
   }
@@ -871,6 +985,12 @@ ul {
   .page-flow > .route-panel {
     margin-top: 24px;
     margin-bottom: 24px;
+  }
+
+  .welcome-greeting {
+    margin-top: 24px;
+    margin-bottom: 18px;
+    padding: 20px 0 8px;
   }
 
   .route-panel {
@@ -902,5 +1022,23 @@ ul {
 
   h1 {
     font-size: 1.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-greeting {
+    animation: none;
+  }
+
+  .button-link,
+  .route-card--link {
+    transition: none;
+  }
+
+  .button-link:hover,
+  .button-link:focus-visible,
+  .route-card--link:hover,
+  .route-card--link:focus-visible {
+    transform: none;
   }
 }

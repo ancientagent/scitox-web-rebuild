@@ -6,8 +6,8 @@ const footerRoutes = [
   { href: "/support", label: "Support" },
   { href: "/contact", label: "Contact" },
   { href: "/shipping-returns", label: "Shipping / Returns" },
-  { href: "/privacy", label: "Privacy [OWNER DATA NEEDED]" },
-  { href: "/terms", label: "Terms [OWNER DATA NEEDED]" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
   { href: "/wholesale", label: "Wholesale" },
 ];
 
@@ -16,7 +16,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <p className="site-footer__note">
-          V1 demo footer note [REVIEW REQUIRED]
+          SciTOX keeps customer guidance, support, and partner inquiries in separate paths.
         </p>
         <nav className="footer-nav" aria-label="Footer navigation">
           {footerRoutes.map((route) => (

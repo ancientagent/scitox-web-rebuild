@@ -1,34 +1,20 @@
-import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 import { GuidanceAssistantDemo } from "@/components/GuidanceAssistantDemo";
 import { GuidancePreview } from "@/components/GuidancePreview";
+import { WelcomeGreeting } from "@/components/WelcomeGreeting";
 
 export default function GuidancePage() {
   return (
     <div className="page-flow">
-      <Section
-        eyebrow="Guidance route"
-        title="Guided product questions [REVIEW REQUIRED]"
-        actions={
-          <>
-            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
-          </>
-        }
-      >
-        <p>
-          [OWNER DATA NEEDED: owner-reviewed source data, TotalTOX variant mapping rules,
-          support fallback workflow, and privacy/data handling terms]
-        </p>
-      </Section>
+      <WelcomeGreeting context="guidance" />
       <section className="content-band content-band--dark">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Guided product questions</p>
-            <h2>Source-gated route check [REVIEW REQUIRED]</h2>
+            <p className="eyebrow">Guided questions</p>
+            <h2>Answer what you know. Skip what you do not.</h2>
             <p>
-              [REVIEW REQUIRED: structured questions, source-backed output,
-              and human follow-up when data is missing]
+              This route is meant to feel calm and practical. It can suggest a
+              simple next step, or move the conversation to support when more
+              context is needed.
             </p>
           </div>
           <GuidanceAssistantDemo />
