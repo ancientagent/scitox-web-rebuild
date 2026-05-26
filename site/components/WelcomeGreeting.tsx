@@ -64,7 +64,7 @@ function GuidanceWelcomeSequence() {
           block: "start",
         });
       });
-    }, reduceMotion ? 800 : 12500);
+    }, reduceMotion ? 800 : 16200);
 
     return () => {
       window.clearTimeout(timer);

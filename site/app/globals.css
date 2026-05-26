@@ -209,17 +209,17 @@ body.session-intro-active {
 }
 
 .welcome-sequence__stage--intro {
-  animation: welcome-intro-breath 5.4s ease-in-out both;
+  animation: welcome-intro-breath 6.8s ease-in-out both;
 }
 
 .welcome-sequence__stage--session {
   opacity: 0;
-  animation: welcome-session-breath 5.8s ease-in-out 5.2s both;
+  animation: welcome-session-breath 6.2s ease-in-out 7.2s both;
 }
 
 .welcome-sequence__stage--loading {
   opacity: 0;
-  animation: welcome-loading-in 1.8s ease-in-out 10.7s both;
+  animation: welcome-loading-in 2.2s ease-in-out 13.8s both;
 }
 
 .session-loader {
