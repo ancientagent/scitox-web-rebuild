@@ -21,7 +21,7 @@ const greetingCopy = {
     title: "Sit tight. We will ask a couple quick questions.",
     body:
       "This step is designed to stay calm and focused. Choose the closest starting point, then continue toward whatever the next chapter holds.",
-    status: "Getting the guidance step ready before asking for details.",
+    status: "Getting the privacy step ready before asking for details.",
     primaryHref: "#quick-guidance",
     primaryLabel: "Start questions",
     secondaryHref: "/products",

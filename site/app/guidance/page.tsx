@@ -1,5 +1,6 @@
 import { GuidanceAssistantDemo } from "@/components/GuidanceAssistantDemo";
 import { GuidancePreview } from "@/components/GuidancePreview";
+import { PrivacyPrepNotice } from "@/components/PrivacyPrepNotice";
 import { WelcomeGreeting } from "@/components/WelcomeGreeting";
 
 export default function GuidancePage() {
@@ -8,6 +9,7 @@ export default function GuidancePage() {
       <WelcomeGreeting context="guidance" />
       <section className="content-band content-band--dark" id="quick-guidance">
         <div className="band-inner">
+          <PrivacyPrepNotice />
           <div className="section-heading">
             <p className="eyebrow">Guided questions</p>
             <h2>Answer what you know. Skip what you do not.</h2>
