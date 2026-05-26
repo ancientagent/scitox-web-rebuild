@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { CheckoutGateDemo } from "@/components/CheckoutGateDemo";
 import { ProductImage } from "@/components/ProductImage";
 import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 import { getPublicProduct, getPublicProducts } from "@/lib/products/getProducts";
 
 type ProductDetailPageProps = {
@@ -27,64 +26,42 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 
   return (
     <div className="page-flow">
-      <Section
-        eyebrow="Product detail preview"
-        title={product.name}
-        actions={
-          <>
-            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-          </>
-        }
-      >
-        <p>{product.shortDescription}</p>
+      <Section eyebrow="Product details" title={product.name}>
+        <p>
+          Use this page to get oriented. If you are not sure which path fits,
+          start product guidance or reach support before making a decision.
+        </p>
       </Section>
       <section className="content-band">
         <div className="band-inner two-column">
           <div className="product-data-card">
             <ProductImage alt={product.name} src={product.image} />
-            <p className="tag">{product.category}</p>
-            <h2>{product.longDescription}</h2>
-            <p>{product.supportCta}</p>
+            <p className="tag">TotalTOX system</p>
+            <h2>A focused product family with guided support available.</h2>
+            <p>
+              The site keeps the product path simple and points you toward
+              guidance when a few questions would make the next step clearer.
+            </p>
           </div>
           <div className="product-data-card">
-            <p className="tag">Public product facts</p>
-            <h2>Source-backed facts with gated details</h2>
+            <p className="tag">How to continue</p>
+            <h2>Choose the level of help that fits.</h2>
             <dl className="fact-list">
               <div>
-                <dt>Size</dt>
-                <dd>{product.size}</dd>
+                <dt>Product family</dt>
+                <dd>TotalTOX Hair Treatment System</dd>
               </div>
               <div>
-                <dt>Kit / variant structure</dt>
-                <dd>{product.kitComposition}</dd>
+                <dt>Guidance</dt>
+                <dd>A few focused questions can help narrow the product path.</dd>
               </div>
               <div>
-                <dt>Price</dt>
-                <dd>{product.price}</dd>
+                <dt>Support</dt>
+                <dd>Use support when your question needs more context.</dd>
               </div>
               <div>
-                <dt>Availability</dt>
-                <dd>{product.availability}</dd>
-              </div>
-              <div>
-                <dt>Ingredients</dt>
-                <dd>{product.ingredients}</dd>
-              </div>
-              <div>
-                <dt>Directions</dt>
-                <dd>{product.directions}</dd>
-              </div>
-              <div>
-                <dt>Warnings</dt>
-                <dd>{product.warnings}</dd>
-              </div>
-              <div>
-                <dt>Shipping notes</dt>
-                <dd>{product.shippingNotes}</dd>
-              </div>
-              <div>
-                <dt>Claim review</dt>
-                <dd>{product.claimReviewStatus}</dd>
+                <dt>Checkout</dt>
+                <dd>Online checkout opens only after the product path is ready.</dd>
               </div>
             </dl>
           </div>
@@ -94,33 +71,22 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <section className="content-band content-band--muted">
           <div className="band-inner">
             <div className="section-heading">
-              <p className="eyebrow">Variant paths</p>
-              <h2>Length, volume, and timing-sensitive paths [REVIEW REQUIRED]</h2>
+              <p className="eyebrow">Product paths</p>
+              <h2>Different situations may need different guidance.</h2>
               <p>
-                These are not final package names, claims, prices, or
-                recommendations. They show how one product can route into
-                owner-confirmed variants.
+                Start with the closest path, then use guidance or support if you
+                want help confirming the next step.
               </p>
             </div>
             <div className="variant-grid">
               {product.variants.map((variant) => (
                 <article className="variant-card" key={variant.id}>
                   <p className="tag">{variant.label}</p>
-                  <h2>{variant.fit}</h2>
-                  <dl className="fact-list">
-                    <div>
-                      <dt>Kit volume</dt>
-                      <dd>{variant.kitVolume}</dd>
-                    </div>
-                    <div>
-                      <dt>Timing boundary</dt>
-                      <dd>{variant.timingBoundary}</dd>
-                    </div>
-                    <div>
-                      <dt>Price</dt>
-                      <dd>{variant.price}</dd>
-                    </div>
-                  </dl>
+                  <h2>Guidance can help confirm whether this fits.</h2>
+                  <p>
+                    If your situation is timing-sensitive or unclear, support is
+                    the better place to continue.
+                  </p>
                 </article>
               ))}
             </div>
@@ -130,11 +96,11 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
       <section className="content-band content-band--muted">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Checkout gate</p>
-            <h2>Reviewed policy details required before checkout [REVIEW REQUIRED]</h2>
+            <p className="eyebrow">Checkout</p>
+            <h2>Continue when the product path is ready.</h2>
             <p>
-              [OWNER DATA NEEDED: Authorize.net configuration, payment settings,
-              policy wording, and owner-reviewed handoff path]
+              Online checkout is kept separate from product guidance. If checkout
+              is not available here, use support for the next step.
             </p>
           </div>
           <CheckoutGateDemo productSlug={product.slug} />

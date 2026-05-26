@@ -1,7 +1,7 @@
 const prepItems = [
   {
     label: "Limited questions",
-    body: "This step asks only enough to route the request.",
+    body: "This step asks only enough to understand the request.",
   },
   {
     label: "No payment details",
@@ -20,7 +20,7 @@ export function PrivacyPrepNotice() {
         <p className="tag">Privacy prep</p>
         <h2>Give us a second to keep this simple.</h2>
         <p>
-          Before the questions start, this route keeps the request focused and
+          Before the questions start, this step keeps the request focused and
           avoids asking for details that do not belong in guidance.
         </p>
       </div>

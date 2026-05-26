@@ -1,33 +1,23 @@
-import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 import { InquiryForm } from "@/components/InquiryForm";
+import { Section } from "@/components/Section";
 
 export default function ContactPage() {
   return (
     <div className="page-flow">
-      <Section
-        eyebrow="Contact route"
-        title="Contact route for product questions [REVIEW REQUIRED]"
-        actions={
-          <>
-            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
-            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-          </>
-        }
-      >
+      <Section eyebrow="Contact" title="Send a focused question.">
         <p>
-          [OWNER DATA NEEDED: approved contact destination, follow-up workflow,
-          support expectations, and privacy notice]
+          Use this page when you have a product, order, or follow-up question.
+          Share only what is needed to understand the request.
         </p>
       </Section>
       <section className="content-band content-band--muted">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
-            <p className="eyebrow">Inquiry routing</p>
-            <h2>Help-first inquiry route [REVIEW REQUIRED]</h2>
+            <p className="eyebrow">Contact form</p>
+            <h2>Keep the message simple.</h2>
             <p>
-              [REVIEW REQUIRED: contact form labels, consent language,
-              privacy notice, and destination handling]
+              Choose the reason for your note, add your contact details, and
+              include the shortest explanation that helps the team respond.
             </p>
           </div>
           <InquiryForm surface="contact" />

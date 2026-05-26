@@ -1,33 +1,27 @@
 import { PolicyRouteLinks } from "@/components/PolicyRouteLinks";
 import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 
 export default function PrivacyPage() {
   return (
     <div className="page-flow">
       <div className="route-shell">
-        <Section
-          eyebrow="Privacy route"
-          title="Privacy and data-handling policy shell [REVIEW REQUIRED]"
-          actions={
-            <>
-              <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
-              <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-            </>
-          }
-        >
+        <Section eyebrow="Privacy" title="Privacy information">
           <p>
-            [OWNER DATA NEEDED: form routing, data handling, retention,
-            provider review, consent language, and reviewed public wording]
+            This page is reserved for the site privacy notice, including what
+            information is requested, how support messages are handled, and how
+            to contact the team about privacy questions.
           </p>
         </Section>
       </div>
       <section className="content-band content-band--muted">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Policy review paths</p>
-            <h2>Policy details required before launch [REVIEW REQUIRED]</h2>
-            <p>[OWNER DATA NEEDED: reviewed privacy, terms, and support policy set]</p>
+            <p className="eyebrow">Related pages</p>
+            <h2>Review the practical site policies in one place.</h2>
+            <p>
+              Use these pages for shipping, terms, contact, and support
+              information as the site is finalized.
+            </p>
           </div>
           <PolicyRouteLinks />
         </div>

@@ -12,13 +12,13 @@ const productPaths = {
   focused: {
     label: "Fit questions",
     title: "Practical questions help narrow the path",
-    status: "Questions can focus on what the customer knows without turning the page into a claims-heavy explanation.",
+    status: "Questions focus on what you know without making the page harder to understand.",
     action: "Use guidance before presenting a path as the best fit.",
   },
   complete: {
     label: "Support fallback",
     title: "Support handles nuanced cases",
-    status: "When the situation is not simple, the customer should feel comfortable asking for help.",
+    status: "When the situation is not simple, support is a normal next step.",
     action: "Move the customer to support instead of forcing a product choice.",
   },
 };
@@ -31,7 +31,7 @@ export function ProductPathPreview() {
 
   return (
     <div className="preview-shell">
-      <div className="segmented-control" role="group" aria-label="Product path preview">
+      <div className="segmented-control" role="group" aria-label="Product path options">
         {Object.entries(productPaths).map(([key, value]) => (
           <button
             className={key === selectedPath ? "is-active" : ""}
@@ -48,15 +48,15 @@ export function ProductPathPreview() {
         <h2>{path.title}</h2>
         <dl className="fact-list">
           <div>
-            <dt>Display status</dt>
+            <dt>What this means</dt>
             <dd>{path.status}</dd>
           </div>
           <div>
-            <dt>CTA behavior</dt>
+            <dt>Next step</dt>
             <dd>{path.action}</dd>
           </div>
           <div>
-            <dt>Support route</dt>
+            <dt>Support</dt>
             <dd>Available when the product path is not clear.</dd>
           </div>
         </dl>

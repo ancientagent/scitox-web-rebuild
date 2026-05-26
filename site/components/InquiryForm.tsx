@@ -13,11 +13,11 @@ type InquiryFormProps = {
 
 const formConfig = {
   contact: {
-    eyebrow: "Contact intake",
-    title: "Help-first contact intake [REVIEW REQUIRED]",
+    eyebrow: "Contact",
+    title: "Send a focused question.",
     helper:
-      "[OWNER DATA NEEDED: approved destination, routing owner, consent language, and reviewed privacy notice]",
-    submitLabel: "Check contact route",
+      "Choose the reason for your note and share only what is needed to understand the request.",
+    submitLabel: "Send question",
     options: [
       { value: "product", label: "Product question" },
       { value: "order", label: "Order or shipping" },
@@ -25,11 +25,11 @@ const formConfig = {
     ],
   },
   support: {
-    eyebrow: "Support intake",
-    title: "Product support intake [REVIEW REQUIRED]",
+    eyebrow: "Support",
+    title: "Ask for product support.",
     helper:
-      "[OWNER DATA NEEDED: support categories, channel owner, destination tooling, and reviewed policy language]",
-    submitLabel: "Check support route",
+      "Use this when guidance is not enough or your question needs more context.",
+    submitLabel: "Send support request",
     options: [
       { value: "product", label: "Product support" },
       { value: "order", label: "Order or shipping" },
@@ -37,13 +37,13 @@ const formConfig = {
     ],
   },
   wholesale: {
-    eyebrow: "Wholesale intake",
-    title: "Partner inquiry intake [REVIEW REQUIRED]",
+    eyebrow: "Partner inquiry",
+    title: "Send a business inquiry.",
     helper:
-      "[OWNER DATA NEEDED: buyer fields, qualification rules, destination, and follow-up workflow]",
-    submitLabel: "Check partner route",
+      "Use this for wholesale, documentation, or buyer follow-up questions.",
+    submitLabel: "Send partner inquiry",
     options: [
-      { value: "vendor", label: "Vendor inquiry" },
+      { value: "vendor", label: "Partner inquiry" },
       { value: "documentation", label: "Documentation question" },
       { value: "buyer", label: "Buyer follow-up" },
     ],
@@ -103,7 +103,7 @@ export function InquiryForm({ surface }: InquiryFormProps) {
     if (!localValidation.ok) {
       setFieldErrors(localValidation.fieldErrors as FieldErrors);
       setStatus("error");
-      setStatusMessage("[REVIEW REQUIRED: complete required intake fields]");
+      setStatusMessage("Please complete the required fields.");
       return;
     }
 
@@ -121,21 +121,15 @@ export function InquiryForm({ surface }: InquiryFormProps) {
       if (!response.ok || !responseBody.ok) {
         setFieldErrors(responseBody.fieldErrors || {});
         setStatus("error");
-        setStatusMessage(
-          responseBody.message ||
-            "[REVIEW REQUIRED: intake route returned an error]",
-        );
+        setStatusMessage("The message could not be sent right now. Please try again later.");
         return;
       }
 
       setStatus("success");
-      setStatusMessage(
-        responseBody.message ||
-          "[OWNER DATA NEEDED: inquiry destination and delivery integration]",
-      );
+      setStatusMessage("Your message was received.");
     } catch {
       setStatus("error");
-      setStatusMessage("[REVIEW REQUIRED: intake route unavailable]");
+      setStatusMessage("The message could not be sent right now. Please try again later.");
     }
   }
 
@@ -167,7 +161,7 @@ export function InquiryForm({ surface }: InquiryFormProps) {
         </label>
 
         <label className="field">
-          <span>Contact name{isWholesale ? "" : " [OWNER DATA NEEDED]"}</span>
+          <span>Contact name</span>
           <input
             name="contactName"
             onChange={(event) => updateField("contactName", event.target.value)}
@@ -208,7 +202,7 @@ export function InquiryForm({ surface }: InquiryFormProps) {
         </label>
 
         <label className="field">
-          <span>Phone [OWNER DATA NEEDED]</span>
+          <span>Phone</span>
           <input
             name="phone"
             onChange={(event) => updateField("phone", event.target.value)}
@@ -233,14 +227,14 @@ export function InquiryForm({ surface }: InquiryFormProps) {
 
       <div className="form-note">
         <p>
-          [REVIEW REQUIRED: keep questions limited until intake, consent,
-          privacy, and routing language are reviewed]
+          Keep the message focused. Do not include sensitive details unless they
+          are needed for the team to understand the request.
         </p>
       </div>
 
       <div className="form-actions">
         <button disabled={status === "submitting"} type="submit">
-          {status === "submitting" ? "Checking route" : config.submitLabel}
+          {status === "submitting" ? "Sending" : config.submitLabel}
         </button>
         {statusMessage ? (
           <p className={`form-status form-status--${status}`}>{statusMessage}</p>

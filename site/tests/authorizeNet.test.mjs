@@ -64,13 +64,13 @@ test("raw card fields are not accepted by the checkout gate", () => {
   ]);
 });
 
-test("checkout demo UI stays review-gated and has no raw payment fields", async () => {
+test("checkout UI hides internal review markers and has no raw payment fields", async () => {
   const source = await readFile(
     new URL("../components/CheckoutGateDemo.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.match(source, /\[REVIEW REQUIRED/);
-  assert.match(source, /\[OWNER DATA NEEDED/);
+  assert.doesNotMatch(source, /\[REVIEW REQUIRED/);
+  assert.doesNotMatch(source, /\[OWNER DATA NEEDED/);
   assert.doesNotMatch(source, /cardNumber|cvv|cvc|expiration|accountNumber/i);
 });

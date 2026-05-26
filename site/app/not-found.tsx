@@ -1,37 +1,36 @@
 import Link from "next/link";
 import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 
 const recoveryRoutes = [
   {
     href: "/products",
     title: "Products",
-    body: "[OWNER DATA NEEDED: reviewed product route]",
+    body: "View the TotalTOX product family.",
   },
   {
     href: "/guidance",
     title: "Guidance",
-    body: "[REVIEW REQUIRED: source-grounded intake route]",
+    body: "Answer a few focused questions before choosing a path.",
+  },
+  {
+    href: "/resources",
+    title: "Resources",
+    body: "Read background information before deciding what to do next.",
   },
   {
     href: "/support",
     title: "Support",
-    body: "[OWNER DATA NEEDED: support destination and routing]",
+    body: "Use support when the situation needs more context.",
   },
   {
     href: "/contact",
     title: "Contact",
-    body: "[OWNER DATA NEEDED: owner-reviewed inquiry destination]",
-  },
-  {
-    href: "/wholesale",
-    title: "Wholesale",
-    body: "[OWNER DATA NEEDED: partner inquiry routing]",
+    body: "Send a focused question to the team.",
   },
   {
     href: "/shipping-returns",
     title: "Policies",
-    body: "[OWNER DATA NEEDED: reviewed launch policy set]",
+    body: "Review shipping, returns, privacy, and terms pages.",
   },
 ];
 
@@ -39,28 +38,19 @@ export default function NotFound() {
   return (
     <div className="page-flow">
       <div className="route-shell">
-        <Section
-          eyebrow="Route unavailable"
-          title="Page not found [REVIEW REQUIRED]"
-          actions={
-            <>
-              <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
-              <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-            </>
-          }
-        >
-          <p>
-            [OWNER DATA NEEDED: legacy redirect map, launch routing rules, and reviewed
-            unavailable-page wording]
-          </p>
+        <Section eyebrow="Page not found" title="That page is not available.">
+          <p>Use one of the paths below to get back to the right place.</p>
         </Section>
       </div>
       <section className="content-band content-band--muted">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Demo recovery routes</p>
-            <h2>Stable owner-demo navigation [REVIEW REQUIRED]</h2>
-            <p>[OWNER DATA NEEDED: final launch route priorities]</p>
+            <p className="eyebrow">Where to go next</p>
+            <h2>Choose the closest path.</h2>
+            <p>
+              Product guidance, resources, support, and policy information are
+              available from here.
+            </p>
           </div>
           <div className="route-grid route-grid--wide">
             {recoveryRoutes.map((route) => (

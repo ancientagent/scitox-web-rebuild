@@ -7,21 +7,21 @@ const guidanceRoutes = {
     label: "Common path",
     title: "When the fit is simple",
     body:
-      "The site can move a customer toward the product line without a long explanation or public overpromising.",
+      "Move toward the product line without a long explanation or a loud sales pitch.",
     detail: "Keep the product path direct and easy to leave.",
   },
   compare: {
     label: "Product fit",
     title: "When the customer needs help choosing",
     body:
-      "The flow can compare practical fit details, then stop before making unsupported claims.",
+      "The flow can compare practical fit details, then keep the next step focused.",
     detail: "Use simple questions and avoid pressure.",
   },
   specific: {
     label: "Nuanced question",
     title: "When the situation is not simple",
     body:
-      "If the product path is not obvious, the site should make support feel normal instead of making the customer figure it out alone.",
+      "If the product path is not obvious, support is a normal next step.",
     detail: "Support is part of the main flow, not a dead end.",
   },
 };
@@ -36,7 +36,7 @@ export function GuidancePreview() {
     <div className="guidance-preview">
       <div className="choice-panel">
         <p className="tag">How guidance works</p>
-        <h2>Simple options, then a clear route.</h2>
+        <h2>Simple options, then a clear next step.</h2>
         <div className="choice-list" role="group" aria-label="Guidance route choices">
           {Object.entries(guidanceRoutes).map(([key, value]) => (
             <button
@@ -56,7 +56,7 @@ export function GuidancePreview() {
         <p>{route.body}</p>
         <div className="notice-list">
           <span>{route.detail}</span>
-          <span>The flow should stay calm, private-feeling, and easy to understand.</span>
+          <span>The flow stays calm, private-feeling, and easy to understand.</span>
         </div>
       </div>
     </div>

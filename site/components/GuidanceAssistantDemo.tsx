@@ -40,7 +40,7 @@ const visitorOptions: Record<
         label: "looking for information on whether SciTOX is right for me",
         title: "We can start with the resource library.",
         body:
-          "No pressure. You can review what SciTOX is, who it may be for, and the privacy-aware topics to consider before making any decisions. [REVIEW REQUIRED]",
+          "No pressure. You can review what SciTOX is, who it may be for, and the privacy-aware topics to consider before making any decisions.",
         route: "resource",
       },
       {
@@ -62,7 +62,7 @@ const visitorOptions: Record<
         label: "checking what to do after a recent purchase",
         title: "We'll keep this focused on next-step support.",
         body:
-          "Use the support route for order, product, or timing questions. Share only the details that help the team understand what you need. [REVIEW REQUIRED]",
+          "Use support for order, product, or timing questions. Share only the details that help the team understand what you need.",
         route: "support",
       },
       {
@@ -70,7 +70,7 @@ const visitorOptions: Record<
         label: "returning with a product or support question",
         title: "Support is the right place for this.",
         body:
-          "When the situation needs more context, the site should move you to support instead of guessing. [OWNER DATA NEEDED: approved support workflow]",
+          "When the situation needs more context, support is the better next step.",
         route: "support",
       },
     ],
@@ -82,7 +82,7 @@ const initialResult: GuidanceResult = {
   recommended_product_id: null,
   recommended_path_label: "Start with the statement that fits best.",
   explanation:
-    "The site should first understand whether the visitor is new, returning, ready to learn, or ready to continue.",
+    "Start by choosing whether you are new, returning, ready to learn, or ready to continue.",
   source_ids: [],
   missing_owner_data: ["Reviewed product path mapping"],
   review_required: ["Guidance source-base behavior"],
@@ -137,7 +137,7 @@ export function GuidanceAssistantDemo() {
           ? "Continue to a few focused product guidance questions."
           : nextNeed.route === "resource"
             ? "Open the resource library before making a decision."
-            : "Use the support route for the next step.",
+            : "Use support for the next step.",
     });
     setMessage("");
     setStatus("idle");
@@ -157,7 +157,7 @@ export function GuidanceAssistantDemo() {
       setMessage(
         selectedNeed.route === "resource"
           ? "We'll take you to the resource library first."
-          : "We'll move this to the support route.",
+          : "We'll move this to support.",
       );
       return;
     }
@@ -199,11 +199,10 @@ export function GuidanceAssistantDemo() {
       setMessage("Your private session is ready for the next questions.");
     } catch {
       setStatus("error");
-      setMessage("This route is not available right now. Support is the safer next step.");
+      setMessage("This path is not available right now. Support is the safer next step.");
       setResult({
         ...initialResult,
-        explanation:
-          "The site should keep the experience calm when guidance is unavailable.",
+        explanation: "Support is available when guidance is not the right fit.",
       });
     }
   }
@@ -289,11 +288,11 @@ function GuidanceResultPanel({
 
   return (
     <div className="preview-result guidance-api-demo__result">
-      <p className="tag">Next step</p>
+        <p className="tag">Next step</p>
       <h2>{display.title}</h2>
       <dl className="fact-list">
         <div>
-          <dt>Route</dt>
+          <dt>Path</dt>
           <dd>{display.status}</dd>
         </div>
         <div>
@@ -310,7 +309,7 @@ function GuidanceResultPanel({
         </div>
       </dl>
       <div className="notice-list">
-        <span>The first choice should make the visitor feel caught and oriented.</span>
+        <span>Your first choice helps narrow the next step.</span>
         <span>Support remains available when the path needs more context.</span>
       </div>
       {display.href ? (
@@ -339,7 +338,7 @@ function getGuidanceDisplay(
           ? "Resource library"
           : selectedNeed.route === "questions"
             ? "Private session"
-            : "Support route",
+            : "Support",
       productPath:
         selectedNeed.route === "questions" ? "TotalTOX product guidance" : "Not selected yet",
       explanation: result.explanation,

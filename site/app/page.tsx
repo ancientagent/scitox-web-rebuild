@@ -10,13 +10,13 @@ export default function Home() {
       <WelcomeGreeting />
       <Section
         eyebrow="Customer lobby"
-        title="Choose the route that feels most useful right now."
+        title="Choose the path that feels most useful right now."
       >
         <p>
           The site is designed for people who already have some context and need
           a clear, low-pressure way to choose the next step.
         </p>
-        <div className="route-grid" aria-label="Draft route paths">
+        <div className="route-grid" aria-label="Main paths">
           <Link className="route-card route-card--link" href="/guidance">
             <h2>Product guidance</h2>
             <p>Answer a few simple questions before choosing a path.</p>
@@ -35,9 +35,9 @@ export default function Home() {
         <div className="band-inner">
           <div className="section-heading">
             <p className="eyebrow">Next step</p>
-            <h2>Choose the next route.</h2>
+            <h2>Choose the next path.</h2>
             <p>
-              The demo keeps product browsing, guided questions, and support
+              The site keeps product browsing, guided questions, and support
               follow-up easy to find without turning the site into a loud sales page.
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function Home() {
       <section className="content-band content-band--muted">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
-            <p className="eyebrow">Product path preview</p>
+            <p className="eyebrow">Product path</p>
             <h2>A simple product path area.</h2>
             <p>
               The site can keep the product line visible while saving detailed
@@ -76,7 +76,7 @@ export default function Home() {
       <section className="content-band content-band--dark">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Guidance preview</p>
+            <p className="eyebrow">Guidance</p>
             <h2>Simple questions, then a clear next step.</h2>
             <p>
               If the answer is not obvious, the flow moves toward support rather
@@ -89,7 +89,7 @@ export default function Home() {
       <section className="content-band">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
-            <p className="eyebrow">Separate vendor layer</p>
+            <p className="eyebrow">Separate partner path</p>
             <h2>A separate partner surface.</h2>
             <p>
               Wholesale inquiries stay separate from customer guidance so buyers
@@ -99,11 +99,11 @@ export default function Home() {
           <div className="vendor-preview">
             <article>
             <h2>Product line overview</h2>
-              <p>TotalTOX is the focused product-line path for this V1 demo.</p>
+              <p>TotalTOX is the focused product-line path.</p>
             </article>
             <article>
               <h2>Documentation checklist</h2>
-              <p>Vendor materials, policies, and final product data stay in the partner layer.</p>
+              <p>Partner materials, policies, and final product data stay in the partner area.</p>
             </article>
           </div>
         </div>

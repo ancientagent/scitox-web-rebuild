@@ -4,8 +4,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SciTOX Custom App Scaffold",
-  description: "Draft V1 route scaffold. Public copy, claims, and owner data require review.",
+  title: "SciTOX",
+  description: "Product guidance and support for SciTOX customers.",
   icons: {
     icon: "/icon.svg",
   },

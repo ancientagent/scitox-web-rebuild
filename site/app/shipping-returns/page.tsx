@@ -1,33 +1,26 @@
 import { PolicyRouteLinks } from "@/components/PolicyRouteLinks";
 import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 
 export default function ShippingReturnsPage() {
   return (
     <div className="page-flow">
       <div className="route-shell">
-        <Section
-          eyebrow="Policy route"
-          title="Shipping, returns, and damage-policy shell [REVIEW REQUIRED]"
-          actions={
-            <>
-              <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
-              <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-            </>
-          }
-        >
+        <Section eyebrow="Shipping and returns" title="Shipping, returns, and order support">
           <p>
-            [OWNER DATA NEEDED: shipping terms, damaged-goods handling, return
-            process, refund process, payment review, and reviewed public wording]
+            This page is reserved for shipping, damaged-item, return, and order
+            support information. For a current order question, use support or contact.
           </p>
         </Section>
       </div>
       <section className="content-band content-band--muted">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Policy review paths</p>
-            <h2>Policy details required before checkout [REVIEW REQUIRED]</h2>
-            <p>[OWNER DATA NEEDED: reviewed shipping, returns, payment, and support policy set]</p>
+            <p className="eyebrow">Related pages</p>
+            <h2>Find the policy or support path you need.</h2>
+            <p>
+              Shipping, privacy, terms, and contact information stay close
+              together so you do not have to hunt for the next step.
+            </p>
           </div>
           <PolicyRouteLinks />
         </div>

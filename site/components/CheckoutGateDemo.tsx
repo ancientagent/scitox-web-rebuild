@@ -27,14 +27,9 @@ const initialResult: CheckoutGateResult = {
   hosted_payment_token: null,
   checkout_url: null,
   environment: "unconfigured",
-  missing_owner_data: [
-    "Authorize.net sandbox/config details [OWNER DATA NEEDED]",
-  ],
-  review_required: [
-    "Checkout flow, payment settings, and policy language [REVIEW REQUIRED]",
-  ],
-  next_step:
-    "Use support or owner-reviewed checkout handoff after payment review. [REVIEW REQUIRED]",
+  missing_owner_data: ["Authorize.net configuration"],
+  review_required: ["Checkout flow and policy language"],
+  next_step: "Use support or a guided handoff when checkout is not available.",
 };
 
 export function CheckoutGateDemo({ productSlug }: { productSlug: string }) {
@@ -57,34 +52,34 @@ export function CheckoutGateDemo({ productSlug }: { productSlug: string }) {
 
       if (!payload?.result) {
         setStatus("error");
-        setMessage("[REVIEW REQUIRED: checkout gate returned no structured state]");
+        setMessage("Checkout is not available here right now. Use support for the next step.");
         return;
       }
 
       setResult(payload.result);
       setStatus(response.ok ? "idle" : "error");
-      setMessage(
-        "[REVIEW REQUIRED: checkout remains unavailable until payment review is complete]",
-      );
+      setMessage("Checkout is not available here right now. Use support for the next step.");
     } catch {
       setStatus("error");
       setResult(initialResult);
-      setMessage("[REVIEW REQUIRED: checkout gate unavailable; use support route]");
+      setMessage("Checkout is not available here right now. Use support for the next step.");
     }
   }
+
+  const isReady = result.available && result.payment_collection_enabled;
 
   return (
     <div className="checkout-gate">
       <form className="checkout-gate__panel" onSubmit={submitCheckoutGate}>
-        <p className="tag">Checkout gate</p>
-        <h2>Authorize.net checkout handoff [REVIEW REQUIRED]</h2>
+        <p className="tag">Checkout</p>
+        <h2>{isReady ? "Checkout is ready." : "Checkout is not open here yet."}</h2>
         <p>
-          [OWNER DATA NEEDED: Authorize.net sandbox/config details before checkout
-          can open]
+          Product guidance and support stay available when online checkout is not
+          the right next step.
         </p>
         <div className="form-actions">
           <button disabled={status === "loading"} type="submit">
-            {status === "loading" ? "Checking gate" : "Check checkout gate"}
+            {status === "loading" ? "Checking" : "Check checkout"}
           </button>
           {message ? (
             <span
@@ -99,55 +94,31 @@ export function CheckoutGateDemo({ productSlug }: { productSlug: string }) {
         </div>
       </form>
       <div className="checkout-gate__panel">
-        <p className="tag">Checkout state</p>
-        <h2>{result.checkout_status}</h2>
+        <p className="tag">Next step</p>
+        <h2>{isReady ? "Continue to checkout." : "Use guidance or support first."}</h2>
         <dl className="fact-list">
           <div>
-            <dt>Provider</dt>
-            <dd>[REVIEW REQUIRED: {result.provider} planning path]</dd>
+            <dt>Checkout status</dt>
+            <dd>{isReady ? "Available" : "Not available here yet"}</dd>
           </div>
           <div>
-            <dt>Mode</dt>
-            <dd>{result.mode}</dd>
+            <dt>Product path</dt>
+            <dd>{result.product_slug ? "Selected" : "Not selected yet"}</dd>
           </div>
           <div>
-            <dt>Environment</dt>
-            <dd>{result.environment}</dd>
-          </div>
-          <div>
-            <dt>Available</dt>
-            <dd>{result.available ? "Available" : "Unavailable [REVIEW REQUIRED]"}</dd>
-          </div>
-          <div>
-            <dt>Payment collection</dt>
+            <dt>Recommended next step</dt>
             <dd>
-              {result.payment_collection_enabled
-                ? "Enabled [REVIEW REQUIRED]"
-                : "Disabled [REVIEW REQUIRED]"}
+              {isReady
+                ? "Continue through checkout."
+                : "Start guidance or use support if your question needs more context."}
             </dd>
-          </div>
-          <div>
-            <dt>Hosted token</dt>
-            <dd>{result.hosted_payment_token ?? "[OWNER DATA NEEDED]"}</dd>
-          </div>
-          <div>
-            <dt>Checkout URL</dt>
-            <dd>{result.checkout_url ?? "[OWNER DATA NEEDED]"}</dd>
-          </div>
-          <div>
-            <dt>Next step</dt>
-            <dd>{result.next_step}</dd>
           </div>
         </dl>
         <div className="notice-list">
-          <span>{formatList("Owner data needed", result.missing_owner_data)}</span>
-          <span>{formatList("Review required", result.review_required)}</span>
+          <span>Payment details are not collected on this page.</span>
+          <span>Support is available when checkout is not the right next step.</span>
         </div>
       </div>
     </div>
   );
-}
-
-function formatList(label: string, values: string[]) {
-  return `${label}: ${values.length ? values.join("; ") : "[OWNER DATA NEEDED]"}`;
 }

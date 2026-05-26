@@ -5,23 +5,23 @@ import { useState } from "react";
 const contactRoutes = {
   product: {
     label: "Product question",
-    summary: "[REVIEW REQUIRED: product question routing preview]",
-    ownerNeed: "[OWNER DATA NEEDED: product support destination]",
+    summary: "Use this for help understanding a product path.",
+    nextStep: "Keep the question focused on what you need help choosing.",
   },
   order: {
     label: "Order or shipping",
-    summary: "[REVIEW REQUIRED: order support routing preview]",
-    ownerNeed: "[OWNER DATA NEEDED: shipping/order lookup workflow]",
+    summary: "Use this for order, delivery, or shipping questions.",
+    nextStep: "Include the details needed to find the order or understand the shipping issue.",
   },
   followUp: {
     label: "Human follow-up",
-    summary: "[REVIEW REQUIRED: callback or follow-up preview]",
-    ownerNeed: "[OWNER DATA NEEDED: support owner, channel, and timing]",
+    summary: "Use this when a quick form is not enough context.",
+    nextStep: "Share a short summary and the best way to reach you.",
   },
   wholesale: {
     label: "Wholesale / partner",
-    summary: "[REVIEW REQUIRED: vendor inquiry routing preview]",
-    ownerNeed: "[OWNER DATA NEEDED: wholesale inquiry destination]",
+    summary: "Use this for buyer, distributor, or documentation questions.",
+    nextStep: "Include the business context so the team can direct the inquiry.",
   },
 };
 
@@ -33,7 +33,7 @@ export function ContactRoutePreview() {
 
   return (
     <div className="preview-shell">
-      <div className="segmented-control" role="group" aria-label="Contact route preview">
+      <div className="segmented-control" role="group" aria-label="Contact options">
         {Object.entries(contactRoutes).map(([key, value]) => (
           <button
             className={key === selectedRoute ? "is-active" : ""}
@@ -46,12 +46,12 @@ export function ContactRoutePreview() {
         ))}
       </div>
       <div className="preview-result">
-        <p className="tag">Selected route</p>
+        <p className="tag">Selected path</p>
         <h2>{route.label}</h2>
         <p>{route.summary}</p>
         <div className="notice-list">
-          <span>{route.ownerNeed}</span>
-          <span>[REVIEW REQUIRED: privacy and consent language]</span>
+          <span>{route.nextStep}</span>
+          <span>Share only the details needed for the team to understand the request.</span>
         </div>
       </div>
     </div>

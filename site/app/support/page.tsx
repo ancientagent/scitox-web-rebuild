@@ -1,33 +1,24 @@
-import { Section } from "@/components/Section";
-import { StatusTag } from "@/components/StatusTag";
 import { InquiryForm } from "@/components/InquiryForm";
+import { Section } from "@/components/Section";
 
 export default function SupportPage() {
   return (
     <div className="page-flow">
-      <Section
-        eyebrow="Support route"
-        title="Support route for nuanced product questions [REVIEW REQUIRED]"
-        actions={
-          <>
-            <StatusTag tone="owner">[OWNER DATA NEEDED]</StatusTag>
-            <StatusTag tone="review">[REVIEW REQUIRED]</StatusTag>
-          </>
-        }
-      >
+      <Section eyebrow="Support" title="Use support when the situation needs more context.">
         <p>
-          [OWNER DATA NEEDED: approved support channels, hours, destination,
-          and reviewed policy language]
+          If product guidance does not feel like enough, send a focused support
+          note. Keep the request simple and avoid sharing details that are not
+          needed for product support.
         </p>
       </Section>
       <section className="content-band">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
-            <p className="eyebrow">Support preview</p>
-            <h2>Calm support intake without overcollection [REVIEW REQUIRED]</h2>
+            <p className="eyebrow">Support form</p>
+            <h2>A calmer place for nuanced questions.</h2>
             <p>
-              [OWNER DATA NEEDED: support categories, channel ownership,
-              destination tooling, and reviewed expectations]
+              Product, order, and follow-up questions can start here when the
+              regular guidance path does not fit.
             </p>
           </div>
           <InquiryForm surface="support" />
