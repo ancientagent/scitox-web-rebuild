@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 type WelcomeGreetingProps = {
   context?: "home" | "guidance";
@@ -46,6 +49,33 @@ export function WelcomeGreeting({ context = "home" }: WelcomeGreetingProps) {
 }
 
 function GuidanceWelcomeSequence() {
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.add("session-intro-active");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const timer = window.setTimeout(() => {
+      document.body.classList.remove("session-intro-active");
+      setIsComplete(true);
+      window.requestAnimationFrame(() => {
+        document.getElementById("quick-guidance")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    }, reduceMotion ? 800 : 12500);
+
+    return () => {
+      window.clearTimeout(timer);
+      document.body.classList.remove("session-intro-active");
+    };
+  }, []);
+
+  if (isComplete) {
+    return null;
+  }
+
   return (
     <section
       className="welcome-greeting welcome-greeting--guidance welcome-sequence"
@@ -71,13 +101,13 @@ function GuidanceWelcomeSequence() {
           Preparing the guidance step before asking for details.
         </p>
       </div>
-      <div className="welcome-greeting__actions welcome-sequence__actions" aria-label="Welcome actions">
-        <Link className="button-link button-link--primary" href="#quick-guidance">
-          Start questions
-        </Link>
-        <Link className="button-link" href="/products">
-          View product line
-        </Link>
+      <div className="welcome-sequence__stage welcome-sequence__stage--loading" aria-live="polite">
+        <div className="session-loader" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <p className="welcome-greeting__subtitle">Opening product guidance.</p>
       </div>
     </section>
   );

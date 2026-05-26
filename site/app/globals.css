@@ -53,6 +53,10 @@ textarea {
   font: inherit;
 }
 
+body.session-intro-active {
+  overflow: hidden;
+}
+
 .page-flow {
   display: grid;
   min-width: 0;
@@ -179,9 +183,21 @@ textarea {
 }
 
 .welcome-sequence {
-  position: relative;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  min-height: 330px;
+  justify-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 44%, rgb(0 189 98 / 10%) 0%, rgb(0 189 98 / 0%) 34%),
+    linear-gradient(180deg, #06100c 0%, #0f1914 100%);
+  padding: 32px;
+  text-align: center;
   overflow: hidden;
 }
 
@@ -193,19 +209,41 @@ textarea {
 }
 
 .welcome-sequence__stage--intro {
-  animation: welcome-intro-breath 6.2s ease-in-out both;
+  animation: welcome-intro-breath 5.4s ease-in-out both;
 }
 
 .welcome-sequence__stage--session {
   opacity: 0;
-  animation: welcome-session-breath 7.4s ease-in-out 5.2s both;
+  animation: welcome-session-breath 5.8s ease-in-out 5.2s both;
 }
 
-.welcome-sequence__actions {
-  grid-column: 2;
-  grid-row: 1;
+.welcome-sequence__stage--loading {
   opacity: 0;
-  animation: welcome-actions-in 900ms ease-out 8.2s both;
+  animation: welcome-loading-in 1.8s ease-in-out 10.7s both;
+}
+
+.session-loader {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.session-loader span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #9fe4b9;
+  box-shadow: 0 0 0 8px rgb(159 228 185 / 10%);
+  animation: session-loader-pulse 1.2s ease-in-out infinite;
+}
+
+.session-loader span:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.session-loader span:nth-child(3) {
+  animation-delay: 320ms;
 }
 
 .welcome-greeting__copy {
@@ -384,7 +422,7 @@ textarea {
   }
 
   18%,
-  58% {
+  66% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -402,21 +440,39 @@ textarea {
   }
 
   20%,
-  100% {
+  72% {
     opacity: 1;
     transform: translateY(0);
   }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
 }
 
-@keyframes welcome-actions-in {
+@keyframes welcome-loading-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes session-loader-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.78);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -1111,12 +1167,8 @@ ul {
   }
 
   .welcome-sequence {
-    min-height: 390px;
-  }
-
-  .welcome-sequence__actions {
-    grid-column: 1;
-    grid-row: 2;
+    align-items: center;
+    min-height: 100vh;
   }
 
   .welcome-greeting__actions {
@@ -1153,7 +1205,10 @@ ul {
   }
 
   .welcome-sequence {
-    min-height: 430px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px;
   }
 
   .route-panel {
@@ -1194,18 +1249,20 @@ ul {
   }
 
   .welcome-sequence {
-    min-height: 0;
+    align-content: center;
+    gap: 22px;
+    min-height: 100vh;
   }
 
-  .welcome-sequence__stage,
-  .welcome-sequence__actions {
+  .welcome-sequence__stage {
     animation: none;
     opacity: 1;
     transform: none;
   }
 
   .welcome-sequence__stage--intro,
-  .welcome-sequence__stage--session {
+  .welcome-sequence__stage--session,
+  .welcome-sequence__stage--loading {
     grid-row: auto;
   }
 
