@@ -85,17 +85,14 @@ function GuidanceWelcomeSequence() {
         <p className="welcome-greeting__eyebrow">You are in the right place</p>
         <h1>Welcome to SciTOX.</h1>
         <p className="welcome-greeting__subtitle">
-          Congratulations! You&apos;ve already completed the most important step
-          toward the next chapter. We&apos;re glad you&apos;re here.
+          You&apos;ve already taken the hardest step. We&apos;re glad you&apos;re here.
         </p>
       </div>
       <div className="welcome-sequence__stage welcome-sequence__stage--session">
         <p className="welcome-greeting__eyebrow">Private session</p>
-        <h1>Feel free to kick back and relax.</h1>
+        <h1>Kick back while we prepare your private session.</h1>
         <p className="welcome-greeting__subtitle">
-          We&apos;re securing a private session with our product guidance
-          system. After a couple quick questions, we&apos;ll get you to the right
-          product and on your way.
+          A couple quick questions will get you to the right product and on your way.
         </p>
         <p className="welcome-greeting__status">
           Preparing the guidance step before asking for details.
