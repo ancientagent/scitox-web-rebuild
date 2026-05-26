@@ -8,6 +8,25 @@ Source context:
 
 This document governs customer-facing messaging for the SciTOX public site. It is not final website copy and does not approve any product, legal, medical, privacy, vendor, marketplace, or advertising claim.
 
+## Current Public UI Rule
+
+Internal review markers remain required for source governance, backend fallbacks, tests, private docs, product data, and launch review work. They must not be rendered in public customer-facing UI.
+
+Do not show these publicly:
+
+- `[REVIEW REQUIRED]`
+- `[OWNER DATA NEEDED]`
+- scaffold, demo, route-shell, or placeholder labels
+- internal implementation notes
+- developer-facing descriptions such as "review-gated," "owner data," "source-backed," or "claim review" unless the page is explicitly an internal review/admin surface
+
+When a public section depends on missing data or claim review, either:
+
+- remove or hide the section,
+- use neutral customer-facing boundaries,
+- route to support or guidance, or
+- keep the marker only in private data/docs/API payloads.
+
 ## Approved Tone Direction
 
 The public customer site should feel:
@@ -24,7 +43,7 @@ The public customer site should feel:
 
 The visitor may be anxious, privacy-sensitive, and trying to make a fast decision. Messaging should lower confusion without increasing fear. The site should sound like a capable product team that understands urgency, not like a panic-driven sales page.
 
-For the demo and early rebuild, the site should not overexplain or advertise the product category when the visitor likely arrives with outside context. Many visitors may already trust the product because of word of mouth, reviews, or outside research. Trust should be validated through seriousness, discretion, organization, clear routing, and support availability.
+For the custom app rebuild, the site should not overexplain or advertise the product category when the visitor likely arrives with outside context. Many visitors may already trust the product because of word of mouth, reviews, or outside research. Trust should be validated through seriousness, discretion, organization, clear routing, and support availability.
 
 Use:
 
@@ -32,8 +51,8 @@ Use:
 - Short sections and clear next steps.
 - Product guidance framing.
 - Supportive but restrained reassurance.
-- Review markers where claims are not approved.
-- Owner-data markers where facts are missing.
+- Internal review markers in source-controlled data and private docs where claims are not approved.
+- Internal owner-data markers in source-controlled data and private docs where facts are missing.
 - Abstract product-path labels where specific product/category exposure is unnecessary.
 - Confirmation-oriented language for already-aware visitors.
 
@@ -92,7 +111,7 @@ Do not use these phrases in customer-facing V1 copy:
 - "Marketplace safe"
 - "Payment-platform safe"
 
-If a concept is needed but risky, use a placeholder and mark it `[REVIEW REQUIRED]`.
+If a concept is needed but risky, do not publish it as customer-facing copy. Keep the review marker in private source data/docs, or replace the public copy with a neutral boundary or support path.
 
 ## Claim-Sensitive Topics
 
@@ -116,7 +135,7 @@ Mark these topics `[REVIEW REQUIRED]` until substantiation, owner approval, and 
 - Any Amazon, vendor, marketplace, payment, ad-platform, or regulatory eligibility claim.
 - Any third-party messaging, autonomous purchasing, or chat-based checkout claim.
 
-Rule: for the demo, the first question is whether the language exposes or flags the product/category to vendors, platforms, payment reviewers, or risk systems. If yes, remove it, abstract it, or mark it `[REVIEW REQUIRED]`. Continue to mark privacy/security, legal/medical, AI, payment, vendor, platform, and outcome claims `[REVIEW REQUIRED]` or `[OWNER DATA NEEDED]`.
+Rule: for public UI, the first question is whether the language exposes or flags the product/category to vendors, platforms, payment reviewers, or risk systems. If yes, remove it, abstract it, or keep the review marker only in private source data/docs. Continue to mark privacy/security, legal/medical, AI, payment, vendor, platform, and outcome claims `[REVIEW REQUIRED]` or `[OWNER DATA NEEDED]` in internal governance materials.
 
 ## Privacy And Discretion Language Rules
 
@@ -138,10 +157,15 @@ Avoid:
 - Any implication that the site gives legal protection.
 - Any implication that customer information is never stored unless verified.
 
-Required markers:
+Required internal markers:
 
 - Use `[REVIEW REQUIRED]` for all privacy/security promises.
 - Use `[OWNER DATA NEEDED]` where data retention, tools, CRM, chat, form routing, or support workflow is unknown.
+
+Public UI handling:
+
+- Do not render those markers to customers.
+- If privacy/security details are unknown, use restrained language such as "review the privacy page" or "share only what is needed," and avoid stronger privacy/security claims.
 
 ## Support And Intake Language Rules
 
@@ -197,7 +221,7 @@ Do not use:
 - "Secure legal advice"
 - "Confidential AI expert"
 
-Safer working labels:
+Safer internal working labels:
 
 - "Private Product Guidance" `[REVIEW REQUIRED]`
 - "Confidential Product Intake" `[REVIEW REQUIRED]`
@@ -242,9 +266,15 @@ Safer handling:
 - Use review cards only after source, permission, and claim review.
 - Avoid cherry-picked extreme outcomes in V1.
 
+## Draft Phrasing Rules
+
+The older placeholder examples below are not approved final copy. In public UI, remove bracketed review/owner markers and use only customer-facing wording that stays within reviewed boundaries.
+
+For internal docs and data, continue using `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` to preserve launch gates.
+
 ## Placeholder-Safe Phrasing Examples
 
-These are structure-safe examples, not final copy.
+These are structure-safe examples for internal planning, not final public copy.
 
 Hero/support framing:
 

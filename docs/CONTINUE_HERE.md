@@ -52,6 +52,29 @@ Read these before making project decisions:
 - Include explicit reasoning settings when assigning tasks: `high` for implementation/backend work and `xhigh` for payment, privacy/security, claims, source-grounded recommendations, and launch-blocker review.
 - Build task packets and acceptance criteria before implementation work.
 
+## Current Implementation Snapshot
+
+As of the latest local app state:
+
+- Branch: `main`.
+- Active app: `site/` Next.js custom app.
+- Recent commits:
+  - `e55592f fix: remove public developer-facing copy`
+  - `207cb2e feat: build knowledge center resource page`
+  - `b9a99d2 feat: add staged guidance entry flow`
+- Local preview has been verified at `http://127.0.0.1:3000/resources` and `http://127.0.0.1:3000/guidance`.
+- `/guidance` keeps the owner-approved staged onboarding flow:
+  1. Welcome overlay: "You are in the right place" / "Welcome to SciTOX."
+  2. The welcome fades out.
+  3. Handoff to the current-situation question.
+  4. First question: "Which of the following statements best represents your current situation?"
+  5. First choice: first-time visitor or active/returning client.
+  6. First-time visitor branches into information-first `/resources` or next-step guidance.
+- `/resources` is now the customer-facing Knowledge Center destination for first-time visitors who want information before deciding.
+- The Knowledge Center includes medication/privacy/workplace-stigma context, ADHD context, ADA/HIPAA nuance, official resource links, legally mandated screening boundaries, and documentation guidance.
+- Public customer-facing UI has been cleaned so internal markers such as `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, and developer-facing planning text are not shown.
+- Backend data, API fallback payloads, tests, private docs, and source-governance files may still use review/owner markers. Do not remove those markers unless replacing them with an equivalent internal review gate.
+
 ## Next Prompt Template
 
 Use this when you want to continue:

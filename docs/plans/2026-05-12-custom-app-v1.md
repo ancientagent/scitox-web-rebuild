@@ -4,6 +4,10 @@
 
 **Goal:** Build the V1 SciTOX custom app under `site/` with a calm customer lobby, source-grounded guidance flow, vendor/wholesale layer, and review-gated Authorize.net checkout handoff.
 
+**Current status:** This plan is now historical implementation guidance. The `site/` app exists, with the `/guidance` welcome fade and current-situation onboarding flow, `/resources` Knowledge Center, public route cleanup, API stubs, and tests already implemented. Use `docs/CONTINUE_HERE.md`, `docs/DEVELOPMENT_HANDOFF.md`, and `docs/CUSTOM_APP_DEVELOPMENT_BACKLOG.md` for the current state before executing any remaining tasks from this plan.
+
+**Public UI update:** Internal markers such as `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` remain valid in private docs/data/backend tests, but they must not be rendered in customer-facing public UI.
+
 **Architecture:** Keep the existing repo as the source-of-truth workspace and create a Next.js App Router app in `site/`. Server-side API routes handle guidance, inquiries, and checkout stubs so LLM/payment secrets never live in the browser.
 
 **Tech Stack:** Next.js App Router, TypeScript, CSS modules or global CSS, server-side route handlers, JSON source data, Vitest or the default Next.js-compatible test runner selected during scaffold.
@@ -542,4 +546,3 @@ The V1 implementation is not complete until:
 - Mobile and desktop QA evidence exists.
 - Claims/privacy/payment/vendor review blockers are documented.
 - Root workbook/artifact scripts still run.
-

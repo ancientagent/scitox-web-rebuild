@@ -12,6 +12,7 @@ site/
     globals.css
     products/
     guidance/
+    resources/
     support/
     contact/
     wholesale/
@@ -80,7 +81,8 @@ assets/
 | `/products` | Product category/routing page. | V1 |
 | `/products/[slug]` | Product detail template. | V1 |
 | `/guidance` | Structured product guidance flow. | V1 |
-| `/support` | FAQ and support routing. | V1 |
+| `/resources` | Knowledge Center for information-first visitors. | V1 |
+| `/support` | Support routing. | V1 |
 | `/contact` | Contact and callback request. | V1 |
 | `/shipping-returns` | Shipping, returns, guarantee policy placeholders. | V1 |
 | `/wholesale` | Partner/Wholesale inquiry. | V1 |
@@ -103,4 +105,3 @@ assets/
 - Real-time encrypted chat.
 - Public testimonial/review proof system.
 - CMS migration before owner data is stable.
-

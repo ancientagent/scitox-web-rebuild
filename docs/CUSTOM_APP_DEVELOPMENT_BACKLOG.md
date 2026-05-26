@@ -4,6 +4,18 @@ Use this backlog to turn the SciTOX planning package into a buildable custom app
 
 Do not publish final copy, claim-sensitive language, payment claims, privacy/security claims, or product recommendations until the relevant review gates are complete.
 
+## Current Status Snapshot
+
+The `site/` app scaffold and early V1 public routes are already implemented. The current public app includes:
+
+- Calm homepage/customer lobby.
+- Staged `/guidance` welcome and onboarding flow.
+- `/resources` Knowledge Center for information-first visitors.
+- Product, support, contact, policy, and wholesale/partner routes.
+- Backend API stubs for guidance, inquiries, and Authorize.net checkout gating.
+
+Public UI has been cleaned to avoid visible internal markers (`[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`), scaffold/demo labels, and developer-facing planning text. Internal data, tests, API fallback payloads, and private docs still preserve review gates.
+
 ## Recommended Agent Settings
 
 | Work Type | Codex App Setting | Codex CLI Setting | Notes |
@@ -35,6 +47,8 @@ If the exact Codex CLI flag name changes, preserve the intent: explicitly choose
 | Add style system | Global CSS and components | Design is serious, warm, restrained, responsive, and not Webflow-dependent. | Visual direction approval. |
 | Add data loading pattern | `site/data/` or `site/lib/data/` | Missing facts stay `[OWNER DATA NEEDED]`; claim-sensitive fields stay `[REVIEW REQUIRED]`. | Product data. |
 
+Status: complete as an initial scaffold. Continue to preserve internal data markers, but do not render them in public UI.
+
 ## Phase 2: Owner-Review Demo Port
 
 | Task | Output | Acceptance Criteria | Blockers |
@@ -43,6 +57,8 @@ If the exact Codex CLI flag name changes, preserve the intent: explicitly choose
 | Port guidance flow UI | Product guidance page | Flow collects structured answers and calls backend route or local stub safely. | Source base and API route. |
 | Port support flow | Support/contact routes | Human callback/support options appear as review-gated paths, not unsupported guarantees. | Support workflow. |
 | Port vendor layer | Partner/wholesale page | Vendor page is restrained and data-forward. | Wholesale owner data. |
+
+Status: substantially ported into public routes. The current app uses customer-facing copy rather than internal placeholders. Future work should refine the experience, not reintroduce visible review markers.
 
 ## Phase 3: Source-Grounded Guidance
 
@@ -53,6 +69,8 @@ If the exact Codex CLI flag name changes, preserve the intent: explicitly choose
 | Add source-base schema | `site/data/guidance-source.example.json` | Source records include review markers and owner-data gaps. | Product mappings. |
 | Add tests | Unit/API tests | Safe fallback, missing source base, blocked advice requests, and human escalation are covered. | Test framework selection. |
 
+Status: initial backend guidance route, source-base behavior, and tests exist. Product mapping remains review-gated internally.
+
 ## Phase 4: Product And Vendor Data
 
 | Task | Output | Acceptance Criteria | Blockers |
@@ -60,6 +78,8 @@ If the exact Codex CLI flag name changes, preserve the intent: explicitly choose
 | Add product schema | Product data file/type | Public and vendor fields are separated. | Owner product data. |
 | Add product category/detail templates | Product routes | Pages render placeholders without inventing facts. | Product images/data. |
 | Add vendor line-sheet model | Vendor data structure | SKU, MSRP, wholesale, MOQ, case pack, UPC/GTIN are represented as owner-needed until confirmed. | Owner vendor data. |
+
+Status: initial product/vendor model exists. Public UI now hides raw owner-needed markers and routes incomplete choices toward guidance/support.
 
 ## Phase 5: Checkout Handoff
 
@@ -70,6 +90,8 @@ If the exact Codex CLI flag name changes, preserve the intent: explicitly choose
 | Implement Accept Hosted after review | Hosted checkout handoff | Uses server-side token creation and hosted payment form flow. | Payment/legal/compliance review. |
 | Add checkout QA | Test plan | No card data is handled directly by the app unless explicitly reviewed. | Sandbox account. |
 
+Status: checkout remains gated behind a server route and public UI says checkout is not open here yet when unavailable. Do not expose internal checkout review markers publicly.
+
 ## Phase 6: Support, Intake, And Operations
 
 | Task | Output | Acceptance Criteria | Blockers |
@@ -77,6 +99,8 @@ If the exact Codex CLI flag name changes, preserve the intent: explicitly choose
 | Add contact/inquiry API | Server route | Validates inquiry type and avoids overcollecting sensitive data. | Destination provider. |
 | Add support escalation | Human follow-up route | Guidance assistant can route unsupported cases without overpromising response times. | Support process. |
 | Add owner dashboard later | Deferred admin view | Not required for V1 unless owner requests it. | Owner priority. |
+
+Status: initial contact/support/partner forms and inquiry API exist. Delivery destination remains a launch blocker until owner-approved tooling is configured.
 
 ## Phase 7: QA And Deploy
 
@@ -86,4 +110,3 @@ If the exact Codex CLI flag name changes, preserve the intent: explicitly choose
 | Browser QA | Screenshots/evidence | Desktop and mobile core flows work. | Dev server. |
 | Claims/privacy QA | QA report | No unreviewed risky copy is launch-ready. | Review gates. |
 | Deploy setup | Vercel or selected host | Environment variables and domains are configured without exposing secrets. | Hosting account and owner access. |
-

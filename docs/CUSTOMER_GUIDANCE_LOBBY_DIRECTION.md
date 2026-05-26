@@ -9,6 +9,46 @@ Source context:
 
 This document captures the current owner direction for the customer-facing rebuild. It is not final website copy and does not approve product, privacy, security, AI, legal, medical, payment, vendor, or platform claims.
 
+## Current Implemented Guidance Flow
+
+The current `site/` implementation uses a staged onboarding flow on `/guidance`:
+
+1. Full-screen welcome overlay:
+   - Eyebrow: "You are in the right place"
+   - Title: "Welcome to SciTOX."
+   - Subtitle: "Take a breath. You made it here, and the next step can be simple."
+2. The welcome fades out.
+3. Automatic handoff to the guidance section.
+4. First question:
+   - "Which of the following statements best represents your current situation?"
+   - Option 1: "I'm a first time visitor"
+   - Option 2: "I'm an active or returning client"
+5. First-time visitor follow-up:
+   - "looking for information on whether SciTOX is right for me" -> `/resources`
+   - "looking to take the next step with SciTOX" -> private-session product guidance questions
+6. Active/returning client follow-up:
+   - recent purchase or product/support question -> support-oriented path
+
+The owner has already clarified that this onboarding structure should remain stable unless explicitly changed.
+
+## Current Knowledge Center Direction
+
+The `/resources` route is now the information-first Knowledge Center destination. It is intended for visitors who are not ready to continue into product guidance and want context first.
+
+Current content direction:
+
+- What SciTOX is for: people whose prescribed medication or private medical circumstances may be misunderstood in ordinary hiring or workplace screening situations.
+- What SciTOX is not for: state, federal, court-ordered, probation, parole, DOT, government-regulated, or otherwise legally mandated screening situations.
+- Medication, privacy, and stigma context.
+- ADHD and prescribed-stimulant context using official public health sources.
+- ADA/EEOC medical-question context.
+- HIPAA limits in employment-record contexts.
+- Official resources and practical documentation guidance.
+
+The page must not claim that a visitor has a legal claim, that an employer will discriminate, that SciTOX gives legal protection, or that any outcome is guaranteed.
+
+Public UI must not show internal review markers or developer-facing planning copy. Keep `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` markers in internal docs/data only.
+
 ## Strategic Shift
 
 Because much customer traffic is expected to arrive from other sources, the first customer-facing experience does not need to overexplain the product category or lead with the nature of the product.
@@ -18,7 +58,7 @@ Refined owner direction:
 - Most visitors should be treated as already-aware prospects who may trust the product because of people they know, reviews they have read, or outside research completed before arrival.
 - The site should validate that existing trust, reduce friction, and help them choose the right path.
 - The customer-facing goal is to make the visitor feel that the product and company are serious, organized, respectful, and capable.
-- The claims priority is not to prove every product point in the demo. The priority is to avoid exposing the product/category in a way that flags the business as risky to vendors, platforms, payment reviewers, or partners.
+- The claims priority is not to prove every product point in public UI. The priority is to avoid exposing the product/category in a way that flags the business as risky to vendors, platforms, payment reviewers, or partners.
 - Product details should appear only where needed for user routing, product selection, and confidence.
 
 The rebuild should focus on:
@@ -100,8 +140,9 @@ Required boundaries:
 - Do not imply that the guidance system can solve every situation.
 - Do not require customers to read risk-flagging product explanations before they can choose a path.
 - Do not return a product recommendation unless the backend source base contains approved product mapping.
-- Mark guidance logic `[REVIEW REQUIRED]`.
-- Mark actual routing rules `[OWNER DATA NEEDED]`.
+- Mark guidance logic `[REVIEW REQUIRED]` internally.
+- Mark actual routing rules `[OWNER DATA NEEDED]` internally.
+- Do not render internal markers in public customer-facing UI.
 
 ## AI Assistance Direction
 
@@ -164,7 +205,7 @@ Public claims requiring review:
 - "No data stored"
 - "End-to-end encrypted"
 
-Use `[REVIEW REQUIRED]` until the technical system and policy language support the exact claim.
+Use `[REVIEW REQUIRED]` in internal governance materials until the technical system and policy language support the exact claim. Do not render that marker in public UI.
 
 ## Third-Party Messaging And Autonomous Purchase Direction
 
@@ -172,7 +213,7 @@ The owner is open to native on-site messaging or third-party platforms such as T
 
 This needs separate technical, privacy, payment, and compliance review before implementation.
 
-The demo should include this as a possible system architecture, not as a live promise. See `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md`.
+Private docs and internal demos may include this as a possible system architecture, not as a live promise. See `docs/SECURE_SUPPORT_CHECKOUT_OPTIONS.md`.
 
 Review questions:
 - Is the platform appropriate for this product category and customer privacy expectations?
@@ -200,8 +241,8 @@ Planning implication:
 - Treat Authorize.net as the owner-confirmed current processor/gateway, but keep integration type, enabled payment methods, fraud/dispute/refund settings, and custom app checkout handoff as `[OWNER DATA NEEDED]` / `[REVIEW REQUIRED]`.
 - Build the site so it can route customers clearly without implying platform safety.
 - Do not claim a payment, marketplace, ad, vendor, or messaging channel is approved.
-- Do not design the public demo around tools, channels, or scenarios that the business likely cannot support because of current risk status.
-- Any system shown in the demo should be framed as controlled routing, support workflow, or review-gated future capability unless it is already verified.
+- Do not design public UI around tools, channels, or scenarios that the business likely cannot support because of current risk status.
+- Any system shown publicly should be framed as controlled routing or support workflow unless it is already verified. Review-gated future capabilities belong in private docs, not public copy.
 - Offer optional comfort-oriented payment paths as choices when reviewed; do not describe them as anonymous, private, processor-proof, refund-proof, or guaranteed.
 
 ## UI Implications
@@ -226,7 +267,7 @@ Private Product Guidance / Intake:
 - Escalate to human support where guidance is uncertain.
 
 FAQ / Support:
-- Explain how product guidance, AI-assisted support, and human follow-up work only after owner data and review.
+- Explain product guidance, support, and human follow-up in customer-facing language only. Keep AI/internal review details out of public UI unless approved.
 
 Contact:
 - Include reason-based routing and support escalation.

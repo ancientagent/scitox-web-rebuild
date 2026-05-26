@@ -25,12 +25,16 @@ test("privacy prep UI avoids unsupported security promises", async () => {
   const files = await Promise.all([
     readFile(new URL("../components/PrivacyPrepNotice.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/WelcomeGreeting.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/GuidanceAssistantDemo.tsx", import.meta.url), "utf8"),
   ]);
   const source = files.join("\n");
+  const welcomeSource = files[1];
+  const guidanceSource = files[2];
 
-  assert.match(source, /prepare your private session/i);
-  assert.match(source, /right\s+product and on your way/i);
-  assert.match(source, /Opening product guidance/i);
+  assert.match(welcomeSource, /Welcome to SciTOX/i);
+  assert.doesNotMatch(welcomeSource, /Opening product guidance|prepare your private session/i);
+  assert.match(guidanceSource, /prepare your private session/i);
+  assert.match(guidanceSource, /right\s+product path/i);
   assert.match(source, /No payment details/i);
   assert.doesNotMatch(source, /encrypted|anonymous|guaranteed|fully private/i);
 });

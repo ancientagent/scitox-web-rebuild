@@ -19,6 +19,7 @@ Status values:
 | Secrets are server-side | No LLM, Authorize.net, CRM, analytics, or provider secrets appear in client bundles or public files. | Secret scan result. |  |
 | Environment variables documented | Required env vars are listed without real secret values. | `.env.example` or docs screenshot. |  |
 | Root artifact scripts still work | Existing root scripts for workbooks/demo are not broken by app package changes. | Script output summary. |  |
+| Public UI marker scan | Public pages/components do not render `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, or developer-facing planning copy. | Source scan and rendered-route scan. |  |
 
 ## Mobile Layout
 
@@ -26,7 +27,8 @@ Status values:
 | --- | --- | --- | --- |
 | Home mobile layout | First viewport clearly shows calm routing and primary CTA without overlap. | Mobile screenshot. |  |
 | Guidance mobile layout | Questions, controls, and results fit without crowding or panic framing. | Mobile screenshot. |  |
-| Product mobile layout | Product facts and placeholders are readable and not overclaiming. | Mobile screenshot. |  |
+| Resources mobile layout | Knowledge Center explains fit, boundaries, official resources, and next steps without legal/medical advice or internal markers. | Mobile screenshot. |  |
+| Product mobile layout | Product facts are readable, restrained, and not overclaiming; missing data does not render as internal markers. | Mobile screenshot. |  |
 | Support/contact mobile layout | Forms are readable, minimal, and easy to complete. | Mobile screenshot and field list. |  |
 | Wholesale mobile layout | Vendor form and product data placeholders are readable and restrained. | Mobile screenshot. |  |
 
@@ -36,7 +38,8 @@ Status values:
 | --- | --- | --- | --- |
 | Home desktop layout | Hierarchy is clear and serious, with no oversized hype hero. | Desktop screenshot. |  |
 | Guidance desktop layout | Structured flow is understandable and does not present advice claims. | Desktop screenshot. |  |
-| Product desktop layout | Product sections separate facts, review markers, support, and checkout routing. | Desktop screenshot. |  |
+| Resources desktop layout | Knowledge Center is calm, readable, and free of internal/developer-facing copy. | Desktop screenshot. |  |
+| Product desktop layout | Product sections separate facts, support, and checkout routing without exposing internal review markers. | Desktop screenshot. |  |
 | Vendor desktop layout | Vendor page feels professional and data-forward. | Desktop screenshot. |  |
 
 ## Navigation And Routing
@@ -45,6 +48,10 @@ Status values:
 | --- | --- | --- | --- |
 | Header navigation | V1 routes are visible and not cluttered. | Link list. |  |
 | Footer navigation | Product, support, policy, privacy, terms, contact, and wholesale links are available. | Link list. |  |
+| Guidance first screen | `/guidance` first shows only the full-screen "Welcome to SciTOX." fade-in, then fades out to the current-situation question. | Browser timing evidence. |  |
+| Guidance information branch | First-time visitor -> information branch routes to `/resources`. | Browser flow evidence. |  |
+| Guidance next-step branch | First-time visitor -> next-step branch continues to private-session product guidance. | Browser flow evidence. |  |
+| Returning-client branch | Active/returning visitor routes toward support paths. | Browser flow evidence. |  |
 | Mobile menu | Menu opens/closes and all links resolve. | Screenshot and link test. |  |
 | 404/unknown paths | Unknown paths do not expose technical errors or risky language. | Test URL result. |  |
 | Legacy URLs | Important current-site URLs redirect or are documented for later. | Redirect list. |  |
@@ -78,9 +85,19 @@ Status values:
 | Check | Pass Criteria | Evidence To Capture | Status |
 | --- | --- | --- | --- |
 | Product facts | Product name, SKU, size, price, ingredients, instructions, warnings, images, and availability use owner-confirmed data or placeholders. | Page screenshot. |  |
-| Claims markers | Claim-sensitive sections are hidden, marked `[REVIEW REQUIRED]`, or reviewed. | Copy scan. |  |
-| Owner gaps | Missing product facts are marked `[OWNER DATA NEEDED]` in draft/admin context, not accidentally public as final copy. | Scan result. |  |
+| Claims markers | Claim-sensitive sections are hidden, reviewed, or gated internally. Public UI does not show review markers. | Copy scan. |  |
+| Owner gaps | Missing product facts are marked `[OWNER DATA NEEDED]` in draft/admin/internal data context, not accidentally public as final copy. | Scan result. |  |
 | Checkout CTA | Buy/checkout route only appears if payment path is approved for that environment. | CTA screenshot and approval note. |  |
+
+## Knowledge Center
+
+| Check | Pass Criteria | Evidence To Capture | Status |
+| --- | --- | --- | --- |
+| Fit explanation | Page explains that SciTOX is for prescribed-medication/private-medical-context privacy concerns in ordinary hiring/workplace settings without overclaiming. | Screenshot/copy scan. |  |
+| Mandated-screening boundary | Page clearly states SciTOX is not for state, federal, court-ordered, probation, parole, DOT, government-regulated, or otherwise legally mandated screening. | Screenshot/copy scan. |  |
+| Official resources | Page links to official resources for EEOC/ADA, HHS/HIPAA, CDC ADHD context, DOT/SAMHSA, and FTC background checks. | Link list. |  |
+| Legal/medical boundary | Page does not provide legal advice, medical advice, claim evaluation, outcome guarantees, or employer-liability conclusions. | Copy review. |  |
+| User-facing clarity | Page reads as a customer Knowledge Center, not an internal planning document. | Browser review. |  |
 
 ## Vendor / Wholesale Layer
 
@@ -119,6 +136,7 @@ Any item below should block launch until resolved or explicitly deferred by owne
 | Blocker | Why It Blocks Launch | Resolution Needed | Status |
 | --- | --- | --- | --- |
 | Unreviewed high-risk claims | Customer, vendor, payment, ad, or legal risk. | Remove, hide, or review. |  |
+| Public internal markers | Customer-facing UI exposes `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, or developer planning copy. | Remove from public UI; keep gates internally. |  |
 | Frontend LLM or exposed secrets | Security and provider risk. | Move to server-side route. |  |
 | Guidance can invent recommendations | Customer and claims risk. | Enforce source-grounded structured output. |  |
 | Payment flow unverified | Customer, processor, refund, and dispute risk. | Confirm Authorize.net setup and sandbox test. |  |
@@ -127,4 +145,3 @@ Any item below should block launch until resolved or explicitly deferred by owne
 | Missing product essentials | Site cannot support product or vendor review. | Add owner data or hide incomplete sections. |  |
 | Analytics leaks sensitive data | Privacy risk. | Remove sensitive payloads. |  |
 | Vendor page implies acceptance | False approval risk. | Remove or rewrite after review. |  |
-

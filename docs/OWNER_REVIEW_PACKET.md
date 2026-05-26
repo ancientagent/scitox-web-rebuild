@@ -1,14 +1,22 @@
 # SciTOX Owner Review Packet
 
-Current demo commit: `c4e4854 chore: stabilize owner demo shell`
+Historical demo commit: `c4e4854 chore: stabilize owner demo shell`
+
+Current app reference commits:
+
+- `e55592f fix: remove public developer-facing copy`
+- `207cb2e feat: build knowledge center resource page`
+- `b9a99d2 feat: add staged guidance entry flow`
 
 This packet is for owner review of the current SciTOX custom app demo. It is not final website copy, launch approval, payment approval, legal review, vendor acceptance, marketplace approval, or product-claim approval.
 
-All visible placeholder text in the demo should be treated as draft structure only. Anything marked `[OWNER DATA NEEDED]` needs owner-provided facts or operating decisions. Anything marked `[REVIEW REQUIRED]` needs review before it becomes public wording or live behavior.
+This packet began as an owner-review demo packet. The current public UI has since been cleaned so internal markers and developer-facing scaffolding do not render to customers.
+
+Any remaining `[OWNER DATA NEEDED]` or `[REVIEW REQUIRED]` language in this packet is an internal review gate. It means owner facts, operating decisions, claims review, privacy review, legal/compliance review, or source review are still needed before that material becomes public wording or live behavior.
 
 ## Demo Purpose
 
-The current demo shows the V1 shape of a private, restrained SciTOX web app:
+The current app shows the V1 shape of a private, restrained SciTOX web app:
 
 - A calm customer lobby for visitors who already know why they are there.
 - Stable navigation across products, product detail, guidance, support, contact, wholesale, and policy routes.
@@ -53,13 +61,15 @@ Review the demo for structure and operating fit:
 
 ## What Is Working Now
 
-The current demo includes:
+The current app includes:
 
 - Shared header, footer, layout, route shell, favicon, and custom 404.
-- Stable demo routes for home, products, TotalTOX product detail, guidance, support, contact, wholesale, privacy, terms, and shipping/returns.
+- Stable routes for home, products, TotalTOX product detail, guidance, resources, support, contact, wholesale, privacy, terms, and shipping/returns.
 - Clickable homepage route cards for the main owner-demo paths.
 - TotalTOX product data placeholders with public product fields separated from vendor/wholesale fields.
 - Product detail placeholders for facts, owner-needed data, review-needed sections, support routing, and checkout state.
+- Staged guidance entry flow with a brief "Welcome to SciTOX." fade-in, current-situation question, and first-time/returning visitor branches.
+- Customer-facing Knowledge Center route at `/resources` for information-first visitors.
 - Guidance API scaffold that returns structured JSON and escalates to human follow-up when source support is missing or the request is outside approved boundaries.
 - Support, contact, and wholesale intake forms with client/server validation and safe success/error states.
 - Inquiry route stub that does not deliver to a live owner destination yet.

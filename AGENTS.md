@@ -24,6 +24,7 @@ Do not import instructions or assumptions from GISTer or any other project.
 - Do not invent owner data, product data, sales numbers, traffic, margins, proof, testing, certifications, reviews, vendor relationships, Amazon eligibility, platform approval, legal conclusions, or claims support.
 - Mark uncertain claims or claim-sensitive language as `[REVIEW REQUIRED]`.
 - Mark missing business, product, policy, pricing, or fulfillment information as `[OWNER DATA NEEDED]`.
+- Keep `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` markers in internal docs, source data, backend fallbacks, tests, and review workflows. Do not render those markers in public customer-facing UI unless the owner explicitly asks for an internal/admin review surface.
 - Treat vendor readiness as the primary rebuild goal unless the owner explicitly changes direction.
 - For demo and early site structure, the main claim risk is exposure: avoid public language that identifies, overexplains, advertises, or flags the product/category in a way that creates vendor, platform, payment, or risk-review problems.
 - Keep the public customer site private, serious, warm, direct, and competent.

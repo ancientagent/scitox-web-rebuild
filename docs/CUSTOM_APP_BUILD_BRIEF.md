@@ -25,6 +25,7 @@ The project now needs more than a static marketing site:
 - Vendor/wholesale inquiry handling.
 - Strict separation between public customer guidance and vendor-facing credibility.
 - Source-controlled claims, owner-data gaps, and sensitive language markers.
+- Public customer-facing copy that hides internal markers while respecting those gates.
 
 Webflow can still help with visual exploration, landing page references, or optional content editing, but it is not the safest primary system for live guidance, payment routing, source governance, and backend-sensitive logic.
 
@@ -38,6 +39,12 @@ Create an explorable, buildable, vendor-ready SciTOX web app that shows:
 - Authorize.net as the planned primary checkout path, without implying every payment setting is approved.
 - A separate partner/wholesale inquiry layer.
 - Owner-data and review gates where facts are missing.
+
+Current implementation note:
+
+- The active `site/` app now includes a `/guidance` flow that starts with a brief "Welcome to SciTOX." fade-in before the current-situation question, plus the `/resources` Knowledge Center.
+- Public customer-facing UI should not render internal review markers, owner-data markers, demo/scaffold labels, or developer-facing planning copy.
+- Internal data files, backend fallback payloads, tests, private docs, and review workflows should continue preserving review gates until owner/legal/compliance review clears the underlying facts.
 
 ## V1 Experience Principles
 
@@ -132,4 +139,3 @@ Require review before public launch:
 - Optional crypto/onramp or alternate payment flows.
 - Vendor/wholesale claims and line sheet fields.
 - Analytics/Search Console events to ensure sensitive data is not sent to tracking tools.
-

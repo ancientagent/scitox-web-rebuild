@@ -148,7 +148,7 @@ export function GuidanceAssistantDemo() {
 
     if (!visitorType || !selectedNeed) {
       setStatus("error");
-      setMessage("Choose the statement that best describes your current situation.");
+      setMessage("Choose the statement that best represents your current situation.");
       return;
     }
 
@@ -208,10 +208,9 @@ export function GuidanceAssistantDemo() {
   }
 
   return (
-    <div className="guidance-api-demo">
+    <div className={`guidance-api-demo ${selectedNeed ? "" : "guidance-api-demo--single"}`}>
       <form className="choice-panel guidance-api-demo__form" onSubmit={submitGuidance}>
-        <p className="tag">Quick guidance</p>
-        <h2>Which statement best describes your current situation?</h2>
+        <h2>Which of the following statements best represents your current situation?</h2>
         <div className="choice-list" role="group" aria-label="Visitor type choices">
           {(Object.entries(visitorOptions) as Array<[VisitorType, (typeof visitorOptions)[VisitorType]]>)
             .filter(([key]) => !visitorType || key === visitorType)
@@ -251,23 +250,27 @@ export function GuidanceAssistantDemo() {
             without asking for more than it needs.
           </p>
         </div>
-        <div className="form-actions">
-          <button disabled={status === "loading"} type="submit">
-            {status === "loading" ? "Preparing" : "Continue"}
-          </button>
-          {message ? (
-            <span
-              className={`form-status ${
-                status === "error" ? "form-status--error" : "form-status--success"
-              }`}
-              role="status"
-            >
-              {message}
-            </span>
-          ) : null}
-        </div>
+        {selectedNeed?.route === "questions" || message ? (
+          <div className="form-actions">
+            {selectedNeed?.route === "questions" ? (
+              <button disabled={status === "loading"} type="submit">
+                {status === "loading" ? "Preparing" : "Continue"}
+              </button>
+            ) : null}
+            {message ? (
+              <span
+                className={`form-status ${
+                  status === "error" ? "form-status--error" : "form-status--success"
+                }`}
+                role="status"
+              >
+                {message}
+              </span>
+            ) : null}
+          </div>
+        ) : null}
       </form>
-      <GuidanceResultPanel result={result} selectedNeed={selectedNeed} />
+      {selectedNeed ? <GuidanceResultPanel result={result} selectedNeed={selectedNeed} /> : null}
     </div>
   );
 }

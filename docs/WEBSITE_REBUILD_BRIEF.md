@@ -7,6 +7,17 @@ Source context:
 
 This brief translates the prior SciTOX website rebuild discussion into a working direction document. It is not final website copy and does not approve product, legal, marketplace, vendor, or advertising claims.
 
+## Current Implementation Note
+
+The custom app under `site/` is now the active implementation path, not only a future plan. Recent app work added the `/guidance` welcome fade and current-situation onboarding flow, the `/resources` Knowledge Center route, and a public UI cleanup that removes visible internal markers, scaffold labels, route-shell notes, and developer-facing planning text.
+
+For current work:
+
+- Keep `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` markers in internal docs, source data, backend fallbacks, tests, QA reports, and owner-review workflows.
+- Do not render those markers in public customer-facing UI.
+- If a customer-facing section is not ready, use neutral reviewed copy, hide the incomplete item, or route the user to resources/support.
+- Use `/resources` for information-first visitors who want to understand fit, boundaries, medication privacy/stigma context, official rights resources, and practical documentation before deciding.
+
 ## Project Goal
 
 Rebuild the existing SciTOX website into a cleaner, more credible, vendor-ready web presence while preserving a customer-facing experience that feels private, serious, warm, direct, and competent.
@@ -95,9 +106,11 @@ Avoid:
 - Competitor attack language.
 - Fake certainty about tests, results, legality, platforms, or vendors.
 
-Any claim-sensitive copy must be marked `[REVIEW REQUIRED]`.
+Any claim-sensitive copy in internal docs, source data, QA reports, or review packets must be marked `[REVIEW REQUIRED]`.
 
-Any missing business, product, pricing, support, or operating detail must be marked `[OWNER DATA NEEDED]`.
+Any missing business, product, pricing, support, or operating detail in internal planning or source data must be marked `[OWNER DATA NEEDED]`.
+
+These markers are review infrastructure, not public customer-facing copy.
 
 ## Visual Style Direction
 
@@ -128,13 +141,15 @@ General constraints:
 - Do not invent proof, testing, reviews, sales numbers, traffic, margins, customer counts, vendor acceptance, Amazon eligibility, or legal conclusions.
 - Keep Amazon conditional.
 - Treat vendor readiness as the primary goal unless the owner changes direction.
-- Build V1 around structure, clarity, review labels, inquiry flow, and owner-data placeholders.
+- Build V1 around structure, clarity, internal review gates, inquiry flow, and owner-data placeholders.
 - Build the public homepage as a guidance lobby, not a product-category explainer.
+- Keep public pages free of internal markers, developer-facing scaffold copy, and visible route-shell notes.
 
 Recommended V1 structure:
 - Public customer homepage.
 - Product category/product routing page.
 - Product detail page template.
+- Knowledge Center/resources page.
 - FAQ/support page.
 - Privacy/support/intake flow.
 - Partner/wholesale inquiry page.

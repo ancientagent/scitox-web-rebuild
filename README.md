@@ -43,13 +43,20 @@ Reusable artifact scripts are in:
 
 - `scripts/`
 
-The explorable owner-review demo is in:
+The legacy explorable owner-review demo is in:
 
 - `demo/index.html`
 
-The planned production custom app should live in:
+The active custom app lives in:
 
 - `site/`
+
+Current app state:
+
+- `/guidance` starts with a brief "Welcome to SciTOX." fade-in, then asks the current-situation question before first-time/returning visitor onboarding.
+- `/resources` is the customer-facing Knowledge Center for first-time visitors who want information before continuing.
+- Public UI must not show internal markers such as `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, or developer-facing planning copy.
+- Internal data, backend fallback responses, tests, and private docs may still use review/owner markers to preserve launch gates.
 
 Important boundaries:
 
@@ -57,6 +64,7 @@ Important boundaries:
 - Do not invent owner data, product data, proof, vendor acceptance, Amazon eligibility, legal conclusions, reviews, or claims support.
 - Mark claim-sensitive language as `[REVIEW REQUIRED]`.
 - Mark missing owner/business/product data as `[OWNER DATA NEEDED]`.
+- Keep those markers out of public customer-facing UI unless the owner explicitly asks for an internal review surface.
 - Do not publish final customer-facing copy from this repo until owner and review gates are complete.
 - Use explicit reasoning settings in prompt packets: `high` for implementation/backend work and `xhigh` for payment, privacy/security, claims, source-grounded recommendations, and launch-blocker review.
 

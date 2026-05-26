@@ -113,3 +113,5 @@ docs/plans/2026-05-12-custom-app-v1.md
 ```
 
 Do not create public final copy, product claims, owner data, payment claims, privacy/security claims, or vendor/platform approval claims during the scaffold. Use `[OWNER DATA NEEDED]` and `[REVIEW REQUIRED]` markers where the source docs require them.
+
+Current app update: `site/` has moved beyond the initial scaffold. Keep review/owner-data markers in internal docs, source data, backend fallbacks, tests, and QA reports, but do not render those markers, scaffold labels, or developer-facing planning text in public customer-facing UI.

@@ -64,7 +64,7 @@ function GuidanceWelcomeSequence() {
           block: "start",
         });
       });
-    }, reduceMotion ? 800 : 16200);
+    }, reduceMotion ? 600 : 4800);
 
     return () => {
       window.clearTimeout(timer);
@@ -87,21 +87,6 @@ function GuidanceWelcomeSequence() {
         <p className="welcome-greeting__subtitle">
           Take a breath. You made it here, and the next step can be simple.
         </p>
-      </div>
-      <div className="welcome-sequence__stage welcome-sequence__stage--session">
-        <p className="welcome-greeting__eyebrow">Private session</p>
-        <h1>Kick back while we prepare your private session.</h1>
-        <p className="welcome-greeting__subtitle">
-          A couple quick questions will get you to the right product and on your way.
-        </p>
-      </div>
-      <div className="welcome-sequence__stage welcome-sequence__stage--loading" aria-live="polite">
-        <div className="session-loader" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-        <p className="welcome-greeting__subtitle">Opening product guidance.</p>
       </div>
     </section>
   );

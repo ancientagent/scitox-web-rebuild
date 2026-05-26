@@ -17,6 +17,7 @@ Every agent or service builder must follow these rules:
 - Do not invent owner data, product data, proof, sales numbers, reviews, vendor relationships, payment approval, platform approval, legal conclusions, or claims support.
 - Mark uncertain claims `[REVIEW REQUIRED]`.
 - Mark missing business, product, policy, support, payment, fulfillment, or wholesale information `[OWNER DATA NEEDED]`.
+- Keep review/owner markers in internal docs, source data, API fallback payloads, tests, and review reports. Do not render those markers in public customer-facing UI.
 - Do not write final public website copy unless explicitly assigned and review gates are defined.
 - Do not present encrypted chat, autonomous checkout, payment approval, crypto checkout, vendor acceptance, or platform eligibility as live unless verified.
 - Treat the product guidance assistant as a live V1 target only when it is backend-source-grounded, uses approved source material, validates output, and escalates unsupported cases.
@@ -77,7 +78,7 @@ Set reasoning to high.
 
 First read AGENTS.md, docs/CONTINUE_HERE.md, docs/CUSTOM_APP_BUILD_BRIEF.md, docs/CUSTOM_APP_REPO_STRUCTURE.md, docs/CUSTOM_APP_DEVELOPMENT_BACKLOG.md, docs/PUBLIC_SITE_MESSAGING_RULES.md, and docs/LLM_PRODUCT_GUIDANCE_ASSISTANT_PLAN.md.
 
-Create the V1 custom app scaffold under site/ without breaking existing root scripts. Use Next.js App Router unless the repo already contains a stronger app framework decision. Add routes for /, /products, /products/[slug], /guidance, /support, /contact, /shipping-returns, and /wholesale. Add placeholder data files with [OWNER DATA NEEDED] and [REVIEW REQUIRED] markers. Do not write final website copy. Do not invent product facts or claims.
+Create or continue the V1 custom app under site/ without breaking existing root scripts. Use Next.js App Router unless the repo already contains a stronger app framework decision. Required routes include /, /products, /products/[slug], /guidance, /resources, /support, /contact, /shipping-returns, and /wholesale. Add or preserve internal data files with [OWNER DATA NEEDED] and [REVIEW REQUIRED] markers. Do not render those markers in public UI. Do not invent product facts or claims.
 
 Deliver:
 - files changed
@@ -110,7 +111,7 @@ Read AGENTS.md, docs/CUSTOM_APP_BUILD_BRIEF.md, docs/CUSTOMER_GUIDANCE_LOBBY_DIR
 
 Port the owner-review demo feel and flow into the custom app under site/. The app should feel private, serious, warm, direct, and competent. It should guide already-aware users without overexplaining the product/category. Keep vendor/wholesale pages separate and restrained.
 
-Do not write final website copy. Use placeholder-safe labels and keep [REVIEW REQUIRED] and [OWNER DATA NEEDED] markers where facts are missing.
+Do not approve final website copy. Use customer-facing labels in public UI and keep [REVIEW REQUIRED] and [OWNER DATA NEEDED] markers only in internal docs/data/review artifacts where facts are missing.
 
 Deliver:
 - implemented pages/components
@@ -299,7 +300,7 @@ Read AGENTS.md, docs/PUBLIC_SITE_MESSAGING_RULES.md, docs/CUSTOMER_GUIDANCE_LOBB
 
 Review the public customer and vendor-facing surfaces for claim risk, exposure risk, privacy/security overclaims, payment/platform overclaims, AI/support overclaims, and vendor approval risk.
 
-Do not rewrite final copy. Do not approve claims. Do not make legal conclusions. Mark uncertain items [REVIEW REQUIRED] and missing owner data [OWNER DATA NEEDED].
+Do not approve claims. Do not make legal conclusions. Mark uncertain items [REVIEW REQUIRED] and missing owner data [OWNER DATA NEEDED] in the QA report. Also flag any public UI that exposes those internal markers, scaffold/demo labels, or developer-facing planning copy.
 
 Deliver:
 - risky sections
@@ -328,7 +329,7 @@ Set reasoning to high.
 
 Read AGENTS.md, docs/CUSTOM_APP_QA_CHECKLIST.md, docs/CUSTOM_APP_BUILD_BRIEF.md, docs/CUSTOM_APP_SOURCE_MATRIX.md, and the current site app.
 
-Run a staging-readiness QA pass for the custom app. Verify mobile layout, desktop layout, navigation, forms, guidance API behavior, product placeholders, vendor inquiry, policy links, analytics/Search Console readiness, secret handling, claim-sensitive language, privacy/security claims, broken links, and launch blockers.
+Run a staging-readiness QA pass for the custom app. Verify mobile layout, desktop layout, navigation, forms, guidance API behavior, product data handling, Knowledge Center/resources page, vendor inquiry, policy links, analytics/Search Console readiness, secret handling, claim-sensitive language, privacy/security claims, broken links, public-marker cleanup, and launch blockers.
 
 Report only evidence you verified. Do not claim launch readiness unless every required gate is satisfied. Mark unresolved items [REVIEW REQUIRED] or [OWNER DATA NEEDED].
 ```
@@ -348,4 +349,3 @@ Acceptance criteria:
 7. Vendor / Wholesale Layer - `high`.
 8. Claims, Messaging, And Exposure QA - `xhigh`.
 9. Deployment, Analytics, And Launch QA - `high` or `xhigh`.
-

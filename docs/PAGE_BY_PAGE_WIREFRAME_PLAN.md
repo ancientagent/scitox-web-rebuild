@@ -11,11 +11,23 @@ This is a structure plan for the SciTOX rebuild. It does not contain final websi
 
 All copy blocks should remain placeholders until owner data, claims review, privacy review, and legal/compliance review are complete.
 
+## Current Implementation Note
+
+This wireframe plan predates the current public UI cleanup. Treat the marker and placeholder instructions below as internal planning guidance, not customer-facing display rules.
+
+Current app direction:
+
+- `/guidance` now opens with a brief full-screen "Welcome to SciTOX." fade-in, then hands off to the current-situation question and routes first-time visitors into either `/resources` or product guidance.
+- `/resources` is the Knowledge Center destination for visitors who want information before deciding.
+- Public customer-facing UI must not render `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, route-shell notes, or other developer-facing planning text.
+- Internal docs, source data, backend fallbacks, tests, QA reports, and owner-review workflows should keep review/owner-data markers until they are replaced by an equivalent internal review gate.
+
 ## Global Wireframe Rules
 
 - Use short placeholder labels, not final marketing copy.
 - Mark claim-sensitive copy `[REVIEW REQUIRED]`.
 - Mark missing owner/business/product facts `[OWNER DATA NEEDED]`.
+- Do not render those markers in public customer-facing UI. Use customer-facing neutral copy, hide incomplete sections, or route to support/resources until facts and review are complete.
 - Treat the custom app under `site/` as the primary implementation target unless the owner explicitly changes direction.
 - Keep the tone private, serious, warm, direct, and competent.
 - Do not use panic-sales language, legal/medical advice, outcome guarantees, fake proof, fake badges, fake review counts, or vendor/platform approval claims.
