@@ -18,10 +18,10 @@ const greetingCopy = {
   },
   guidance: {
     eyebrow: "You are in the right place",
-    title: "Sit tight. We will ask a couple quick questions.",
+    title: "Just sit tight while we prepare a private session.",
     body:
-      "This step is designed to stay calm and focused. Choose the closest starting point, then continue toward whatever the next chapter holds.",
-    status: "Getting the privacy step ready before asking for details.",
+      "Then we can learn a bit about you and get you on your way.",
+    status: "Getting the guidance step ready before asking for details.",
     primaryHref: "#quick-guidance",
     primaryLabel: "Start questions",
     secondaryHref: "/products",
