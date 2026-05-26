@@ -94,9 +94,6 @@ function GuidanceWelcomeSequence() {
         <p className="welcome-greeting__subtitle">
           A couple quick questions will get you to the right product and on your way.
         </p>
-        <p className="welcome-greeting__status">
-          Preparing the guidance step before asking for details.
-        </p>
       </div>
       <div className="welcome-sequence__stage welcome-sequence__stage--loading" aria-live="polite">
         <div className="session-loader" aria-hidden="true">
