@@ -34,7 +34,7 @@ test("privacy prep UI avoids unsupported security promises", async () => {
   assert.match(welcomeSource, /Welcome to SciTOX/i);
   assert.doesNotMatch(welcomeSource, /Opening product guidance|prepare your private session/i);
   assert.match(guidanceSource, /prepare your private session/i);
-  assert.match(guidanceSource, /right\s+product path/i);
+  assert.match(guidanceSource, /right\s+treatment/i);
   assert.match(source, /No payment details/i);
   assert.doesNotMatch(source, /encrypted|anonymous|guaranteed|fully private/i);
 });

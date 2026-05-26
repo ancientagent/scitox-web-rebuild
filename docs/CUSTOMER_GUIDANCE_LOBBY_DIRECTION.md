@@ -29,6 +29,8 @@ The current `site/` implementation uses a staged onboarding flow on `/guidance`:
 6. Active/returning client follow-up:
    - recent purchase or product/support question -> support-oriented path
 
+During each entry segment, the segment must be the only thing on screen. Do not show the global header, footer, privacy prep content, guidance explainer, product cards, support panels, or other page sections while the visitor is still choosing their situation. The normal site surface becomes available only after the visitor is brought to `/resources`, `/support`, or into the product-guidance area.
+
 The owner has already clarified that this onboarding structure should remain stable unless explicitly changed.
 
 ## Current Knowledge Center Direction

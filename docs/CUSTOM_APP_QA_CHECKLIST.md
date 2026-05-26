@@ -49,6 +49,7 @@ Status values:
 | Header navigation | V1 routes are visible and not cluttered. | Link list. |  |
 | Footer navigation | Product, support, policy, privacy, terms, contact, and wholesale links are available. | Link list. |  |
 | Guidance first screen | `/guidance` first shows only the full-screen "Welcome to SciTOX." fade-in, then fades out to the current-situation question. | Browser timing evidence. |  |
+| Guidance entry isolation | Welcome, current-situation, follow-up pills, and routing messages show no header, footer, privacy prep, guidance explainer, or other page sections. | Browser flow evidence. |  |
 | Guidance information branch | First-time visitor -> information branch routes to `/resources`. | Browser flow evidence. |  |
 | Guidance next-step branch | First-time visitor -> next-step branch continues to private-session product guidance. | Browser flow evidence. |  |
 | Returning-client branch | Active/returning visitor routes toward support paths. | Browser flow evidence. |  |
