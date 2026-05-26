@@ -6,20 +6,22 @@ type WelcomeGreetingProps = {
 
 const greetingCopy = {
   home: {
-    eyebrow: "Welcome to SciTOX",
-    title: "Start quietly. Find the path that fits.",
+    eyebrow: "You are in the right place",
+    title: "Welcome to SciTOX.",
     body:
-      "Use the product line, guided questions, or support route depending on how simple your situation feels.",
+      "Take a moment. The site can ask a couple quick questions, keep the path focused, and help you move toward the next step.",
+    status: "Preparing a quiet guidance path.",
     primaryHref: "/guidance",
     primaryLabel: "Start guidance",
     secondaryHref: "/products",
     secondaryLabel: "View product line",
   },
   guidance: {
-    eyebrow: "Welcome to SciTOX",
-    title: "A few calm questions can point you in the right direction.",
+    eyebrow: "You are in the right place",
+    title: "Sit tight. We will ask a couple quick questions.",
     body:
-      "Choose the closest starting point. If the fit is not simple, the site routes you to support instead of guessing.",
+      "This step is designed to stay calm and focused. Choose the closest starting point, then continue toward whatever the next chapter holds.",
+    status: "Getting the guidance step ready before asking for details.",
     primaryHref: "#quick-guidance",
     primaryLabel: "Start questions",
     secondaryHref: "/products",
@@ -36,6 +38,7 @@ export function WelcomeGreeting({ context = "home" }: WelcomeGreetingProps) {
         <p className="welcome-greeting__eyebrow">{copy.eyebrow}</p>
         <h1>{copy.title}</h1>
         <p>{copy.body}</p>
+        <p className="welcome-greeting__status">{copy.status}</p>
       </div>
       <div className="welcome-greeting__actions" aria-label="Welcome actions">
         <Link className="button-link button-link--primary" href={copy.primaryHref}>

@@ -204,6 +204,19 @@ textarea {
   color: #d7e2da;
 }
 
+.welcome-greeting__status {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid rgb(159 228 185 / 36%);
+  border-radius: 999px;
+  background: rgb(159 228 185 / 10%);
+  padding: 8px 12px;
+  color: #c8f4d9;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
 .welcome-greeting__actions {
   display: flex;
   flex-wrap: wrap;
