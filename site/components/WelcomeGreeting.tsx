@@ -16,20 +16,13 @@ const greetingCopy = {
     secondaryHref: "/products",
     secondaryLabel: "View product line",
   },
-  guidance: {
-    eyebrow: "You are in the right place",
-    title: "Just sit tight while we prepare a private session.",
-    body:
-      "Then we can learn a bit about you and get you on your way.",
-    status: "Getting the guidance step ready before asking for details.",
-    primaryHref: "#quick-guidance",
-    primaryLabel: "Start questions",
-    secondaryHref: "/products",
-    secondaryLabel: "View product line",
-  },
 };
 
 export function WelcomeGreeting({ context = "home" }: WelcomeGreetingProps) {
+  if (context === "guidance") {
+    return <GuidanceWelcomeSequence />;
+  }
+
   const copy = greetingCopy[context];
 
   return (
@@ -46,6 +39,44 @@ export function WelcomeGreeting({ context = "home" }: WelcomeGreetingProps) {
         </Link>
         <Link className="button-link" href={copy.secondaryHref}>
           {copy.secondaryLabel}
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+function GuidanceWelcomeSequence() {
+  return (
+    <section
+      className="welcome-greeting welcome-greeting--guidance welcome-sequence"
+      aria-label="Welcome to SciTOX"
+    >
+      <div className="welcome-sequence__stage welcome-sequence__stage--intro">
+        <p className="welcome-greeting__eyebrow">You are in the right place</p>
+        <h1>Welcome to SciTOX.</h1>
+        <p className="welcome-greeting__subtitle">
+          Congratulations! You&apos;ve already completed the most important step
+          toward the next chapter. We&apos;re glad you&apos;re here.
+        </p>
+      </div>
+      <div className="welcome-sequence__stage welcome-sequence__stage--session">
+        <p className="welcome-greeting__eyebrow">Private session</p>
+        <h1>Feel free to kick back and relax.</h1>
+        <p className="welcome-greeting__subtitle">
+          We&apos;re securing a private session with our product guidance
+          system. After a couple quick questions, we&apos;ll get you to the right
+          product and on your way.
+        </p>
+        <p className="welcome-greeting__status">
+          Preparing the guidance step before asking for details.
+        </p>
+      </div>
+      <div className="welcome-greeting__actions welcome-sequence__actions" aria-label="Welcome actions">
+        <Link className="button-link button-link--primary" href="#quick-guidance">
+          Start questions
+        </Link>
+        <Link className="button-link" href="/products">
+          View product line
         </Link>
       </div>
     </section>

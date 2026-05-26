@@ -28,7 +28,8 @@ test("privacy prep UI avoids unsupported security promises", async () => {
   ]);
   const source = files.join("\n");
 
-  assert.match(source, /prepare a private session/i);
+  assert.match(source, /securing a private session/i);
+  assert.match(source, /right\s+product and on your way/i);
   assert.match(source, /No payment details/i);
   assert.doesNotMatch(source, /encrypted|anonymous|guaranteed|fully private/i);
 });
