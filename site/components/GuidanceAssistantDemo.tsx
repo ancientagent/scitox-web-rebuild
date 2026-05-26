@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 
 type GuidanceResult = {
@@ -13,47 +14,154 @@ type GuidanceResult = {
   next_step: string;
 };
 
-const demoRoutes = {
-  common: {
-    label: "Common path",
-    answerLabel: "Starting point",
-    answerValue: "standard-volume",
+type VisitorType = "first-time" | "returning";
+type VisitorNeed = "learn" | "next-step" | "recent-purchase" | "support-question";
+
+const visitorOptions: Record<
+  VisitorType,
+  {
+    label: string;
+    sentence: string;
+    needs: Array<{
+      key: VisitorNeed;
+      label: string;
+      title: string;
+      body: string;
+      route: "resource" | "questions" | "support";
+    }>;
+  }
+> = {
+  "first-time": {
+    label: "I'm a first time visitor",
+    sentence: "I'm a first time visitor",
+    needs: [
+      {
+        key: "learn",
+        label: "looking for information on whether SciTOX is right for me",
+        title: "We can start with the resource library.",
+        body:
+          "No pressure. You can review what SciTOX is, who it may be for, and the privacy-aware topics to consider before making any decisions. [REVIEW REQUIRED]",
+        route: "resource",
+      },
+      {
+        key: "next-step",
+        label: "looking to take the next step with SciTOX",
+        title: "No problem. We'll keep this simple.",
+        body:
+          "We just need to ask a few quick questions to help route you toward the right product path. Kick back while we prepare your private session, and we'll get you moving.",
+        route: "questions",
+      },
+    ],
   },
-  compare: {
-    label: "Longer hair",
-    answerLabel: "Product volume need",
-    answerValue: "long-hair-volume",
-  },
-  boundary: {
-    label: "Not simple",
-    answerLabel: "Support need",
-    answerValue: "boundary-review-needed",
+  returning: {
+    label: "I'm an active or returning client",
+    sentence: "I'm an active or returning client",
+    needs: [
+      {
+        key: "recent-purchase",
+        label: "checking what to do after a recent purchase",
+        title: "We'll keep this focused on next-step support.",
+        body:
+          "Use the support route for order, product, or timing questions. Share only the details that help the team understand what you need. [REVIEW REQUIRED]",
+        route: "support",
+      },
+      {
+        key: "support-question",
+        label: "returning with a product or support question",
+        title: "Support is the right place for this.",
+        body:
+          "When the situation needs more context, the site should move you to support instead of guessing. [OWNER DATA NEEDED: approved support workflow]",
+        route: "support",
+      },
+    ],
   },
 };
-
-type DemoRouteKey = keyof typeof demoRoutes;
 
 const initialResult: GuidanceResult = {
   recommendation_status: "human_follow_up",
   recommended_product_id: null,
-  recommended_path_label: "Start with the closest option.",
+  recommended_path_label: "Start with the statement that fits best.",
   explanation:
-    "The site can help with simple paths first. If the fit is unclear, it will move the request to support.",
+    "The site should first understand whether the visitor is new, returning, ready to learn, or ready to continue.",
   source_ids: [],
   missing_owner_data: ["Reviewed product path mapping"],
   review_required: ["Guidance source-base behavior"],
-  next_step: "Choose a starting point, then continue only if the route feels right.",
+  next_step: "Choose the closest statement. The next options will narrow from there.",
 };
 
 export function GuidanceAssistantDemo() {
-  const [selectedRoute, setSelectedRoute] = useState<DemoRouteKey>("common");
+  const [visitorType, setVisitorType] = useState<VisitorType | null>(null);
+  const [visitorNeed, setVisitorNeed] = useState<VisitorNeed | null>(null);
   const [result, setResult] = useState<GuidanceResult>(initialResult);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");
-  const route = demoRoutes[selectedRoute];
+
+  const selectedProfile = visitorType ? visitorOptions[visitorType] : null;
+  const selectedNeed = selectedProfile?.needs.find((need) => need.key === visitorNeed) ?? null;
+
+  function chooseVisitorType(type: VisitorType) {
+    setVisitorType(type);
+    setVisitorNeed(null);
+    setResult({
+      ...initialResult,
+      recommended_path_label: visitorOptions[type].sentence,
+      explanation: "Good. The next step is choosing what you need from here.",
+      next_step: "Choose the statement that completes the thought.",
+    });
+    setMessage("");
+    setStatus("idle");
+  }
+
+  function chooseVisitorNeed(need: VisitorNeed) {
+    if (!selectedProfile) {
+      return;
+    }
+
+    const nextNeed = selectedProfile.needs.find((option) => option.key === need);
+    if (!nextNeed) {
+      return;
+    }
+
+    setVisitorNeed(need);
+    setResult({
+      ...initialResult,
+      recommendation_status: nextNeed.route === "questions" ? "needs_more_info" : "human_follow_up",
+      recommended_path_label: `${selectedProfile.sentence} ${nextNeed.label}.`,
+      explanation: nextNeed.body,
+      review_required:
+        nextNeed.route === "questions"
+          ? ["Product guidance routing review"]
+          : ["Resource and support content review"],
+      next_step:
+        nextNeed.route === "questions"
+          ? "Continue to a few focused product guidance questions."
+          : nextNeed.route === "resource"
+            ? "Open the resource library before making a decision."
+            : "Use the support route for the next step.",
+    });
+    setMessage("");
+    setStatus("idle");
+  }
 
   async function submitGuidance(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (!visitorType || !selectedNeed) {
+      setStatus("error");
+      setMessage("Choose the statement that best describes your current situation.");
+      return;
+    }
+
+    if (selectedNeed.route !== "questions") {
+      setStatus("idle");
+      setMessage(
+        selectedNeed.route === "resource"
+          ? "We'll take you to the resource library first."
+          : "We'll move this to the support route.",
+      );
+      return;
+    }
+
     setStatus("loading");
     setMessage("");
 
@@ -64,9 +172,9 @@ export function GuidanceAssistantDemo() {
         body: JSON.stringify({
           answers: [
             {
-              id: "demo_route",
-              label: route.answerLabel,
-              value: route.answerValue,
+              id: "visitor_context",
+              label: selectedProfile?.sentence ?? "Visitor context",
+              value: selectedNeed.key,
             },
           ],
         }),
@@ -79,9 +187,16 @@ export function GuidanceAssistantDemo() {
         return;
       }
 
-      setResult(payload.result);
+      setResult({
+        ...payload.result,
+        recommended_path_label: `${selectedProfile?.sentence} ${selectedNeed.label}.`,
+        explanation:
+          "No problem. We just need a few focused answers to help route you toward the right product path.",
+        next_step:
+          "Kick back while we prepare your private session, then continue through the quick questions.",
+      });
       setStatus("idle");
-      setMessage("The guidance route checked your starting point.");
+      setMessage("Your private session is ready for the next questions.");
     } catch {
       setStatus("error");
       setMessage("This route is not available right now. Support is the safer next step.");
@@ -97,28 +212,49 @@ export function GuidanceAssistantDemo() {
     <div className="guidance-api-demo">
       <form className="choice-panel guidance-api-demo__form" onSubmit={submitGuidance}>
         <p className="tag">Quick guidance</p>
-        <h2>Pick the closest starting point.</h2>
-        <div className="choice-list" role="group" aria-label="Guidance route choices">
-          {Object.entries(demoRoutes).map(([key, value]) => (
-            <button
-              className={key === selectedRoute ? "is-active" : ""}
-              key={key}
-              onClick={() => setSelectedRoute(key as DemoRouteKey)}
-              type="button"
-            >
-              {value.label}
-            </button>
-          ))}
+        <h2>Which statement best describes your current situation?</h2>
+        <div className="choice-list" role="group" aria-label="Visitor type choices">
+          {(Object.entries(visitorOptions) as Array<[VisitorType, (typeof visitorOptions)[VisitorType]]>)
+            .filter(([key]) => !visitorType || key === visitorType)
+            .map(([key, value]) => (
+              <button
+                className={key === visitorType ? "is-active" : ""}
+                key={key}
+                onClick={() => chooseVisitorType(key)}
+                type="button"
+              >
+                {value.label}
+              </button>
+            ))}
         </div>
+        {selectedProfile ? (
+          <div className="followup-choice" aria-live="polite">
+            <p>{selectedProfile.sentence}...</p>
+            <div className="choice-list" role="group" aria-label="Visitor need choices">
+              {selectedProfile.needs
+                .filter((need) => !visitorNeed || need.key === visitorNeed)
+                .map((need) => (
+                  <button
+                    className={need.key === visitorNeed ? "is-active" : ""}
+                    key={need.key}
+                    onClick={() => chooseVisitorNeed(need.key)}
+                    type="button"
+                  >
+                    {need.label}
+                  </button>
+                ))}
+            </div>
+          </div>
+        ) : null}
         <div className="form-note">
           <p>
-            The demo keeps this simple: common situations can move forward,
-            unclear situations should go to support.
+            Start with the closest answer. The page will narrow the next step
+            without asking for more than it needs.
           </p>
         </div>
         <div className="form-actions">
           <button disabled={status === "loading"} type="submit">
-            {status === "loading" ? "Checking" : "Continue"}
+            {status === "loading" ? "Preparing" : "Continue"}
           </button>
           {message ? (
             <span
@@ -132,13 +268,24 @@ export function GuidanceAssistantDemo() {
           ) : null}
         </div>
       </form>
-      <GuidanceResultPanel result={result} />
+      <GuidanceResultPanel result={result} selectedNeed={selectedNeed} />
     </div>
   );
 }
 
-function GuidanceResultPanel({ result }: { result: GuidanceResult }) {
-  const display = getGuidanceDisplay(result);
+function GuidanceResultPanel({
+  result,
+  selectedNeed,
+}: {
+  result: GuidanceResult;
+  selectedNeed:
+    | {
+        title: string;
+        route: "resource" | "questions" | "support";
+      }
+    | null;
+}) {
+  const display = getGuidanceDisplay(result, selectedNeed);
 
   return (
     <div className="preview-result guidance-api-demo__result">
@@ -163,42 +310,62 @@ function GuidanceResultPanel({ result }: { result: GuidanceResult }) {
         </div>
       </dl>
       <div className="notice-list">
-        <span>The site should avoid guessing when the fit is unclear.</span>
-        <span>Support remains available for situations that need more context.</span>
+        <span>The first choice should make the visitor feel caught and oriented.</span>
+        <span>Support remains available when the path needs more context.</span>
       </div>
+      {display.href ? (
+        <Link className="text-link" href={display.href}>
+          {display.cta}
+        </Link>
+      ) : null}
     </div>
   );
 }
 
-function getGuidanceDisplay(result: GuidanceResult) {
-  if (result.recommendation_status === "product_path" && result.recommended_product_id) {
+function getGuidanceDisplay(
+  result: GuidanceResult,
+  selectedNeed:
+    | {
+        title: string;
+        route: "resource" | "questions" | "support";
+      }
+    | null,
+) {
+  if (selectedNeed) {
     return {
-      title: result.recommended_path_label,
-      status: "Product path available",
-      productPath: "TotalTOX product line",
-      explanation:
-        "A product path can be shown when the answers match reviewed product information.",
-      nextStep: "Review the product path, then continue only if it fits.",
-    };
-  }
-
-  if (result.recommendation_status === "needs_more_info") {
-    return {
-      title: "A little more context is needed.",
-      status: "More information needed",
-      productPath: "Not selected yet",
-      explanation:
-        "The site should ask for more context before suggesting a product path.",
-      nextStep: "Use support if the choice still feels unclear.",
+      title: selectedNeed.title,
+      status:
+        selectedNeed.route === "resource"
+          ? "Resource library"
+          : selectedNeed.route === "questions"
+            ? "Private session"
+            : "Support route",
+      productPath:
+        selectedNeed.route === "questions" ? "TotalTOX product guidance" : "Not selected yet",
+      explanation: result.explanation,
+      nextStep: result.next_step,
+      href:
+        selectedNeed.route === "resource"
+          ? "/resources"
+          : selectedNeed.route === "support"
+            ? "/support"
+            : null,
+      cta:
+        selectedNeed.route === "resource"
+          ? "Open resource library"
+          : selectedNeed.route === "support"
+            ? "Open support"
+            : null,
     };
   }
 
   return {
-    title: "Support is the better next step.",
-    status: "Support follow-up",
+    title: "Start with where you are right now.",
+    status: "Waiting for first choice",
     productPath: "Not selected yet",
-    explanation:
-      "When a situation is not simple, the site should route to support instead of guessing.",
-    nextStep: "Send the support request with the details you are comfortable sharing.",
+    explanation: result.explanation,
+    nextStep: result.next_step,
+    href: null,
+    cta: null,
   };
 }

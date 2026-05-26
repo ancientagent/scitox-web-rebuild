@@ -85,7 +85,7 @@ function GuidanceWelcomeSequence() {
         <p className="welcome-greeting__eyebrow">You are in the right place</p>
         <h1>Welcome to SciTOX.</h1>
         <p className="welcome-greeting__subtitle">
-          You&apos;ve already taken the hardest step. We&apos;re glad you&apos;re here.
+          Take a breath. You made it here, and the next step can be simple.
         </p>
       </div>
       <div className="welcome-sequence__stage welcome-sequence__stage--session">

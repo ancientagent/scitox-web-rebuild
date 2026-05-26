@@ -12,11 +12,11 @@ export default function GuidancePage() {
           <PrivacyPrepNotice />
           <div className="section-heading">
             <p className="eyebrow">Guided questions</p>
-            <h2>Answer what you know. Skip what you do not.</h2>
+            <h2>Start with where you are right now.</h2>
             <p>
-              This route is meant to feel calm and practical. It can suggest a
-              simple next step, or move the conversation to support when more
-              context is needed.
+              Some people arrive ready to continue. Others need to understand
+              the product and the privacy-aware context first. Choose the closest
+              statement, and the page will narrow from there.
             </p>
           </div>
           <GuidanceAssistantDemo />
