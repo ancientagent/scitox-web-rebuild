@@ -95,6 +95,11 @@ export function GuidanceAssistantDemo() {
 
   return (
     <section className={`guidance-entry guidance-entry--${step}`} aria-label="SciTOX guidance entry">
+      <div className="guidance-entry__masthead" aria-label="SciTOX">
+        <span aria-hidden="true" />
+        <strong>SciTOX</strong>
+      </div>
+
       {step === "welcome" ? (
         <div className="guidance-entry__stage guidance-entry__stage--welcome">
           <p className="guidance-entry__eyebrow">You are in the right place</p>
