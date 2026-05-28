@@ -14,13 +14,13 @@ const recoveryRoutes = [
   },
   {
     href: "/resources",
-    title: "Resources",
-    body: "Read background information before deciding what to do next.",
+    title: "Help / Resources",
+    body: "Read the FAQ and background information before deciding what to do next.",
   },
   {
     href: "/support",
     title: "Support",
-    body: "Use support when the situation needs more context.",
+    body: "Use support when resources or guidance are not enough.",
   },
   {
     href: "/contact",

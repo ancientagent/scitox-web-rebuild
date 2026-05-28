@@ -4,7 +4,7 @@
 
 **Goal:** Build the V1 SciTOX custom app under `site/` with a calm customer lobby, source-grounded guidance flow, vendor/wholesale layer, and review-gated Authorize.net checkout handoff.
 
-**Current status:** This plan is now historical implementation guidance. The `site/` app exists, with the `/guidance` welcome fade and current-situation onboarding flow, `/resources` Knowledge Center, public route cleanup, API stubs, and tests already implemented. Use `docs/CONTINUE_HERE.md`, `docs/DEVELOPMENT_HANDOFF.md`, and `docs/CUSTOM_APP_DEVELOPMENT_BACKLOG.md` for the current state before executing any remaining tasks from this plan.
+**Current status:** This plan is now historical implementation guidance. The `site/` app exists, with the `/guidance` welcome fade and current-situation onboarding flow, `/resources` Help / Resources FAQ hub, focused support route, public route cleanup, API stubs, and tests already implemented. Use `docs/CONTINUE_HERE.md`, `docs/DEVELOPMENT_HANDOFF.md`, and `docs/CUSTOM_APP_DEVELOPMENT_BACKLOG.md` for the current state before executing any remaining tasks from this plan.
 
 **Public UI update:** Internal markers such as `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` remain valid in private docs/data/backend tests, but they must not be rendered in customer-facing public UI.
 
@@ -154,7 +154,8 @@ feat: scaffold SciTOX custom app
 Add header routes:
 - Products
 - Product Guidance
-- FAQ / Support
+- Help / Resources
+- Support
 - Contact
 - Wholesale / Partners
 

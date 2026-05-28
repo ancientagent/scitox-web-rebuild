@@ -81,8 +81,8 @@ assets/
 | `/products` | Product category/routing page. | V1 |
 | `/products/[slug]` | Product detail template. | V1 |
 | `/guidance` | Structured product guidance flow. | V1 |
-| `/resources` | Knowledge Center for information-first visitors. | V1 |
-| `/support` | Support routing. | V1 |
+| `/resources` | Help / Resources FAQ hub for information-first visitors. | V1 |
+| `/support` | Focused support routing after resources or guidance are not enough. | V1 |
 | `/contact` | Contact and callback request. | V1 |
 | `/shipping-returns` | Shipping, returns, guarantee policy placeholders. | V1 |
 | `/wholesale` | Partner/Wholesale inquiry. | V1 |

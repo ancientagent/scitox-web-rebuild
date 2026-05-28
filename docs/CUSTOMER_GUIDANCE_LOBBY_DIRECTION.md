@@ -33,9 +33,9 @@ During each entry segment, the segment must be the only thing on screen. Do not 
 
 The owner has already clarified that this onboarding structure should remain stable unless explicitly changed.
 
-## Current Knowledge Center Direction
+## Current Help / Resources Direction
 
-The `/resources` route is now the information-first Knowledge Center destination. It is intended for visitors who are not ready to continue into product guidance and want context first.
+The `/resources` route is now the information-first Help / Resources destination. It is intended for visitors who are not ready to continue into product guidance and want FAQ answers, education, and official resources first.
 
 Current content direction:
 
@@ -268,8 +268,12 @@ Private Product Guidance / Intake:
 - Use structured questions, not broad free-form confession-style intake.
 - Escalate to human support where guidance is uncertain.
 
-FAQ / Support:
-- Explain product guidance, support, and human follow-up in customer-facing language only. Keep AI/internal review details out of public UI unless approved.
+Help / Resources:
+- Keep the FAQ, medication/privacy education, stigma context, official links, screening boundaries, and documentation guidance together as the information-first destination.
+
+Support:
+- Explain product support and human follow-up in customer-facing language only. Keep AI/internal review details out of public UI unless approved.
+- Treat support as the next step when Help / Resources or product guidance does not answer the customer's question.
 
 Contact:
 - Include reason-based routing and support escalation.

@@ -9,14 +9,15 @@ This brief translates the prior SciTOX website rebuild discussion into a working
 
 ## Current Implementation Note
 
-The custom app under `site/` is now the active implementation path, not only a future plan. Recent app work added the `/guidance` welcome fade and current-situation onboarding flow, the `/resources` Knowledge Center route, and a public UI cleanup that removes visible internal markers, scaffold labels, route-shell notes, and developer-facing planning text.
+The custom app under `site/` is now the active implementation path, not only a future plan. Recent app work added the `/guidance` welcome fade and current-situation onboarding flow, the `/resources` Help / Resources FAQ hub, and a public UI cleanup that removes visible internal markers, scaffold labels, route-shell notes, and developer-facing planning text.
 
 For current work:
 
 - Keep `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` markers in internal docs, source data, backend fallbacks, tests, QA reports, and owner-review workflows.
 - Do not render those markers in public customer-facing UI.
 - If a customer-facing section is not ready, use neutral reviewed copy, hide the incomplete item, or route the user to resources/support.
-- Use `/resources` for information-first visitors who want to understand fit, boundaries, medication privacy/stigma context, official rights resources, and practical documentation before deciding.
+- Use `/resources` for information-first visitors who want FAQ answers, fit boundaries, medication privacy/stigma context, official rights resources, and practical documentation before deciding.
+- Use `/support` as a narrower follow-up route for order questions, returning clients, and product questions that still need a person after resources or guidance.
 
 ## Project Goal
 
@@ -149,8 +150,8 @@ Recommended V1 structure:
 - Public customer homepage.
 - Product category/product routing page.
 - Product detail page template.
-- Knowledge Center/resources page.
-- FAQ/support page.
+- Help / Resources FAQ hub.
+- Focused support page.
 - Privacy/support/intake flow.
 - Partner/wholesale inquiry page.
 - Vendor documentation checklist or packet placeholder.

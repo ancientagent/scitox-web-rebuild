@@ -69,7 +69,8 @@ The current app includes:
 - TotalTOX product data placeholders with public product fields separated from vendor/wholesale fields.
 - Product detail placeholders for facts, owner-needed data, review-needed sections, support routing, and checkout state.
 - Staged guidance entry flow with a brief "Welcome to SciTOX." fade-in, current-situation question, and first-time/returning visitor branches.
-- Customer-facing Knowledge Center route at `/resources` for information-first visitors.
+- Customer-facing Help / Resources FAQ hub at `/resources` for information-first visitors.
+- Focused support route at `/support` for order questions, returning clients, and product questions that still need a person.
 - Guidance API scaffold that returns structured JSON and escalates to human follow-up when source support is missing or the request is outside approved boundaries.
 - Support, contact, and wholesale intake forms with client/server validation and safe success/error states.
 - Inquiry route stub that does not deliver to a live owner destination yet.

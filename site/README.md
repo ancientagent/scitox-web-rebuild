@@ -25,6 +25,7 @@ Open `http://localhost:3000` after starting the development server.
 - `/products`
 - `/products/[slug]`
 - `/guidance`
+- `/resources`
 - `/support`
 - `/contact`
 - `/shipping-returns`

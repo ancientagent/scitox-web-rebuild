@@ -329,7 +329,7 @@ Set reasoning to high.
 
 Read AGENTS.md, docs/CUSTOM_APP_QA_CHECKLIST.md, docs/CUSTOM_APP_BUILD_BRIEF.md, docs/CUSTOM_APP_SOURCE_MATRIX.md, and the current site app.
 
-Run a staging-readiness QA pass for the custom app. Verify mobile layout, desktop layout, navigation, forms, guidance API behavior, product data handling, Knowledge Center/resources page, vendor inquiry, policy links, analytics/Search Console readiness, secret handling, claim-sensitive language, privacy/security claims, broken links, public-marker cleanup, and launch blockers.
+Run a staging-readiness QA pass for the custom app. Verify mobile layout, desktop layout, navigation, forms, guidance API behavior, product data handling, Help / Resources FAQ hub, focused support page, vendor inquiry, policy links, analytics/Search Console readiness, secret handling, claim-sensitive language, privacy/security claims, broken links, public-marker cleanup, and launch blockers.
 
 Report only evidence you verified. Do not claim launch readiness unless every required gate is satisfied. Mark unresolved items [REVIEW REQUIRED] or [OWNER DATA NEEDED].
 ```

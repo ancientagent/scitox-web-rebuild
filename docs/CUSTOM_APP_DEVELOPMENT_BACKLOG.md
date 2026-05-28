@@ -10,8 +10,8 @@ The `site/` app scaffold and early V1 public routes are already implemented. The
 
 - Calm homepage/customer lobby.
 - Staged `/guidance` welcome and onboarding flow.
-- `/resources` Knowledge Center for information-first visitors.
-- Product, support, contact, policy, and wholesale/partner routes.
+- `/resources` Help / Resources FAQ hub for information-first visitors.
+- Product, focused support, contact, policy, and wholesale/partner routes.
 - Backend API stubs for guidance, inquiries, and Authorize.net checkout gating.
 
 Public UI has been cleaned to avoid visible internal markers (`[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`), scaffold/demo labels, and developer-facing planning text. Internal data, tests, API fallback payloads, and private docs still preserve review gates.

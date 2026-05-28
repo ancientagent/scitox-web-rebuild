@@ -42,7 +42,7 @@ Create an explorable, buildable, vendor-ready SciTOX web app that shows:
 
 Current implementation note:
 
-- The active `site/` app now includes a `/guidance` flow that starts with a brief "Welcome to SciTOX." fade-in before the current-situation question, plus the `/resources` Knowledge Center.
+- The active `site/` app now includes a `/guidance` flow that starts with a brief "Welcome to SciTOX." fade-in before the current-situation question, plus the `/resources` Help / Resources FAQ hub.
 - Public customer-facing UI should not render internal review markers, owner-data markers, demo/scaffold labels, or developer-facing planning copy.
 - Internal data files, backend fallback payloads, tests, private docs, and review workflows should continue preserving review gates until owner/legal/compliance review clears the underlying facts.
 
@@ -71,7 +71,7 @@ Operations layer:
 V1 should use a simple app architecture:
 
 1. `site/` Next.js application.
-2. UI routes for homepage, product category, product detail, product guidance, FAQ/support, shipping/returns, contact, and partner/wholesale inquiry.
+2. UI routes for homepage, product category, product detail, product guidance, Help / Resources FAQ hub, focused support, shipping/returns, contact, and partner/wholesale inquiry.
 3. API route for product guidance that loads approved source data on the server.
 4. API route or server action for inquiry submission.
 5. API route for Authorize.net Accept Hosted token/session creation after owner/payment review.

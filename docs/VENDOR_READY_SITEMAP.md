@@ -15,7 +15,7 @@ Internal docs/data should use `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` wher
 Use the custom app as the primary marketing/product, guidance, intake, and vendor-readiness surface. Keep checkout/payment migration outside V1 unless owner and payment review clear it.
 
 Recommended custom app structure:
-- Static pages for home, resources/Knowledge Center, support, contact/intake, wholesale inquiry, and policy pages.
+- Static pages for home, Help / Resources, support, contact/intake, wholesale inquiry, and policy pages.
 - Source-controlled product/SKU data first; CMS can be added later if product data is ready enough.
 - Server-side forms for customer support/intake and vendor inquiry, routed to email plus spreadsheet/CRM if approved.
 - A customer guidance lobby pattern on the homepage, with common-situation self-service, a backend-source-grounded guidance assistant, and escalation for nuanced situations.
@@ -27,8 +27,8 @@ Recommended custom app structure:
 | Home / Product Guidance Lobby | Establish trust, orient stressed visitors, and route them to common product paths, guided product questions, support, or product categories without panic-sales framing or dense first-screen product explanation. | Direct customers; vendor/payment reviewers who inspect the public site. | Calm lobby hero placeholder; common-situation paths; "not sure" guidance route; product category entry points; human support/callback placeholder; privacy/support reassurance placeholders; review-safe trust section; policy/support footer. | Outcome language; drug-test/pass-result language; recommendation logic; AI/private guidance; privacy/security/encryption claims; testimonials/results; guarantee/refund mentions. | Current product categories; approved support path; product routing rules; privacy policy details; chat/form/callback tooling; review/testimonial source status; owner-approved positioning. | V1 |
 | Product Category / Product Finder | Let customers compare product paths or categories without overclaiming results. | Direct customers deciding what product area applies to them. | Category cards; short category explanations; product routing CTA; support/intake CTA; review markers for claim-heavy areas; links to product detail pages. | Category names or framing tied to test outcomes; substance-specific claims; "works for" language; timing/result promises. | Final product category list; SKU mapping; approved category language; current inventory/availability. | V1 |
 | Product Detail Template | Present each product cleanly with structured, review-safe product information. | Direct customers; support team; vendor reviewers checking public product quality. | Product name; image; short description placeholder; product facts; use/directions placeholder; FAQ snippets; support CTA; shipping/returns links; claim review markers. | Product efficacy; directions that imply guaranteed outcomes; ingredients/safety; timing; refunds/guarantee; reviews/results. | SKU; product name; images; ingredients; directions; price; availability; shipping details; refund/guarantee rules; substantiation status. | V1 if product data is available; otherwise build template with placeholders |
-| Knowledge Center / Resources | Give information-first visitors context before they continue to product guidance. | Direct customers researching fit; vendor/payment reviewers who inspect public education tone. | Fit boundaries; mandated-screening boundary; medication/privacy/workplace-stigma context; ADHD context; ADA/HIPAA official resources; documentation guidance; support/guidance CTAs. | Legal/medical advice; employer-liability conclusions; outcome guarantees; drug-test advice; privacy/security overclaims; unsupported statistics. | Approved legal/compliance review; source freshness review; owner-approved final tone. | V1 |
-| FAQ / Support | Reduce repeated support questions and present a competent help path without legal/medical advice. | Direct customers; support team; vendor/payment reviewers. | FAQ/support categories; support options; order/shipping/refund policy links; product guidance route; privacy/intake explanation; escalation path. | Claims embedded in answers; refund/guarantee language; legal/medical advice; privacy/security statements; result expectations. | Support logs; top questions; actual support channels; refund policy; shipping timelines; privacy/data handling workflow. | V1 |
+| Help / Resources | Give information-first visitors FAQ answers and context before they continue to product guidance. | Direct customers researching fit; vendor/payment reviewers who inspect public education tone. | FAQ; fit boundaries; mandated-screening boundary; medication/privacy/workplace-stigma context; ADHD context; ADA/HIPAA official resources; documentation guidance; support/guidance CTAs. | Legal/medical advice; employer-liability conclusions; outcome guarantees; drug-test advice; privacy/security overclaims; unsupported statistics. | Approved legal/compliance review; source freshness review; owner-approved final tone. | V1 |
+| Support | Present a focused help path after FAQ/resources or guidance are not enough. | Direct customers; returning clients; support team; vendor/payment reviewers. | Resource/guidance routing; order and follow-up support framing; minimal support form; professional-resource boundary language. | Claims embedded in answers; refund/guarantee language; legal/medical advice; privacy/security statements; result expectations; overcollection of sensitive data. | Support logs; top questions; actual support channels; refund policy; shipping timelines; privacy/data handling workflow. | V1 |
 | Contact / Product Guidance Intake | Provide a minimal, structured way for customers to ask product questions, use guided product routing, or request human follow-up. | Direct customers needing product guidance; support team. | Minimal form; common-situation selector; product interest; order question option; guided product questions placeholder; human callback/follow-up routing; privacy notice placeholder; expected response timing placeholder. | "Private," "confidential," or "encrypted" claims; AI/counsel/consultation claims; legal/medical/test-result advice; overcollection of sensitive data; support response promises. | Form routing; CRM/helpdesk/chat choice; data retention; support ownership; response-time policy; callback workflow; privacy policy; product routing rules. | V1 |
 | Shipping, Returns, Privacy, Terms Hub | Make policies visible and reduce vendor/payment-review friction. | Customers; payment reviewers; vendors; support team. | Links to privacy, shipping, returns/refunds, terms, contact/support; short placeholders for each policy. | Refund/guarantee claims; privacy/security commitments; liability/disclaimer language; payment/checkout representations. | Current policies; legal review status; refund handling; shipping times; payment processor details; data retention policy. | V1 |
 | Reviews / Customer Experience | Preserve trust assets without treating reviews as proof. | Direct customers; vendor reviewers. | Neutral review module placeholder; source/permission notes; no success-rate framing; link back to product/support. | Testimonials, result screenshots, pass-result claims, AI summaries, ratings/counts, typical-result implications. | Verified review sources; permissions; platform data; moderation policy; legal/compliance review. | Later, unless review data and approval are ready |
@@ -50,15 +50,15 @@ Recommended custom app structure:
 Public header:
 - Products
 - Product Guidance
-- Resources
-- FAQ / Support
+- Help / Resources
+- Support
 - Contact
 - Wholesale / Partners
 
 Footer:
 - Products
-- Resources
-- FAQ / Support
+- Help / Resources
+- Support
 - Contact
 - Shipping
 - Returns / Refunds

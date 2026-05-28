@@ -72,8 +72,9 @@ As of the latest local app state:
   6. First-time visitor branches into information-first `/resources` or next-step guidance.
 - During the welcome, current-situation question, follow-up pills, and routing messages, no header, footer, support panels, guidance preview, or other page sections should compete with the entry flow.
 - Normal page sections become available only after the user is routed to `/resources`, `/support`, or into the product-guidance area.
-- `/resources` is now the customer-facing Knowledge Center destination for first-time visitors who want information before deciding.
-- The Knowledge Center includes medication/privacy/workplace-stigma context, ADHD context, ADA/HIPAA nuance, official resource links, legally mandated screening boundaries, and documentation guidance.
+- `/resources` is now the customer-facing Help / Resources destination for first-time visitors who want FAQ answers, education, and official resources before deciding.
+- Help / Resources includes medication/privacy/workplace-stigma context, ADHD context, ADA/HIPAA nuance, official resource links, legally mandated screening boundaries, and documentation guidance.
+- `/support` is now a narrower follow-up route for order questions, active/returning clients, and product questions that still need a person after resources or guidance.
 - Public customer-facing UI has been cleaned so internal markers such as `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, and developer-facing planning text are not shown.
 - Backend data, API fallback payloads, tests, private docs, and source-governance files may still use review/owner markers. Do not remove those markers unless replacing them with an equivalent internal review gate.
 

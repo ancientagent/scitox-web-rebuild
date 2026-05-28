@@ -18,7 +18,8 @@ This wireframe plan predates the current public UI cleanup. Treat the marker and
 Current app direction:
 
 - `/guidance` now opens with a brief full-screen "Welcome to SciTOX." fade-in, then hands off to the current-situation question and routes first-time visitors into either `/resources` or product guidance.
-- `/resources` is the Knowledge Center destination for visitors who want information before deciding.
+- `/resources` is the Help / Resources destination for visitors who want FAQ answers and information before deciding.
+- `/support` is the focused follow-up route for order questions, returning clients, and product questions that still need a person.
 - Public customer-facing UI must not render `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, route-shell notes, or other developer-facing planning text.
 - Internal docs, source data, backend fallbacks, tests, QA reports, and owner-review workflows should keep review/owner-data markers until they are replaced by an equivalent internal review gate.
 
@@ -43,7 +44,7 @@ Orient stressed visitors quickly, establish a serious and credible brand feel, a
 
 **Section Order**
 
-1. Header/navigation: Products, Product Guidance, FAQ / Support, Contact, Wholesale / Partners.
+1. Header/navigation: Products, Product Guidance, Help / Resources, Support, Contact, Wholesale / Partners.
 2. Lobby hero: concise orientation placeholder and primary CTAs.
 3. Calm guidance path: "common situation / not sure / contact support" structure.
 4. Product category cards: major product categories or product paths.
@@ -221,7 +222,7 @@ Give customers a structured way to ask product questions, choose a product path,
 7. Human support/callback request placeholder.
 8. Privacy/data handling notice placeholder.
 9. Product category links.
-10. FAQ/support links.
+10. Help / Resources and support links.
 11. Footer policy links.
 
 **CTA Hierarchy**
@@ -265,38 +266,39 @@ Give customers a structured way to ask product questions, choose a product path,
 - Escalation rules.
 - Approved product routing logic.
 
-## 5. FAQ / Support
+## 5. Help / Resources And Support
 
 **Purpose**
 
-Reduce repeated support questions, organize help topics, and make support feel competent without legal/medical advice or risky claims.
+Keep FAQ, education, and official resources in `/resources`, then make `/support` a narrower follow-up path when those resources or product guidance are not enough.
 
 **Section Order**
 
-1. Header/navigation.
-2. Support page hero: calm help placeholder.
-3. Quick action cards: product question, order/shipping question, refund/returns question, wholesale question.
-4. FAQ category navigation.
-5. Product questions section.
-6. Ordering/shipping section.
-7. Returns/guarantee section.
-8. Privacy/product guidance section.
-9. Contact support block.
-10. Policy links.
-11. Footer.
+1. Help / Resources hero with FAQ and education framing.
+2. Start-here cards for fit, non-fit, and next step.
+3. Medication privacy, workplace stigma, and official-resource context.
+4. FAQ section with educational boundaries.
+5. Documentation and official resource links.
+6. Guidance and support CTAs.
+7. Support page hero for questions that still need a person.
+8. Support routing cards back to Help / Resources, product guidance, or the support form.
+9. Minimal support form.
+10. Footer.
 
 **CTA Hierarchy**
 
-- Primary: Contact Support / Submit Support Request.
-- Secondary: Get Product Guidance.
-- Tertiary: View Shipping / Returns.
+- Primary on `/resources`: Start Guidance.
+- Secondary on `/resources`: Open Support.
+- Primary on `/support`: Submit Support Request.
+- Secondary on `/support`: Help / Resources or Product Guidance.
 
 **Placeholder Copy Rules**
 
-- Use category headings and answer placeholders only.
-- Do not write final FAQ answers where claims, directions, refunds, or privacy are involved.
-- Mark product, result, refund, privacy, and support process answers `[REVIEW REQUIRED]`.
-- Mark actual times, policies, and support channels `[OWNER DATA NEEDED]`.
+- Public UI should not render internal review or owner-data markers.
+- Keep educational FAQ answers neutral and cite official resources where possible.
+- Do not turn support into legal, medical, screening, or workplace advice.
+- Mark product, result, refund, privacy, and support process answers `[REVIEW REQUIRED]` in internal drafts only.
+- Mark actual times, policies, and support channels `[OWNER DATA NEEDED]` in internal drafts only.
 
 **Claim-Sensitive Sections**
 
@@ -306,6 +308,7 @@ Reduce repeated support questions, organize help topics, and make support feel c
 - Privacy/product guidance answers.
 - Shipping promises.
 - Contact/support promises.
+- Any use of "detox" as an efficacy, health, or outcome claim.
 
 **Owner Data Needed**
 
@@ -443,7 +446,7 @@ Provide a calm, professional support route for customers, vendors, and general i
 
 - Primary: Submit Contact Form.
 - Secondary: Product Guidance.
-- Tertiary: FAQ / Support.
+- Tertiary: Help / Resources.
 - Utility: Wholesale / Partners.
 
 **Placeholder Copy Rules**

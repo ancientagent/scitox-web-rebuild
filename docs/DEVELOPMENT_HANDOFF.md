@@ -24,7 +24,8 @@ Current public UX:
   - information-first path -> `/resources`
   - next-step path -> product guidance/private-session questions
 - Active or returning clients are routed toward support-oriented paths.
-- `/resources` is the Knowledge Center for medication privacy, workplace stigma, ADHD/prescribed-medication context, ADA/HIPAA official resources, mandated-screening boundaries, documentation guidance, and responsible next steps.
+- `/resources` is the Help / Resources destination for the FAQ, medication privacy, workplace stigma, ADHD/prescribed-medication context, ADA/HIPAA official resources, mandated-screening boundaries, documentation guidance, and responsible next steps.
+- `/support` is a narrower follow-up path for order questions, returning clients, and product questions that still need a person after Help / Resources or product guidance.
 - Public UI copy has been cleaned so internal review markers, owner-data markers, demo/scaffold labels, and developer-facing planning copy are not visible.
 - Internal source data, API fallback states, tests, and private docs still preserve review gates. Do not remove those internal markers unless replacing them with another internal governance mechanism.
 
@@ -68,13 +69,14 @@ Current public UX:
 2. Resolve or remove launch-blocking claims from the current site.
 3. Continue iterating inside the existing `site/` app.
 4. Preserve the current `/guidance` sequence: welcome fade first, then the current-situation question.
-5. Keep `/resources` as the information-first Knowledge Center destination from onboarding.
-6. Keep public UI free of internal review/developer markers while preserving internal source/data review gates.
-7. Continue refining lean public customer pages from `docs/VENDOR_READY_SITEMAP.md`.
-8. Build Partner / Wholesale Inquiry as the primary vendor-facing conversion surface.
-9. Prepare product data and line-sheet assets from `outputs/`.
-10. Add Authorize.net checkout handoff only after owner/payment review confirms the exact workflow.
-11. Run `docs/CUSTOM_APP_QA_CHECKLIST.md` before publishing.
+5. Keep `/resources` as the information-first Help / Resources and FAQ destination from onboarding.
+6. Keep `/support` focused on follow-up support after resources or guidance are not enough.
+7. Keep public UI free of internal review/developer markers while preserving internal source/data review gates.
+8. Continue refining lean public customer pages from `docs/VENDOR_READY_SITEMAP.md`.
+9. Build Partner / Wholesale Inquiry as the primary vendor-facing conversion surface.
+10. Prepare product data and line-sheet assets from `outputs/`.
+11. Add Authorize.net checkout handoff only after owner/payment review confirms the exact workflow.
+12. Run `docs/CUSTOM_APP_QA_CHECKLIST.md` before publishing.
 
 ## Required Gates
 

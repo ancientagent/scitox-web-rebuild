@@ -3,7 +3,7 @@ import Link from "next/link";
 const footerRoutes = [
   { href: "/products", label: "Products" },
   { href: "/guidance", label: "Guidance" },
-  { href: "/resources", label: "Resources" },
+  { href: "/resources", label: "Help / Resources" },
   { href: "/support", label: "Support" },
   { href: "/contact", label: "Contact" },
   { href: "/shipping-returns", label: "Shipping / Returns" },

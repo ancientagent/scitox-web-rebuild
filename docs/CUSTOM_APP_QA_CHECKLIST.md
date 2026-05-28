@@ -27,7 +27,7 @@ Status values:
 | --- | --- | --- | --- |
 | Home mobile layout | First viewport clearly shows calm routing and primary CTA without overlap. | Mobile screenshot. |  |
 | Guidance mobile layout | Questions, controls, and results fit without crowding or panic framing. | Mobile screenshot. |  |
-| Resources mobile layout | Knowledge Center explains fit, boundaries, official resources, and next steps without legal/medical advice or internal markers. | Mobile screenshot. |  |
+| Help / Resources mobile layout | FAQ and resources explain fit, boundaries, official resources, and next steps without legal/medical advice or internal markers. | Mobile screenshot. |  |
 | Product mobile layout | Product facts are readable, restrained, and not overclaiming; missing data does not render as internal markers. | Mobile screenshot. |  |
 | Support/contact mobile layout | Forms are readable, minimal, and easy to complete. | Mobile screenshot and field list. |  |
 | Wholesale mobile layout | Vendor form and product data placeholders are readable and restrained. | Mobile screenshot. |  |
@@ -38,7 +38,7 @@ Status values:
 | --- | --- | --- | --- |
 | Home desktop layout | Hierarchy is clear and serious, with no oversized hype hero. | Desktop screenshot. |  |
 | Guidance desktop layout | Structured flow is understandable and does not present advice claims. | Desktop screenshot. |  |
-| Resources desktop layout | Knowledge Center is calm, readable, and free of internal/developer-facing copy. | Desktop screenshot. |  |
+| Help / Resources desktop layout | FAQ and resources are calm, readable, and free of internal/developer-facing copy. | Desktop screenshot. |  |
 | Product desktop layout | Product sections separate facts, support, and checkout routing without exposing internal review markers. | Desktop screenshot. |  |
 | Vendor desktop layout | Vendor page feels professional and data-forward. | Desktop screenshot. |  |
 
@@ -90,7 +90,7 @@ Status values:
 | Owner gaps | Missing product facts are marked `[OWNER DATA NEEDED]` in draft/admin/internal data context, not accidentally public as final copy. | Scan result. |  |
 | Checkout CTA | Buy/checkout route only appears if payment path is approved for that environment. | CTA screenshot and approval note. |  |
 
-## Knowledge Center
+## Help / Resources
 
 | Check | Pass Criteria | Evidence To Capture | Status |
 | --- | --- | --- | --- |
@@ -98,7 +98,7 @@ Status values:
 | Mandated-screening boundary | Page clearly states SciTOX is not for state, federal, court-ordered, probation, parole, DOT, government-regulated, or otherwise legally mandated screening. | Screenshot/copy scan. |  |
 | Official resources | Page links to official resources for EEOC/ADA, HHS/HIPAA, CDC ADHD context, DOT/SAMHSA, and FTC background checks. | Link list. |  |
 | Legal/medical boundary | Page does not provide legal advice, medical advice, claim evaluation, outcome guarantees, or employer-liability conclusions. | Copy review. |  |
-| User-facing clarity | Page reads as a customer Knowledge Center, not an internal planning document. | Browser review. |  |
+| User-facing clarity | Page reads as a customer FAQ and resource hub, not an internal planning document. | Browser review. |  |
 
 ## Vendor / Wholesale Layer
 

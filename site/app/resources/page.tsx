@@ -150,11 +150,12 @@ const documentationSteps = [
 export default function ResourcesPage() {
   return (
     <div className="page-flow">
-      <Section eyebrow="Knowledge center" title="Understand whether SciTOX is the right next step.">
+      <Section eyebrow="Help / Resources" title="FAQ, context, and official resources before you decide.">
         <p>
-          Start here if you want context before moving into product guidance.
-          This page explains medication-related stigma, workplace privacy
-          concerns, screening boundaries, and official resources.
+          Start here if you want to understand whether SciTOX fits your
+          situation before moving into product guidance. This page explains
+          medication-related stigma, workplace privacy concerns, screening
+          boundaries, and official resources.
         </p>
       </Section>
 
@@ -280,7 +281,7 @@ export default function ResourcesPage() {
             <p className="eyebrow">Important boundary</p>
             <h2>Education is not advice.</h2>
             <p>
-              This Knowledge Center is for general educational information only.
+              Help / Resources is for general educational information only.
               It is not legal advice, medical advice, or a substitute for a
               qualified professional. Screening rules, employer policies, and
               legal protections vary by situation.
@@ -298,10 +299,11 @@ export default function ResourcesPage() {
               </Link>
             </article>
             <article>
-              <h2>Need more context</h2>
+              <h2>Still need support</h2>
               <p>
-                If the situation is unclear, sensitive, or already connected to
-                an order, support is the better next step.
+                If your question is about an order, follow-up help, or a
+                situation the FAQ does not answer, support is the better next
+                step.
               </p>
               <Link className="text-link" href="/support">
                 Open support

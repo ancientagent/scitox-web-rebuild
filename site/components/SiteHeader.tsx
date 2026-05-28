@@ -3,8 +3,8 @@ import Link from "next/link";
 const primaryRoutes = [
   { href: "/products", label: "Products" },
   { href: "/guidance", label: "Product Guidance" },
-  { href: "/resources", label: "Resources" },
-  { href: "/support", label: "FAQ / Support" },
+  { href: "/resources", label: "Help / Resources" },
+  { href: "/support", label: "Support" },
   { href: "/contact", label: "Contact" },
   { href: "/wholesale", label: "Wholesale / Partners" },
 ];
