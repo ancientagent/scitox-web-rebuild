@@ -1,9 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { GuidancePreview } from "@/components/GuidancePreview";
-import { PrivacyPrepNotice } from "@/components/PrivacyPrepNotice";
 
 type EntryStep =
   | "welcome"
@@ -14,6 +13,10 @@ type EntryStep =
   | "support-routing"
   | "private-session"
   | "complete";
+
+type ProductIntent = "choose-system" | "size-help" | "support";
+type HairProfile = "short" | "medium" | "long-thick" | "not-sure";
+type ContinuePreference = "view-product" | "support-review";
 
 const routingDelay = 1700;
 const sessionDelay = 2800;
@@ -29,6 +32,10 @@ function getMotionDelay(defaultDelay: number) {
 export function GuidanceAssistantDemo() {
   const router = useRouter();
   const [step, setStep] = useState<EntryStep>("welcome");
+  const [questionStep, setQuestionStep] = useState(0);
+  const [productIntent, setProductIntent] = useState<ProductIntent | null>(null);
+  const [hairProfile, setHairProfile] = useState<HairProfile | null>(null);
+  const [continuePreference, setContinuePreference] = useState<ContinuePreference | null>(null);
 
   useEffect(() => {
     if (step === "complete") {
@@ -84,12 +91,16 @@ export function GuidanceAssistantDemo() {
 
   if (step === "complete") {
     return (
-      <section className="content-band content-band--dark guidance-revealed" id="quick-guidance">
-        <div className="band-inner">
-          <PrivacyPrepNotice />
-          <GuidancePreview />
-        </div>
-      </section>
+      <ProductGuidanceQuestions
+        continuePreference={continuePreference}
+        hairProfile={hairProfile}
+        productIntent={productIntent}
+        questionStep={questionStep}
+        setContinuePreference={setContinuePreference}
+        setHairProfile={setHairProfile}
+        setProductIntent={setProductIntent}
+        setQuestionStep={setQuestionStep}
+      />
     );
   }
 
@@ -181,5 +192,226 @@ export function GuidanceAssistantDemo() {
         </div>
       ) : null}
     </section>
+  );
+}
+
+function ProductGuidanceQuestions({
+  continuePreference,
+  hairProfile,
+  productIntent,
+  questionStep,
+  setContinuePreference,
+  setHairProfile,
+  setProductIntent,
+  setQuestionStep,
+}: {
+  continuePreference: ContinuePreference | null;
+  hairProfile: HairProfile | null;
+  productIntent: ProductIntent | null;
+  questionStep: number;
+  setContinuePreference: (value: ContinuePreference | null) => void;
+  setHairProfile: (value: HairProfile | null) => void;
+  setProductIntent: (value: ProductIntent | null) => void;
+  setQuestionStep: (value: number) => void;
+}) {
+  function resetQuestions() {
+    setProductIntent(null);
+    setHairProfile(null);
+    setContinuePreference(null);
+    setQuestionStep(0);
+  }
+
+  return (
+    <section className="content-band content-band--dark guidance-revealed" id="quick-guidance">
+      <div className="band-inner">
+        <div className="product-guidance-flow">
+          <div className="product-guidance-flow__intro">
+            <p className="tag">Product guidance</p>
+            <h1>Let&apos;s find the right TotalTOX path.</h1>
+            <p>
+              Answer what you can. If the fit is not clear, we&apos;ll send this to support
+              instead of guessing.
+            </p>
+          </div>
+
+          {questionStep === 0 ? (
+            <GuidanceQuestion
+              options={[
+                {
+                  label: "I need help choosing a TotalTOX system",
+                  onClick: () => {
+                    setProductIntent("choose-system");
+                    setQuestionStep(1);
+                  },
+                },
+                {
+                  label: "I need help with size or quantity",
+                  onClick: () => {
+                    setProductIntent("size-help");
+                    setQuestionStep(1);
+                  },
+                },
+                {
+                  label: "I want support to review this first",
+                  onClick: () => {
+                    setProductIntent("support");
+                    setQuestionStep(3);
+                  },
+                },
+              ]}
+              question="What do you need help with right now?"
+            />
+          ) : null}
+
+          {questionStep === 1 ? (
+            <GuidanceQuestion
+              options={[
+                {
+                  label: "Short hair",
+                  onClick: () => {
+                    setHairProfile("short");
+                    setQuestionStep(2);
+                  },
+                },
+                {
+                  label: "Medium length hair",
+                  onClick: () => {
+                    setHairProfile("medium");
+                    setQuestionStep(2);
+                  },
+                },
+                {
+                  label: "Long or thick hair",
+                  onClick: () => {
+                    setHairProfile("long-thick");
+                    setQuestionStep(2);
+                  },
+                },
+                {
+                  label: "I'm not sure",
+                  onClick: () => {
+                    setHairProfile("not-sure");
+                    setQuestionStep(2);
+                  },
+                },
+              ]}
+              question="Which best describes your hair?"
+            />
+          ) : null}
+
+          {questionStep === 2 ? (
+            <GuidanceQuestion
+              options={[
+                {
+                  label: "Show me the product path",
+                  onClick: () => {
+                    setContinuePreference("view-product");
+                    setQuestionStep(3);
+                  },
+                },
+                {
+                  label: "Have support review before I order",
+                  onClick: () => {
+                    setContinuePreference("support-review");
+                    setQuestionStep(3);
+                  },
+                },
+              ]}
+              question="How would you like to continue?"
+            />
+          ) : null}
+
+          {questionStep === 3 ? (
+            <GuidanceResult
+              continuePreference={continuePreference}
+              hairProfile={hairProfile}
+              productIntent={productIntent}
+              resetQuestions={resetQuestions}
+            />
+          ) : null}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function GuidanceQuestion({
+  options,
+  question,
+}: {
+  options: Array<{ label: string; onClick: () => void }>;
+  question: string;
+}) {
+  return (
+    <div className="product-guidance-card">
+      <h2>{question}</h2>
+      <div className="product-guidance-options">
+        {options.map((option) => (
+          <button key={option.label} onClick={option.onClick} type="button">
+            {option.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function GuidanceResult({
+  continuePreference,
+  hairProfile,
+  productIntent,
+  resetQuestions,
+}: {
+  continuePreference: ContinuePreference | null;
+  hairProfile: HairProfile | null;
+  productIntent: ProductIntent | null;
+  resetQuestions: () => void;
+}) {
+  const shouldUseSupport =
+    productIntent === "support" ||
+    continuePreference === "support-review" ||
+    hairProfile === "not-sure";
+
+  if (shouldUseSupport) {
+    return (
+      <div className="product-guidance-card">
+        <p className="tag">Next step</p>
+        <h2>Support should review this with you.</h2>
+        <p>
+          That is the better next step when size, quantity, or product fit is not clear
+          from the quick questions.
+        </p>
+        <div className="product-guidance-actions">
+          <Link className="button-link button-link--primary" href="/support">
+            Go to support
+          </Link>
+          <button onClick={resetQuestions} type="button">
+            Change answers
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="product-guidance-card">
+      <p className="tag">Next step</p>
+      <h2>Start with the TotalTOX Hair Treatment System.</h2>
+      <p>
+        This points you to the product family. If anything about size, quantity, or
+        order timing feels unclear, support can review before you order.
+      </p>
+      <div className="product-guidance-actions">
+        <Link
+          className="button-link button-link--primary"
+          href="/products/totaltox-hair-treatment-system"
+        >
+          View TotalTOX
+        </Link>
+        <button onClick={resetQuestions} type="button">
+          Change answers
+        </button>
+      </div>
+    </div>
   );
 }

@@ -860,6 +860,74 @@ ul {
   justify-content: center;
 }
 
+.product-guidance-flow {
+  display: grid;
+  gap: 18px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.product-guidance-flow__intro,
+.product-guidance-card {
+  min-width: 0;
+  border: 1px solid rgb(0 189 98 / 22%);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 6%);
+  color: #f8fbf6;
+  padding: 24px;
+}
+
+.product-guidance-flow__intro {
+  display: grid;
+  gap: 12px;
+}
+
+.product-guidance-flow__intro h1,
+.product-guidance-card h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.product-guidance-flow__intro p,
+.product-guidance-card p {
+  margin: 0;
+  color: #d7e2da;
+}
+
+.product-guidance-card {
+  display: grid;
+  gap: 18px;
+  animation: guidance-stage-in 360ms ease-out both;
+}
+
+.product-guidance-options,
+.product-guidance-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product-guidance-options button,
+.product-guidance-actions button {
+  min-height: 44px;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 9%);
+  color: #f8fbf6;
+  padding: 10px 13px;
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.product-guidance-options button:hover,
+.product-guidance-options button:focus-visible,
+.product-guidance-actions button:hover,
+.product-guidance-actions button:focus-visible {
+  border-color: var(--accent-strong);
+  background: rgb(0 189 98 / 16%);
+  outline: none;
+}
+
 .privacy-prep {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);

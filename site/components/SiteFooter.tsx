@@ -17,7 +17,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <p className="site-footer__note">
-          SciTOX keeps customer guidance, support, and partner inquiries in separate paths.
+          Guidance and support are here when you need a clearer next step.
         </p>
         <nav className="footer-nav" aria-label="Footer navigation">
           {footerRoutes.map((route) => (
