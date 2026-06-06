@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import {
@@ -131,4 +132,29 @@ test("malformed input returns validation errors", () => {
   assert.deepEqual(result.fieldErrors.answers, [
     "Provide structured guidance answers.",
   ]);
+});
+
+test("product guidance starts with hair detox support frequency question", async () => {
+  const source = await readFile(
+    new URL("../components/GuidanceAssistantDemo.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /How often have you needed hair detox support in the last 9 months\?/);
+  assert.match(source, /Every 2 weeks or less/);
+  assert.match(source, /Weekly/);
+  assert.match(source, /Daily/);
+  assert.doesNotMatch(source, /What do you need help with right now\?/);
+});
+
+test("guidance entry includes a static fallback for the first routing question", async () => {
+  const source = await readFile(
+    new URL("../components/GuidanceAssistantDemo.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /guidance-entry__stage--fallback-visitor/);
+  assert.match(source, /Which of the following statements best represents your current situation\?/);
+  assert.match(source, /href="\/products\/totaltox-hair-treatment-system"/);
+  assert.match(source, /href="\/support"/);
 });

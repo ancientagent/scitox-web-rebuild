@@ -14,14 +14,14 @@
       "type": "product_catalog",
       "status": "OWNER_DATA_NEEDED",
       "allowed_use": "Product matching only after owner-reviewed product data is supplied.",
-      "content": "[OWNER DATA NEEDED: TotalTOX variant names, SKUs, hair-length rules, kit volumes, bottle sizes, labels, prices, ingredients, instructions, warnings, availability, and reviewed variant-path mapping rules.]"
+      "content": "Owner-confirmed treatment names: TotalTOX Light, TotalTOX Plus, TotalTOX Max, and TotalTOX Ultra Max. Current first product guidance question: how often the customer has needed hair detox support in the last 9 months, with answer options Every 2 weeks or less, Weekly, and Daily. [OWNER DATA NEEDED: SKUs, treatment-frequency mapping rules, hair-length rules, kit volumes, bottle sizes, labels, prices, ingredients, instructions, warnings, availability, and reviewed treatment mapping rules.]"
     },
     {
       "id": "claim-boundary-rules",
       "type": "guardrail",
       "status": "REVIEW_REQUIRED",
       "allowed_use": "Restrict route outputs until review is complete.",
-      "content": "[REVIEW REQUIRED: route must not provide legal advice, medical advice, diagnostic advice, test-result advice, outcome guarantees, privacy/security guarantees, vendor approval claims, marketplace eligibility claims, payment-platform safety claims, or unsupported product performance claims.]"
+      "content": "[REVIEW REQUIRED: route must not provide professional advice, diagnostic advice, outcome guarantees, privacy/security guarantees, vendor approval claims, marketplace eligibility claims, payment-platform safety claims, or unsupported product performance claims.]"
     },
     {
       "id": "human-escalation-rules",
@@ -36,13 +36,14 @@
       "id": "totaltox-variant-routing-placeholder",
       "status": "OWNER_DATA_NEEDED",
       "product_id": "totaltox-hair-treatment-system",
-      "path_label": "TotalTOX variant routing placeholder [REVIEW REQUIRED]",
-      "allowed_use": "Human follow-up only until owner-reviewed variant mapping exists.",
+      "path_label": "TotalTOX treatment routing placeholder [REVIEW REQUIRED]",
+      "allowed_use": "Human follow-up only until owner-reviewed Light, Plus, Max, and Ultra Max mapping exists.",
       "routing_inputs_needed": [
+        "hair detox support frequency in the last 9 months [OWNER DATA NEEDED: treatment mapping rules]",
         "hair length [OWNER DATA NEEDED]",
         "kit volume need [OWNER DATA NEEDED]",
         "timing-sensitive support boundary [REVIEW REQUIRED]",
-        "variant pricing [OWNER DATA NEEDED]"
+        "treatment pricing [OWNER DATA NEEDED]"
       ]
     }
   ],

@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { CheckoutGateDemo } from "@/components/CheckoutGateDemo";
-import { ProductImage } from "@/components/ProductImage";
-import { Section } from "@/components/Section";
+import { getCheckoutSummary } from "@/lib/payments/checkoutDisplay";
 import { getPublicProduct, getPublicProducts } from "@/lib/products/getProducts";
+import { getProductHeroImage } from "@/lib/products/heroImage";
 
 type ProductDetailPageProps = {
   params: Promise<{
@@ -24,46 +25,36 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     notFound();
   }
 
+  const checkoutSummary = getCheckoutSummary(product.slug);
+  const checkoutPrice = checkoutSummary.priceLabel;
+  const heroImage = getProductHeroImage(product.slug, product.image);
+
   return (
     <div className="page-flow">
-      <Section eyebrow="Product details" title={product.name}>
-        <p>
-          Use this page to get oriented. If you are not sure which path fits,
-          start product guidance or reach support before making a decision.
-        </p>
-      </Section>
-      <section className="content-band">
-        <div className="band-inner two-column">
-          <div className="product-data-card">
-            <ProductImage alt={product.name} src={product.image} />
-            <p className="tag">TotalTOX system</p>
-            <h2>A focused product family with guided support available.</h2>
-            <p>
-              The site keeps the product path simple and points you toward
-              guidance when a few questions would make the next step clearer.
-            </p>
-          </div>
-          <div className="product-data-card">
-            <p className="tag">How to continue</p>
-            <h2>Choose the level of help that fits.</h2>
-            <dl className="fact-list">
-              <div>
-                <dt>Product family</dt>
-                <dd>TotalTOX Hair Treatment System</dd>
-              </div>
-              <div>
-                <dt>Guidance</dt>
-                <dd>A few focused questions can help narrow the product path.</dd>
-              </div>
-              <div>
-                <dt>Support</dt>
-                <dd>Use support when your question needs more context.</dd>
-              </div>
-              <div>
-                <dt>Checkout</dt>
-                <dd>Online checkout opens only after the product path is ready.</dd>
-              </div>
-            </dl>
+      <section className="product-hero" aria-labelledby="product-hero-title">
+        <Image
+          alt={product.name}
+          className="product-hero__image"
+          height={900}
+          priority
+          sizes="100vw"
+          src={heroImage}
+          width={1440}
+        />
+        <div className="product-hero__shade" />
+        <div className="product-hero__content">
+          <p className="eyebrow">We recommend</p>
+          <h1 id="product-hero-title">TotalTOX Treatment System</h1>
+          <p>
+            Review the product and price, then continue when you are ready.
+          </p>
+          <div className="product-hero__actions">
+            {checkoutPrice ? (
+              <span className="product-hero__price">{checkoutPrice}</span>
+            ) : null}
+            <a className="button-link button-link--primary" href="#checkout">
+              Review order
+            </a>
           </div>
         </div>
       </section>
@@ -71,39 +62,74 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
         <section className="content-band content-band--muted">
           <div className="band-inner">
             <div className="section-heading">
-              <p className="eyebrow">Product paths</p>
-              <h2>Different situations may need different guidance.</h2>
+              <p className="eyebrow">Treatment options</p>
+              <h2>Four TotalTOX treatments.</h2>
               <p>
-                Start with the closest path, then use guidance or support if you
-                want help confirming the next step.
+                TotalTOX is organized into four treatment options. If you are not sure
+                which one fits, use the quick questions or contact support before ordering.
               </p>
             </div>
-            <div className="variant-grid">
+            <div className="variant-list" aria-label={`${product.name} treatments`}>
               {product.variants.map((variant) => (
                 <article className="variant-card" key={variant.id}>
-                  <p className="tag">{variant.label}</p>
-                  <h2>Guidance can help confirm whether this fits.</h2>
-                  <p>
-                    If your situation is timing-sensitive or unclear, support is
-                    the better place to continue.
-                  </p>
+                  <h3>{variant.label}</h3>
+                  <p>Use the quick questions or support if you want help choosing.</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
       ) : null}
-      <section className="content-band content-band--muted">
-        <div className="band-inner">
-          <div className="section-heading">
-            <p className="eyebrow">Checkout</p>
-            <h2>Continue when the product path is ready.</h2>
+      <section className="content-band product-order-band" id="checkout">
+        <div className="band-inner product-order-layout">
+          <div className="product-order-copy">
+            <p className="eyebrow">Your selection</p>
+            <h2>{product.name}</h2>
             <p>
-              Online checkout is kept separate from product guidance. If checkout
-              is not available here, use support for the next step.
+              Your selected product is below. If you want help choosing between
+              Light, Plus, Max, and Ultra Max, support is available before you order.
+            </p>
+            <dl className="fact-list">
+              <div>
+                <dt>Product</dt>
+                <dd>TotalTOX Hair Treatment System</dd>
+              </div>
+              <div>
+                <dt>Price</dt>
+                <dd>{checkoutPrice ?? "Shown at checkout"}</dd>
+              </div>
+              <div>
+                <dt>Payment</dt>
+                <dd>Payment details are entered on Authorize.net.</dd>
+              </div>
+            </dl>
+          </div>
+          <CheckoutGateDemo
+            addOns={checkoutSummary.addOns}
+            baseAmount={checkoutSummary.baseAmount}
+            priceLabel={checkoutPrice}
+            productSlug={product.slug}
+          />
+        </div>
+      </section>
+      <section className="content-band content-band--muted">
+        <div className="band-inner product-support-strip">
+          <div>
+            <p className="eyebrow">Before you order</p>
+            <h2>Questions can still go to support.</h2>
+            <p>
+              Use support if you want a person to review your situation before
+              you continue.
             </p>
           </div>
-          <CheckoutGateDemo productSlug={product.slug} />
+          <div className="product-support-strip__actions">
+            <a className="button-link button-link--primary" href="/support">
+              Contact support
+            </a>
+            <a className="text-link" href="/guidance">
+              Answer quick questions
+            </a>
+          </div>
         </div>
       </section>
     </div>

@@ -43,7 +43,9 @@ Read these before making project decisions:
 - Treat non-Amazon growth as a serious path.
 - Separate the public customer site from the partner/vendor-facing surface.
 - Treat the public homepage as a calm product guidance lobby, not a dense product-explanation page.
-- Treat the current V1 product direction as TotalTOX-first: one public product family with review-gated variant paths, unless the owner explicitly changes direction.
+- Treat the current V1 product direction as TotalTOX-first: one public product family with owner-confirmed treatment names, unless the owner explicitly changes direction.
+- Owner-confirmed treatment names: TotalTOX Light, TotalTOX Plus, TotalTOX Max, and TotalTOX Ultra Max. Fit rules, kit contents, prices, SKUs, and routing remain owner-data gaps.
+- Current first product guidance question: "How often have you needed hair detox support in the last 9 months?" with options "Every 2 weeks or less", "Weekly", and "Daily". Treatment mapping remains an owner-data gap.
 - Build the production implementation as a custom app under `site/` unless the owner explicitly changes the platform decision.
 - Treat Webflow and Claude Design as prototype, visual-reference, CMS-reference, or handoff aids unless explicitly assigned as production.
 - Build the product guidance assistant as a live backend-source-grounded feature, not as an open-ended frontend AI chat.
@@ -62,19 +64,18 @@ As of the latest local app state:
   - `e55592f fix: remove public developer-facing copy`
   - `207cb2e feat: build knowledge center resource page`
   - `b9a99d2 feat: add staged guidance entry flow`
-- Local preview has been verified at `http://127.0.0.1:3000/resources` and `http://127.0.0.1:3000/guidance`.
+- Local preview has been verified at `http://127.0.0.1:3000/guidance`.
 - `/guidance` keeps the owner-approved staged onboarding flow:
   1. Welcome overlay: "You are in the right place" / "Welcome to SciTOX."
   2. The welcome fades out.
   3. Handoff to the current-situation question.
   4. First question: "Which of the following statements best represents your current situation?"
   5. First choice: first-time visitor or active/returning client.
-  6. First-time visitor branches into information-first `/resources` or next-step guidance.
+  6. First-time visitor branches into product review or next-step guidance.
 - During the welcome, current-situation question, follow-up pills, and routing messages, no header, footer, support panels, guidance preview, or other page sections should compete with the entry flow.
-- Normal page sections become available only after the user is routed to `/resources`, `/support`, or into the product-guidance area.
-- `/resources` is now the customer-facing Help / Resources destination for first-time visitors who want FAQ answers, education, and official resources before deciding.
-- Help / Resources includes medication/privacy/workplace-stigma context, ADHD context, ADA/HIPAA nuance, official resource links, legally mandated screening boundaries, and documentation guidance.
-- `/support` is now a narrower follow-up route for order questions, active/returning clients, and product questions that still need a person after resources or guidance.
+- Normal page sections become available only after the user is routed to the TotalTOX product page, `/support`, or into the product-guidance area.
+- `/resources` has been removed from the public app.
+- `/support` is now the follow-up route for order questions, active/returning clients, and product questions that still need a person after product review or guidance.
 - Public customer-facing UI has been cleaned so internal markers such as `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, and developer-facing planning text are not shown.
 - Backend data, API fallback payloads, tests, private docs, and source-governance files may still use review/owner markers. Do not remove those markers unless replacing them with an equivalent internal review gate.
 

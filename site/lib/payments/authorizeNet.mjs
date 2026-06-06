@@ -15,6 +15,36 @@ const RAW_PAYMENT_FIELD_NAMES = new Set([
 
 const OWNER_NEEDED = "[OWNER DATA NEEDED]";
 const REVIEW_NEEDED = "[REVIEW REQUIRED]";
+const TOTALTOX_SLUG = "totaltox-hair-treatment-system";
+
+const API_ENDPOINTS = {
+  sandbox: "https://apitest.authorize.net/xml/v1/request.api",
+  live: "https://api.authorize.net/xml/v1/request.api",
+};
+
+const HOSTED_PAYMENT_URLS = {
+  sandbox: "https://test.authorize.net/payment/payment",
+  live: "https://accept.authorize.net/payment/payment",
+};
+
+const PRODUCT_AMOUNT_ENV = {
+  [TOTALTOX_SLUG]: "AUTHORIZE_NET_TOTALTOX_AMOUNT",
+};
+
+const ADD_ONS_BY_PRODUCT = {
+  [TOTALTOX_SLUG]: [
+    {
+      envName: "AUTHORIZE_NET_ADDON_UV_LIGHT_AMOUNT",
+      id: "uv-light",
+      label: "UV light",
+    },
+    {
+      envName: "AUTHORIZE_NET_ADDON_CUSTOM_DEVELOPER_AMOUNT",
+      id: "custom-developer",
+      label: "Custom developer",
+    },
+  ],
+};
 
 function cleanText(value, maxLength = 160) {
   if (typeof value !== "string") {
@@ -46,6 +76,117 @@ function includesRawPaymentField(value) {
   });
 }
 
+function normalizeBoolean(value) {
+  return ["1", "true", "yes", "on"].includes(cleanText(value, 12).toLowerCase());
+}
+
+function normalizeAmount(value) {
+  const raw = cleanText(value, 24).replace(/^\$/, "");
+
+  if (!/^\d+(\.\d{1,2})?$/.test(raw)) {
+    return "";
+  }
+
+  const amount = Number(raw);
+
+  if (!Number.isFinite(amount) || amount <= 0 || amount > 10000) {
+    return "";
+  }
+
+  return amount.toFixed(2);
+}
+
+function productAmountForSlug(productSlug, env) {
+  const envName = PRODUCT_AMOUNT_ENV[productSlug];
+  return envName ? normalizeAmount(env[envName]) : "";
+}
+
+function addOnsForSlug(productSlug) {
+  return ADD_ONS_BY_PRODUCT[productSlug] ?? [];
+}
+
+function normalizeAddOns(value) {
+  if (value === undefined) {
+    return { addOns: [], fieldErrors: {} };
+  }
+
+  if (!Array.isArray(value)) {
+    return {
+      addOns: [],
+      fieldErrors: {
+        addOns: ["Provide add-ons as a list."],
+      },
+    };
+  }
+
+  const addOns = [...new Set(value.map((item) => cleanText(item, 80)).filter(Boolean))];
+
+  return { addOns, fieldErrors: {} };
+}
+
+function selectedAddOnsForRequest(productSlug, addOns, env) {
+  const availableAddOns = addOnsForSlug(productSlug);
+  const selected = [];
+  const missingOwnerData = [];
+
+  for (const addOnId of addOns) {
+    const addOn = availableAddOns.find((item) => item.id === addOnId);
+
+    if (!addOn) {
+      continue;
+    }
+
+    const amount = normalizeAmount(env[addOn.envName]);
+
+    if (!amount) {
+      missingOwnerData.push(`${addOn.envName} ${OWNER_NEEDED}`);
+      continue;
+    }
+
+    selected.push({
+      amount,
+      id: addOn.id,
+      label: addOn.label,
+    });
+  }
+
+  return { missingOwnerData, selected };
+}
+
+function checkoutAmountForRequest(productSlug, addOns, env) {
+  const baseAmount = productAmountForSlug(productSlug, env);
+
+  if (!baseAmount) {
+    return "";
+  }
+
+  const { selected } = selectedAddOnsForRequest(productSlug, addOns, env);
+  const total = selected.reduce((sum, addOn) => sum + Number(addOn.amount), Number(baseAmount));
+
+  return total.toFixed(2);
+}
+
+function orderDescriptionForRequest(productSlug, addOns, env) {
+  const base = productSlug === TOTALTOX_SLUG ? "TotalTOX Hair Treatment System" : "SciTOX order";
+  const { selected } = selectedAddOnsForRequest(productSlug, addOns, env);
+
+  return [base, ...selected.map((addOn) => addOn.label)].join(" + ").slice(0, 255);
+}
+
+function parseAuthorizeNetMessages(payload) {
+  const messages = payload?.messages?.message;
+
+  if (!Array.isArray(messages)) {
+    return [];
+  }
+
+  return messages
+    .map((message) =>
+      cleanText(`${message?.code || ""} ${message?.text || ""}`, 220),
+    )
+    .filter(Boolean);
+}
+
 export function validateAuthorizeNetCheckoutRequest(payload) {
   const fieldErrors = {};
 
@@ -66,29 +207,51 @@ export function validateAuthorizeNetCheckoutRequest(payload) {
   }
 
   const productSlug = cleanText(payload.productSlug, 120);
+  const normalizedAddOns = normalizeAddOns(payload.addOns);
+
+  Object.assign(fieldErrors, normalizedAddOns.fieldErrors);
 
   if (!productSlug) {
     fieldErrors.productSlug = ["Provide a product slug for the checkout gate."];
   }
 
+  if (productSlug && !PRODUCT_AMOUNT_ENV[productSlug]) {
+    fieldErrors.productSlug = ["This product is not configured for online checkout yet."];
+  }
+
+  const allowedAddOnIds = new Set(addOnsForSlug(productSlug).map((addOn) => addOn.id));
+  const unknownAddOns = normalizedAddOns.addOns.filter((addOn) => !allowedAddOnIds.has(addOn));
+
+  if (unknownAddOns.length > 0) {
+    fieldErrors.addOns = ["One or more selected add-ons are not configured for this product."];
+  }
+
   if (Object.keys(fieldErrors).length > 0) {
     return {
       ok: false,
-      data: { productSlug },
+      data: { addOns: normalizedAddOns.addOns, productSlug },
       fieldErrors,
     };
   }
 
   return {
     ok: true,
-    data: { productSlug },
+    data: { addOns: normalizedAddOns.addOns, productSlug },
     fieldErrors: {},
   };
 }
 
-export function getAuthorizeNetConfigState(env = process.env) {
+export function getAuthorizeNetConfigState(env = process.env, productSlug = "", addOns = []) {
   const environment = cleanText(env.AUTHORIZE_NET_ENVIRONMENT, 20);
+  const normalizedEnvironment = ALLOWED_ENVIRONMENTS.has(environment)
+    ? environment
+    : "unconfigured";
   const missingOwnerData = [];
+  const reviewRequired = [];
+
+  if (!normalizeBoolean(env.AUTHORIZE_NET_CHECKOUT_ENABLED)) {
+    reviewRequired.push(`AUTHORIZE_NET_CHECKOUT_ENABLED true ${REVIEW_NEEDED}`);
+  }
 
   if (!cleanText(env.AUTHORIZE_NET_API_LOGIN_ID)) {
     missingOwnerData.push(`AUTHORIZE_NET_API_LOGIN_ID ${OWNER_NEEDED}`);
@@ -118,15 +281,102 @@ export function getAuthorizeNetConfigState(env = process.env) {
     );
   }
 
+  if (productSlug && !productAmountForSlug(productSlug, env)) {
+    const envName = PRODUCT_AMOUNT_ENV[productSlug] || "AUTHORIZE_NET_PRODUCT_AMOUNT";
+    missingOwnerData.push(`${envName} ${OWNER_NEEDED}`);
+  }
+
+  if (productSlug && addOns.length > 0) {
+    missingOwnerData.push(
+      ...selectedAddOnsForRequest(productSlug, addOns, env).missingOwnerData,
+    );
+  }
+
   return {
-    environment: ALLOWED_ENVIRONMENTS.has(environment) ? environment : "unconfigured",
+    apiEndpoint: normalizedEnvironment === "unconfigured" ? null : API_ENDPOINTS[normalizedEnvironment],
+    checkoutEnabled: normalizeBoolean(env.AUTHORIZE_NET_CHECKOUT_ENABLED),
+    environment: normalizedEnvironment,
+    hostedPaymentUrl:
+      normalizedEnvironment === "unconfigured" ? null : HOSTED_PAYMENT_URLS[normalizedEnvironment],
+    merchantName: cleanText(env.AUTHORIZE_NET_MERCHANT_NAME, 80) || "SciTOX",
     missingOwnerData,
+    reviewRequired,
+    showBankAccount: normalizeBoolean(env.AUTHORIZE_NET_SHOW_BANK_ACCOUNT),
+  };
+}
+
+export function buildAcceptHostedRequest({ addOns = [], amount, env = process.env, productSlug }) {
+  const config = getAuthorizeNetConfigState(env, productSlug, addOns);
+  const invoiceNumber = `SCI-${Date.now().toString(36).toUpperCase()}`.slice(0, 20);
+
+  return {
+    getHostedPaymentPageRequest: {
+      merchantAuthentication: {
+        name: cleanText(env.AUTHORIZE_NET_API_LOGIN_ID, 120),
+        transactionKey: cleanText(env.AUTHORIZE_NET_TRANSACTION_KEY, 120),
+      },
+      refId: invoiceNumber,
+      transactionRequest: {
+        transactionType: "authCaptureTransaction",
+        amount,
+        order: {
+          invoiceNumber,
+          description: orderDescriptionForRequest(productSlug, addOns, env),
+        },
+      },
+      hostedPaymentSettings: {
+        setting: [
+          {
+            settingName: "hostedPaymentReturnOptions",
+            settingValue: JSON.stringify({
+              showReceipt: true,
+              url: cleanText(env.AUTHORIZE_NET_ACCEPT_HOSTED_RETURN_URL, 500),
+              urlText: "Continue",
+              cancelUrl: cleanText(env.AUTHORIZE_NET_ACCEPT_HOSTED_CANCEL_URL, 500),
+              cancelUrlText: "Cancel",
+            }),
+          },
+          {
+            settingName: "hostedPaymentButtonOptions",
+            settingValue: JSON.stringify({ text: "Pay" }),
+          },
+          {
+            settingName: "hostedPaymentPaymentOptions",
+            settingValue: JSON.stringify({
+              cardCodeRequired: true,
+              showCreditCard: true,
+              showBankAccount: config.showBankAccount,
+            }),
+          },
+          {
+            settingName: "hostedPaymentShippingAddressOptions",
+            settingValue: JSON.stringify({ show: true, required: true }),
+          },
+          {
+            settingName: "hostedPaymentBillingAddressOptions",
+            settingValue: JSON.stringify({ show: true, required: false }),
+          },
+          {
+            settingName: "hostedPaymentCustomerOptions",
+            settingValue: JSON.stringify({ showEmail: true, requiredEmail: true }),
+          },
+          {
+            settingName: "hostedPaymentOrderOptions",
+            settingValue: JSON.stringify({ show: true, merchantName: config.merchantName }),
+          },
+        ],
+      },
+    },
   };
 }
 
 export function createAuthorizeNetCheckoutGate(payload, options = {}) {
   const request = validateAuthorizeNetCheckoutRequest(payload);
-  const config = getAuthorizeNetConfigState(options.env ?? process.env);
+  const productSlug = request.data.productSlug || "";
+  const addOns = request.data.addOns ?? [];
+  const env = options.env ?? process.env;
+  const config = getAuthorizeNetConfigState(env, productSlug, addOns);
+  const selectedAddOns = selectedAddOnsForRequest(productSlug, addOns, env).selected;
 
   if (!request.ok) {
     return {
@@ -135,7 +385,10 @@ export function createAuthorizeNetCheckoutGate(payload, options = {}) {
       mode: "server_stub",
       available: false,
       payment_collection_enabled: false,
-      product_slug: request.data.productSlug || null,
+      site_payment_collection_enabled: false,
+      add_ons: selectedAddOns,
+      product_slug: productSlug || null,
+      checkout_total: null,
       hosted_payment_token: null,
       checkout_url: null,
       environment: config.environment,
@@ -144,6 +397,7 @@ export function createAuthorizeNetCheckoutGate(payload, options = {}) {
       review_required: [
         `Checkout request validation ${REVIEW_NEEDED}`,
         `Raw payment field handling ${REVIEW_NEEDED}`,
+        ...config.reviewRequired,
       ],
       next_step: `Use product support or inquiry routing until checkout is reviewed. ${REVIEW_NEEDED}`,
     };
@@ -155,22 +409,94 @@ export function createAuthorizeNetCheckoutGate(payload, options = {}) {
     mode: "server_stub",
     available: false,
     payment_collection_enabled: false,
-    product_slug: request.data.productSlug,
+    site_payment_collection_enabled: false,
+    add_ons: selectedAddOns,
+    product_slug: productSlug,
+    checkout_total: null,
     hosted_payment_token: null,
     checkout_url: null,
     environment: config.environment,
     field_errors: {},
     missing_owner_data: [
       ...config.missingOwnerData,
-      `Authorize.net Accept Hosted integration type ${OWNER_NEEDED}`,
       `Merchant account/payment method settings ${OWNER_NEEDED}`,
       `Refund, fraud, dispute, and support workflow ${OWNER_NEEDED}`,
     ],
     review_required: [
+      ...config.reviewRequired,
       `Authorize.net checkout flow payment review ${REVIEW_NEEDED}`,
       `Payment, refund, dispute, and policy language ${REVIEW_NEEDED}`,
       `Checkout copy and product routing review ${REVIEW_NEEDED}`,
     ],
     next_step: `Route to support or owner-reviewed checkout handoff after configuration review. ${REVIEW_NEEDED}`,
   };
+}
+
+export async function createAuthorizeNetCheckoutSession(payload, options = {}) {
+  const request = validateAuthorizeNetCheckoutRequest(payload);
+  const env = options.env ?? process.env;
+  const productSlug = request.data.productSlug || "";
+  const addOns = request.data.addOns ?? [];
+  const config = getAuthorizeNetConfigState(env, productSlug, addOns);
+  const selectedAddOns = selectedAddOnsForRequest(productSlug, addOns, env).selected;
+
+  if (!request.ok || config.missingOwnerData.length > 0 || config.reviewRequired.length > 0) {
+    return createAuthorizeNetCheckoutGate(payload, { env });
+  }
+
+  const amount = checkoutAmountForRequest(productSlug, addOns, env);
+  const requestBody = buildAcceptHostedRequest({ addOns, amount, env, productSlug });
+  const fetchImpl = options.fetchImpl ?? fetch;
+
+  try {
+    const response = await fetchImpl(config.apiEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestBody),
+    });
+    const responseBody = await response.json();
+    const token = cleanText(responseBody?.token, 4096);
+    const messages = parseAuthorizeNetMessages(responseBody);
+
+    if (!response.ok || responseBody?.messages?.resultCode !== "Ok" || !token) {
+      return {
+        ...createAuthorizeNetCheckoutGate(payload, { env }),
+        checkout_status: "processor_error",
+        processor_messages: messages,
+        review_required: [
+          `Authorize.net hosted payment token response review ${REVIEW_NEEDED}`,
+        ],
+        next_step: `Use support while checkout setup is reviewed. ${REVIEW_NEEDED}`,
+      };
+    }
+
+    return {
+      checkout_status: "hosted_payment_ready",
+      provider: "authorize_net",
+      mode: "accept_hosted",
+      available: true,
+      payment_collection_enabled: true,
+      site_payment_collection_enabled: false,
+      add_ons: selectedAddOns,
+      product_slug: productSlug,
+      checkout_total: amount,
+      hosted_payment_token: token,
+      checkout_url: config.hostedPaymentUrl,
+      environment: config.environment,
+      field_errors: {},
+      missing_owner_data: [],
+      review_required: [],
+      next_step: "Continue to the hosted payment form.",
+    };
+  } catch {
+    return {
+      ...createAuthorizeNetCheckoutGate(payload, { env }),
+      checkout_status: "processor_error",
+      processor_messages: [],
+      review_required: [
+        `Authorize.net hosted payment token request review ${REVIEW_NEEDED}`,
+      ],
+      next_step: `Use support while checkout setup is reviewed. ${REVIEW_NEEDED}`,
+    };
+  }
 }

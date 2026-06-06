@@ -5,7 +5,7 @@ const prepItems = [
   },
   {
     label: "No payment details",
-    body: "Guidance never asks for card, bank, or payment information.",
+    body: "The questions never ask for card, bank, or payment information.",
   },
   {
     label: "Support fallback",
@@ -21,7 +21,7 @@ export function PrivacyPrepNotice() {
         <h2>Give us a second to keep this simple.</h2>
         <p>
           Before the questions start, this step keeps the request focused and
-          avoids asking for details that do not belong in guidance.
+          avoids asking for details that do not belong in this step.
         </p>
       </div>
       <div className="privacy-prep__items">

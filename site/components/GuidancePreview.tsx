@@ -35,9 +35,9 @@ export function GuidancePreview() {
   return (
     <div className="guidance-preview">
       <div className="choice-panel">
-        <p className="tag">How guidance works</p>
+        <p className="tag">How getting started works</p>
         <h2>Simple options, then a clear next step.</h2>
-        <div className="choice-list" role="group" aria-label="Guidance route choices">
+        <div className="choice-list" role="group" aria-label="Getting started route choices">
           {Object.entries(guidanceRoutes).map(([key, value]) => (
             <button
               className={key === selectedRoute ? "is-active" : ""}
@@ -56,7 +56,7 @@ export function GuidancePreview() {
         <p>{route.body}</p>
         <div className="notice-list">
           <span>{route.detail}</span>
-          <span>The flow stays calm, private-feeling, and easy to understand.</span>
+          <span>The questions stay calm, private-feeling, and easy to understand.</span>
         </div>
       </div>
     </div>

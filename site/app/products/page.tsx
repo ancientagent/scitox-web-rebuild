@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ProductImage } from "@/components/ProductImage";
 import { ProductPathPreview } from "@/components/ProductPathPreview";
 import { Section } from "@/components/Section";
+import { getCheckoutPriceLabel } from "@/lib/payments/checkoutDisplay";
 import { getPublicProducts } from "@/lib/products/getProducts";
 
 export default function ProductsPage() {
@@ -12,17 +13,17 @@ export default function ProductsPage() {
       <Section eyebrow="Products" title="TotalTOX Hair Treatment System">
         <p>
           Start with the core TotalTOX product family. If the right setup is not
-          obvious, product guidance or support can help narrow the next step.
+          obvious, answer a few quick questions or use support to choose the next step.
         </p>
       </Section>
       <section className="content-band content-band--muted">
         <div className="band-inner two-column">
           <div className="section-heading section-heading--compact">
             <p className="eyebrow">Choosing a path</p>
-            <h2>One product family, a few ways to get oriented.</h2>
+            <h2>One product family, four treatment options.</h2>
             <p>
               Browse the product family when you already know what you need, or
-              use guidance when you want the site to ask a few focused questions first.
+              answer a few focused questions when you want help choosing first.
             </p>
           </div>
           <ProductPathPreview />
@@ -44,14 +45,17 @@ export default function ProductsPage() {
                 <ProductImage alt={product.name} src={product.image} />
                 <p className="tag">TotalTOX system</p>
                 <h2>{product.name}</h2>
+                <p className="product-data-card__price">
+                  {getCheckoutPriceLabel(product.slug) ?? "Price shown at checkout"}
+                </p>
                 <p>
-                  A focused product family with guided questions available when
-                  you want help choosing the right path.
+                  A focused product family with quick questions available when
+                  you want help choosing between the treatment options.
                 </p>
                 <dl className="fact-list">
                   <div>
                     <dt>Best next step</dt>
-                    <dd>Use product guidance if you want help narrowing the path.</dd>
+                    <dd>Answer the quick questions if you want help choosing.</dd>
                   </div>
                   <div>
                     <dt>Support</dt>
@@ -59,17 +63,17 @@ export default function ProductsPage() {
                   </div>
                 </dl>
                 {product.variants?.length ? (
-                  <div className="variant-list" aria-label={`${product.name} paths`}>
+                  <div className="variant-list" aria-label={`${product.name} treatments`}>
                     {product.variants.map((variant) => (
                       <article className="variant-card" key={variant.id}>
                         <h3>{variant.label}</h3>
-                        <p>Guidance can help confirm whether this path fits.</p>
+                        <p>A few questions can help confirm whether this treatment fits.</p>
                       </article>
                     ))}
                   </div>
                 ) : null}
-                <Link className="text-link" href={`/products/${product.slug}`}>
-                  View product details
+                <Link className="button-link button-link--primary" href={`/products/${product.slug}`}>
+                  View product and checkout
                 </Link>
               </article>
             ))}

@@ -9,17 +9,28 @@ type EntryStep =
   | "visitor"
   | "first-time"
   | "returning"
-  | "resource-routing"
+  | "product-routing"
   | "support-routing"
   | "private-session"
   | "complete";
 
-type ProductIntent = "choose-system" | "size-help" | "support";
+type TreatmentFrequency = "two-weeks-or-less" | "weekly" | "daily";
 type HairProfile = "short" | "medium" | "long-thick" | "not-sure";
 type ContinuePreference = "view-product" | "support-review";
 
 const routingDelay = 1700;
 const sessionDelay = 2800;
+const treatmentFrequencyLabels: Record<TreatmentFrequency, string> = {
+  "two-weeks-or-less": "Every 2 weeks or less",
+  weekly: "Weekly",
+  daily: "Daily",
+};
+const hairProfileLabels: Record<HairProfile, string> = {
+  short: "Short hair",
+  medium: "Medium length hair",
+  "long-thick": "Long or thick hair",
+  "not-sure": "I'm not sure",
+};
 
 function getMotionDelay(defaultDelay: number) {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -33,7 +44,7 @@ export function GuidanceAssistantDemo() {
   const router = useRouter();
   const [step, setStep] = useState<EntryStep>("welcome");
   const [questionStep, setQuestionStep] = useState(0);
-  const [productIntent, setProductIntent] = useState<ProductIntent | null>(null);
+  const [treatmentFrequency, setTreatmentFrequency] = useState<TreatmentFrequency | null>(null);
   const [hairProfile, setHairProfile] = useState<HairProfile | null>(null);
   const [continuePreference, setContinuePreference] = useState<ContinuePreference | null>(null);
 
@@ -62,13 +73,13 @@ export function GuidanceAssistantDemo() {
   }, [step]);
 
   useEffect(() => {
-    if (step !== "resource-routing" && step !== "support-routing" && step !== "private-session") {
+    if (step !== "product-routing" && step !== "support-routing" && step !== "private-session") {
       return;
     }
 
     const timer = window.setTimeout(() => {
-      if (step === "resource-routing") {
-        router.push("/resources");
+      if (step === "product-routing") {
+        router.push("/products/totaltox-hair-treatment-system");
         return;
       }
 
@@ -94,29 +105,56 @@ export function GuidanceAssistantDemo() {
       <ProductGuidanceQuestions
         continuePreference={continuePreference}
         hairProfile={hairProfile}
-        productIntent={productIntent}
+        treatmentFrequency={treatmentFrequency}
         questionStep={questionStep}
         setContinuePreference={setContinuePreference}
         setHairProfile={setHairProfile}
-        setProductIntent={setProductIntent}
+        setTreatmentFrequency={setTreatmentFrequency}
         setQuestionStep={setQuestionStep}
       />
     );
   }
 
   return (
-    <section className={`guidance-entry guidance-entry--${step}`} aria-label="SciTOX guidance entry">
+    <section className={`guidance-entry guidance-entry--${step}`} aria-label="SciTOX getting started">
       <div className="guidance-entry__masthead" aria-label="SciTOX">
         <span aria-hidden="true" />
         <strong>SciTOX</strong>
       </div>
 
       {step === "welcome" ? (
-        <div className="guidance-entry__stage guidance-entry__stage--welcome">
-          <p className="guidance-entry__eyebrow">You are in the right place</p>
-          <h1>Welcome to SciTOX.</h1>
-          <p>Take a breath. You made it here, and the next step can be simple.</p>
-        </div>
+        <>
+          <div className="guidance-entry__stage guidance-entry__stage--welcome">
+            <p className="guidance-entry__eyebrow">You are in the right place</p>
+            <h1>Welcome to SciTOX.</h1>
+            <p>Take a breath. You made it here, and the next step can be simple.</p>
+          </div>
+          <div className="guidance-entry__stage guidance-entry__stage--fallback-visitor">
+            <h1>Which of the following statements best represents your current situation?</h1>
+            <div className="guidance-entry__choices" aria-label="Current situation">
+              <Link
+                className="guidance-entry__choice"
+                href="/products/totaltox-hair-treatment-system"
+                onClick={(event) => {
+                  event.preventDefault();
+                  setStep("first-time");
+                }}
+              >
+                I&apos;m a first time visitor
+              </Link>
+              <Link
+                className="guidance-entry__choice"
+                href="/support"
+                onClick={(event) => {
+                  event.preventDefault();
+                  setStep("returning");
+                }}
+              >
+                I&apos;m an active or returning client
+              </Link>
+            </div>
+          </div>
+        </>
       ) : null}
 
       {step === "visitor" ? (
@@ -137,7 +175,7 @@ export function GuidanceAssistantDemo() {
         <div className="guidance-entry__stage">
           <p className="guidance-entry__sentence">I&apos;m a first time visitor...</p>
           <div className="guidance-entry__choices" aria-label="First time visitor options">
-            <button className="guidance-entry__choice" onClick={() => setStep("resource-routing")} type="button">
+            <button className="guidance-entry__choice" onClick={() => setStep("product-routing")} type="button">
               looking for information on whether SciTOX is right for me
             </button>
             <button className="guidance-entry__choice" onClick={() => setStep("private-session")} type="button">
@@ -161,12 +199,12 @@ export function GuidanceAssistantDemo() {
         </div>
       ) : null}
 
-      {step === "resource-routing" ? (
+      {step === "product-routing" ? (
         <div className="guidance-entry__stage">
-          <p className="guidance-entry__eyebrow">Resource library</p>
-          <h1>We&apos;ll take you there first.</h1>
+          <p className="guidance-entry__eyebrow">Product review</p>
+          <h1>We&apos;ll take you to TotalTOX first.</h1>
           <p>
-            You can learn what SciTOX is, who it may be for, and what to consider before
+            You can review the complete hair detox treatment system before
             making any decisions.
           </p>
         </div>
@@ -198,24 +236,24 @@ export function GuidanceAssistantDemo() {
 function ProductGuidanceQuestions({
   continuePreference,
   hairProfile,
-  productIntent,
+  treatmentFrequency,
   questionStep,
   setContinuePreference,
   setHairProfile,
-  setProductIntent,
+  setTreatmentFrequency,
   setQuestionStep,
 }: {
   continuePreference: ContinuePreference | null;
   hairProfile: HairProfile | null;
-  productIntent: ProductIntent | null;
+  treatmentFrequency: TreatmentFrequency | null;
   questionStep: number;
   setContinuePreference: (value: ContinuePreference | null) => void;
   setHairProfile: (value: HairProfile | null) => void;
-  setProductIntent: (value: ProductIntent | null) => void;
+  setTreatmentFrequency: (value: TreatmentFrequency | null) => void;
   setQuestionStep: (value: number) => void;
 }) {
   function resetQuestions() {
-    setProductIntent(null);
+    setTreatmentFrequency(null);
     setHairProfile(null);
     setContinuePreference(null);
     setQuestionStep(0);
@@ -226,8 +264,8 @@ function ProductGuidanceQuestions({
       <div className="band-inner">
         <div className="product-guidance-flow">
           <div className="product-guidance-flow__intro">
-            <p className="tag">Product guidance</p>
-            <h1>Let&apos;s find the right TotalTOX path.</h1>
+            <p className="tag">Quick product questions</p>
+            <h1>Let&apos;s find the treatment that&apos;s right for you.</h1>
             <p>
               Answer what you can. If the fit is not clear, we&apos;ll send this to support
               instead of guessing.
@@ -238,28 +276,28 @@ function ProductGuidanceQuestions({
             <GuidanceQuestion
               options={[
                 {
-                  label: "I need help choosing a TotalTOX system",
+                  label: treatmentFrequencyLabels["two-weeks-or-less"],
                   onClick: () => {
-                    setProductIntent("choose-system");
+                    setTreatmentFrequency("two-weeks-or-less");
                     setQuestionStep(1);
                   },
                 },
                 {
-                  label: "I need help with size or quantity",
+                  label: treatmentFrequencyLabels.weekly,
                   onClick: () => {
-                    setProductIntent("size-help");
+                    setTreatmentFrequency("weekly");
                     setQuestionStep(1);
                   },
                 },
                 {
-                  label: "I want support to review this first",
+                  label: treatmentFrequencyLabels.daily,
                   onClick: () => {
-                    setProductIntent("support");
-                    setQuestionStep(3);
+                    setTreatmentFrequency("daily");
+                    setQuestionStep(1);
                   },
                 },
               ]}
-              question="What do you need help with right now?"
+              question="How often have you needed hair detox support in the last 9 months?"
             />
           ) : null}
 
@@ -303,7 +341,7 @@ function ProductGuidanceQuestions({
             <GuidanceQuestion
               options={[
                 {
-                  label: "Show me the product path",
+                  label: "Show me the product",
                   onClick: () => {
                     setContinuePreference("view-product");
                     setQuestionStep(3);
@@ -325,7 +363,7 @@ function ProductGuidanceQuestions({
             <GuidanceResult
               continuePreference={continuePreference}
               hairProfile={hairProfile}
-              productIntent={productIntent}
+              treatmentFrequency={treatmentFrequency}
               resetQuestions={resetQuestions}
             />
           ) : null}
@@ -359,18 +397,19 @@ function GuidanceQuestion({
 function GuidanceResult({
   continuePreference,
   hairProfile,
-  productIntent,
+  treatmentFrequency,
   resetQuestions,
 }: {
   continuePreference: ContinuePreference | null;
   hairProfile: HairProfile | null;
-  productIntent: ProductIntent | null;
+  treatmentFrequency: TreatmentFrequency | null;
   resetQuestions: () => void;
 }) {
-  const shouldUseSupport =
-    productIntent === "support" ||
-    continuePreference === "support-review" ||
-    hairProfile === "not-sure";
+  const treatmentFrequencyLabel = treatmentFrequency
+    ? treatmentFrequencyLabels[treatmentFrequency]
+    : null;
+  const hairProfileLabel = hairProfile ? hairProfileLabels[hairProfile] : null;
+  const shouldUseSupport = continuePreference === "support-review" || hairProfile === "not-sure";
 
   if (shouldUseSupport) {
     return (
@@ -378,9 +417,13 @@ function GuidanceResult({
         <p className="tag">Next step</p>
         <h2>Support should review this with you.</h2>
         <p>
-          That is the better next step when size, quantity, or product fit is not clear
+          That is the better next step when size, quantity, or treatment fit is not clear
           from the quick questions.
         </p>
+        <GuidanceAnswerSummary
+          hairProfileLabel={hairProfileLabel}
+          treatmentFrequencyLabel={treatmentFrequencyLabel}
+        />
         <div className="product-guidance-actions">
           <Link className="button-link button-link--primary" href="/support">
             Go to support
@@ -396,11 +439,15 @@ function GuidanceResult({
   return (
     <div className="product-guidance-card">
       <p className="tag">Next step</p>
-      <h2>Start with the TotalTOX Hair Treatment System.</h2>
+      <h2>Start with the TotalTOX treatment family.</h2>
       <p>
         This points you to the product family. If anything about size, quantity, or
         order timing feels unclear, support can review before you order.
       </p>
+      <GuidanceAnswerSummary
+        hairProfileLabel={hairProfileLabel}
+        treatmentFrequencyLabel={treatmentFrequencyLabel}
+      />
       <div className="product-guidance-actions">
         <Link
           className="button-link button-link--primary"
@@ -413,5 +460,34 @@ function GuidanceResult({
         </button>
       </div>
     </div>
+  );
+}
+
+function GuidanceAnswerSummary({
+  hairProfileLabel,
+  treatmentFrequencyLabel,
+}: {
+  hairProfileLabel: string | null;
+  treatmentFrequencyLabel: string | null;
+}) {
+  if (!hairProfileLabel && !treatmentFrequencyLabel) {
+    return null;
+  }
+
+  return (
+    <dl className="fact-list product-guidance-summary" aria-label="Your answers">
+      {treatmentFrequencyLabel ? (
+        <div>
+          <dt>Treatment frequency</dt>
+          <dd>{treatmentFrequencyLabel}</dd>
+        </div>
+      ) : null}
+      {hairProfileLabel ? (
+        <div>
+          <dt>Hair</dt>
+          <dd>{hairProfileLabel}</dd>
+        </div>
+      ) : null}
+    </dl>
   );
 }

@@ -7,13 +7,13 @@ const productPaths = {
     label: "Core system",
     title: "One focused product line",
     status: "The public catalog centers on TotalTOX instead of several confusing product categories.",
-    action: "Open the TotalTOX detail, then choose guidance or support if the fit is not obvious.",
+    action: "Open the TotalTOX detail, then answer the quick questions or use support if the fit is not obvious.",
   },
   focused: {
     label: "Fit questions",
     title: "Practical questions help narrow the path",
     status: "Questions focus on what you know without making the page harder to understand.",
-    action: "Use guidance before presenting a path as the best fit.",
+    action: "Answer the quick questions before choosing a path.",
   },
   complete: {
     label: "Support fallback",

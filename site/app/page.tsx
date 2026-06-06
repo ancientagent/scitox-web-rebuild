@@ -18,7 +18,7 @@ export default function Home() {
         </p>
         <div className="route-grid" aria-label="Main paths">
           <Link className="route-card route-card--link" href="/guidance">
-            <h2>Product guidance</h2>
+            <h2>Get started</h2>
             <p>Answer a few simple questions before choosing a path.</p>
           </Link>
           <Link className="route-card route-card--link" href="/support">
@@ -37,7 +37,7 @@ export default function Home() {
             <p className="eyebrow">Next step</p>
             <h2>Choose the next path.</h2>
             <p>
-              The site keeps product browsing, guided questions, and support
+              The site keeps product browsing, quick questions, and support
               follow-up easy to find without turning the site into a loud sales page.
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function Home() {
             </Link>
             <Link className="route-card route-card--featured route-card--link" href="/guidance">
               <span className="path-number">02</span>
-              <h2>Guided questions</h2>
+              <h2>Quick questions</h2>
               <p>Let the site ask a few questions before showing a path.</p>
             </Link>
             <Link className="route-card route-card--link" href="/contact">
@@ -67,7 +67,7 @@ export default function Home() {
             <h2>A simple product path area.</h2>
             <p>
               The site can keep the product line visible while saving detailed
-              fit decisions for guidance or support.
+              fit decisions for quick questions or support.
             </p>
           </div>
           <ProductPathPreview />
@@ -76,7 +76,7 @@ export default function Home() {
       <section className="content-band content-band--dark">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Guidance</p>
+            <p className="eyebrow">Get started</p>
             <h2>Simple questions, then a clear next step.</h2>
             <p>
               If the answer is not obvious, the flow moves toward support rather
@@ -92,7 +92,7 @@ export default function Home() {
             <p className="eyebrow">Separate partner path</p>
             <h2>A separate partner surface.</h2>
             <p>
-              Wholesale inquiries stay separate from customer guidance so buyers
+              Wholesale inquiries stay separate from the customer path so buyers
               can evaluate the brand in a cleaner context.
             </p>
           </div>

@@ -4,18 +4,18 @@ import { Section } from "@/components/Section";
 
 const supportPaths = [
   {
-    title: "Need general answers first?",
+    title: "Need product details first?",
     body:
-      "Use Help / Resources for the FAQ, medication privacy context, workplace stigma information, official links, and important screening boundaries.",
-    href: "/resources",
-    cta: "Open Help / Resources",
+      "Review the TotalTOX product page before sending a support request.",
+    href: "/products/totaltox-hair-treatment-system",
+    cta: "View TotalTOX",
   },
   {
     title: "Trying to choose a product path?",
     body:
-      "Use product guidance if you are ready for a few focused questions that can point you toward the right next step.",
+      "Answer a few focused questions if you are ready for the site to point you toward the right next step.",
     href: "/guidance",
-    cta: "Start guidance",
+    cta: "Get started",
   },
   {
     title: "Already ordered or returning?",
@@ -29,11 +29,10 @@ const supportPaths = [
 export default function SupportPage() {
   return (
     <div className="page-flow">
-      <Section eyebrow="Support" title="Use support when resources or guidance are not enough.">
+      <Section eyebrow="Support" title="Use support when quick questions are not enough.">
         <p>
           This page is for order questions, follow-up help, returning clients,
-          and product questions that need a person to review the context. For
-          general FAQ answers, start with Help / Resources.
+          and product questions that need a person to review the context.
         </p>
       </Section>
 
@@ -43,8 +42,8 @@ export default function SupportPage() {
             <p className="eyebrow">Before support</p>
             <h2>Choose the path that matches what you need.</h2>
             <p>
-              Keeping FAQ, guidance, and support separate makes the site easier
-              to use and keeps support focused on questions that need follow-up.
+              Keeping product review, quick questions, and support separate makes the
+              site easier to use and keeps support focused on questions that need follow-up.
             </p>
           </div>
           <div className="path-grid">
@@ -68,9 +67,7 @@ export default function SupportPage() {
             <h2>Send the question that still needs a person.</h2>
             <p>
               Keep the request focused and share only what is needed for product
-              or order support. For legal, medical, or workplace rights
-              questions, use the official resources linked in Help / Resources
-              or speak with a qualified professional.
+              or order support.
             </p>
           </div>
           <InquiryForm surface="support" />

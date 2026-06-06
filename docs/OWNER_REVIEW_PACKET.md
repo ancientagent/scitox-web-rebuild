@@ -50,7 +50,7 @@ Review the demo for structure and operating fit:
 
 - Does the homepage routing model match how customers should be guided?
 - Should the product path begin with product browsing, guided questions, human support, or another route?
-- Which TotalTOX product details and variant details can safely appear on public product pages?
+- Which TotalTOX product details and treatment details can safely appear on public product pages?
 - Which product details should stay vendor-only or owner-only?
 - Does the guidance flow ask the right type of structured questions?
 - When should the guidance flow escalate to human support instead of returning a product path?
@@ -64,12 +64,12 @@ Review the demo for structure and operating fit:
 The current app includes:
 
 - Shared header, footer, layout, route shell, favicon, and custom 404.
-- Stable routes for home, products, TotalTOX product detail, guidance, resources, support, contact, wholesale, privacy, terms, and shipping/returns.
+- Stable routes for home, products, TotalTOX product detail, guidance, support, contact, wholesale, privacy, terms, and shipping/returns.
 - Clickable homepage route cards for the main owner-demo paths.
 - TotalTOX product data placeholders with public product fields separated from vendor/wholesale fields.
 - Product detail placeholders for facts, owner-needed data, review-needed sections, support routing, and checkout state.
 - Staged guidance entry flow with a brief "Welcome to SciTOX." fade-in, current-situation question, and first-time/returning visitor branches.
-- Customer-facing Help / Resources FAQ hub at `/resources` for information-first visitors.
+- Public `/resources` route removed per owner direction.
 - Focused support route at `/support` for order questions, returning clients, and product questions that still need a person.
 - Guidance API scaffold that returns structured JSON and escalates to human follow-up when source support is missing or the request is outside approved boundaries.
 - Support, contact, and wholesale intake forms with client/server validation and safe success/error states.
@@ -88,14 +88,14 @@ The following are intentionally not live:
 - Live form delivery to email, CRM, helpdesk, or another destination. `[OWNER DATA NEEDED]`
 - Final privacy, terms, shipping, returns, refund, support, or wholesale policies. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Public product claims, proof, results language, testimonials, certifications, platform eligibility, or vendor acceptance. `[REVIEW REQUIRED]`
-- Any legal, medical, diagnostic, test-result, consultation, counsel, prescription, guaranteed-outcome, privacy/security, or platform-safety claim. `[REVIEW REQUIRED]`
+- Any professional-advice, diagnostic, consultation, counsel, guaranteed-outcome, privacy/security, or platform-safety claim. `[REVIEW REQUIRED]`
 
 ## Owner Data Needed
 
 Before the demo can move toward launch, the owner needs to provide or confirm:
 
-- TotalTOX product name, variant names, categories, sizes, images, labels, ingredients, directions, warnings, availability, and public display rules. `[OWNER DATA NEEDED]`
-- TotalTOX variant routing rules for hair length, kit volume, timing-sensitive support, and human escalation. `[OWNER DATA NEEDED]`
+- TotalTOX product name, treatment details for Light, Plus, Max, and Ultra Max, categories, sizes, images, labels, ingredients, directions, warnings, availability, and public display rules. `[OWNER DATA NEEDED]`
+- TotalTOX treatment routing rules for hair length, kit volume, timing-sensitive support, and human escalation. `[OWNER DATA NEEDED]`
 - Prices, MSRP, wholesale pricing, MOQ, case pack, UPC/GTIN, stock status, shipping rules, and fulfillment rules. `[OWNER DATA NEEDED]`
 - Support process, support owner, response expectations, callback workflow, and customer handoff rules. `[OWNER DATA NEEDED]`
 - Contact, support, and wholesale form destinations. `[OWNER DATA NEEDED]`
@@ -143,7 +143,7 @@ Needed before live recommendations:
 - Explicit reviewed/approved markers for any path allowed to return a product recommendation. `[REVIEW REQUIRED]`
 - Source IDs and source notes for every answerable product path. `[OWNER DATA NEEDED]`
 - Rules for missing data, unmatched requests, and sensitive requests. `[REVIEW REQUIRED]`
-- Disallowed categories that must escalate to human support, including legal, medical, diagnostic, test-result, privacy/security, guaranteed-outcome, platform, and payment-risk requests. `[REVIEW REQUIRED]`
+- Disallowed categories that must escalate to human support, including professional-advice, diagnostic, privacy/security, guaranteed-outcome, platform, and payment-risk requests. `[REVIEW REQUIRED]`
 - Approved structured questions and answer options. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Logging, retention, analytics, and provider-processing review before any live AI/provider integration. `[REVIEW REQUIRED]`
 - Human support destination for fallback cases. `[OWNER DATA NEEDED]`
@@ -167,7 +167,7 @@ Needed before vendor/wholesale review:
 Do not treat these as launch-ready:
 
 - Placeholder text.
-- Product and variant facts on the TotalTOX product page.
+- Product and treatment facts on the TotalTOX product page.
 - Vendor product table data.
 - Guidance recommendation output beyond source-gated demo behavior.
 - Checkout handoff or payment collection.
@@ -182,8 +182,8 @@ Do not treat these as launch-ready:
 Recommended next steps:
 
 1. Owner completes the data and decision items in this packet.
-2. Convert owner-confirmed TotalTOX variant and vendor fields into the source-controlled product data model.
-3. Build the owner-reviewed guidance source base and approved TotalTOX variant-path rules.
+2. Convert owner-confirmed TotalTOX treatment and vendor fields into the source-controlled product data model.
+3. Build the owner-reviewed guidance source base and approved TotalTOX treatment-path rules.
 4. Connect support/contact/wholesale forms to an owner-confirmed destination.
 5. Configure and test Authorize.net sandbox only after owner/payment details are available.
 6. Draft policy pages from owner-provided policy decisions, then mark claim-sensitive language for review.

@@ -26,7 +26,11 @@ test("public product projection includes source-backed product records", () => {
   assert.match(product.image, /^\/product-marketing\/totaltox-kit\.png$/);
   assert.match(product.sourceImage, /^\/product-images\/totaltox\.jpg$/);
   assert.match(product.kitComposition, /12-item complete-kit/);
-  assert.equal(product.variants.length, 3);
+  assert.equal(product.variants.length, 4);
+  assert.deepEqual(
+    product.variants.map((variant) => variant.label),
+    ["TotalTOX Light", "TotalTOX Plus", "TotalTOX Max", "TotalTOX Ultra Max"],
+  );
 });
 
 test("public product projection does not expose vendor-only fields", () => {

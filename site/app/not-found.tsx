@@ -9,18 +9,13 @@ const recoveryRoutes = [
   },
   {
     href: "/guidance",
-    title: "Guidance",
+    title: "Get Started",
     body: "Answer a few focused questions before choosing a path.",
-  },
-  {
-    href: "/resources",
-    title: "Help / Resources",
-    body: "Read the FAQ and background information before deciding what to do next.",
   },
   {
     href: "/support",
     title: "Support",
-    body: "Use support when resources or guidance are not enough.",
+    body: "Use support when product questions need a person.",
   },
   {
     href: "/contact",
@@ -48,8 +43,7 @@ export default function NotFound() {
             <p className="eyebrow">Where to go next</p>
             <h2>Choose the closest path.</h2>
             <p>
-              Product guidance, resources, support, and policy information are
-              available from here.
+              Products, support, and policy information are available from here.
             </p>
           </div>
           <div className="route-grid route-grid--wide">

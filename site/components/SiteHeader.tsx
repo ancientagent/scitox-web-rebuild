@@ -2,8 +2,7 @@ import Link from "next/link";
 
 const primaryRoutes = [
   { href: "/products", label: "Products" },
-  { href: "/guidance", label: "Product Guidance" },
-  { href: "/resources", label: "Help / Resources" },
+  { href: "/guidance", label: "Get Started" },
   { href: "/support", label: "Support" },
   { href: "/contact", label: "Contact" },
   { href: "/wholesale", label: "Wholesale / Partners" },

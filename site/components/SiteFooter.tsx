@@ -2,8 +2,7 @@ import Link from "next/link";
 
 const footerRoutes = [
   { href: "/products", label: "Products" },
-  { href: "/guidance", label: "Guidance" },
-  { href: "/resources", label: "Help / Resources" },
+  { href: "/guidance", label: "Get Started" },
   { href: "/support", label: "Support" },
   { href: "/contact", label: "Contact" },
   { href: "/shipping-returns", label: "Shipping / Returns" },
@@ -17,7 +16,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <p className="site-footer__note">
-          Guidance and support are here when you need a clearer next step.
+          Getting started and support are here when you need a clearer next step.
         </p>
         <nav className="footer-nav" aria-label="Footer navigation">
           {footerRoutes.map((route) => (

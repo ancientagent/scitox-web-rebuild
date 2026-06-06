@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "SciTOX",
-  description: "Product guidance and support for SciTOX customers.",
+  description: "Product questions and support for SciTOX customers.",
   icons: {
     icon: "/icon.svg",
   },

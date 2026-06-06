@@ -13,9 +13,9 @@ const greetingCopy = {
     title: "Welcome to SciTOX.",
     body:
       "Take a moment. The site can ask a couple quick questions, keep the path focused, and help you move toward the next step.",
-    status: "Preparing a quiet guidance path.",
+    status: "Preparing a clear next step.",
     primaryHref: "/guidance",
-    primaryLabel: "Start guidance",
+    primaryLabel: "Get started",
     secondaryHref: "/products",
     secondaryLabel: "View product line",
   },
