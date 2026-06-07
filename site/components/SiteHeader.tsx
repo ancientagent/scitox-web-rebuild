@@ -1,10 +1,8 @@
 import Link from "next/link";
 
 const primaryRoutes = [
-  { href: "/products", label: "Products" },
-  { href: "/guidance", label: "Get Started" },
+  { href: "/products/totaltox-hair-treatment-system", label: "Products" },
   { href: "/support", label: "Support" },
-  { href: "/contact", label: "Contact" },
   { href: "/wholesale", label: "Wholesale / Partners" },
 ];
 
@@ -21,6 +19,9 @@ export function SiteHeader() {
               {route.label}
             </Link>
           ))}
+          <Link className="site-nav__cta" href="/products/totaltox-hair-treatment-system#checkout">
+            Buy now
+          </Link>
         </nav>
       </div>
     </header>

@@ -26,11 +26,13 @@ test("public product projection includes source-backed product records", () => {
   assert.match(product.image, /^\/product-marketing\/totaltox-kit\.png$/);
   assert.match(product.sourceImage, /^\/product-images\/totaltox\.jpg$/);
   assert.match(product.kitComposition, /12-item complete-kit/);
-  assert.equal(product.variants.length, 4);
+  assert.equal(product.options.length, 2);
   assert.deepEqual(
-    product.variants.map((variant) => variant.label),
-    ["TotalTOX Light", "TotalTOX Plus", "TotalTOX Max", "TotalTOX Ultra Max"],
+    product.options.map((option) => option.label),
+    ["TotalTOX", "TotalTOX Advanced"],
   );
+  assert.match(product.options[1].whoItsFor, /long hair and\/or daily buildup/i);
+  assert.doesNotMatch(product.options[1].whoItsFor, /\[REVIEW REQUIRED/);
 });
 
 test("public product projection does not expose vendor-only fields", () => {
@@ -60,7 +62,7 @@ test("public product route files do not render vendor-only labels", async () => 
   const publicFiles = await Promise.all([
     readFile(new URL("../app/products/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../components/ProductPathPreview.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/WelcomeGreeting.tsx", import.meta.url), "utf8"),
   ]);
   const publicSource = publicFiles.join("\n");
 
@@ -69,6 +71,17 @@ test("public product route files do not render vendor-only labels", async () => 
   assert.doesNotMatch(publicSource, /\bMOQ\b/);
   assert.doesNotMatch(publicSource, /case pack/i);
   assert.doesNotMatch(publicSource, /UPC\/GTIN/i);
+});
+
+test("product page links to Trustpilot without publishing review claims", async () => {
+  const source = await readFile(
+    new URL("../app/products/[slug]/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /Customer reviews live on Trustpilot/);
+  assert.match(source, /https:\/\/www\.trustpilot\.com\/review\/scitoxdetox\.com/);
+  assert.doesNotMatch(source, /100'?s|5 Star|4\.6|Trustpilot AI|success rate|pass-result/i);
 });
 
 test("catalog validation rejects missing markers on owner-data fields", () => {

@@ -1,31 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 type WelcomeGreetingProps = {
-  context?: "home" | "guidance";
+  context?: "home";
 };
 
 const greetingCopy = {
   home: {
-    eyebrow: "You are in the right place",
-    title: "Welcome to SciTOX.",
+    eyebrow: "New",
+    title: "NEW Sci-TOX TotalTOX hair treatment systems for all your hair detox needs",
     body:
-      "Take a moment. The site can ask a couple quick questions, keep the path focused, and help you move toward the next step.",
-    status: "Preparing a clear next step.",
-    primaryHref: "/guidance",
-    primaryLabel: "Get started",
-    secondaryHref: "/products",
-    secondaryLabel: "View product line",
+      "Choose TotalTOX or TotalTOX Advanced, add optional items, and checkout when you are ready.",
+    status: "Support is available when a product or order question needs a person.",
+    primaryHref: "/products/totaltox-hair-treatment-system#checkout",
+    primaryLabel: "Buy now",
+    secondaryHref: "/products/totaltox-hair-treatment-system",
+    secondaryLabel: "View product",
   },
 };
 
 export function WelcomeGreeting({ context = "home" }: WelcomeGreetingProps) {
-  if (context === "guidance") {
-    return <GuidanceWelcomeSequence />;
-  }
-
   const copy = greetingCopy[context];
 
   return (
@@ -43,50 +38,6 @@ export function WelcomeGreeting({ context = "home" }: WelcomeGreetingProps) {
         <Link className="button-link" href={copy.secondaryHref}>
           {copy.secondaryLabel}
         </Link>
-      </div>
-    </section>
-  );
-}
-
-function GuidanceWelcomeSequence() {
-  const [isComplete, setIsComplete] = useState(false);
-
-  useEffect(() => {
-    document.body.classList.add("session-intro-active");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const timer = window.setTimeout(() => {
-      document.body.classList.remove("session-intro-active");
-      setIsComplete(true);
-      window.requestAnimationFrame(() => {
-        document.getElementById("quick-guidance")?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      });
-    }, reduceMotion ? 600 : 4800);
-
-    return () => {
-      window.clearTimeout(timer);
-      document.body.classList.remove("session-intro-active");
-    };
-  }, []);
-
-  if (isComplete) {
-    return null;
-  }
-
-  return (
-    <section
-      className="welcome-greeting welcome-greeting--guidance welcome-sequence"
-      aria-label="Welcome to SciTOX"
-    >
-      <div className="welcome-sequence__stage welcome-sequence__stage--intro">
-        <p className="welcome-greeting__eyebrow">You are in the right place</p>
-        <h1>Welcome to SciTOX.</h1>
-        <p className="welcome-greeting__subtitle">
-          Take a breath. You made it here, and the next step can be simple.
-        </p>
       </div>
     </section>
   );

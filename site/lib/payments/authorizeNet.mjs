@@ -16,6 +16,8 @@ const RAW_PAYMENT_FIELD_NAMES = new Set([
 const OWNER_NEEDED = "[OWNER DATA NEEDED]";
 const REVIEW_NEEDED = "[REVIEW REQUIRED]";
 const TOTALTOX_SLUG = "totaltox-hair-treatment-system";
+const MAX_PRODUCT_QUANTITY = 10;
+const MIN_PRODUCT_QUANTITY = 1;
 
 const API_ENDPOINTS = {
   sandbox: "https://apitest.authorize.net/xml/v1/request.api",
@@ -124,6 +126,30 @@ function normalizeAddOns(value) {
   return { addOns, fieldErrors: {} };
 }
 
+function normalizeQuantity(value) {
+  if (value === undefined) {
+    return { fieldErrors: {}, quantity: MIN_PRODUCT_QUANTITY };
+  }
+
+  const quantity =
+    typeof value === "number" ? value : typeof value === "string" ? Number(value) : Number.NaN;
+
+  if (
+    !Number.isInteger(quantity) ||
+    quantity < MIN_PRODUCT_QUANTITY ||
+    quantity > MAX_PRODUCT_QUANTITY
+  ) {
+    return {
+      fieldErrors: {
+        quantity: [`Choose a quantity from ${MIN_PRODUCT_QUANTITY} to ${MAX_PRODUCT_QUANTITY}.`],
+      },
+      quantity: MIN_PRODUCT_QUANTITY,
+    };
+  }
+
+  return { fieldErrors: {}, quantity };
+}
+
 function selectedAddOnsForRequest(productSlug, addOns, env) {
   const availableAddOns = addOnsForSlug(productSlug);
   const selected = [];
@@ -153,7 +179,7 @@ function selectedAddOnsForRequest(productSlug, addOns, env) {
   return { missingOwnerData, selected };
 }
 
-function checkoutAmountForRequest(productSlug, addOns, env) {
+function checkoutAmountForRequest(productSlug, addOns, env, quantity = MIN_PRODUCT_QUANTITY) {
   const baseAmount = productAmountForSlug(productSlug, env);
 
   if (!baseAmount) {
@@ -161,16 +187,18 @@ function checkoutAmountForRequest(productSlug, addOns, env) {
   }
 
   const { selected } = selectedAddOnsForRequest(productSlug, addOns, env);
-  const total = selected.reduce((sum, addOn) => sum + Number(addOn.amount), Number(baseAmount));
+  const productTotal = Number(baseAmount) * quantity;
+  const total = selected.reduce((sum, addOn) => sum + Number(addOn.amount), productTotal);
 
   return total.toFixed(2);
 }
 
-function orderDescriptionForRequest(productSlug, addOns, env) {
+function orderDescriptionForRequest(productSlug, addOns, env, quantity = MIN_PRODUCT_QUANTITY) {
   const base = productSlug === TOTALTOX_SLUG ? "TotalTOX Hair Treatment System" : "SciTOX order";
   const { selected } = selectedAddOnsForRequest(productSlug, addOns, env);
+  const productLabel = quantity > 1 ? `${base} x${quantity}` : base;
 
-  return [base, ...selected.map((addOn) => addOn.label)].join(" + ").slice(0, 255);
+  return [productLabel, ...selected.map((addOn) => addOn.label)].join(" + ").slice(0, 255);
 }
 
 function parseAuthorizeNetMessages(payload) {
@@ -208,8 +236,10 @@ export function validateAuthorizeNetCheckoutRequest(payload) {
 
   const productSlug = cleanText(payload.productSlug, 120);
   const normalizedAddOns = normalizeAddOns(payload.addOns);
+  const normalizedQuantity = normalizeQuantity(payload.quantity);
 
   Object.assign(fieldErrors, normalizedAddOns.fieldErrors);
+  Object.assign(fieldErrors, normalizedQuantity.fieldErrors);
 
   if (!productSlug) {
     fieldErrors.productSlug = ["Provide a product slug for the checkout gate."];
@@ -229,14 +259,14 @@ export function validateAuthorizeNetCheckoutRequest(payload) {
   if (Object.keys(fieldErrors).length > 0) {
     return {
       ok: false,
-      data: { addOns: normalizedAddOns.addOns, productSlug },
+      data: { addOns: normalizedAddOns.addOns, productSlug, quantity: normalizedQuantity.quantity },
       fieldErrors,
     };
   }
 
   return {
     ok: true,
-    data: { addOns: normalizedAddOns.addOns, productSlug },
+    data: { addOns: normalizedAddOns.addOns, productSlug, quantity: normalizedQuantity.quantity },
     fieldErrors: {},
   };
 }
@@ -305,7 +335,13 @@ export function getAuthorizeNetConfigState(env = process.env, productSlug = "", 
   };
 }
 
-export function buildAcceptHostedRequest({ addOns = [], amount, env = process.env, productSlug }) {
+export function buildAcceptHostedRequest({
+  addOns = [],
+  amount,
+  env = process.env,
+  productSlug,
+  quantity = MIN_PRODUCT_QUANTITY,
+}) {
   const config = getAuthorizeNetConfigState(env, productSlug, addOns);
   const invoiceNumber = `SCI-${Date.now().toString(36).toUpperCase()}`.slice(0, 20);
 
@@ -321,7 +357,7 @@ export function buildAcceptHostedRequest({ addOns = [], amount, env = process.en
         amount,
         order: {
           invoiceNumber,
-          description: orderDescriptionForRequest(productSlug, addOns, env),
+          description: orderDescriptionForRequest(productSlug, addOns, env, quantity),
         },
       },
       hostedPaymentSettings: {
@@ -374,6 +410,7 @@ export function createAuthorizeNetCheckoutGate(payload, options = {}) {
   const request = validateAuthorizeNetCheckoutRequest(payload);
   const productSlug = request.data.productSlug || "";
   const addOns = request.data.addOns ?? [];
+  const quantity = request.data.quantity ?? MIN_PRODUCT_QUANTITY;
   const env = options.env ?? process.env;
   const config = getAuthorizeNetConfigState(env, productSlug, addOns);
   const selectedAddOns = selectedAddOnsForRequest(productSlug, addOns, env).selected;
@@ -388,6 +425,7 @@ export function createAuthorizeNetCheckoutGate(payload, options = {}) {
       site_payment_collection_enabled: false,
       add_ons: selectedAddOns,
       product_slug: productSlug || null,
+      quantity,
       checkout_total: null,
       hosted_payment_token: null,
       checkout_url: null,
@@ -412,6 +450,7 @@ export function createAuthorizeNetCheckoutGate(payload, options = {}) {
     site_payment_collection_enabled: false,
     add_ons: selectedAddOns,
     product_slug: productSlug,
+    quantity,
     checkout_total: null,
     hosted_payment_token: null,
     checkout_url: null,
@@ -437,6 +476,7 @@ export async function createAuthorizeNetCheckoutSession(payload, options = {}) {
   const env = options.env ?? process.env;
   const productSlug = request.data.productSlug || "";
   const addOns = request.data.addOns ?? [];
+  const quantity = request.data.quantity ?? MIN_PRODUCT_QUANTITY;
   const config = getAuthorizeNetConfigState(env, productSlug, addOns);
   const selectedAddOns = selectedAddOnsForRequest(productSlug, addOns, env).selected;
 
@@ -444,8 +484,8 @@ export async function createAuthorizeNetCheckoutSession(payload, options = {}) {
     return createAuthorizeNetCheckoutGate(payload, { env });
   }
 
-  const amount = checkoutAmountForRequest(productSlug, addOns, env);
-  const requestBody = buildAcceptHostedRequest({ addOns, amount, env, productSlug });
+  const amount = checkoutAmountForRequest(productSlug, addOns, env, quantity);
+  const requestBody = buildAcceptHostedRequest({ addOns, amount, env, productSlug, quantity });
   const fetchImpl = options.fetchImpl ?? fetch;
 
   try {
@@ -479,6 +519,7 @@ export async function createAuthorizeNetCheckoutSession(payload, options = {}) {
       site_payment_collection_enabled: false,
       add_ons: selectedAddOns,
       product_slug: productSlug,
+      quantity,
       checkout_total: amount,
       hosted_payment_token: token,
       checkout_url: config.hostedPaymentUrl,

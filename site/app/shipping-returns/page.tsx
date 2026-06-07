@@ -7,8 +7,9 @@ export default function ShippingReturnsPage() {
       <div className="route-shell">
         <Section eyebrow="Shipping and returns" title="Shipping, returns, and order support">
           <p>
-            This page is reserved for shipping, damaged-item, return, and order
-            support information. For a current order question, use support or contact.
+            Use support for shipping, damaged-item, return, or order questions.
+            Include the order details needed to understand the issue and keep
+            the message focused on the support request.
           </p>
         </Section>
       </div>
@@ -18,8 +19,8 @@ export default function ShippingReturnsPage() {
             <p className="eyebrow">Related pages</p>
             <h2>Find the policy or support path you need.</h2>
             <p>
-              Shipping, privacy, terms, and contact information stay close
-              together so you do not have to hunt for the next step.
+              Shipping, privacy, terms, and support information stay close
+              together so the next step is easy to find.
             </p>
           </div>
           <PolicyRouteLinks />

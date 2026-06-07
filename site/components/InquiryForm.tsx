@@ -28,7 +28,7 @@ const formConfig = {
     eyebrow: "Support",
     title: "Ask for product support.",
     helper:
-      "Use this when the quick questions are not enough or your question needs more context.",
+      "Use this when your product or order question needs more context.",
     submitLabel: "Send support request",
     options: [
       { value: "product", label: "Product support" },

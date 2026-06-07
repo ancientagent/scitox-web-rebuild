@@ -17,15 +17,15 @@ const policyRoutes = [
     body: "Review site terms and purchase boundaries.",
   },
   {
-    href: "/contact",
-    title: "Contact",
-    body: "Send a focused question to the team.",
+    href: "/support",
+    title: "Support",
+    body: "Contact support for product or order questions.",
   },
 ];
 
 export function PolicyRouteLinks() {
   return (
-    <div className="policy-route-links" aria-label="Policy and contact pages">
+    <div className="policy-route-links" aria-label="Policy and support pages">
       {policyRoutes.map((route) => (
         <Link className="route-card route-card--link" href={route.href} key={route.href}>
           <h2>{route.title}</h2>

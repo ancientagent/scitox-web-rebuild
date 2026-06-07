@@ -42,16 +42,15 @@ Read these before making project decisions:
 - Treat Amazon as conditional.
 - Treat non-Amazon growth as a serious path.
 - Separate the public customer site from the partner/vendor-facing surface.
-- Treat the public homepage as a calm product guidance lobby, not a dense product-explanation page.
-- Treat the current V1 product direction as TotalTOX-first: one public product family with owner-confirmed treatment names, unless the owner explicitly changes direction.
-- Owner-confirmed treatment names: TotalTOX Light, TotalTOX Plus, TotalTOX Max, and TotalTOX Ultra Max. Fit rules, kit contents, prices, SKUs, and routing remain owner-data gaps.
-- Current first product guidance question: "How often have you needed hair detox support in the last 9 months?" with options "Every 2 weeks or less", "Weekly", and "Daily". Treatment mapping remains an owner-data gap.
+- Treat the public homepage as a calm product lobby, not a dense product-explanation page.
+- Treat the current V1 product direction as TotalTOX-first: one public product family with two owner-confirmed products, unless the owner explicitly changes direction.
+- Owner-confirmed products: TotalTOX and TotalTOX Advanced. TotalTOX Advanced is for people with long hair and/or daily buildup. Kit contents, prices, SKUs, and policy details remain owner-data gaps.
+- Current owner direction: do not use public product-choice direction. The product page should say who TotalTOX is for, present optional add-ons, and send product/order questions to support.
 - Build the production implementation as a custom app under `site/` unless the owner explicitly changes the platform decision.
 - Treat Webflow and Claude Design as prototype, visual-reference, CMS-reference, or handoff aids unless explicitly assigned as production.
-- Build the product guidance assistant as a live backend-source-grounded feature, not as an open-ended frontend AI chat.
 - Include secure support and assisted/autonomous checkout options as review-gated solution paths, not live promises.
 - Use `docs/CUSTOM_APP_AGENT_PROMPTS.md` for Codex App, Codex CLI, service-builder, design, backend, checkout, vendor, data, messaging, and QA workstreams.
-- Include explicit reasoning settings when assigning tasks: `high` for implementation/backend work and `xhigh` for payment, privacy/security, claims, source-grounded recommendations, and launch-blocker review.
+- Include explicit reasoning settings when assigning tasks: `high` for implementation/backend work and `xhigh` for payment, privacy/security, claims, checkout, and launch-blocker review.
 - Build task packets and acceptance criteria before implementation work.
 
 ## Current Implementation Snapshot
@@ -65,17 +64,13 @@ As of the latest local app state:
   - `207cb2e feat: build knowledge center resource page`
   - `b9a99d2 feat: add staged guidance entry flow`
 - Local preview has been verified at `http://127.0.0.1:3000/guidance`.
-- `/guidance` keeps the owner-approved staged onboarding flow:
-  1. Welcome overlay: "You are in the right place" / "Welcome to SciTOX."
-  2. The welcome fades out.
-  3. Handoff to the current-situation question.
-  4. First question: "Which of the following statements best represents your current situation?"
-  5. First choice: first-time visitor or active/returning client.
-  6. First-time visitor branches into product review or next-step guidance.
-- During the welcome, current-situation question, follow-up pills, and routing messages, no header, footer, support panels, guidance preview, or other page sections should compete with the entry flow.
-- Normal page sections become available only after the user is routed to the TotalTOX product page, `/support`, or into the product-guidance area.
+- `/guidance` is now a legacy redirect to `/products/totaltox-hair-treatment-system`.
+- The staged onboarding/question flow has been removed from the public app.
+- The product page now leads with "Who it's for" and avoids choice-directing language.
+- Add-ons are optional add-ons, not suggested or preferred add-ons.
+- The product page includes a neutral customer-experience section that links to the live SciTOX Trustpilot profile only. It does not publish copied review text, star ratings, review counts, AI summaries, or review-as-proof language.
 - `/resources` has been removed from the public app.
-- `/support` is now the follow-up route for order questions, active/returning clients, and product questions that still need a person after product review or guidance.
+- `/support` is now the follow-up route for order questions, active/returning clients, and product questions that still need a person after product review.
 - Public customer-facing UI has been cleaned so internal markers such as `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, and developer-facing planning text are not shown.
 - Backend data, API fallback payloads, tests, private docs, and source-governance files may still use review/owner markers. Do not remove those markers unless replacing them with an equivalent internal review gate.
 

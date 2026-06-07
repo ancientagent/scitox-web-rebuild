@@ -7,9 +7,9 @@ export default function PrivacyPage() {
       <div className="route-shell">
         <Section eyebrow="Privacy" title="Privacy information">
           <p>
-            This page is reserved for the site privacy notice, including what
-            information is requested, how support messages are handled, and how
-            to contact the team about privacy questions.
+            Use this page to understand what the site asks for during support
+            and checkout. Keep support messages focused and share only what is
+            needed for the team to respond.
           </p>
         </Section>
       </div>
@@ -19,8 +19,8 @@ export default function PrivacyPage() {
             <p className="eyebrow">Related pages</p>
             <h2>Review the practical site policies in one place.</h2>
             <p>
-              Use these pages for shipping, terms, contact, and support
-              information as the site is finalized.
+              Shipping, return, terms, and support pages stay close together so
+              you can find the next step without hunting.
             </p>
           </div>
           <PolicyRouteLinks />

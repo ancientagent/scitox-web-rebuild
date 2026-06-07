@@ -21,20 +21,47 @@ test("Next config applies baseline privacy and security headers", async () => {
   assert.match(allHeaders["Strict-Transport-Security"], /max-age=31536000/);
 });
 
-test("privacy prep UI avoids unsupported security promises", async () => {
+test("public payment and support UI avoids unsupported security promises", async () => {
   const files = await Promise.all([
-    readFile(new URL("../components/PrivacyPrepNotice.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/privacy/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/support/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/WelcomeGreeting.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../components/GuidanceAssistantDemo.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/CheckoutGateDemo.tsx", import.meta.url), "utf8"),
   ]);
   const source = files.join("\n");
-  const welcomeSource = files[1];
-  const guidanceSource = files[2];
+  const privacySource = files[0];
+  const productSource = files[1];
+  const welcomeSource = files[3];
+  const checkoutSource = files[4];
 
-  assert.match(welcomeSource, /Welcome to SciTOX/i);
+  assert.match(productSource, /SciTOX TotalTOX 2\.0 Ultra/i);
   assert.doesNotMatch(welcomeSource, /Opening product guidance|prepare your private session/i);
-  assert.match(guidanceSource, /prepare your private session/i);
-  assert.match(guidanceSource, /right\s+treatment/i);
-  assert.match(source, /No payment details/i);
+  assert.match(checkoutSource, /Payment details are entered on Authorize\.net/i);
+  assert.match(privacySource, /Keep support messages focused/i);
   assert.doesNotMatch(source, /encrypted|anonymous|guaranteed|fully private/i);
+});
+
+test("homepage avoids developer-facing planning copy", async () => {
+  const files = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/products/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/not-found.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/privacy/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/shipping-returns/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/terms/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/SiteFooter.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/SiteHeader.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/WelcomeGreeting.tsx", import.meta.url), "utf8"),
+  ]);
+  const publicSource = files.join("\n");
+
+  assert.match(publicSource, /TotalTOX Advanced/i);
+  assert.match(publicSource, /UV light and custom developer/i);
+  assert.doesNotMatch(
+    publicSource,
+    /Customer lobby|Product path|focused product path|Separate partner path|partner surface|Support fallback|Product line overview|Documentation checklist|current customer path/i,
+  );
+  assert.doesNotMatch(publicSource, /Get Started|reserved|placeholder/i);
 });

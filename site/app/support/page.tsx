@@ -4,46 +4,53 @@ import { Section } from "@/components/Section";
 
 const supportPaths = [
   {
-    title: "Need product details first?",
+    title: "Product details",
     body:
-      "Review the TotalTOX product page before sending a support request.",
+      "Review TotalTOX, TotalTOX Advanced, optional add-ons, and checkout.",
     href: "/products/totaltox-hair-treatment-system",
     cta: "View TotalTOX",
   },
   {
-    title: "Trying to choose a product path?",
+    title: "Buy online",
     body:
-      "Answer a few focused questions if you are ready for the site to point you toward the right next step.",
-    href: "/guidance",
-    cta: "Get started",
-  },
-  {
-    title: "Already ordered or returning?",
-    body:
-      "Use the support form for order questions, follow-up help, or product questions that need more context.",
-    href: "#support-form",
-    cta: "Go to support form",
+      "Go directly to quantity, optional add-ons, and checkout.",
+    href: "/products/totaltox-hair-treatment-system#checkout",
+    cta: "Buy now",
   },
 ];
 
 export default function SupportPage() {
   return (
     <div className="page-flow">
-      <Section eyebrow="Support" title="Use support when quick questions are not enough.">
+      <Section eyebrow="Support" title="Contact support.">
         <p>
-          This page is for order questions, follow-up help, returning clients,
-          and product questions that need a person to review the context.
+          Use this page for product questions, order questions, follow-up help,
+          or anything that needs a person to respond.
         </p>
       </Section>
+
+      <section className="content-band" id="support-form">
+        <div className="band-inner two-column">
+          <div className="section-heading section-heading--compact">
+            <p className="eyebrow">Support form</p>
+            <h2>Send the question that needs a person.</h2>
+            <p>
+              Keep the request focused and share only what is needed for product
+              or order support.
+            </p>
+          </div>
+          <InquiryForm surface="support" />
+        </div>
+      </section>
 
       <section className="content-band content-band--muted">
         <div className="band-inner">
           <div className="section-heading">
-            <p className="eyebrow">Before support</p>
-            <h2>Choose the path that matches what you need.</h2>
+            <p className="eyebrow">Useful links</p>
+            <h2>Product and checkout are one click away.</h2>
             <p>
-              Keeping product review, quick questions, and support separate makes the
-              site easier to use and keeps support focused on questions that need follow-up.
+              If you do not need to send a message, these links take you back
+              to the product page.
             </p>
           </div>
           <div className="path-grid">
@@ -57,20 +64,6 @@ export default function SupportPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="content-band" id="support-form">
-        <div className="band-inner two-column">
-          <div className="section-heading section-heading--compact">
-            <p className="eyebrow">Support form</p>
-            <h2>Send the question that still needs a person.</h2>
-            <p>
-              Keep the request focused and share only what is needed for product
-              or order support.
-            </p>
-          </div>
-          <InquiryForm surface="support" />
         </div>
       </section>
     </div>

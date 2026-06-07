@@ -52,11 +52,18 @@ const REQUIRED_PUBLIC_FIELDS = [
   "supportCta",
 ];
 
-const PUBLIC_VARIANT_REVIEW_FIELDS = ["fit", "timingBoundary", "price"];
-const PUBLIC_VARIANT_OWNER_FIELDS = ["fit", "kitVolume", "price"];
+const PUBLIC_OPTION_REVIEW_FIELDS = ["whoItsFor", "price"];
+const PUBLIC_OPTION_OWNER_FIELDS = ["price"];
 
 function text(value) {
   return typeof value === "string" ? value : "";
+}
+
+function publicText(value) {
+  return text(value)
+    .replace(/\s*\[OWNER DATA NEEDED[^\]]*\]/g, "")
+    .replace(/\s*\[REVIEW REQUIRED[^\]]*\]/g, "")
+    .trim();
 }
 
 function hasMarker(value, marker) {
@@ -75,38 +82,38 @@ function validateText(errors, product, section, field) {
   }
 }
 
-function validateVariants(errors, product) {
-  const variants = product?.public?.variants;
-  if (variants === undefined) {
+function validateOptions(errors, product) {
+  const options = product?.public?.options;
+  if (options === undefined) {
     return;
   }
 
-  if (!Array.isArray(variants) || variants.length === 0) {
-    errors.push(`${product?.slug ?? "unknown"}.public.variants missing records`);
+  if (!Array.isArray(options) || options.length === 0) {
+    errors.push(`${product?.slug ?? "unknown"}.public.options missing records`);
     return;
   }
 
-  variants.forEach((variant, index) => {
-    if (!text(variant?.id)) {
-      errors.push(`${product?.slug ?? "unknown"}.public.variants.${index}.id missing text`);
+  options.forEach((option, index) => {
+    if (!text(option?.id)) {
+      errors.push(`${product?.slug ?? "unknown"}.public.options.${index}.id missing text`);
     }
 
-    if (!text(variant?.label)) {
-      errors.push(`${product?.slug ?? "unknown"}.public.variants.${index}.label missing text`);
+    if (!text(option?.label)) {
+      errors.push(`${product?.slug ?? "unknown"}.public.options.${index}.label missing text`);
     }
 
-    for (const field of PUBLIC_VARIANT_REVIEW_FIELDS) {
-      if (!hasMarker(variant?.[field], REVIEW_MARKER)) {
+    for (const field of PUBLIC_OPTION_REVIEW_FIELDS) {
+      if (!hasMarker(option?.[field], REVIEW_MARKER)) {
         errors.push(
-          `${product?.slug ?? "unknown"}.public.variants.${index}.${field} missing ${REVIEW_MARKER}]`,
+          `${product?.slug ?? "unknown"}.public.options.${index}.${field} missing ${REVIEW_MARKER}]`,
         );
       }
     }
 
-    for (const field of PUBLIC_VARIANT_OWNER_FIELDS) {
-      if (!hasMarker(variant?.[field], OWNER_MARKER)) {
+    for (const field of PUBLIC_OPTION_OWNER_FIELDS) {
+      if (!hasMarker(option?.[field], OWNER_MARKER)) {
         errors.push(
-          `${product?.slug ?? "unknown"}.public.variants.${index}.${field} missing ${OWNER_MARKER}]`,
+          `${product?.slug ?? "unknown"}.public.options.${index}.${field} missing ${OWNER_MARKER}]`,
         );
       }
     }
@@ -144,7 +151,7 @@ export function validateProductCatalog(catalog) {
       validateMarker(errors, product, "public", field, REVIEW_MARKER);
     }
 
-    validateVariants(errors, product);
+    validateOptions(errors, product);
 
     for (const field of VENDOR_OWNER_FIELDS) {
       validateMarker(errors, product, "vendor", field, OWNER_MARKER);
@@ -194,14 +201,12 @@ export function getPublicProductDetails(catalog) {
     shippingNotes: text(product.public?.shippingNotes),
     claimReviewStatus: text(product.public?.claimReviewStatus),
     supportCta: text(product.public?.supportCta),
-    variants: Array.isArray(product.public?.variants)
-      ? product.public.variants.map((variant) => ({
-          id: text(variant.id),
-          label: text(variant.label),
-          fit: text(variant.fit),
-          kitVolume: text(variant.kitVolume),
-          timingBoundary: text(variant.timingBoundary),
-          price: text(variant.price),
+    options: Array.isArray(product.public?.options)
+      ? product.public.options.map((option) => ({
+          id: text(option.id),
+          label: text(option.label),
+          whoItsFor: publicText(option.whoItsFor),
+          price: text(option.price),
         }))
       : [],
   }));

@@ -1,5 +1,6 @@
 "use client";
 
+import type { ChangeEvent } from "react";
 import { useState } from "react";
 
 type CheckoutAddOn = {
@@ -19,6 +20,7 @@ type CheckoutGateResult = {
   site_payment_collection_enabled: boolean;
   add_ons: Array<{ amount: string; id: string; label: string }>;
   product_slug: string | null;
+  quantity: number;
   checkout_total: string | null;
   hosted_payment_token: string | null;
   checkout_url: string | null;
@@ -37,6 +39,7 @@ const initialResult: CheckoutGateResult = {
   site_payment_collection_enabled: false,
   add_ons: [],
   product_slug: null,
+  quantity: 1,
   checkout_total: null,
   hosted_payment_token: null,
   checkout_url: null,
@@ -46,18 +49,24 @@ const initialResult: CheckoutGateResult = {
   next_step: "Use support when checkout is not available.",
 };
 
+const maxProductQuantity = 10;
+const minProductQuantity = 1;
+
 export function CheckoutGateDemo({
   addOns = [],
   baseAmount,
   priceLabel,
+  productName = "TotalTOX Hair Treatment System",
   productSlug,
 }: {
   addOns?: CheckoutAddOn[];
   baseAmount?: number | null;
   priceLabel?: string | null;
+  productName?: string;
   productSlug: string;
 }) {
   const [result, setResult] = useState<CheckoutGateResult>(initialResult);
+  const [quantity, setQuantity] = useState(1);
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -77,6 +86,23 @@ export function CheckoutGateDemo({
     setStatus("idle");
   }
 
+  function clampQuantity(value: number) {
+    if (!Number.isFinite(value)) {
+      return minProductQuantity;
+    }
+
+    return Math.min(maxProductQuantity, Math.max(minProductQuantity, Math.trunc(value)));
+  }
+
+  function updateQuantity(nextQuantity: number) {
+    resetPreparedPayment();
+    setQuantity(clampQuantity(nextQuantity));
+  }
+
+  function handleQuantityChange(event: ChangeEvent<HTMLInputElement>) {
+    updateQuantity(Number(event.target.value));
+  }
+
   function toggleAddOn(addOnId: string) {
     resetPreparedPayment();
     setSelectedAddOns((current) =>
@@ -94,7 +120,7 @@ export function CheckoutGateDemo({
       const response = await fetch("/api/checkout/authorize-net", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ addOns: selectedAddOns, productSlug }),
+        body: JSON.stringify({ addOns: selectedAddOns, productSlug, quantity }),
       });
       const payload = await response.json();
 
@@ -128,21 +154,67 @@ export function CheckoutGateDemo({
 
     return sum + addOn.amount;
   }, 0);
+  const treatmentAmount =
+    typeof baseAmount === "number" ? baseAmount * quantity : null;
   const totalLabel =
-    typeof baseAmount === "number" ? formatUsd(baseAmount + selectedAddOnAmount) : priceLabel;
+    typeof treatmentAmount === "number"
+      ? formatUsd(treatmentAmount + selectedAddOnAmount)
+      : priceLabel;
 
   return (
     <div className="checkout-gate checkout-gate--single">
       <div className="checkout-gate__panel">
         <div>
-          <p className="tag">Online checkout</p>
-          <h2>{isReady ? "Payment form is ready." : "Ready when you are."}</h2>
+          <p className="tag">Order summary</p>
+          <h2>{isReady ? "Payment form is ready." : "Review your order."}</h2>
         </div>
         {totalLabel ? <p className="checkout-gate__price">{totalLabel}</p> : null}
-        <p>Payment and shipping details are completed on Authorize.net.</p>
+        <p>Select quantity and optional add-ons before checkout.</p>
+        <div className="checkout-order-summary" aria-label="Order summary">
+          <div className="checkout-order-summary__line">
+            <span>
+              <small>Treatment</small>
+              <strong>{productName}</strong>
+            </span>
+            {typeof baseAmount === "number" ? (
+              <b>{formatUsd(baseAmount)} each</b>
+            ) : null}
+          </div>
+          <div className="checkout-quantity">
+            <span>Quantity</span>
+            <span className="checkout-quantity__control">
+              <button
+                aria-label="Decrease quantity"
+                disabled={status === "loading" || quantity <= minProductQuantity}
+                onClick={() => updateQuantity(quantity - 1)}
+                type="button"
+              >
+                -
+              </button>
+              <input
+                aria-label="Treatment quantity"
+                disabled={status === "loading"}
+                inputMode="numeric"
+                max={maxProductQuantity}
+                min={minProductQuantity}
+                onChange={handleQuantityChange}
+                type="number"
+                value={quantity}
+              />
+              <button
+                aria-label="Increase quantity"
+                disabled={status === "loading" || quantity >= maxProductQuantity}
+                onClick={() => updateQuantity(quantity + 1)}
+                type="button"
+              >
+                +
+              </button>
+            </span>
+          </div>
+        </div>
         {addOns.length > 0 ? (
           <fieldset className="checkout-add-ons">
-            <legend>Recommended add ons</legend>
+            <legend>Optional add-ons</legend>
             <div className="checkout-add-ons__list">
               {addOns.map((addOn) => (
                 <label
@@ -167,7 +239,7 @@ export function CheckoutGateDemo({
         {!canOpenHostedPayment ? (
           <div className="form-actions">
             <button disabled={status === "loading"} onClick={prepareCheckout} type="button">
-              {status === "loading" ? "Preparing payment form" : "Start checkout"}
+              {status === "loading" ? "Preparing checkout" : "Continue to checkout"}
             </button>
             {message ? (
               <span

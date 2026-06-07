@@ -1,10 +1,9 @@
 import Link from "next/link";
 
 const footerRoutes = [
-  { href: "/products", label: "Products" },
-  { href: "/guidance", label: "Get Started" },
+  { href: "/products/totaltox-hair-treatment-system", label: "Products" },
+  { href: "/products/totaltox-hair-treatment-system#checkout", label: "Buy now" },
   { href: "/support", label: "Support" },
-  { href: "/contact", label: "Contact" },
   { href: "/shipping-returns", label: "Shipping / Returns" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
@@ -16,7 +15,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <p className="site-footer__note">
-          Getting started and support are here when you need a clearer next step.
+          Product details and support are here when you need a clearer next step.
         </p>
         <nav className="footer-nav" aria-label="Footer navigation">
           {footerRoutes.map((route) => (

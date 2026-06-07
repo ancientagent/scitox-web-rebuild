@@ -1,7 +1,7 @@
 {
   "status": "Owner-direction product records imported from captured public SciTOX store pages and simplified to a TotalTOX-first V1. [REVIEW REQUIRED: confirm currentness before launch]",
   "notes": [
-    "The prior public store included multiple category-specific product records. V1 is now being reshaped around one TotalTOX system with four owner-confirmed treatment names: TotalTOX Light, TotalTOX Plus, TotalTOX Max, and TotalTOX Ultra Max. Fit rules, kit volumes, and routing remain review-gated. [REVIEW REQUIRED]",
+    "The prior public store included multiple category-specific product records. V1 is now being reshaped around two owner-confirmed public products: TotalTOX and TotalTOX Advanced. Final SKUs, prices, labels, ingredients, directions, and policy details remain review-gated. [REVIEW REQUIRED]",
     "TotalTOX title, source image asset, visual kit-composition reference, standard-kit sale context, shipping references, damaged-item handling references, and warning topics are source-backed from captured public product pages.",
     "Outcome, mechanism, review, comparison, timing, direction, and policy language remains blocked until review. [REVIEW REQUIRED]",
     "Wholesale pricing, SKUs, case packs, UPC/GTIN, label files, dimensions, packaging, insurance status, and routing are still missing operational data. [OWNER DATA NEEDED]"
@@ -12,59 +12,39 @@
       "status": "Owner-direction TotalTOX-first product record loaded from captured public store page. [REVIEW REQUIRED: public exposure, claim, and treatment review]",
       "public": {
         "name": "TotalTOX Hair Treatment System",
-        "category": "Single-system product line with four treatment options [REVIEW REQUIRED: public exposure and claim wording]",
-        "size": "Treatment-based kit [OWNER DATA NEEDED: confirm bottle sizes, volumes, and exact kit contents for Light, Plus, Max, and Ultra Max] [REVIEW REQUIRED]",
-        "price": "[OWNER DATA NEEDED: Light, Plus, Max, and Ultra Max pricing] [REVIEW REQUIRED]",
+        "category": "Two-product hair detox treatment line [REVIEW REQUIRED: public exposure and claim wording]",
+        "size": "Treatment-based kit [OWNER DATA NEEDED: confirm bottle sizes, volumes, and exact kit contents for TotalTOX and TotalTOX Advanced] [REVIEW REQUIRED]",
+        "price": "[OWNER DATA NEEDED: TotalTOX and TotalTOX Advanced pricing] [REVIEW REQUIRED]",
         "availability": "Owner-direction V1 product line pending confirmation. [REVIEW REQUIRED: confirm current availability]",
         "image": "/product-marketing/totaltox-kit.png",
         "sourceImage": "/product-images/totaltox.jpg",
-        "kitComposition": "12-item complete-kit visual concept based on the captured TotalTOX product photo. Variant kit counts, bottle sizes, bottle types, and volume rules remain owner data. [OWNER DATA NEEDED] [REVIEW REQUIRED]",
-        "shortDescription": "One core TotalTOX system can become the V1 product line, with owner-confirmed treatment names and review-gated fit, volume, pricing, and support rules. [REVIEW REQUIRED]",
+        "kitComposition": "12-item complete-kit visual concept based on the captured TotalTOX product photo. Product-specific kit counts, bottle sizes, bottle types, and volume rules remain owner data. [OWNER DATA NEEDED] [REVIEW REQUIRED]",
+        "shortDescription": "The V1 product line includes TotalTOX and TotalTOX Advanced, with reviewed public fit language and support rules still needed. [REVIEW REQUIRED]",
         "longDescription": "This demo treats TotalTOX as the primary customer-facing product and moves the prior category-specific product paths out of the public catalog. Outcome, mechanism, restricted-use, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
         "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
         "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
         "warnings": "Source warning topics include pregnancy or physician review, oral-product laxative effect, scalp irritation, hair texture changes, eye contact, protective coverings, treatment time, and child safety. [REVIEW REQUIRED]",
         "shippingNotes": "Source captures worldwide shipping and damaged-item replacement handling with photo or video proof. [REVIEW REQUIRED: confirm current policy before launch]",
         "claimReviewStatus": "The simplified TotalTOX line reduces category-specific public exposure, but product performance, timing, proof, and use-context language remains blocked pending review. [REVIEW REQUIRED]",
-        "supportCta": "Use structured product questions or human follow-up to choose the right kit volume and support path. [REVIEW REQUIRED]",
-        "variants": [
+        "supportCta": "Use human follow-up when a product or order question needs more context. [REVIEW REQUIRED]",
+        "options": [
           {
-            "id": "totaltox-light",
-            "label": "TotalTOX Light",
-            "fit": "Owner-confirmed treatment name. [OWNER DATA NEEDED: exact use-case, hair-length range, volume rule, and fit rules] [REVIEW REQUIRED]",
-            "kitVolume": "[OWNER DATA NEEDED: bottle count, bottle sizes, and included items]",
-            "timingBoundary": "[REVIEW REQUIRED: public timing language and restricted-use boundary]",
-            "price": "[OWNER DATA NEEDED: TotalTOX Light price] [REVIEW REQUIRED]"
+            "id": "totaltox",
+            "label": "TotalTOX",
+            "whoItsFor": "For people looking for a complete hair detox treatment system. [REVIEW REQUIRED: final public fit language]",
+            "price": "[OWNER DATA NEEDED: TotalTOX price] [REVIEW REQUIRED]"
           },
           {
-            "id": "totaltox-plus",
-            "label": "TotalTOX Plus",
-            "fit": "Owner-confirmed treatment name. [OWNER DATA NEEDED: exact use-case, hair-length range, volume rule, and fit rules] [REVIEW REQUIRED]",
-            "kitVolume": "[OWNER DATA NEEDED: bottle count, bottle sizes, and included items]",
-            "timingBoundary": "[REVIEW REQUIRED: public timing language and restricted-use boundary]",
-            "price": "[OWNER DATA NEEDED: TotalTOX Plus price] [REVIEW REQUIRED]"
-          },
-          {
-            "id": "totaltox-max",
-            "label": "TotalTOX Max",
-            "fit": "Owner-confirmed treatment name. [OWNER DATA NEEDED: exact use-case, hair-length range, volume rule, and fit rules] [REVIEW REQUIRED]",
-            "kitVolume": "[OWNER DATA NEEDED: bottle count, bottle sizes, and included items]",
-            "timingBoundary": "[REVIEW REQUIRED: avoid public outcome, proof, or deadline claims]",
-            "price": "[OWNER DATA NEEDED: TotalTOX Max price] [REVIEW REQUIRED]"
-          },
-          {
-            "id": "totaltox-ultra-max",
-            "label": "TotalTOX Ultra Max",
-            "fit": "Owner-confirmed treatment name. [OWNER DATA NEEDED: exact use-case, hair-length range, volume rule, and fit rules] [REVIEW REQUIRED]",
-            "kitVolume": "[OWNER DATA NEEDED: bottle count, bottle sizes, and included items]",
-            "timingBoundary": "[REVIEW REQUIRED: avoid public outcome, proof, or deadline claims]",
-            "price": "[OWNER DATA NEEDED: TotalTOX Ultra Max price] [REVIEW REQUIRED]"
+            "id": "totaltox-advanced",
+            "label": "TotalTOX Advanced",
+            "whoItsFor": "For people with long hair and/or daily buildup. [REVIEW REQUIRED: final public fit language]",
+            "price": "[OWNER DATA NEEDED: TotalTOX Advanced price] [REVIEW REQUIRED]"
           }
         ]
       },
       "vendor": {
         "sku": "[OWNER DATA NEEDED: SKU]",
-        "msrp": "[OWNER DATA NEEDED: MSRP by TotalTOX treatment] [REVIEW REQUIRED]",
+        "msrp": "[OWNER DATA NEEDED: MSRP by product] [REVIEW REQUIRED]",
         "wholesalePrice": "[OWNER DATA NEEDED: wholesale price]",
         "moq": "[OWNER DATA NEEDED: MOQ]",
         "casePack": "[OWNER DATA NEEDED: case pack]",
@@ -78,7 +58,7 @@
         "claimSubstantiation": "[REVIEW REQUIRED: claim substantiation status]",
         "vendorReadinessNotes": [
           "TotalTOX-first product line can simplify vendor review and reduce category-specific catalog exposure. [REVIEW REQUIRED]",
-          "Variant SKUs, pricing, case packs, UPC/GTIN, and line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
+          "Product SKUs, pricing, case packs, UPC/GTIN, and line-sheet essentials still need owner-confirmed commercial data. [OWNER DATA NEEDED]"
         ]
       }
     }

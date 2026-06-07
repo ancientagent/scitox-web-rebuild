@@ -1,9 +1,7 @@
-export type PublicProductVariant = {
+export type PublicProductOption = {
   id: string;
   label: string;
-  fit: string;
-  kitVolume: string;
-  timingBoundary: string;
+  whoItsFor: string;
   price: string;
 };
 
@@ -24,7 +22,7 @@ export type PublicProductFields = {
   shippingNotes: string;
   claimReviewStatus: string;
   supportCta: string;
-  variants?: PublicProductVariant[];
+  options?: PublicProductOption[];
 };
 
 export type VendorProductFields = {

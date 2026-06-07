@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 export default function WholesalePage() {
   return (
     <div className="page-flow">
-      <Section eyebrow="Wholesale and partners" title="Partner inquiries stay separate.">
+      <Section eyebrow="Wholesale and partners" title="Wholesale and partner inquiries.">
         <p>
           This page is for buyer, distributor, and partner questions. Customer
           product support stays on the regular support path.
@@ -22,15 +22,15 @@ export default function WholesalePage() {
           </div>
           <div className="vendor-grid">
             <article>
-              <h2>Product line overview</h2>
+              <h2>Product family</h2>
               <p>TotalTOX is the focused product family for partner review.</p>
             </article>
             <article>
-              <h2>Documentation</h2>
+              <h2>Business documentation</h2>
               <p>Business documentation can be requested through the partner form.</p>
             </article>
             <article>
-              <h2>Inquiry process</h2>
+              <h2>Next steps</h2>
               <p>Send the business context and the team can follow up with next steps.</p>
             </article>
           </div>

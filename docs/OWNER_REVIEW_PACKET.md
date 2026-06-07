@@ -26,7 +26,7 @@ The current app shows the V1 shape of a private, restrained SciTOX web app:
 
 The demo should be reviewed as a product-routing and operating-model prototype, not as a finished public site.
 
-## Recommended Demo Path
+## Demo Path
 
 Use this path when reviewing the demo:
 
@@ -34,7 +34,7 @@ Use this path when reviewing the demo:
 2. Products: `/products`
 3. TotalTOX product detail: `/products/totaltox-hair-treatment-system`
 4. Checkout gate on the product detail page.
-5. Guidance: `/guidance`
+5. Legacy guidance redirect: `/guidance` should land on the TotalTOX product detail page.
 6. Support: `/support`
 7. Contact: `/contact`
 8. Wholesale: `/wholesale`
@@ -52,8 +52,8 @@ Review the demo for structure and operating fit:
 - Should the product path begin with product browsing, guided questions, human support, or another route?
 - Which TotalTOX product details and treatment details can safely appear on public product pages?
 - Which product details should stay vendor-only or owner-only?
-- Does the guidance flow ask the right type of structured questions?
-- When should the guidance flow escalate to human support instead of returning a product path?
+- Does the product page clearly say who TotalTOX is for?
+- Which questions should go to human support instead of being handled on the site?
 - Which support/contact/wholesale form fields are necessary?
 - Where should form submissions go? `[OWNER DATA NEEDED]`
 - Which policy pages must exist before launch?
@@ -68,10 +68,11 @@ The current app includes:
 - Clickable homepage route cards for the main owner-demo paths.
 - TotalTOX product data placeholders with public product fields separated from vendor/wholesale fields.
 - Product detail placeholders for facts, owner-needed data, review-needed sections, support routing, and checkout state.
-- Staged guidance entry flow with a brief "Welcome to SciTOX." fade-in, current-situation question, and first-time/returning visitor branches.
+- Legacy `/guidance` route redirects to the TotalTOX product page.
+- Product detail page uses a "Who it's for" frame and optional add-ons.
 - Public `/resources` route removed per owner direction.
 - Focused support route at `/support` for order questions, returning clients, and product questions that still need a person.
-- Guidance API scaffold that returns structured JSON and escalates to human follow-up when source support is missing or the request is outside approved boundaries.
+- Product support path for questions that need human follow-up.
 - Support, contact, and wholesale intake forms with client/server validation and safe success/error states.
 - Inquiry route stub that does not deliver to a live owner destination yet.
 - Authorize.net checkout gate scaffold that stays unavailable/review-gated and does not collect raw card data.
@@ -82,25 +83,27 @@ The current app includes:
 The following are intentionally not live:
 
 - Final public website copy. `[REVIEW REQUIRED]`
-- Real product recommendations from unreviewed source data. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
+- Product-choice direction logic. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Live payment collection or Authorize.net transaction creation. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Raw card entry in the app.
 - Live form delivery to email, CRM, helpdesk, or another destination. `[OWNER DATA NEEDED]`
 - Final privacy, terms, shipping, returns, refund, support, or wholesale policies. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Public product claims, proof, results language, testimonials, certifications, platform eligibility, or vendor acceptance. `[REVIEW REQUIRED]`
+- Copied review excerpts, star ratings, review counts, Trustpilot/Yotpo widgets, AI review summaries, or review-as-proof language. The current product page may link to the live Trustpilot profile only. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Any professional-advice, diagnostic, consultation, counsel, guaranteed-outcome, privacy/security, or platform-safety claim. `[REVIEW REQUIRED]`
 
 ## Owner Data Needed
 
 Before the demo can move toward launch, the owner needs to provide or confirm:
 
-- TotalTOX product name, treatment details for Light, Plus, Max, and Ultra Max, categories, sizes, images, labels, ingredients, directions, warnings, availability, and public display rules. `[OWNER DATA NEEDED]`
-- TotalTOX treatment routing rules for hair length, kit volume, timing-sensitive support, and human escalation. `[OWNER DATA NEEDED]`
+- TotalTOX and TotalTOX Advanced product details, categories, sizes, images, labels, ingredients, directions, warnings, availability, and public display rules. `[OWNER DATA NEEDED]`
+- Final TotalTOX Advanced wording for long hair and/or daily buildup, plus support boundaries for product questions. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Prices, MSRP, wholesale pricing, MOQ, case pack, UPC/GTIN, stock status, shipping rules, and fulfillment rules. `[OWNER DATA NEEDED]`
 - Support process, support owner, response expectations, callback workflow, and customer handoff rules. `[OWNER DATA NEEDED]`
 - Contact, support, and wholesale form destinations. `[OWNER DATA NEEDED]`
 - Privacy, retention, consent, terms, shipping, returns, refund, and wholesale policy details. `[OWNER DATA NEEDED]`
 - Claim support, product substantiation, testimonial permissions, review-source permissions, and approved public wording. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
+- Trustpilot Business access, approved TrustBox/widget code or API approach, and current review-display permissions if the live profile link should become an embedded review module. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
 - Legacy/current-site URLs that need redirects or route mapping. `[OWNER DATA NEEDED]`
 
 ## Review Decisions Needed
@@ -108,8 +111,8 @@ Before the demo can move toward launch, the owner needs to provide or confirm:
 These decisions should be made before final copy or live integration work:
 
 - Public exposure level: how much product/category detail should appear on the customer site? `[REVIEW REQUIRED]`
-- Product CTA strategy: browse-first, guidance-first, support-first, or another order. `[REVIEW REQUIRED]`
-- Guidance boundary: which questions can be answered automatically and which must go to human support? `[REVIEW REQUIRED]`
+- Product CTA strategy: product-first, support-first, or another order. `[REVIEW REQUIRED]`
+- Support boundary: which questions belong in support instead of public product copy? `[REVIEW REQUIRED]`
 - Support boundary: what the team can say, what must be avoided, and what must escalate. `[REVIEW REQUIRED]`
 - Privacy wording: what can be stated based on real tools, data flow, retention, and policies. `[REVIEW REQUIRED]`
 - Payment wording: how checkout, refunds, disputes, failures, and unavailable states should be described. `[REVIEW REQUIRED]`
@@ -133,19 +136,17 @@ Needed before checkout can move beyond the gate:
 - Payment-related policy language for terms, shipping, returns, and refunds. `[REVIEW REQUIRED]`
 - Any alternate payment or crypto/onramp path must remain hidden or review-gated until separately reviewed. `[REVIEW REQUIRED]`
 
-## Guidance Assistant / Source-Base Items Needed
+## Support Boundary Items Needed
 
-The guidance assistant must stay backend-source-grounded and review-gated.
+The public app should not choose a product path for the customer. Support handles questions
+that need a person.
 
-Needed before live recommendations:
+Needed before launch:
 
-- Owner-reviewed source-base data for products, product paths, and escalation rules. `[OWNER DATA NEEDED]`
-- Explicit reviewed/approved markers for any path allowed to return a product recommendation. `[REVIEW REQUIRED]`
-- Source IDs and source notes for every answerable product path. `[OWNER DATA NEEDED]`
+- Owner-reviewed support rules for product and order questions. `[OWNER DATA NEEDED]`
 - Rules for missing data, unmatched requests, and sensitive requests. `[REVIEW REQUIRED]`
 - Disallowed categories that must escalate to human support, including professional-advice, diagnostic, privacy/security, guaranteed-outcome, platform, and payment-risk requests. `[REVIEW REQUIRED]`
-- Approved structured questions and answer options. `[OWNER DATA NEEDED]` `[REVIEW REQUIRED]`
-- Logging, retention, analytics, and provider-processing review before any live AI/provider integration. `[REVIEW REQUIRED]`
+- Logging, retention, analytics, and provider-processing review before any live provider integration. `[REVIEW REQUIRED]`
 - Human support destination for fallback cases. `[OWNER DATA NEEDED]`
 
 ## Wholesale / Vendor Items Needed
@@ -169,7 +170,7 @@ Do not treat these as launch-ready:
 - Placeholder text.
 - Product and treatment facts on the TotalTOX product page.
 - Vendor product table data.
-- Guidance recommendation output beyond source-gated demo behavior.
+- Product-choice direction output.
 - Checkout handoff or payment collection.
 - Intake form delivery.
 - Privacy/security language.
@@ -177,13 +178,13 @@ Do not treat these as launch-ready:
 - Claims, testimonials, reviews, proof, certifications, platform eligibility, vendor acceptance, Amazon eligibility, payment-platform acceptance, or legal conclusions.
 - Analytics, search indexing, sitemap, redirect, or launch QA readiness.
 
-## Next Recommended Implementation Steps
+## Next Implementation Steps
 
-Recommended next steps:
+Next steps:
 
 1. Owner completes the data and decision items in this packet.
 2. Convert owner-confirmed TotalTOX treatment and vendor fields into the source-controlled product data model.
-3. Build the owner-reviewed guidance source base and approved TotalTOX treatment-path rules.
+3. Finalize owner-reviewed product/support boundaries for TotalTOX treatment questions.
 4. Connect support/contact/wholesale forms to an owner-confirmed destination.
 5. Configure and test Authorize.net sandbox only after owner/payment details are available.
 6. Draft policy pages from owner-provided policy decisions, then mark claim-sensitive language for review.

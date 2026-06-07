@@ -5,11 +5,11 @@ export default function TermsPage() {
   return (
     <div className="page-flow">
       <div className="route-shell">
-        <Section eyebrow="Terms" title="Terms and purchase boundaries">
+        <Section eyebrow="Terms" title="Terms and purchase information">
           <p>
-            This page is reserved for site terms, purchase conditions, support
-            boundaries, and other practical policies customers may want to review
-            before continuing.
+            Review product information, checkout details, shipping and return
+            information, and support options before ordering. Use support for
+            questions that need a person.
           </p>
         </Section>
       </div>
@@ -19,8 +19,8 @@ export default function TermsPage() {
             <p className="eyebrow">Related pages</p>
             <h2>Keep the important policies easy to find.</h2>
             <p>
-              Review shipping, privacy, terms, or contact information before
-              choosing a product path.
+              Review shipping, privacy, terms, or support information before
+              continuing to checkout.
             </p>
           </div>
           <PolicyRouteLinks />

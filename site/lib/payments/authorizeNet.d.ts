@@ -1,6 +1,7 @@
 export type AuthorizeNetCheckoutRequest = {
   addOns?: string[];
   productSlug: string;
+  quantity?: number;
 };
 
 export type AuthorizeNetCheckoutStatus =
@@ -22,6 +23,7 @@ export type AuthorizeNetCheckoutGate = {
     label: string;
   }>;
   product_slug: string | null;
+  quantity: number;
   checkout_total: string | null;
   hosted_payment_token: string | null;
   checkout_url: string | null;
@@ -60,6 +62,7 @@ export function buildAcceptHostedRequest(options: {
   amount: string;
   env?: Record<string, string | undefined>;
   productSlug: string;
+  quantity?: number;
 }): Record<string, unknown>;
 
 export function createAuthorizeNetCheckoutGate(

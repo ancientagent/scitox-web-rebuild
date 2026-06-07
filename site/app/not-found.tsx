@@ -3,24 +3,19 @@ import { Section } from "@/components/Section";
 
 const recoveryRoutes = [
   {
-    href: "/products",
-    title: "Products",
+    href: "/products/totaltox-hair-treatment-system",
+    title: "Product",
     body: "View the TotalTOX product family.",
   },
   {
-    href: "/guidance",
-    title: "Get Started",
-    body: "Answer a few focused questions before choosing a path.",
+    href: "/products/totaltox-hair-treatment-system#checkout",
+    title: "Buy now",
+    body: "Go to quantity, optional add-ons, and checkout.",
   },
   {
     href: "/support",
     title: "Support",
     body: "Use support when product questions need a person.",
-  },
-  {
-    href: "/contact",
-    title: "Contact",
-    body: "Send a focused question to the team.",
   },
   {
     href: "/shipping-returns",

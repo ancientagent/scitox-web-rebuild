@@ -14,21 +14,21 @@ Internal docs/data should use `[REVIEW REQUIRED]` and `[OWNER DATA NEEDED]` wher
 
 Use the custom app as the primary marketing/product, guidance, intake, and vendor-readiness surface. Keep checkout/payment migration outside V1 unless owner and payment review clear it.
 
-Recommended custom app structure:
+Suggested custom app structure:
 - Static pages for home, products, support, contact/intake, wholesale inquiry, and policy pages.
 - Source-controlled product/SKU data first; CMS can be added later if product data is ready enough.
 - Server-side forms for customer support/intake and vendor inquiry, routed to email plus spreadsheet/CRM if approved.
-- A customer guidance lobby pattern on the homepage, with common-situation self-service, a backend-source-grounded guidance assistant, and escalation for nuanced situations.
+- A customer product lobby pattern on the homepage, with direct TotalTOX product entry, optional add-ons, and escalation for nuanced situations.
 
 ## Layer 1: Public Customer Site
 
 | Page | Purpose | Target Audience | Must-Have Sections | Claim-Sensitive Areas | Owner Data Needed | V1 or Later |
 |---|---|---|---|---|---|---|
-| Home / Product Guidance Lobby | Establish trust, orient visitors, and route them to product review, guided product questions, support, or checkout without panic-sales framing or dense first-screen product explanation. | Direct customers; vendor/payment reviewers who inspect the public site. | Calm lobby hero placeholder; common-situation paths; "not sure" guidance route; product entry points; human support/callback placeholder; support reassurance placeholders; review-safe trust section; policy/support footer. | Outcome language; recommendation logic; AI/private guidance; privacy/security/encryption claims; testimonials/results; guarantee/refund mentions. | Current product categories; approved support path; product routing rules; privacy policy details; chat/form/callback tooling; review/testimonial source status; owner-approved positioning. | V1 |
+| Home / Product Lobby | Establish trust, orient visitors, and route them to product review, optional add-ons, support, or checkout without panic-sales framing or dense first-screen product explanation. | Direct customers; vendor/payment reviewers who inspect the public site. | Calm lobby hero placeholder; product entry points; optional add-on path; human support/callback placeholder; support reassurance placeholders; review-safe trust section; policy/support footer. | Outcome language; choice-direction logic; AI/private guidance; privacy/security/encryption claims; testimonials/results; guarantee/refund mentions. | Current product categories; approved support path; product/support boundaries; privacy policy details; chat/form/callback tooling; review/testimonial source status; owner-approved positioning. | V1 |
 | Product Category / Product Finder | Let customers compare product paths or categories without overclaiming results. | Direct customers deciding what product area applies to them. | Category cards; short category explanations; product routing CTA; support/intake CTA; review markers for claim-heavy areas; links to product detail pages. | Category names or framing tied to unapproved outcomes; "works for" language; timing/result promises. | Final product category list; SKU mapping; approved category language; current inventory/availability. | V1 |
-| Product Detail Template | Present each product cleanly with structured, review-safe product information. | Direct customers; support team; vendor reviewers checking public product quality. | Product name; image; short description placeholder; product facts; use/directions placeholder; FAQ snippets; support CTA; shipping/returns links; claim review markers. | Product efficacy; directions that imply guaranteed outcomes; ingredients/safety; timing; refunds/guarantee; reviews/results. | SKU; product name; images; ingredients; directions; price; availability; shipping details; refund/guarantee rules; substantiation status. | V1 if product data is available; otherwise build template with placeholders |
-| Support | Present a focused help path after product review or guidance are not enough. | Direct customers; returning clients; support team; vendor/payment reviewers. | Product/guidance routing; order and follow-up support framing; minimal support form; support boundary language. | Claims embedded in answers; refund/guarantee language; privacy/security statements; result expectations; overcollection of sensitive data. | Support logs; top questions; actual support channels; refund policy; shipping timelines; privacy/data handling workflow. | V1 |
-| Contact / Product Guidance Intake | Provide a minimal, structured way for customers to ask product questions, use guided product routing, or request human follow-up. | Direct customers needing product guidance; support team. | Minimal form; common-situation selector; product interest; order question option; guided product questions placeholder; human callback/follow-up routing; privacy notice placeholder; expected response timing placeholder. | "Private," "confidential," or "encrypted" claims; AI/counsel/consultation claims; overcollection of sensitive data; support response promises. | Form routing; CRM/helpdesk/chat choice; data retention; support ownership; response-time policy; callback workflow; privacy policy; product routing rules. | V1 |
+| Product Detail Template | Present each product cleanly with structured, review-safe product information. | Direct customers; support team; vendor reviewers checking public product quality. | Product name; image; short description placeholder; product facts; neutral customer-experience link to the live Trustpilot profile; use/directions placeholder; FAQ snippets; support CTA; shipping/returns links; claim review markers. | Product efficacy; directions that imply guaranteed outcomes; ingredients/safety; timing; refunds/guarantee; copied reviews; ratings/counts; review-as-proof language. | SKU; product name; images; ingredients; directions; price; availability; shipping details; refund/guarantee rules; substantiation status; Trustpilot Business/widget or API permission if embedded reviews are desired. | V1 if product data is available; otherwise build template with placeholders |
+| Support | Present a focused help path after product review is not enough. | Direct customers; returning clients; support team; vendor/payment reviewers. | Product routing; order and follow-up support framing; minimal support form; support boundary language. | Claims embedded in answers; refund/guarantee language; privacy/security statements; result expectations; overcollection of sensitive data. | Support logs; top questions; actual support channels; refund policy; shipping timelines; privacy/data handling workflow. | V1 |
+| Contact / Product Support Intake | Provide a minimal, structured way for customers to ask product questions or request human follow-up. | Direct customers needing product support; support team. | Minimal form; product interest; order question option; human callback/follow-up routing; privacy notice placeholder; expected response timing placeholder. | "Private," "confidential," or "encrypted" claims; AI/counsel/consultation claims; overcollection of sensitive data; support response promises. | Form routing; CRM/helpdesk/chat choice; data retention; support ownership; response-time policy; callback workflow; privacy policy; product/support boundaries. | V1 |
 | Shipping, Returns, Privacy, Terms Hub | Make policies visible and reduce vendor/payment-review friction. | Customers; payment reviewers; vendors; support team. | Links to privacy, shipping, returns/refunds, terms, contact/support; short placeholders for each policy. | Refund/guarantee claims; privacy/security commitments; liability/disclaimer language; payment/checkout representations. | Current policies; legal review status; refund handling; shipping times; payment processor details; data retention policy. | V1 |
 | Reviews / Customer Experience | Preserve trust assets without treating reviews as proof. | Direct customers; vendor reviewers. | Neutral review module placeholder; source/permission notes; no success-rate framing; link back to product/support. | Testimonials, result screenshots, pass-result claims, AI summaries, ratings/counts, typical-result implications. | Verified review sources; permissions; platform data; moderation policy; legal/compliance review. | Later, unless review data and approval are ready |
 
@@ -43,17 +43,17 @@ Recommended custom app structure:
 | Vendor Resource / Download Area | Provide gated or semi-private documents after owner approval. | Qualified vendors or distributors. | Line sheet download; product images; labels; policy docs; contact owner/support. | Any document containing unreviewed product claims, pricing, or legal statements. | Final line sheet; approved docs; access/gating process; file storage workflow. | Later |
 | Buyer Tracker / Outreach Admin | Internal-only operating surface, not public site content. | Owner/team; outreach agents. | Buyer list; contact status; risk level; notes; next step; owner approval state. | Vendor acceptance claims; unsupported notes presented as fact. | Target list; outreach rules; owner approvals; CRM/sheet workflow. | Later/internal, not public app page |
 
-## V1 Navigation Recommendation
+## V1 Navigation Direction
 
 Public header:
 - Products
-- Product Guidance
 - Support
 - Contact
 - Wholesale / Partners
 
 Footer:
 - Products
+- TotalTOX
 - Support
 - Contact
 - Shipping
@@ -64,7 +64,7 @@ Footer:
 
 Avoid crowding the header with every policy page. Keep policies accessible in the footer and from relevant page sections.
 
-## Product Data Recommendation
+## Product Data Direction
 
 Use source-controlled product data in the custom app first. A CMS can be added later if product data can be provided cleanly and owner workflow requires it.
 
@@ -88,7 +88,7 @@ Use static placeholder blocks instead of CMS fields if owner data is not ready.
 Do not include in V1:
 - Open-ended AI chat as a live feature.
 - "Encrypted AI consultation" language.
-- Product recommendations from AI unless the assistant uses approved backend source data and escalation rules.
+- Product-choice direction logic.
 - Third-party autonomous purchasing through messaging unless owner/payment/privacy review clears it.
 - Amazon, marketplace, or vendor approval claims.
 - Checkout/payment migration unless reviewed.
@@ -96,7 +96,7 @@ Do not include in V1:
 - Wholesale portal login.
 - Wholesale pricing unless owner confirms it.
 - Vendor outreach automation.
-- Unnecessary custom complexity beyond the V1 app, guidance, intake, and reviewed checkout scope.
+- Unnecessary custom complexity beyond the V1 app, intake, support, and reviewed checkout scope.
 - Final product claims.
 
 ## Approval Gates

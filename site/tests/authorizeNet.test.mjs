@@ -44,6 +44,22 @@ test("unknown checkout add-ons are rejected", () => {
   ]);
 });
 
+test("checkout quantity is bounded before checkout", () => {
+  const valid = validateAuthorizeNetCheckoutRequest({
+    productSlug: "totaltox-hair-treatment-system",
+    quantity: 2,
+  });
+  const invalid = validateAuthorizeNetCheckoutRequest({
+    productSlug: "totaltox-hair-treatment-system",
+    quantity: 11,
+  });
+
+  assert.equal(valid.ok, true);
+  assert.equal(valid.data.quantity, 2);
+  assert.equal(invalid.ok, false);
+  assert.deepEqual(invalid.fieldErrors.quantity, ["Choose a quantity from 1 to 10."]);
+});
+
 test("explicit sandbox config still returns unavailable review-gated state", () => {
   const result = createAuthorizeNetCheckoutGate(
     { productSlug: "totaltox-hair-treatment-system" },
@@ -146,6 +162,28 @@ test("Accept Hosted request includes selected add-ons in total and description",
   );
 });
 
+test("Accept Hosted request can describe multiple treatment quantities", () => {
+  const request = buildAcceptHostedRequest({
+    amount: "498.00",
+    productSlug: "totaltox-hair-treatment-system",
+    quantity: 2,
+    env: {
+      AUTHORIZE_NET_API_LOGIN_ID: "configured-for-test",
+      AUTHORIZE_NET_TRANSACTION_KEY: "configured-for-test",
+      AUTHORIZE_NET_ENVIRONMENT: "sandbox",
+      AUTHORIZE_NET_TOTALTOX_AMOUNT: "249.00",
+      AUTHORIZE_NET_ACCEPT_HOSTED_RETURN_URL: "https://example.test/return",
+      AUTHORIZE_NET_ACCEPT_HOSTED_CANCEL_URL: "https://example.test/cancel",
+      AUTHORIZE_NET_MERCHANT_NAME: "SciTOX",
+    },
+  });
+
+  assert.equal(
+    request.getHostedPaymentPageRequest.transactionRequest.order.description,
+    "TotalTOX Hair Treatment System x2",
+  );
+});
+
 test("configured sandbox checkout can return an Accept Hosted token", async () => {
   const calls = [];
   const result = await createAuthorizeNetCheckoutSession(
@@ -233,6 +271,54 @@ test("configured checkout can add priced add-ons to the hosted amount", async ()
   );
 });
 
+test("configured checkout multiplies treatment quantity before adding optional add-ons", async () => {
+  const calls = [];
+  const result = await createAuthorizeNetCheckoutSession(
+    {
+      addOns: ["uv-light"],
+      productSlug: "totaltox-hair-treatment-system",
+      quantity: 3,
+    },
+    {
+      env: {
+        AUTHORIZE_NET_API_LOGIN_ID: "configured-for-test",
+        AUTHORIZE_NET_TRANSACTION_KEY: "configured-for-test",
+        AUTHORIZE_NET_SIGNATURE_KEY: "configured-for-test",
+        AUTHORIZE_NET_CHECKOUT_ENABLED: "true",
+        AUTHORIZE_NET_ENVIRONMENT: "sandbox",
+        AUTHORIZE_NET_TOTALTOX_AMOUNT: "249.00",
+        AUTHORIZE_NET_ADDON_UV_LIGHT_AMOUNT: "79.00",
+        AUTHORIZE_NET_ACCEPT_HOSTED_RETURN_URL: "https://example.test/return",
+        AUTHORIZE_NET_ACCEPT_HOSTED_CANCEL_URL: "https://example.test/cancel",
+      },
+      fetchImpl: async (url, init) => {
+        calls.push({ body: JSON.parse(init.body), url });
+        return {
+          ok: true,
+          async json() {
+            return {
+              messages: { resultCode: "Ok", message: [{ code: "I00001", text: "Successful." }] },
+              token: "hosted-token-for-test",
+            };
+          },
+        };
+      },
+    },
+  );
+
+  assert.equal(result.checkout_status, "hosted_payment_ready");
+  assert.equal(result.quantity, 3);
+  assert.equal(result.checkout_total, "826.00");
+  assert.equal(
+    calls[0].body.getHostedPaymentPageRequest.transactionRequest.amount,
+    "826.00",
+  );
+  assert.equal(
+    calls[0].body.getHostedPaymentPageRequest.transactionRequest.order.description,
+    "TotalTOX Hair Treatment System x3 + UV light",
+  );
+});
+
 test("raw card fields are not accepted by the checkout gate", () => {
   const result = validateAuthorizeNetCheckoutRequest({
     productSlug: "totaltox-hair-treatment-system",
@@ -254,5 +340,7 @@ test("checkout UI hides internal review markers and has no raw payment fields", 
 
   assert.doesNotMatch(source, /\[REVIEW REQUIRED/);
   assert.doesNotMatch(source, /\[OWNER DATA NEEDED/);
+  assert.match(source, /Order summary/);
+  assert.match(source, /Treatment quantity/);
   assert.doesNotMatch(source, /cardNumber|cvv|cvc|expiration|accountNumber/i);
 });

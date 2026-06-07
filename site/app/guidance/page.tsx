@@ -1,9 +1,5 @@
-import { GuidanceAssistantDemo } from "@/components/GuidanceAssistantDemo";
+import { redirect } from "next/navigation";
 
 export default function GuidancePage() {
-  return (
-    <div className="page-flow page-flow--guidance">
-      <GuidanceAssistantDemo />
-    </div>
-  );
+  redirect("/products/totaltox-hair-treatment-system");
 }
