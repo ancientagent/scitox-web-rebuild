@@ -3,6 +3,7 @@ import Link from "next/link";
 const footerRoutes = [
   { href: "/products/totaltox-hair-treatment-system", label: "Products" },
   { href: "/products/totaltox-hair-treatment-system#checkout", label: "Buy now" },
+  { href: "/faq", label: "FAQ" },
   { href: "/support", label: "Support" },
   { href: "/shipping-returns", label: "Shipping / Returns" },
   { href: "/privacy", label: "Privacy" },

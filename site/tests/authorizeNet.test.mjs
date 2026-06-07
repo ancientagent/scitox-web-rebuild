@@ -81,7 +81,7 @@ test("explicit sandbox config still returns unavailable review-gated state", () 
   assert.match(result.review_required.join(" "), /payment review/i);
 });
 
-test("selected add-ons require owner-provided pricing before checkout", () => {
+test("selected add-ons use owner-confirmed fallback pricing before checkout", () => {
   const result = createAuthorizeNetCheckoutGate(
     { addOns: ["uv-light"], productSlug: "totaltox-hair-treatment-system" },
     {
@@ -99,7 +99,10 @@ test("selected add-ons require owner-provided pricing before checkout", () => {
   );
 
   assert.equal(result.checkout_status, "review_required");
-  assert.match(result.missing_owner_data.join(" "), /AUTHORIZE_NET_ADDON_UV_LIGHT_AMOUNT/);
+  assert.doesNotMatch(result.missing_owner_data.join(" "), /AUTHORIZE_NET_ADDON_UV_LIGHT_AMOUNT/);
+  assert.deepEqual(result.add_ons, [
+    { amount: "79.00", id: "uv-light", label: "UV light" },
+  ]);
 });
 
 test("Accept Hosted request keeps raw payment fields off the site", () => {
@@ -158,7 +161,7 @@ test("Accept Hosted request includes selected add-ons in total and description",
   );
   assert.equal(
     request.getHostedPaymentPageRequest.transactionRequest.order.description,
-    "TotalTOX Hair Treatment System + UV light + Custom developer",
+    "TotalTOX 2.0 Ultra + UV light + Custom developer",
   );
 });
 
@@ -180,7 +183,28 @@ test("Accept Hosted request can describe multiple treatment quantities", () => {
 
   assert.equal(
     request.getHostedPaymentPageRequest.transactionRequest.order.description,
-    "TotalTOX Hair Treatment System x2",
+    "TotalTOX 2.0 Ultra x2",
+  );
+});
+
+test("Accept Hosted request can describe Ultra Max orders", () => {
+  const request = buildAcceptHostedRequest({
+    amount: "399.00",
+    productOptionId: "totaltox-advanced",
+    productSlug: "totaltox-hair-treatment-system",
+    env: {
+      AUTHORIZE_NET_API_LOGIN_ID: "configured-for-test",
+      AUTHORIZE_NET_TRANSACTION_KEY: "configured-for-test",
+      AUTHORIZE_NET_ENVIRONMENT: "sandbox",
+      AUTHORIZE_NET_ACCEPT_HOSTED_RETURN_URL: "https://example.test/return",
+      AUTHORIZE_NET_ACCEPT_HOSTED_CANCEL_URL: "https://example.test/cancel",
+      AUTHORIZE_NET_MERCHANT_NAME: "SciTOX",
+    },
+  });
+
+  assert.equal(
+    request.getHostedPaymentPageRequest.transactionRequest.order.description,
+    "TotalTOX 2.0 Ultra Max",
   );
 });
 
@@ -315,7 +339,49 @@ test("configured checkout multiplies treatment quantity before adding optional a
   );
   assert.equal(
     calls[0].body.getHostedPaymentPageRequest.transactionRequest.order.description,
-    "TotalTOX Hair Treatment System x3 + UV light",
+    "TotalTOX 2.0 Ultra x3 + UV light",
+  );
+});
+
+test("configured checkout can prepare an Ultra Max hosted amount", async () => {
+  const calls = [];
+  const result = await createAuthorizeNetCheckoutSession(
+    {
+      productOptionId: "totaltox-advanced",
+      productSlug: "totaltox-hair-treatment-system",
+    },
+    {
+      env: {
+        AUTHORIZE_NET_API_LOGIN_ID: "configured-for-test",
+        AUTHORIZE_NET_TRANSACTION_KEY: "configured-for-test",
+        AUTHORIZE_NET_SIGNATURE_KEY: "configured-for-test",
+        AUTHORIZE_NET_CHECKOUT_ENABLED: "true",
+        AUTHORIZE_NET_ENVIRONMENT: "sandbox",
+        AUTHORIZE_NET_ACCEPT_HOSTED_RETURN_URL: "https://example.test/return",
+        AUTHORIZE_NET_ACCEPT_HOSTED_CANCEL_URL: "https://example.test/cancel",
+      },
+      fetchImpl: async (url, init) => {
+        calls.push({ body: JSON.parse(init.body), url });
+        return {
+          ok: true,
+          async json() {
+            return {
+              messages: { resultCode: "Ok", message: [{ code: "I00001", text: "Successful." }] },
+              token: "hosted-token-for-test",
+            };
+          },
+        };
+      },
+    },
+  );
+
+  assert.equal(result.checkout_status, "hosted_payment_ready");
+  assert.equal(result.product_option_id, "totaltox-advanced");
+  assert.equal(result.product_option_label, "TotalTOX 2.0 Ultra Max");
+  assert.equal(result.checkout_total, "399.00");
+  assert.equal(
+    calls[0].body.getHostedPaymentPageRequest.transactionRequest.order.description,
+    "TotalTOX 2.0 Ultra Max",
   );
 });
 

@@ -1,11 +1,19 @@
 "use client";
 
 import type { ChangeEvent } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type CheckoutAddOn = {
   amount: number | null;
   enabled: boolean;
+  id: string;
+  label: string;
+  priceLabel: string | null;
+};
+
+type CheckoutProductOption = {
+  amount: number | null;
+  description: string;
   id: string;
   label: string;
   priceLabel: string | null;
@@ -19,6 +27,8 @@ type CheckoutGateResult = {
   payment_collection_enabled: boolean;
   site_payment_collection_enabled: boolean;
   add_ons: Array<{ amount: string; id: string; label: string }>;
+  product_option_id?: string | null;
+  product_option_label?: string | null;
   product_slug: string | null;
   quantity: number;
   checkout_total: string | null;
@@ -55,21 +65,51 @@ const minProductQuantity = 1;
 export function CheckoutGateDemo({
   addOns = [],
   baseAmount,
+  defaultProductOptionId,
   priceLabel,
   productName = "TotalTOX Hair Treatment System",
+  productOptions = [],
   productSlug,
 }: {
   addOns?: CheckoutAddOn[];
   baseAmount?: number | null;
+  defaultProductOptionId?: string | null;
   priceLabel?: string | null;
   productName?: string;
+  productOptions?: CheckoutProductOption[];
   productSlug: string;
 }) {
+  const initialProductOptionId =
+    defaultProductOptionId ?? productOptions[0]?.id ?? "";
+  const productOptionIds = productOptions.map((option) => option.id).join("|");
   const [result, setResult] = useState<CheckoutGateResult>(initialResult);
   const [quantity, setQuantity] = useState(1);
+  const [selectedProductOptionId, setSelectedProductOptionId] = useState(initialProductOptionId);
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const validProductOptionIds = new Set(
+      productOptionIds.split("|").filter(Boolean),
+    );
+
+    function syncOptionFromHash() {
+      const optionId = window.location.hash.replace(/^#checkout-?/, "");
+
+      if (optionId && validProductOptionIds.has(optionId)) {
+        setSelectedProductOptionId(optionId);
+        setResult(initialResult);
+        setMessage("");
+        setStatus("idle");
+      }
+    }
+
+    syncOptionFromHash();
+    window.addEventListener("hashchange", syncOptionFromHash);
+
+    return () => window.removeEventListener("hashchange", syncOptionFromHash);
+  }, [productOptionIds]);
 
   function formatUsd(amount: number) {
     return new Intl.NumberFormat("en-US", {
@@ -99,6 +139,11 @@ export function CheckoutGateDemo({
     setQuantity(clampQuantity(nextQuantity));
   }
 
+  function updateProductOption(optionId: string) {
+    resetPreparedPayment();
+    setSelectedProductOptionId(optionId);
+  }
+
   function handleQuantityChange(event: ChangeEvent<HTMLInputElement>) {
     updateQuantity(Number(event.target.value));
   }
@@ -120,7 +165,12 @@ export function CheckoutGateDemo({
       const response = await fetch("/api/checkout/authorize-net", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ addOns: selectedAddOns, productSlug, quantity }),
+        body: JSON.stringify({
+          addOns: selectedAddOns,
+          productOptionId: selectedProductOptionId,
+          productSlug,
+          quantity,
+        }),
       });
       const payload = await response.json();
 
@@ -147,6 +197,10 @@ export function CheckoutGateDemo({
   const isReady = result.available && result.payment_collection_enabled;
   const canOpenHostedPayment =
     isReady && Boolean(result.checkout_url && result.hosted_payment_token);
+  const selectedProductOption =
+    productOptions.find((option) => option.id === selectedProductOptionId) ??
+    productOptions[0] ??
+    null;
   const selectedAddOnAmount = addOns.reduce((sum, addOn) => {
     if (!selectedAddOns.includes(addOn.id) || addOn.amount === null) {
       return sum;
@@ -155,29 +209,66 @@ export function CheckoutGateDemo({
     return sum + addOn.amount;
   }, 0);
   const treatmentAmount =
-    typeof baseAmount === "number" ? baseAmount * quantity : null;
+    typeof selectedProductOption?.amount === "number"
+      ? selectedProductOption.amount * quantity
+      : typeof baseAmount === "number"
+        ? baseAmount * quantity
+        : null;
   const totalLabel =
     typeof treatmentAmount === "number"
       ? formatUsd(treatmentAmount + selectedAddOnAmount)
-      : priceLabel;
+      : selectedProductOption?.priceLabel ?? priceLabel;
+  const treatmentName = selectedProductOption?.label ?? productName;
+  const treatmentPrice =
+    typeof selectedProductOption?.amount === "number"
+      ? selectedProductOption.amount
+      : baseAmount;
 
   return (
     <div className="checkout-gate checkout-gate--single">
+      <div className="checkout-anchor-stack" aria-hidden="true">
+        {productOptions.map((option) => (
+          <span className="checkout-anchor" id={`checkout-${option.id}`} key={option.id} />
+        ))}
+      </div>
       <div className="checkout-gate__panel">
         <div>
           <p className="tag">Order summary</p>
           <h2>{isReady ? "Payment form is ready." : "Review your order."}</h2>
         </div>
         {totalLabel ? <p className="checkout-gate__price">{totalLabel}</p> : null}
-        <p>Select quantity and optional add-ons before checkout.</p>
+        <p>Choose treatment, quantity, and optional add-ons before checkout.</p>
+        {productOptions.length > 1 ? (
+          <fieldset className="checkout-product-options">
+            <legend>Treatment</legend>
+            <div className="checkout-product-options__list">
+              {productOptions.map((option) => (
+                <label className="checkout-product-option" key={option.id}>
+                  <input
+                    checked={selectedProductOptionId === option.id}
+                    disabled={status === "loading"}
+                    name="product-option"
+                    onChange={() => updateProductOption(option.id)}
+                    type="radio"
+                  />
+                  <span>
+                    <strong>{option.label}</strong>
+                    <small>{option.description}</small>
+                  </span>
+                  <b>{option.priceLabel ?? "Shown at checkout"}</b>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ) : null}
         <div className="checkout-order-summary" aria-label="Order summary">
           <div className="checkout-order-summary__line">
             <span>
               <small>Treatment</small>
-              <strong>{productName}</strong>
+              <strong>{treatmentName}</strong>
             </span>
-            {typeof baseAmount === "number" ? (
-              <b>{formatUsd(baseAmount)} each</b>
+            {typeof treatmentPrice === "number" ? (
+              <b>{formatUsd(treatmentPrice)} each</b>
             ) : null}
           </div>
           <div className="checkout-quantity">

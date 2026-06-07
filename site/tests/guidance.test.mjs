@@ -18,11 +18,15 @@ test("product page opens with the TotalTOX landing message and buy-now link", as
     "utf8",
   );
 
-  assert.match(source, /SciTOX TotalTOX 2\.0 Ultra/);
-  assert.match(source, /Powered by Folliclear™ Technology/);
-  assert.match(source, /Our first all-in-one full follicle solution/);
-  assert.match(source, /Available Now/);
-  assert.match(source, /href="#checkout"/);
+  assert.match(source, /SciTOX is now simpler/);
+  assert.match(source, /Introducing the all new TotalTOX 2\.0 Ultra Series/);
+  assert.match(source, /Our number one selling solution reformulated/);
+  assert.match(source, /new Folliclear™ Treatment Technology/);
+  assert.match(source, /Now available/);
+  assert.doesNotMatch(source, /Product FAQ/);
+  assert.match(source, /href="\/faq"/);
+  assert.match(source, /getProductOptionPrice/);
+  assert.match(source, /\$399/);
   assert.match(source, /Buy now/);
   assert.doesNotMatch(source, /We recommend|Recommended add/i);
 });

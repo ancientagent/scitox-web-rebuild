@@ -11,16 +11,17 @@ export default function Home() {
         title="Two TotalTOX options. One simple order path."
       >
         <p>
-          TotalTOX is the complete hair detox treatment system. TotalTOX
-          Advanced is for people with long hair and/or daily buildup.
+          TotalTOX 2.0 Ultra is the standard complete hair detox treatment.
+          TotalTOX 2.0 Ultra Max is for people with long hair and/or daily
+          buildup.
         </p>
         <div className="route-grid" aria-label="Main paths">
           <Link className="route-card route-card--link" href="/products/totaltox-hair-treatment-system">
-            <h2>TotalTOX</h2>
-            <p>Review the complete hair detox treatment system.</p>
+            <h2>TotalTOX 2.0 Ultra</h2>
+            <p>For most orders.</p>
           </Link>
           <Link className="route-card route-card--link" href="/products/totaltox-hair-treatment-system">
-            <h2>TotalTOX Advanced</h2>
+            <h2>TotalTOX 2.0 Ultra Max</h2>
             <p>For people with long hair and/or daily buildup.</p>
           </Link>
           <Link className="route-card route-card--link" href="/products/totaltox-hair-treatment-system#checkout">

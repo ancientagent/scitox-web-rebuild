@@ -1,7 +1,7 @@
 {
   "status": "Owner-direction product records imported from captured public SciTOX store pages and simplified to a TotalTOX-first V1. [REVIEW REQUIRED: confirm currentness before launch]",
   "notes": [
-    "The prior public store included multiple category-specific product records. V1 is now being reshaped around two owner-confirmed public products: TotalTOX and TotalTOX Advanced. Final SKUs, prices, labels, ingredients, directions, and policy details remain review-gated. [REVIEW REQUIRED]",
+    "The prior public store included multiple category-specific product records. V1 is now being reshaped around two owner-confirmed public products: TotalTOX 2.0 Ultra and TotalTOX 2.0 Ultra Max. Final SKUs, labels, ingredients, directions, and policy details remain review-gated. [REVIEW REQUIRED]",
     "TotalTOX title, source image asset, visual kit-composition reference, standard-kit sale context, shipping references, damaged-item handling references, and warning topics are source-backed from captured public product pages.",
     "Outcome, mechanism, review, comparison, timing, direction, and policy language remains blocked until review. [REVIEW REQUIRED]",
     "Wholesale pricing, SKUs, case packs, UPC/GTIN, label files, dimensions, packaging, insurance status, and routing are still missing operational data. [OWNER DATA NEEDED]"
@@ -13,13 +13,13 @@
       "public": {
         "name": "TotalTOX Hair Treatment System",
         "category": "Two-product hair detox treatment line [REVIEW REQUIRED: public exposure and claim wording]",
-        "size": "Treatment-based kit [OWNER DATA NEEDED: confirm bottle sizes, volumes, and exact kit contents for TotalTOX and TotalTOX Advanced] [REVIEW REQUIRED]",
-        "price": "[OWNER DATA NEEDED: TotalTOX and TotalTOX Advanced pricing] [REVIEW REQUIRED]",
+        "size": "Treatment-based kit [OWNER DATA NEEDED: confirm bottle sizes, volumes, and exact kit contents for TotalTOX 2.0 Ultra and TotalTOX 2.0 Ultra Max] [REVIEW REQUIRED]",
+        "price": "TotalTOX 2.0 Ultra $329; TotalTOX 2.0 Ultra Max $399. [REVIEW REQUIRED: final price display and checkout policy language]",
         "availability": "Owner-direction V1 product line pending confirmation. [REVIEW REQUIRED: confirm current availability]",
         "image": "/product-marketing/totaltox-kit.png",
         "sourceImage": "/product-images/totaltox.jpg",
         "kitComposition": "12-item complete-kit visual concept based on the captured TotalTOX product photo. Product-specific kit counts, bottle sizes, bottle types, and volume rules remain owner data. [OWNER DATA NEEDED] [REVIEW REQUIRED]",
-        "shortDescription": "The V1 product line includes TotalTOX and TotalTOX Advanced, with reviewed public fit language and support rules still needed. [REVIEW REQUIRED]",
+        "shortDescription": "The V1 product line includes TotalTOX 2.0 Ultra and TotalTOX 2.0 Ultra Max, with reviewed public fit language and support rules still needed. [REVIEW REQUIRED]",
         "longDescription": "This demo treats TotalTOX as the primary customer-facing product and moves the prior category-specific product paths out of the public catalog. Outcome, mechanism, restricted-use, and use-detail language are intentionally withheld. [REVIEW REQUIRED]",
         "ingredients": "[OWNER DATA NEEDED: ingredients and label panel]",
         "directions": "Current source contains detailed use instructions; launch directions require product, safety, and claims review. [REVIEW REQUIRED]",
@@ -30,15 +30,15 @@
         "options": [
           {
             "id": "totaltox",
-            "label": "TotalTOX",
-            "whoItsFor": "For people looking for a complete hair detox treatment system. [REVIEW REQUIRED: final public fit language]",
-            "price": "[OWNER DATA NEEDED: TotalTOX price] [REVIEW REQUIRED]"
+            "label": "TotalTOX 2.0 Ultra",
+            "whoItsFor": "Designed for most users, TotalTOX 2.0 Ultra helps cleanse residue, mineral buildup, and environmental deposits from modern styling routines and lifestyle exposure — leaving hair feeling clean, light, and refreshed. [REVIEW REQUIRED: final public fit language]",
+            "price": "[OWNER DATA NEEDED: TotalTOX 2.0 Ultra price] [REVIEW REQUIRED]"
           },
           {
             "id": "totaltox-advanced",
-            "label": "TotalTOX Advanced",
-            "whoItsFor": "For people with long hair and/or daily buildup. [REVIEW REQUIRED: final public fit language]",
-            "price": "[OWNER DATA NEEDED: TotalTOX Advanced price] [REVIEW REQUIRED]"
+            "label": "TotalTOX 2.0 Ultra Max",
+            "whoItsFor": "For longer hair, frequent styling, and high-exposure lifestyles. An intensified follicle-focused cleanse for more stubborn buildup and daily residue. [REVIEW REQUIRED: final public fit language]",
+            "price": "[OWNER DATA NEEDED: TotalTOX 2.0 Ultra Max price] [REVIEW REQUIRED]"
           }
         ]
       },

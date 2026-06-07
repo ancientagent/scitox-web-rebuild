@@ -44,8 +44,9 @@ Read these before making project decisions:
 - Separate the public customer site from the partner/vendor-facing surface.
 - Treat the public homepage as a calm product lobby, not a dense product-explanation page.
 - Treat the current V1 product direction as TotalTOX-first: one public product family with two owner-confirmed products, unless the owner explicitly changes direction.
-- Owner-confirmed products: TotalTOX and TotalTOX Advanced. TotalTOX Advanced is for people with long hair and/or daily buildup. Kit contents, prices, SKUs, and policy details remain owner-data gaps.
-- Current owner direction: do not use public product-choice direction. The product page should say who TotalTOX is for, present optional add-ons, and send product/order questions to support.
+- Owner-confirmed public products: TotalTOX 2.0 Ultra and TotalTOX 2.0 Ultra Max. TotalTOX 2.0 Ultra is for most orders. TotalTOX 2.0 Ultra Max is for long hair and/or daily buildup. Public prices are owner-confirmed as $329 and $399, respectively. Kit contents, SKUs, and policy details remain owner-data gaps.
+- Owner-confirmed add-ons: UV light for $79 and custom developer for $20.
+- Current owner direction: the product page is buyer-first, and FAQ is its own top-level page next to Products and Support. FAQ may include neutral product-choice and ordering questions, but must avoid recommendations, outcome claims, test/screening language, workplace/medical/stigma framing, guarantees, or Google Ads policy-risk language. Unsure buyers or unusually heavy buildup questions should route to support before ordering.
 - Build the production implementation as a custom app under `site/` unless the owner explicitly changes the platform decision.
 - Treat Webflow and Claude Design as prototype, visual-reference, CMS-reference, or handoff aids unless explicitly assigned as production.
 - Include secure support and assisted/autonomous checkout options as review-gated solution paths, not live promises.
@@ -66,9 +67,10 @@ As of the latest local app state:
 - Local preview has been verified at `http://127.0.0.1:3000/guidance`.
 - `/guidance` is now a legacy redirect to `/products/totaltox-hair-treatment-system`.
 - The staged onboarding/question flow has been removed from the public app.
-- The product page now leads with "Who it's for" and avoids choice-directing language.
-- Add-ons are optional add-ons, not suggested or preferred add-ons.
-- The product page includes a neutral customer-experience section that links to the live SciTOX Trustpilot profile only. It does not publish copied review text, star ratings, review counts, AI summaries, or review-as-proof language.
+- The product page now leads with the TotalTOX 2.0 Ultra Series launch message, product options with prices, pre-checkout Trustpilot/order information, and checkout.
+- `/faq` is now the standalone customer-facing FAQ route linked from the primary navigation.
+- Add-ons are optional add-ons, not suggested, recommended, or preferred add-ons.
+- The product page includes a neutral Trustpilot link before checkout. It does not publish copied review text, star ratings, review counts, AI summaries, or review-as-proof language.
 - `/resources` has been removed from the public app.
 - `/support` is now the follow-up route for order questions, active/returning clients, and product questions that still need a person after product review.
 - Public customer-facing UI has been cleaned so internal markers such as `[REVIEW REQUIRED]`, `[OWNER DATA NEEDED]`, scaffold/demo labels, and developer-facing planning text are not shown.

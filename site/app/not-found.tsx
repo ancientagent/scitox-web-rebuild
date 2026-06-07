@@ -13,6 +13,11 @@ const recoveryRoutes = [
     body: "Go to quantity, optional add-ons, and checkout.",
   },
   {
+    href: "/faq",
+    title: "FAQ",
+    body: "Review product and ordering questions.",
+  },
+  {
     href: "/support",
     title: "Support",
     body: "Use support when product questions need a person.",

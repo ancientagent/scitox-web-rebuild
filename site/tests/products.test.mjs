@@ -29,9 +29,10 @@ test("public product projection includes source-backed product records", () => {
   assert.equal(product.options.length, 2);
   assert.deepEqual(
     product.options.map((option) => option.label),
-    ["TotalTOX", "TotalTOX Advanced"],
+    ["TotalTOX 2.0 Ultra", "TotalTOX 2.0 Ultra Max"],
   );
-  assert.match(product.options[1].whoItsFor, /long hair and\/or daily buildup/i);
+  assert.match(product.options[1].whoItsFor, /longer hair, frequent styling/i);
+  assert.match(product.options[1].whoItsFor, /more stubborn buildup and daily residue/i);
   assert.doesNotMatch(product.options[1].whoItsFor, /\[REVIEW REQUIRED/);
 });
 
@@ -79,7 +80,7 @@ test("product page links to Trustpilot without publishing review claims", async 
     "utf8",
   );
 
-  assert.match(source, /Customer reviews live on Trustpilot/);
+  assert.match(source, /Read live customer reviews/);
   assert.match(source, /https:\/\/www\.trustpilot\.com\/review\/scitoxdetox\.com/);
   assert.doesNotMatch(source, /100'?s|5 Star|4\.6|Trustpilot AI|success rate|pass-result/i);
 });

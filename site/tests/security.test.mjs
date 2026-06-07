@@ -35,7 +35,7 @@ test("public payment and support UI avoids unsupported security promises", async
   const welcomeSource = files[3];
   const checkoutSource = files[4];
 
-  assert.match(productSource, /SciTOX TotalTOX 2\.0 Ultra/i);
+  assert.match(productSource, /Introducing the all new TotalTOX 2\.0 Ultra Series/i);
   assert.doesNotMatch(welcomeSource, /Opening product guidance|prepare your private session/i);
   assert.match(checkoutSource, /Payment details are entered on Authorize\.net/i);
   assert.match(privacySource, /Keep support messages focused/i);
@@ -45,6 +45,7 @@ test("public payment and support UI avoids unsupported security promises", async
 test("homepage avoids developer-facing planning copy", async () => {
   const files = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/faq/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/products/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/products/[slug]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/not-found.tsx", import.meta.url), "utf8"),
@@ -57,8 +58,11 @@ test("homepage avoids developer-facing planning copy", async () => {
   ]);
   const publicSource = files.join("\n");
 
-  assert.match(publicSource, /TotalTOX Advanced/i);
+  assert.match(publicSource, /TotalTOX 2\.0 Ultra Max/i);
   assert.match(publicSource, /UV light and custom developer/i);
+  assert.match(publicSource, /href: "\/faq"|href="\/faq"/);
+  assert.match(publicSource, /aria-label="Shopping cart"/);
+  assert.doesNotMatch(files[9], />\s*Buy now\s*</i);
   assert.doesNotMatch(
     publicSource,
     /Customer lobby|Product path|focused product path|Separate partner path|partner surface|Support fallback|Product line overview|Documentation checklist|current customer path/i,

@@ -11,7 +11,7 @@ const greetingCopy = {
     eyebrow: "New",
     title: "NEW Sci-TOX TotalTOX hair treatment systems for all your hair detox needs",
     body:
-      "Choose TotalTOX or TotalTOX Advanced, add optional items, and checkout when you are ready.",
+      "Choose TotalTOX 2.0 Ultra or TotalTOX 2.0 Ultra Max, add optional items, and checkout when you are ready.",
     status: "Support is available when a product or order question needs a person.",
     primaryHref: "/products/totaltox-hair-treatment-system#checkout",
     primaryLabel: "Buy now",
